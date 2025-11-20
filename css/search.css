@@ -1,0 +1,427 @@
+/* ============================================
+   LGLC Search Page Styles
+   Custom styling for Project Endings staticSearch output
+   ============================================ */
+
+@import url('design-tokens.css');
+
+body.search-page-body {
+  background-color: var(--color-bg-lighter-gray);
+  color: var(--color-secondary-charcoal);
+  font-family: var(--font-family-primary);
+}
+
+.search-main {
+  padding: var(--spacing-16) var(--spacing-4) var(--spacing-20);
+}
+
+.search-section {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.search-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary-black);
+  margin: 0;
+}
+
+.search-tabs {
+  position: relative;
+}
+
+.search-tabs__list {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: center;
+  margin: 0;
+  padding: var(--spacing-3) var(--spacing-4);
+  list-style: none;
+  background: var(--color-primary-navy);
+  border-radius: 2.75rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.search-tabs__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: 2rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: var(--transition-base);
+  opacity: 0.75;
+}
+
+.search-tabs__link:hover,
+.search-tabs__link:focus {
+  opacity: 1;
+}
+
+.search-tabs__link.is-active,
+.search-tabs__link[aria-current="page"] {
+  background: var(--color-white);
+  color: var(--color-primary-navy);
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(27, 46, 75, 0.12);
+}
+
+.search-tabs__link[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.search-card {
+  position: relative;
+  padding: var(--spacing-6);
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 3rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.search-card::before {
+  content: "";
+  position: absolute;
+  inset: 1.5rem 3rem auto;
+  height: 3.75rem;
+  background: var(--color-primary-navy);
+  border-radius: 3rem;
+  opacity: 0.18;
+}
+
+.search-card__content {
+  position: relative;
+  background: var(--color-white);
+  border-radius: 2.25rem;
+  padding: var(--spacing-10);
+  box-shadow: var(--shadow-md);
+}
+
+#staticSearch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+#ssForm {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.ssQueryAndButton {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid rgba(27, 46, 75, 0.08);
+}
+
+.ssQueryAndButton::before {
+  content: "Search by keywords";
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary-charcoal);
+}
+
+#ssQuery {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(27, 46, 75, 0.15);
+  background: var(--color-bg-lighter-gray);
+  font-size: var(--font-size-base);
+  color: var(--color-secondary-charcoal);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+#ssQuery:focus {
+  outline: none;
+  border-color: var(--color-primary-navy);
+  box-shadow: 0 0 0 3px rgba(27, 46, 75, 0.15);
+  background: var(--color-white);
+}
+
+#ssDoSearch,
+#ssDoSearch2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--border-radius-full);
+  background: var(--color-primary-navy);
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+#ssDoSearch:hover,
+#ssDoSearch:focus,
+#ssDoSearch2:hover,
+#ssDoSearch2:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(27, 46, 75, 0.18);
+}
+
+#ssDoSearch2 {
+  display: none;
+}
+
+.clearButton {
+  display: none;
+}
+
+.ssDateFilters,
+.ssFeatFilters,
+.ssDescFilters,
+.ssBoolFilters {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.ssFieldset {
+  border: none;
+  margin: 0;
+  padding: var(--spacing-3) 0;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  column-gap: var(--spacing-5);
+  row-gap: var(--spacing-3);
+  align-items: center;
+}
+
+.ssFieldset legend {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary-charcoal);
+}
+
+.ssFieldset > *:not(legend) {
+  grid-column: 2 / -1;
+}
+
+.ssFieldset span {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.ssFieldset label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: rgba(27, 46, 75, 0.75);
+}
+
+.ssFieldset input[type="text"],
+.ssFieldset input[type="number"],
+.ssFieldset select {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(27, 46, 75, 0.15);
+  background: var(--color-bg-lighter-gray);
+  font-size: var(--font-size-base);
+  color: var(--color-secondary-charcoal);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+}
+
+.ssFieldset input[type="text"]:focus,
+.ssFieldset input[type="number"]:focus,
+.ssFieldset select:focus {
+  outline: none;
+  border-color: var(--color-primary-navy);
+  background: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(27, 46, 75, 0.15);
+}
+
+.ssFeatFilters .ssFieldset input {
+  min-height: 3.25rem;
+}
+
+.ssDescFilters::before {
+  content: attr(data-section-title);
+  display: block;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary-charcoal);
+  margin: var(--spacing-6) 0 var(--spacing-2);
+}
+
+.ssDescCheckboxList {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--spacing-3);
+  row-gap: var(--spacing-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ssDescCheckboxList li {
+  position: relative;
+}
+
+.ssDescCheckboxList input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ssDescCheckboxList label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  border-radius: var(--border-radius-full);
+  border: 1px solid rgba(27, 46, 75, 0.15);
+  background: rgba(27, 46, 75, 0.05);
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary-charcoal);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+  cursor: pointer;
+}
+
+.ssDescCheckboxList input[type="checkbox"]:checked + label {
+  background: var(--color-primary-navy);
+  border-color: var(--color-primary-navy);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.ssDescCheckboxList input[type="checkbox"]:focus + label {
+  outline: 3px solid rgba(27, 46, 75, 0.2);
+  outline-offset: 3px;
+}
+
+.ssBoolFilters .ssFieldset {
+  padding-top: var(--spacing-4);
+}
+
+.ssBoolFilters .ssFieldset legend {
+  align-self: flex-start;
+}
+
+.ssBoolFilters .ssFieldset span {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--spacing-3);
+}
+
+.ssBoolFilters select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231B2E4B' d='M1.41 0L6 4.58 10.59 0 12 1.41 6 7.41 0 1.41z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px 8px;
+}
+
+#ssSearching {
+  display: none;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-navy);
+}
+
+#ssResults {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+#ssPoweredBy {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: var(--font-size-sm);
+  color: rgba(27, 46, 75, 0.7);
+}
+
+#ssPoweredBy p {
+  margin: 0;
+}
+
+#ssPoweredBy svg {
+  display: block;
+}
+
+/* ============================================ */
+/* Responsive adjustments */
+/* ============================================ */
+
+@media (max-width: 1024px) {
+  .search-card {
+    padding: var(--spacing-5);
+  }
+
+  .search-card__content {
+    padding: var(--spacing-8);
+  }
+
+  .ssQueryAndButton,
+  .ssFieldset {
+    grid-template-columns: 1fr;
+  }
+
+  .ssQueryAndButton::before {
+    margin-bottom: var(--spacing-2);
+  }
+
+  .ssFieldset > *:not(legend) {
+    grid-column: 1;
+  }
+
+  .ssFieldset span {
+    grid-template-columns: 1fr;
+  }
+
+  .ssBoolFilters .ssFieldset span {
+    grid-template-columns: 1fr;
+  }
+
+  .search-tabs__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-main {
+    padding: var(--spacing-12) var(--spacing-3) var(--spacing-16);
+  }
+
+  .search-card__content {
+    padding: var(--spacing-6);
+  }
+
+  .search-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .search-tabs__link {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-2) var(--spacing-4);
+  }
+
+  .ssDescFilters::before {
+    font-size: var(--font-size-xl);
+  }
+}
+
+

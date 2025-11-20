@@ -1,0 +1,285 @@
+/**
+ * LGLC Record Pages Styles
+ * Styles for Event, Person, Place, Periodical, and Organization pages
+ * Uses design tokens from design-tokens.css
+ */
+
+/* ============================================
+   RECORD CONTAINER
+   ============================================ */
+
+/* Page wrapper with white background */
+body {
+  background-color: var(--color-white);
+}
+
+.record-container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-12) var(--header-side-padding) var(--spacing-16);
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+/* ============================================
+   PAGE HEADER
+   ============================================ */
+
+.record-header {
+  margin-bottom: var(--spacing-16);
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.record-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.record-meta {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.record-meta-line {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-tertiary);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.record-meta-line:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   RECORD SECTIONS
+   ============================================ */
+
+.record-section {
+  margin-bottom: var(--spacing-12);
+}
+
+.section-heading {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+.details-content {
+  background-color: var(--color-bg-lighter-gray);
+  padding: var(--spacing-8);
+  border-radius: var(--border-radius-lg);
+}
+
+.details-heading {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.details-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Secondary text for plain sections (without background) */
+.section-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   RELATED RESULTS GRID
+   ============================================ */
+
+.related-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-10);
+}
+
+.related-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+/* Related Card Icons */
+.related-icon-img {
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  border-radius: var(--border-radius-full);
+}
+
+/* Related Card Content */
+.related-heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+.related-list {
+  list-style: disc;
+  padding-left: var(--spacing-5);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.related-list li {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   DATA TABLE (Organization Page)
+   ============================================ */
+
+.data-table-wrapper {
+  background-color: var(--color-bg-lighter-gray);
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-md);
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-base);
+}
+
+.data-table thead {
+  background-color: var(--color-white);
+}
+
+.data-table th {
+  padding: var(--spacing-4) var(--spacing-6);
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  border-bottom: var(--border-width-medium) solid var(--border-color-light);
+}
+
+.data-table td {
+  padding: var(--spacing-4) var(--spacing-6);
+  color: var(--text-secondary);
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--overlay-dark);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 79.9375rem) {  /* --breakpoint-xl-max */
+  .record-container {
+    padding: var(--spacing-10) var(--spacing-10);
+  }
+}
+
+@media (max-width: 63.9375rem) {  /* --breakpoint-lg-max */
+  .record-container {
+    padding: var(--spacing-8) var(--spacing-8);
+  }
+
+  .related-results-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-10);
+  }
+
+  .record-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .section-heading {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
+  .record-container {
+    padding: var(--spacing-6) var(--spacing-6);
+  }
+
+  .record-header {
+    margin-bottom: var(--spacing-8);
+    padding-bottom: var(--spacing-6);
+  }
+
+  .record-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section-heading {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .record-section {
+    margin-bottom: var(--spacing-8);
+  }
+
+  .details-content {
+    padding: var(--spacing-6);
+  }
+
+  .related-icon-img {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+  }
+
+  .data-table-wrapper {
+    padding: var(--spacing-4);
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .record-container {
+    padding: var(--spacing-4);
+    max-width: 100%;
+  }
+
+  .related-icon-img {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+

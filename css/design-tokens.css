@@ -1,0 +1,329 @@
+/**
+ * LGLC Design System - CSS Custom Properties
+ * Design tokens extracted from the LGLC PE Website Mockup
+ */
+
+:root {
+  /* ============================================
+     COLOR PALETTE - LGLC BRAND COLORS
+     ============================================ */
+  
+  /* LGLC Primary Colors */
+  --color-primary-yellow: #F5B841;
+  --color-primary-magenta: #E91E8C;
+  --color-primary-red: #ED1C24;
+  --color-primary-navy: #1B2E4B;
+  --color-primary-black: #000000;
+  --color-primary-gray: #CDCFD1;
+  
+  /* LGLC Secondary Colors */
+  --color-secondary-pale-yellow: #F9E5B8;
+  --color-secondary-orange: #F5A623;
+  --color-secondary-light-pink: #F8B5D4;
+  --color-secondary-pink: #EC4E8E;
+  --color-secondary-coral: #F47E5C;
+  --color-secondary-orange-red: #ED5A3D;
+  --color-secondary-purple-gray: #6B6C7E;
+  --color-secondary-dark-navy: #2D3E5C;
+  --color-secondary-dark-gray: #666666;
+  --color-secondary-charcoal: #4A4A4A;
+  
+  /* Backgrounds & Neutrals */
+  --color-bg-lighter-gray: #F5F5F5;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  
+  /* ============================================
+     GRADIENTS
+     ============================================ */
+  
+  --gradient-navy-pink: linear-gradient(
+    90deg, 
+    var(--color-primary-navy) 0%, 
+    var(--color-secondary-dark-navy) 33%, 
+    var(--color-primary-magenta) 66%, 
+    var(--color-secondary-pink) 100%
+  );
+  
+  --gradient-navy-orange: linear-gradient(
+    90deg, 
+    var(--color-primary-navy) 0%, 
+    var(--color-secondary-dark-navy) 25%, 
+    var(--color-secondary-orange) 75%, 
+    var(--color-primary-yellow) 100%
+  );
+  
+  --gradient-purple-yellow: linear-gradient(
+    90deg, 
+    var(--color-secondary-purple-gray) 0%, 
+    var(--color-primary-magenta) 33%, 
+    var(--color-secondary-orange) 66%, 
+    var(--color-primary-yellow) 100%
+  );
+  
+  --gradient-red-orange: linear-gradient(
+    90deg, 
+    var(--color-primary-red) 0%, 
+    var(--color-secondary-orange-red) 33%, 
+    var(--color-secondary-coral) 66%, 
+    var(--color-secondary-orange) 100%
+  );
+  
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  
+  /* Font Families */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-heading: var(--font-family-primary);
+  --font-family-mono: "SF Mono", Monaco, "Cascadia Code", 
+    "Roboto Mono", Consolas, "Courier New", monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+  
+  /* ============================================
+     SPACING
+     ============================================ */
+  
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-1-5: 0.375rem; /* 6px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+  
+  /* ============================================
+     BORDERS
+     ============================================ */
+  
+  /* Border Widths */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+  
+  /* Border Radius */
+  --border-radius-none: 0;
+  --border-radius-xs: 0.125rem;   /* 2px */
+  --border-radius-sm: 0.25rem;    /* 4px */
+  --border-radius-md: 0.5rem;     /* 8px */
+  --border-radius-lg: 0.75rem;    /* 12px */
+  --border-radius-xl: 1rem;       /* 16px */
+  --border-radius-2xl: 1.5rem;    /* 24px */
+  --border-radius-full: 62.5rem;  /* 1000px - effectively full */
+  
+  /* Border Colors */
+  --border-color-light: var(--color-primary-gray);
+  --border-color-medium: var(--color-secondary-dark-gray);
+  --border-color-dark: var(--color-secondary-charcoal);
+  
+  /* ============================================
+     SHADOWS
+     ============================================ */
+  
+  --shadow-xs: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 
+    0 0.0625rem 0.125rem -0.0625rem rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 
+    0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 
+    0 0.25rem 0.375rem -0.25rem rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 1.25rem 1.5625rem -0.3125rem rgba(0, 0, 0, 0.1), 
+    0 0.5rem 0.625rem -0.375rem rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+  
+  /* ============================================
+     OPACITY
+     ============================================ */
+  
+  --opacity-disabled: 0.4;
+  --opacity-hover: 0.8;
+  --opacity-hover-light: 0.9;
+  --opacity-overlay: 0.1;
+  
+  /* ============================================
+     OVERLAYS
+     ============================================ */
+  
+  --overlay-light: rgba(255, 255, 255, 0.1);
+  --overlay-dark: rgba(0, 0, 0, 0.1);
+  
+  /* ============================================
+     FOCUS & OUTLINE
+     ============================================ */
+  
+  --outline-width-thin: 0.125rem;   /* 2px */
+  --outline-width-thick: 0.1875rem; /* 3px */
+  --outline-offset-sm: 0.125rem;    /* 2px */
+  --outline-offset-md: 0.25rem;     /* 4px */
+  --outline-offset-inner: -0.1875rem; /* -3px */
+  
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+  
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  
+  --transition-property-common: background-color, 
+    border-color, color, fill, stroke, opacity, 
+    box-shadow, transform;
+  
+  /* ============================================
+     Z-INDEX LAYERS
+     ============================================ */
+  
+  --z-index-base: 0;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1100;
+  --z-index-fixed: 1200;
+  --z-index-modal-backdrop: 1300;
+  --z-index-modal: 1400;
+  --z-index-popover: 1500;
+  --z-index-tooltip: 1600;
+  
+  /* ============================================
+     BREAKPOINTS
+     Note: CSS variables cannot be used in @media queries.
+     Use these values directly in media queries with comments.
+     ============================================ */
+  
+  --breakpoint-sm: 40rem;    /* 640px */
+  --breakpoint-md: 48rem;    /* 768px */
+  --breakpoint-lg: 64rem;    /* 1024px */
+  --breakpoint-xl: 80rem;    /* 1280px */
+  --breakpoint-2xl: 96rem;   /* 1536px */
+  
+  /* For max-width queries, subtract 0.0625rem (1px) to avoid overlap */
+  --breakpoint-sm-max: 39.9375rem;   /* 639px */
+  --breakpoint-md-max: 47.9375rem;   /* 767px */
+  --breakpoint-lg-max: 63.9375rem;   /* 1023px */
+  --breakpoint-xl-max: 79.9375rem;   /* 1279px */
+  --breakpoint-2xl-max: 95.9375rem;  /* 1535px */
+  
+  /* ============================================
+     COMPONENT-SPECIFIC TOKENS
+     ============================================ */
+  
+  /* Header/Banner */
+  --header-bg: var(--color-primary-red);
+  --header-text: var(--color-white);
+  --header-height: 10.25rem;      /* 164px */
+  --header-side-padding: 5rem;    /* 80px */
+  
+  /* Navigation */
+  --nav-bg: var(--color-primary-navy);
+  --nav-bg-active: var(--color-white);
+  --nav-text: var(--color-white);
+  --nav-text-active: var(--color-primary-navy);
+  --nav-border-radius: var(--border-radius-xl);
+  
+  /* Cards */
+  --card-bg: var(--color-white);
+  --card-border: var(--border-color-light);
+  --card-shadow: var(--shadow-sm);
+  --card-shadow-hover: var(--shadow-md);
+  --card-border-radius: var(--border-radius-lg);
+  --card-padding: var(--spacing-6);
+  
+  /* Buttons */
+  --button-primary-bg: var(--color-primary-red);
+  --button-primary-text: var(--color-white);
+  --button-primary-hover: var(--color-secondary-orange-red);
+  --button-secondary-bg: var(--color-primary-yellow);
+  --button-secondary-text: var(--color-primary-navy);
+  --button-secondary-hover: var(--color-secondary-orange);
+  --button-padding-y: var(--spacing-3);
+  --button-padding-x: var(--spacing-6);
+  --button-border-radius: var(--border-radius-md);
+  
+  /* Icons */
+  --icon-size-sm: 1rem;
+  --icon-size-md: 1.5rem;
+  --icon-size-lg: 2rem;
+  --icon-size-xl: 3rem;
+  
+  /* Touch Targets (Accessibility) */
+  --touch-target-min: 2.75rem;  /* 44px */
+  --touch-target-sm: 2.5rem;    /* 40px */
+  
+  /* Page Layout */
+  --page-max-width: 80rem;      /* 1280px */
+  --page-padding-x: var(--spacing-6);
+  --page-padding-y: var(--spacing-8);
+  
+  /* Content Width */
+  --content-width-narrow: 40rem;  /* 640px */
+  --content-width-medium: 48rem;  /* 768px */
+  --content-width-wide: 64rem;    /* 1024px */
+  --content-width-xlarge: 75rem;  /* 1200px */
+  
+  /* Image Heights */
+  --image-height-sm: 12.5rem;   /* 200px */
+  --image-height-md: 15rem;     /* 240px */
+  --image-height-lg: 31.25rem;  /* 500px */
+  --image-height-xl: 37.5rem;   /* 600px */
+  --image-height-2xl: 50rem;    /* 800px */
+}
+
+/* ============================================
+   SEMANTIC COLOR TOKENS
+   ============================================ */
+
+:root {
+  /* Feedback Colors */
+  --color-success: #52B788;
+  --color-success-bg: #74C69D;
+  --color-info: var(--color-primary-navy);
+  --color-info-bg: var(--color-secondary-dark-navy);
+  --color-warning: var(--color-primary-yellow);
+  --color-warning-bg: var(--color-secondary-pale-yellow);
+  --color-error: var(--color-primary-red);
+  --color-error-bg: var(--color-secondary-coral);
+  
+  /* Text Colors */
+  --text-primary: var(--color-primary-black);
+  --text-secondary: var(--color-secondary-charcoal);
+  --text-tertiary: var(--color-secondary-dark-gray);
+  --text-disabled: var(--color-primary-gray);
+  --text-inverse: var(--color-white);
+  
+  /* Background Colors */
+  --bg-page: var(--color-bg-lighter-gray);
+  --bg-surface: var(--color-white);
+  --bg-elevated: var(--color-white);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+}
+
