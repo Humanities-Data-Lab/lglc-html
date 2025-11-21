@@ -3,6 +3,22 @@
 Lesbian and Gay Liberation in Canada (LGLC) website templates and 
 components built with a token-based design system.
 
+## 🚀 Quick Start
+
+1. **View the templates:**
+   - Open `index.html` in a browser to see the active template (currently Organization page)
+   - Open `search.html` to see the search interface
+
+2. **Customize a page:**
+   - Edit `index.html` and uncomment the desired page template section
+   - Replace placeholder content with your actual data
+   - Update CSS files to match your brand (using design tokens)
+
+3. **Add new components:**
+   - Create a new CSS file in `css/` directory
+   - Import `design-tokens.css` first, then your component CSS
+   - Use design tokens exclusively (see Component Styling Guide below)
+
 ## 📁 Project Structure
 
 ```
@@ -11,11 +27,13 @@ components built with a token-based design system.
 │   ├── header.css           # Header component styles
 │   ├── footer.css           # Footer component styles
 │   ├── landing.css          # Landing page styles
-│   └── records.css          # Records page styles
+│   ├── records.css          # Records page styles
+│   └── search.css           # Search page styles
 ├── js/
-│   └── header.js            # Header interactivity
+│   └── header.js            # Header interactivity and accessibility features
 ├── media/                   # Images and assets
-└── index.html               # Landing page template
+├── index.html               # Main template (contains multiple page types)
+└── search.html              # Search page template with staticSearch integration
 ```
 
 ## 🎨 Component Styling Guide
@@ -156,6 +174,40 @@ queries, so use the values directly with comments:
   var(--color-primary-yellow)`
 - Test keyboard navigation
 
+## 📄 Page Templates
+
+The `index.html` file contains multiple page templates that can be activated by uncommenting the relevant sections:
+
+- **Landing Page** - Homepage with hero section, featured content, and team section
+- **Event Page** - Individual event record with details and related results
+- **Person Page** - Individual person record with biography, occupation, and related results
+- **Place Page** - Individual place record with related results
+- **Periodical Page** - Individual periodical record with related results
+- **Organization Page** - Individual organization record with related results (currently active)
+
+To switch between templates, comment/uncomment the relevant `<main>` sections in `index.html`.
+
+## 🔍 Search Functionality
+
+The `search.html` page includes integration with [staticSearch](https://github.com/projectEndings/staticSearch), a static site search solution. The search page includes:
+
+- Tabbed interface for different collection types (Events, People, Places, Periodicals, Organizations)
+- Keyword search with date range filters
+- Advanced filters for associated people, periodicals, organizations, and places
+- Type-based filtering (e.g., place types)
+- Boolean filters for availability
+
+**Note:** The staticSearch build artifacts (`ssSearch.js`, `ssInitialize.js`) need to be generated and injected into the search page for full functionality.
+
+## 🎯 JavaScript Features
+
+The `js/header.js` file provides:
+
+- **Mobile Menu Toggle** - Responsive navigation with ARIA attributes
+- **Accessibility Enhancements** - Skip links, keyboard navigation, screen reader announcements
+- **Focus Management** - Proper focus handling for keyboard users
+- **Window Resize Handling** - Auto-closes mobile menu on desktop viewport
+
 ## 🚀 Development Rules
 
 - **No hardcoded values** - always use design tokens
@@ -163,4 +215,52 @@ queries, so use the values directly with comments:
 - **No inline styles** - keep all CSS in stylesheets
 - **Import order** - `css/design-tokens.css` must load first
 - **Component isolation** - each component in its own CSS file
+- **Semantic HTML** - use proper HTML5 elements and ARIA attributes
+- **Accessibility first** - ensure all interactive elements are keyboard accessible
+
+## 🌐 Browser Support
+
+These templates are designed to work in modern browsers that support:
+- CSS Custom Properties (CSS Variables)
+- Flexbox and CSS Grid
+- ES6 JavaScript features
+- HTML5 semantic elements
+
+## 📝 Usage
+
+1. **Set up your HTML page:**
+   - Include `css/design-tokens.css` first
+   - Add component-specific CSS files as needed
+   - Include `js/header.js` before closing `</body>` tag
+
+2. **Use design tokens:**
+   - Reference tokens via `var(--token-name)`
+   - Never hardcode values in component CSS
+
+3. **Customize templates:**
+   - Uncomment the desired page template in `index.html`
+   - Replace placeholder content with your actual data
+   - Update navigation links and footer content as needed
+
+4. **For search functionality:**
+   - Set up staticSearch build process
+   - Configure search indexes for your content
+   - Inject build artifacts into `search.html`
+
+## 📦 Media Assets
+
+The `media/` folder contains placeholder images and assets used in the templates:
+- Card images for landing page
+- Icon images for related results sections
+- Featured images for hero sections
+
+Replace these with your actual project assets. Maintain the same file structure or update image paths in the HTML files accordingly.
+
+## 🔧 Technical Details
+
+- **No build process required** - These are static HTML/CSS/JS templates
+- **No dependencies** - Pure vanilla JavaScript and CSS
+- **Design tokens** - All styling values are centralized in `css/design-tokens.css`
+- **Accessibility** - WCAG 2.1 compliant with semantic HTML and ARIA attributes
+- **Mobile-first** - Responsive design with mobile-first approach
 
