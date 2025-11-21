@@ -50,6 +50,10 @@ body.search-page-body {
   box-shadow: var(--shadow-lg);
 }
 
+.search-tabs__item {
+  list-style: none;
+}
+
 .search-tabs__link {
   display: inline-flex;
   align-items: center;
@@ -79,6 +83,8 @@ body.search-page-body {
 
 .search-tabs__link[aria-disabled="true"] {
   cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+  pointer-events: none;
 }
 
 .search-card {
