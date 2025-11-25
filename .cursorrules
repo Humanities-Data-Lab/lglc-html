@@ -1,0 +1,254 @@
+# LGLC Website Templates - Cursor Rules
+
+This project uses a token-based design system for the Lesbian and Gay Liberation in Canada (LGLC) website templates.
+
+## Core Principles
+
+1. **Always use design tokens** - Never hardcode CSS values. All styling must use tokens from `css/design-tokens.css`
+2. **Mobile-first responsive design** - Design for mobile first, enhance for larger screens
+3. **Accessibility first** - Ensure all interactive elements are keyboard accessible and meet WCAG 2.1 standards
+4. **Semantic HTML** - Use proper HTML5 elements and ARIA attributes
+5. **Component isolation** - Each component in its own CSS file
+
+## CSS Rules
+
+### Design Token Usage
+
+**✅ DO:**
+- Always use design tokens via `var(--token-name)`
+- Reference tokens from `css/design-tokens.css`
+- Use semantic token names when available (`--text-primary` over `--color-primary-black`)
+
+**❌ DON'T:**
+- Never hardcode values (no `16px`, `#ED1C24`, `8px`, etc.)
+- Never use raw `px` values for spacing, fonts, or sizes (except border widths which are already in tokens)
+- Never define custom values in component CSS files
+
+### CSS File Structure
+
+1. **Import order is critical:**
+   ```html
+   <link rel="stylesheet" href="css/design-tokens.css">
+   <link rel="stylesheet" href="css/your-component.css">
+   ```
+
+2. **Component files:**
+   - Each component gets its own CSS file in `css/` directory
+   - Import `design-tokens.css` first in HTML
+   - Use design tokens exclusively
+
+3. **Units:**
+   - Use `rem` for all scalable values (spacing, fonts, sizes) via tokens
+   - Use `px` ONLY for border widths (already defined in tokens)
+   - Never mix units
+
+### Example CSS:
+```css
+/* ✅ Correct */
+.my-component {
+  padding: var(--spacing-4);
+  color: var(--color-primary-red);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-lg);
+}
+
+/* ❌ Incorrect */
+.my-component {
+  padding: 16px;
+  color: #ED1C24;
+  border-radius: 8px;
+  font-size: 18px;
+}
+```
+
+## HTML Rules
+
+### Semantic HTML
+- Use semantic HTML5 elements: `<header>`, `<main>`, `<footer>`, `<nav>`, `<article>`, `<section>`
+- Include ARIA labels where needed
+- Use proper heading hierarchy (h1 → h2 → h3)
+
+### Structure
+- No inline styles - keep all CSS in stylesheets
+- Import CSS in correct order (design-tokens.css first)
+- Include `js/header.js` before closing `</body>` tag
+
+## JavaScript Rules
+
+### File Organization
+- Component-specific JS in `js/` directory
+- Keep JavaScript vanilla (no frameworks)
+- Ensure accessibility features (keyboard navigation, ARIA updates)
+
+### Accessibility
+- All interactive elements must be keyboard accessible
+- Include focus management
+- Provide screen reader announcements where needed
+
+## Component Creation Guidelines
+
+### When creating a new component:
+
+1. **Create CSS file:**
+   - New file in `css/` directory
+   - Name it descriptively (e.g., `card.css`, `button.css`)
+
+2. **Use design tokens:**
+   - Reference existing tokens via `var(--token-name)`
+   - If you need a new value, add it to `css/design-tokens.css` first
+   - Never define custom values in component CSS
+
+3. **Follow existing patterns:**
+   - Look at `css/header.css` and `css/footer.css` for examples
+   - Maintain consistency with existing components
+
+## Design Token Categories
+
+### Colors
+- Primary: `--color-primary-red`, `--color-primary-navy`, `--color-primary-yellow`, `--color-primary-black`, `--color-primary-gray`
+- Secondary: `--color-secondary-*` variants
+- Semantic: `--text-primary`, `--text-secondary`, `--text-tertiary`, `--text-inverse`
+- Backgrounds: `--bg-page`, `--bg-surface`, `--bg-elevated`
+
+### Spacing
+- Use `--spacing-1` through `--spacing-24` (0.25rem to 6rem)
+- Never hardcode spacing values
+
+### Typography
+- Font sizes: `--font-size-xs` through `--font-size-5xl`
+- Font weights: `--font-weight-normal` through `--font-weight-extrabold`
+- Line heights: `--line-height-tight`, `--line-height-normal`, `--line-height-relaxed`, `--line-height-loose`
+
+### Borders
+- Widths: `--border-width-thin`, `--border-width-medium`, `--border-width-thick`
+- Radius: `--border-radius-sm` through `--border-radius-2xl`
+- Colors: `--border-color-*`
+
+### Shadows
+- `--shadow-xs` through `--shadow-2xl`
+
+## Responsive Design
+
+### Breakpoints
+- Mobile-first approach (default styles for mobile)
+- Tablet: `48rem` (768px) - use `@media (min-width: 48rem)`
+- Desktop: `64rem` (1024px) - use `@media (min-width: 64rem)`
+- Large Desktop: `80rem` (1280px) - use `@media (min-width: 80rem)`
+
+**Note:** CSS variables cannot be used in `@media` queries, so use the values directly with comments:
+```css
+@media (min-width: 48rem) {  /* --breakpoint-md */
+  /* Tablet styles */
+}
+```
+
+## Accessibility Requirements
+
+### Focus States
+- Always include: Yellow outline (`--color-primary-yellow`)
+- Adequate offset (`--outline-offset-sm`)
+- Visible on all interactive elements
+
+### Touch Targets
+- Minimum size: `var(--touch-target-min)` (2.75rem/44px)
+- Ensure buttons and links have sufficient clickable area
+
+### Keyboard Navigation
+- All interactive elements must be keyboard accessible
+- Logical tab order
+- Skip links for main content
+- ARIA labels where needed
+
+## Button Guidelines
+
+### Primary Button (`.btn-primary`)
+- Use for: Main call-to-action, primary user actions
+- Black background (`--color-primary-black`), white text
+- Focus: Yellow outline
+
+### Secondary Button (`.btn-secondary`)
+- Use for: Secondary actions, alternative options
+- Transparent background, black text, gray border
+- Focus: Yellow outline
+
+## Card Guidelines
+
+### Content Cards (`.card`)
+- White background
+- Use for: Content previews, feature highlights, grid layouts
+- Hover: Slight lift, enhanced shadow
+- Focus: Yellow outline
+
+### Related Results Cards (`.related-card`)
+- Use for: Related content on detail pages
+- Icon/image at top, heading, list of items
+- 3-column grid on desktop
+
+## Typography Guidelines
+
+### Font Sizes
+- **5xl (3rem)**: Hero titles, landing page main headings
+- **4xl (2.25rem)**: Section titles, major page headings
+- **3xl (1.875rem)**: Subsection headings, large content titles
+- **2xl (1.5rem)**: Medium headings, section subheadings
+- **xl (1.25rem)**: Small headings, card titles
+- **lg (1.125rem)**: Large body text, emphasized content
+- **base (1rem)**: Default body text, buttons, form inputs
+- **sm (0.875rem)**: Small text, captions, metadata
+- **xs (0.75rem)**: Tiny text, fine print
+
+### Font Weights
+- **Extrabold (800)**: Hero titles, major emphasis
+- **Bold (700)**: Section headings, important content
+- **Semibold (600)**: Buttons, card titles, emphasized text
+- **Medium (500)**: Navigation links, subheadings
+- **Normal (400)**: Body text, default weight
+
+## Layout Patterns
+
+### Containers
+- `.landing-container`: Landing page sections (max-width: 75rem)
+- `.record-container`: Individual record pages (max-width: 80rem)
+- `.search-section`: Search page content (max-width: 72.5rem)
+
+### Grids
+- `.cards-grid`: 3-column grid, stacks to 1 column on mobile
+- Gap: `--spacing-8`
+
+## File Structure
+
+```
+├── css/
+│   ├── design-tokens.css    # Design system (MUST be imported first)
+│   ├── header.css
+│   ├── footer.css
+│   ├── landing.css
+│   ├── records.css
+│   └── search.css
+├── js/
+│   └── header.js
+├── media/                   # Images and assets
+├── index.html               # Main template
+└── search.html              # Search page template
+```
+
+## Quick Reference
+
+### Common Mistakes to Avoid
+1. ❌ Hardcoding CSS values instead of using tokens
+2. ❌ Using `px` for spacing/fonts instead of `rem` via tokens
+3. ❌ Defining custom values in component CSS files
+4. ❌ Importing CSS files in wrong order
+5. ❌ Using inline styles
+6. ❌ Creating components without checking existing patterns
+7. ❌ Not including accessibility features (focus states, ARIA)
+8. ❌ Making touch targets too small (< 44px)
+
+### When in Doubt
+- Check `css/design-tokens.css` for available tokens
+- Look at existing components (`css/header.css`, `css/footer.css`) for patterns
+- Refer to `DESIGN-LANGUAGE.md` for detailed component guidelines
+- Refer to `README.md` for project structure and usage
+
+
+
