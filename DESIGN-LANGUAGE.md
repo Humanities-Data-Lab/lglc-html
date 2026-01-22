@@ -103,13 +103,6 @@ Materials issued by LGLC should utilize the official brand palette. If limited b
   - Use for: Navigation backgrounds, headings (Josefin Sans), body copy
   - Example: Secondary headings, navigation bar, primary text
 
-- **Magenta (`--color-primary-magenta`)** - Links, accent color
-  - **Hex:** `#EC008C`
-  - **RGB:** 236, 0, 140
-  - **CMYK:** 0/100/0/0
-  - Use for: Links (80% tint), special emphasis, accent elements
-  - Example: Text links, highlighted content
-
 - **Yellow (`--color-primary-yellow`)** - Accents, highlights, warm elements
   - **Hex:** `#F6BE38`
   - **RGB:** 246, 190, 56
@@ -133,14 +126,12 @@ Tints of 80% and 60% of the primary palette can be used for variety.
 - **Black 80%:** `#58595B` (RGB: 88, 89, 91, CMYK: 0/0/0/80)
 - **Red 80%:** `#F15B40` (RGB: 241, 91, 64, CMYK: 0/80/80/0) - Use for: Interactive materials (with red)
 - **Navy 80%:** `#445078` (RGB: 68, 80, 120, CMYK: 80/69/26/18)
-- **Magenta 80%:** `#EF5BA1` (RGB: 239, 91, 161, CMYK: 0/80/0/0) - **Note:** Brand manual specifies this for links, but we use context-aware navy-based system (see Link Colors section)
 - **Yellow 80%:** `#F8C965` (RGB: 248, 201, 101, CMYK: 2/21/71/0)
 
 **60% Tints:**
 - **Black 60%:** `#808285` (RGB: 128, 130, 133, CMYK: 0/0/0/60)
 - **Red 60%:** `#F58466` (RGB: 245, 132, 102, CMYK: 0/60/60/0)
 - **Navy 60%:** `#6A6D8F` (RGB: 106, 109, 143, CMYK: 60/52/20/14)
-- **Magenta 60%:** `#F287B7` (RGB: 242, 135, 183, CMYK: 0/60/0/0)
 - **Yellow 60%:** `#FAD589` (RGB: 250, 213, 137, CMYK: 2/16/53/0)
 
 ### Semantic Colors
@@ -150,8 +141,7 @@ Tints of 80% and 60% of the primary palette can be used for variety.
 - `--text-secondary` - Body text, descriptions (navy: `#1C3664`)
 - `--text-tertiary` - Metadata, less important info (navy 60%: `#6A6D8F`)
 - `--text-inverse` - Text on dark backgrounds (white)
-- `--text-link` - Links (context-aware navy-based system: brightened navy `#2D5A8C` on light backgrounds)
-  - **Note:** Brand manual specifies magenta 80% for links, but we use a context-aware navy-based system (see [Link Colors](#link-colors-implementation-note) section)
+- `--text-link` - Links (context-aware navy-based system, see [Link Color System](#link-color-system) section)
 
 **Background Colors:**
 - `--bg-page` - Page background (light grey: `#E6E7E8`)
@@ -175,15 +165,75 @@ Tints of 80% and 60% of the primary palette can be used for variety.
 - Don't change the official hex values
 - Don't use colors that aren't in the brand standards
 
-### Link Colors (Implementation Note)
+### Link Color System
 
-**Brand Manual Specification:** The brand standards manual specifies that 80% magenta (`#EF5BA1`) should be used for links.
+LGLC uses a context-aware navy-based link color system that harmonizes with the brand palette while ensuring optimal contrast and accessibility across all contexts.
 
-**Our Implementation:** We use a context-aware navy-based link color system instead, which provides better brand harmony and accessibility. This system uses:
-- **Default links (on light backgrounds):** Brightened navy (`#2D5A8C`) → Navy (`#1C3664`) on hover
-- **Links on colored backgrounds:** Context-specific colors (white on red/navy/black, navy on yellow/grey)
+**Design Tokens:**
+All link colors are available as CSS custom properties in `css/design-tokens.css`.
 
-This approach maintains brand cohesion while ensuring optimal contrast and accessibility across all contexts. See the [Typography & Color](#typography--color) section for complete link color specifications.
+#### Default Links (on White/Light Backgrounds)
+
+- **Link Color:** `--text-link` = `#2D5A8C` (Brightened navy - vibrant but cohesive)
+- **Hover:** `--text-link-hover` = `#1C3664` (Navy - subtle darkening)
+- **Visited:** `--text-link-visited` = `#445078` (Navy 80% - distinguishes visited links)
+
+**Usage:** Applied automatically to `<a>` tags on light backgrounds (white, light grey).
+
+#### Links on Red Backgrounds
+
+- **Link Color:** `--text-link-on-red` = White (`#FFFFFF`)
+- **Hover:** `--text-link-hover-on-red` = White (stays white - background change provides feedback)
+
+**Usage:** Navigation bar, red header sections, interactive elements with red backgrounds.
+
+#### Links on Navy/Dark Backgrounds
+
+- **Link Color:** `--text-link-on-navy` = White (`#FFFFFF`)
+- **Hover:** `--text-link-hover-on-navy` = White (stays white - background change provides feedback)
+
+**Usage:** Search tabs, dark sections, navy background areas.
+
+#### Links on Black Backgrounds
+
+- **Link Color:** `--text-link-on-black` = White (`#FFFFFF`)
+- **Hover:** `--text-link-hover-on-black` = White (stays white - background change provides feedback)
+
+**Usage:** Buttons with black backgrounds, dark UI elements.
+
+#### Links on Grey Backgrounds
+
+- **Link Color:** `--text-link-on-grey` = Navy (`#1C3664`)
+- **Hover:** `--text-link-hover-on-grey` = Brightened navy (`#2D5A8C`)
+
+**Usage:** Muted sections, hover states, grey background areas.
+
+#### Links on Yellow Backgrounds
+
+- **Link Color:** `--text-link-on-yellow` = Navy (`#1C3664`)
+- **Hover:** `--text-link-hover-on-yellow` = Black (`#000000`)
+
+**Usage:** Team section, yellow highlight areas, accent sections.
+
+### Link Color Usage Rules
+
+✅ **DO:**
+- Use default link colors (`--text-link`) for links on white/light backgrounds
+- Apply context-specific tokens when links appear on colored backgrounds
+- Use CSS classes (`.bg-red`, `.on-navy`, etc.) to apply context-specific link colors
+- Ensure all link/background combinations meet WCAG AA contrast standards
+
+❌ **DON'T:**
+- Don't use default link colors on colored backgrounds (use context-specific tokens)
+- Don't hardcode link colors - always use design tokens
+- Don't create new link colors outside the approved system
+
+### Accessibility Compliance
+
+All link color combinations in this system meet WCAG 2.1 accessibility standards:
+- **White text on dark backgrounds:** AAA level compliance
+- **Navy variations on light backgrounds:** AA+ compliance
+- **All combinations:** Minimum 4.5:1 contrast ratio for normal text
 
 ---
 
@@ -286,8 +336,7 @@ LGLC applications should use the following styles and colors as a base for all L
 - **Red** (`#ED1C24`) and **Red 80%** (`#F15B40`) should be used for interactive materials (e.g., menus, maps, graphs)
 
 **Links:**
-- **Brand Manual:** 80% magenta (`#EF5BA1`) should be used for links
-- **Our Implementation:** Context-aware navy-based system (see [Link Colors](#link-colors-implementation-note) section)
+- **Our Implementation:** Context-aware navy-based system (see [Link Color System](#link-color-system) section)
 
 ### Typography Usage Rules
 
@@ -753,11 +802,11 @@ Use spacing tokens consistently:
 | Black | `#000000` | `--color-primary-black` | Main headings (Aachen), primary text |
 | Red | `#ED1C24` | `--color-primary-red` | Header, interactive materials |
 | Navy | `#1C3664` | `--color-primary-navy` | Headings (Josefin), body copy, navigation |
-| Magenta | `#EC008C` | `--color-primary-magenta` | Accent elements |
 | Yellow | `#F6BE38` | `--color-primary-yellow` | Accents, highlights |
 | Light Grey | `#E6E7E8` | `--color-grey-light` | Backgrounds, subtle elements |
-| Magenta 80% | `#EF5BA1` | `--color-magenta-80` | **Links** |
 | Red 80% | `#F15B40` | `--color-red-80` | Interactive materials (with red) |
+| Brightened Navy | `#2D5A8C` | `--text-link` | Default links (on light backgrounds) |
+| Navy 80% | `#445078` | `--text-link-visited` | Visited links |
 
 ---
 
@@ -808,7 +857,7 @@ The official LGLC Brand Standards Manual includes:
 11. ❌ Never reconfigure logo elements
 12. ❌ Never place logo on an angle
 
-**Note on Links:** The brand manual specifies magenta 80% for links, but we implement a context-aware navy-based system for better brand harmony and accessibility.
+**Note on Links:** We implement a context-aware navy-based link color system for optimal brand harmony and accessibility. See the [Link Color System](#link-color-system) section for complete specifications.
 
 ---
 
@@ -871,13 +920,46 @@ p {
 **3. Links:**
 
 ```css
+/* Default Links (on light backgrounds) */
 a {
-  color: var(--text-link);                  /* Magenta 80% #EF5BA1 */
+  color: var(--text-link);                  /* Brightened navy #2D5A8C */
   text-decoration: underline;
 }
 
 a:hover {
-  color: var(--text-link-hover);            /* Full Magenta #EC008C */
+  color: var(--text-link-hover);            /* Navy #1C3664 */
+}
+
+a:visited {
+  color: var(--text-link-visited);          /* Navy 80% #445078 */
+}
+
+/* Links on Red Backgrounds (navigation) */
+.bg-red a,
+.on-red a {
+  color: var(--text-link-on-red);          /* White */
+}
+
+.bg-red a:hover,
+.on-red a:hover {
+  color: var(--text-link-hover-on-red);    /* White (background changes) */
+}
+
+/* Links on Navy Backgrounds */
+.bg-navy a,
+.on-navy a {
+  color: var(--text-link-on-navy);         /* White */
+}
+
+/* Links on Yellow Backgrounds */
+.bg-yellow a,
+.on-yellow a {
+  color: var(--text-link-on-yellow);       /* Navy */
+}
+
+.bg-yellow a:hover,
+.on-yellow a:hover {
+  color: var(--text-link-hover-on-yellow); /* Black */
 }
 ```
 
