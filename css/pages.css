@@ -146,13 +146,6 @@
   gap: var(--spacing-4);
 }
 
-/* Special focus state for yellow background */
-.team-section .btn-primary:focus,
-.team-section .btn-white:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-navy);
-  outline-offset: var(--outline-offset-sm);
-}
-
 /* ============================================
    RECORD PAGES
    ============================================ */
@@ -281,7 +274,7 @@
   }
 
   .team-buttons .btn-primary,
-  .team-buttons .btn-white {
+  .team-buttons .btn-secondary {
     width: var(--size-full);
     text-align: center;
   }

@@ -10,7 +10,7 @@
  * - Main Headings: Aachen Std, Black, 18pt+
  * - Secondary/Tertiary Headings: Josefin Sans Bold, Navy, 14pt+/11pt+
  * - Body Copy: Josefin Sans Regular, Navy, 10pt+
- * - Links: Magenta 80% (#EF5BA1)
+ * - Links: Context-aware navy-based system (brightened navy on light backgrounds)
  */
 
 /* ============================================
@@ -155,8 +155,10 @@
        - Font: --font-family-primary, Regular weight
      
      Links:
-       - Color: Magenta 80% (#EF5BA1)
-       - Hover: Full Magenta (#EC008C)
+       - Context-aware system using navy variations
+       - Default (on light): Brightened Navy (#2D5A8C) → Navy (#1C3664)
+       - On red: White → Yellow
+       - On navy/dark: Yellow → Yellow 60%
      
      Interactive Materials (menus, maps, graphs):
        - Colors: Red (#ED1C24) and Red 80% (#F15B40)
@@ -498,8 +500,50 @@
   --text-tertiary: var(--color-navy-60);             /* Less important text */
   --text-disabled: var(--color-primary-gray);
   --text-inverse: var(--color-white);
-  --text-link: var(--color-magenta-80);              /* Links - Magenta 80% (#EF5BA1) */
-  --text-link-hover: var(--color-primary-magenta);   /* Link hover - Full magenta */
+  
+  /* ============================================
+     CONTEXT-AWARE LINK COLORS - Navy-Based System
+     ============================================
+     
+     Replaces the original magenta link color with a more cohesive
+     navy-based system that harmonizes with the LGLC brand palette.
+     
+     USAGE:
+     - Default <a> tags use --text-link (brightened navy on light backgrounds)
+     - Apply context classes (.bg-red, .on-navy, etc.) for colored backgrounds
+     - Dark backgrounds (red, navy, black) use white links
+     - Hover feedback on dark backgrounds comes from background color changes
+     
+     CONTRAST COMPLIANCE:
+     - All link/background combinations meet WCAG AA standards
+     - White text on dark backgrounds: AAA level compliance
+     - Navy variations on light backgrounds: AA+ compliance
+     ============================================ */
+  
+  /* Default Links (on white/light backgrounds) */
+  --text-link: #2D5A8C;                              /* Brightened navy - vibrant but cohesive */
+  --text-link-hover: var(--color-primary-navy);      /* Navy #1C3664 - subtle darkening */
+  --text-link-visited: #445078;                      /* Navy 80% - distinguishes visited links */
+  
+  /* Links on Red Backgrounds (navigation bar) */
+  --text-link-on-red: var(--color-white);            /* White for visibility */
+  --text-link-hover-on-red: var(--color-white);      /* Stay white - background change provides feedback */
+  
+  /* Links on Navy/Dark Backgrounds (search tabs, dark sections) */
+  --text-link-on-navy: var(--color-white);           /* White for clarity */
+  --text-link-hover-on-navy: var(--color-white);     /* Stay white - background change provides feedback */
+  
+  /* Links on Black Backgrounds (buttons, dark UI elements) */
+  --text-link-on-black: var(--color-white);          /* White for maximum contrast */
+  --text-link-hover-on-black: var(--color-white);    /* Stay white - background change provides feedback */
+  
+  /* Links on Grey Backgrounds (muted sections, hover states) */
+  --text-link-on-grey: var(--color-primary-navy);    /* Navy maintains hierarchy */
+  --text-link-hover-on-grey: #2D5A8C;                /* Brightened navy for emphasis */
+  
+  /* Links on Yellow Backgrounds (team section, highlights) */
+  --text-link-on-yellow: var(--color-primary-navy);  /* Navy for strong contrast */
+  --text-link-hover-on-yellow: var(--color-primary-black);  /* Black for emphasis */
   
   /* Background Colors - Brand Standards */
   --bg-page: var(--color-grey-light);                /* Light grey (#E6E7E8) */

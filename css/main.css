@@ -92,21 +92,83 @@ p {
   line-height: var(--line-height-loose);  /* 1.9 - Generous spacing per brand guide */
 }
 
-/* Links: Magenta 80% */
+/* Links: Navy-Based Context-Aware System */
 a {
-  color: var(--text-link);  /* Magenta 80% #EF5BA1 */
+  color: var(--text-link);  /* Brightened Navy #2D5A8C */
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--text-link-hover);  /* Full Magenta #EC008C */
+  color: var(--text-link-hover);  /* Navy #1C3664 */
   text-decoration: underline;
+}
+
+a:visited {
+  color: var(--text-link-visited);  /* Navy 80% - distinguishes visited */
 }
 
 a:focus {
   outline: var(--outline-width-thick) solid var(--color-primary-yellow);
   outline-offset: var(--outline-offset-sm);
+}
+
+/* Context-Specific Link Styles */
+/* Note: Buttons maintain their own colors via .btn-* classes */
+
+/* Links on red backgrounds */
+.bg-red a:not([class*="btn-"]),
+.on-red a:not([class*="btn-"]) {
+  color: var(--text-link-on-red);
+}
+
+.bg-red a:not([class*="btn-"]):hover,
+.on-red a:not([class*="btn-"]):hover {
+  color: var(--text-link-hover-on-red);
+}
+
+/* Links on navy backgrounds */
+.bg-navy a:not([class*="btn-"]),
+.on-navy a:not([class*="btn-"]) {
+  color: var(--text-link-on-navy);
+}
+
+.bg-navy a:not([class*="btn-"]):hover,
+.on-navy a:not([class*="btn-"]):hover {
+  color: var(--text-link-hover-on-navy);
+}
+
+/* Links on black backgrounds */
+.bg-black a:not([class*="btn-"]),
+.on-black a:not([class*="btn-"]) {
+  color: var(--text-link-on-black);
+}
+
+.bg-black a:not([class*="btn-"]):hover,
+.on-black a:not([class*="btn-"]):hover {
+  color: var(--text-link-hover-on-black);
+}
+
+/* Links on grey backgrounds */
+.bg-grey a:not([class*="btn-"]),
+.on-grey a:not([class*="btn-"]) {
+  color: var(--text-link-on-grey);
+}
+
+.bg-grey a:not([class*="btn-"]):hover,
+.on-grey a:not([class*="btn-"]):hover {
+  color: var(--text-link-hover-on-grey);
+}
+
+/* Links on yellow backgrounds */
+.bg-yellow a:not([class*="btn-"]),
+.on-yellow a:not([class*="btn-"]) {
+  color: var(--text-link-on-yellow);
+}
+
+.bg-yellow a:not([class*="btn-"]):hover,
+.on-yellow a:not([class*="btn-"]):hover {
+  color: var(--text-link-hover-on-yellow);
 }
 
 /* ============================================
@@ -235,13 +297,13 @@ main:focus {
 .btn-primary:hover {
   background-color: var(--color-black-80);  /* Brand Standard: Black 80% tint */
   border-color: var(--color-black-80);
-  transform: var(--transform-translate-y-2);
-  box-shadow: var(--shadow-md);
+  color: var(--text-inverse);  /* Ensure text stays white */
+  text-decoration: underline;
 }
 
-/* Secondary Button - Transparent background, border */
+/* Secondary Button - White background, border */
 .btn-secondary {
-  background-color: transparent;
+  background-color: var(--color-white);
   color: var(--text-primary);
   border-color: var(--color-grey-light);  /* Brand Standard */
 }
@@ -249,6 +311,7 @@ main:focus {
 .btn-secondary:hover {
   background-color: var(--color-grey-light);  /* Brand Standard */
   border-color: var(--color-navy-60);  /* Brand Standard */
+  text-decoration: underline;
 }
 
 /* White Button - For colored backgrounds (like yellow team section) */
@@ -304,7 +367,7 @@ main:focus {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-normal);
-  color: var(--text-primary);
+  color: inherit;  /* Inherit from parent <a> tag for proper link styling */
 }
 
 /* Related Cards (for record pages) */
@@ -381,8 +444,9 @@ main:focus {
    ============================================ */
 
 /* All links use default <a> tag styling defined above in base styles.
-   Brand Standard: Magenta 80% (#EF5BA1) for all content links.
-   Navigation links on colored backgrounds use custom .nav-link or .mobile-nav-link classes. */
+   Context-Aware System: Brightened navy (#2D5A8C) for content links on light backgrounds.
+   Navigation links on colored backgrounds use custom .nav-link or .mobile-nav-link classes.
+   Use context-specific utility classes (.bg-red, .on-navy, etc.) for links on colored backgrounds. */
 
 /* ============================================
    IMAGES

@@ -29,7 +29,7 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
 - **Black 80%:** `#58595B` (RGB: 88/89/91)
 - **Red 80%:** `#F15B40` (RGB: 241/91/64)
 - **Navy 80%:** `#445078` (RGB: 68/80/120)
-- **Magenta 80%:** `#EF5BA1` (RGB: 239/91/161) - **USE FOR ALL LINKS**
+- **Magenta 80%:** `#EF5BA1` (RGB: 239/91/161) - ~~Legacy color, no longer used for links~~
 - **Yellow 80%:** `#F8C965` (RGB: 248/201/101)
 
 **Secondary Colors (60% Tints):**
@@ -50,8 +50,37 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
 - **Secondary Heading:** Josefin Sans Bold, Navy (`#1C3664`), 14pt+ (`--font-size-sm`)
 - **Tertiary Heading:** Josefin Sans Bold, Navy (`#1C3664`), 11pt+ (0.6875rem)
 - **Body Copy:** Josefin Sans Regular, Navy (`#1C3664`), 10pt+ (0.625rem)
-- **Links:** Magenta 80% (`#EF5BA1`)
+- **Links:** **Context-aware navy-based system** (see Link Color System section below)
 - **Interactive Materials** (menus, maps, graphs): Red (`#ED1C24`) and Red 80% (`#F15B40`)
+
+### Link Color System (Context-Aware)
+
+**IMPORTANT:** Links use a context-aware color system for better brand harmony and accessibility.
+
+**Default Links (on white/light backgrounds):**
+- Link: Brightened Navy (`#2D5A8C`)
+- Hover: Navy (`#1C3664`)
+- Use: `var(--text-link)` and `var(--text-link-hover)`
+
+**Links on Colored Backgrounds:**
+- **Red backgrounds:** White (stays white on hover, background changes to Red 80%)
+- **Navy backgrounds:** White (stays white on hover)
+- **Black backgrounds:** White (stays white on hover)
+- **Yellow backgrounds:** Navy → Black on hover
+- **Grey backgrounds:** Navy → Brightened Navy on hover
+
+**Implementation:**
+```css
+/* Default - auto-applies to <a> tags on light backgrounds */
+a { color: var(--text-link); }
+
+/* Use context classes for colored backgrounds */
+<div class="bg-red"><a href="#">White link</a></div>
+<div class="bg-navy"><a href="#">White link</a></div>
+<section class="team-section"><a href="#">Navy link on yellow</a></section>
+```
+
+**📖 Full Documentation:** See `LINK-COLOR-SYSTEM.md` for complete specifications and usage examples.
 
 ### Logo Usage Don'ts
 
@@ -166,7 +195,7 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
   - `--color-grey-light` (#E6E7E8) - Page backgrounds
   
 - **Tints (80% and 60%):**
-  - `--color-magenta-80` (#EF5BA1) - **USE FOR ALL LINKS**
+  - `--color-magenta-80` (#EF5BA1) - ~~Legacy, no longer used for links~~
   - `--color-red-80` (#F15B40) - Interactive materials
   - `--color-navy-80`, `--color-black-80`, `--color-yellow-80`
   - `--color-*-60` variants for 60% tints
@@ -175,7 +204,8 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
   - `--text-primary` → Black (#000000) - Main headings (Aachen)
   - `--text-secondary` → Navy (#1C3664) - Body copy, secondary headings (Josefin)
   - `--text-tertiary` → Navy 60% (#6A6D8F) - Less important text
-  - `--text-link` → Magenta 80% (#EF5BA1) - **ALL LINKS**
+  - `--text-link` → Brightened Navy (#2D5A8C) - **DEFAULT LINKS** (context-aware system)
+  - `--text-link-on-red`, `--text-link-on-navy`, etc. → Context-specific link colors
   - `--text-inverse` → White - Text on dark backgrounds
   
 - **Backgrounds:** 
@@ -340,17 +370,19 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
 1. ✅ Use **exact** hex values from brand palette (no approximations)
 2. ✅ Use **Aachen Std** for main headings ONLY (18pt+, Black)
 3. ✅ Use **Josefin Sans** for all other text (Regular/Bold, Navy for body/headings)
-4. ✅ Use **Magenta 80%** (#EF5BA1) for ALL links
+4. ✅ Use **context-aware link color system** (navy-based, see `LINK-COLOR-SYSTEM.md`)
 5. ✅ Use **Navy** (#1C3664) for body copy and secondary headings
 6. ✅ Use **Red** (#ED1C24) and **Red 80%** (#F15B40) for interactive materials
 7. ✅ Use **Light Grey** (#E6E7E8) for page backgrounds
 8. ❌ NEVER stretch, rotate, or apply effects to logos
 9. ❌ NEVER use colors outside the approved brand palette
 10. ❌ NEVER use Josefin Sans for main headings (use Aachen Std)
+11. ❌ NEVER hardcode link colors - use `var(--text-link)` and context tokens
 
 **For complete brand guidelines, see:**
 - Official Brand Standards Manual: `media/style_guide.pdf`
 - Design Language Documentation: `DESIGN-LANGUAGE.md`
+- Link Color System: `LINK-COLOR-SYSTEM.md` ← **NEW: Context-aware link colors**
 - Brand-compliant Design Tokens: `css/design-tokens.css`
 
 

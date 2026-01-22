@@ -1,6 +1,12 @@
 /**
  * LGLC Footer Styles
  * Uses design tokens from design-tokens.css
+ * 
+ * LOGO SPACING GUIDELINES (Brand Standards):
+ * - X measurement = height of the "L" in LGLC (equals logo height)
+ * - Clearspace around logo must be ≥ X measurement
+ * - No elements should encroach upon this clearspace
+ * - Footer logo: 48px height = 48px clearspace (3rem each)
  */
 
 /* ============================================
@@ -34,12 +40,31 @@
   gap: var(--spacing-6);
 }
 
+/* Footer Logo - Icon with X measurement clearspace
+   X measurement = height of "L" in LGLC = logo height
+   Clearspace around logo = X measurement (logo height) */
 .footer-logo {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
+  display: inline-block;
+  /* X measurement clearspace: margin equal to logo height */
+  margin: var(--spacing-12) var(--spacing-12) var(--spacing-12) 0;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-logo:hover {
+  opacity: var(--opacity-85);
+}
+
+.footer-logo:focus {
+  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline-offset: var(--outline-offset-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.footer-logo-img {
+  display: block;
+  height: var(--spacing-12);  /* 48px - Logo height = X measurement */
+  width: auto;  /* Maintain aspect ratio */
+  object-fit: contain;
 }
 
 .footer-social {
@@ -47,7 +72,7 @@
   gap: var(--spacing-4);
 }
 
-/* Social links use default <a> tag colors (Brand Standard: Magenta 80%) with custom sizing */
+/* Social links use default <a> tag colors (Context-aware: Brightened navy) with custom sizing */
 .social-link {
   display: flex;
   align-items: center;
@@ -90,7 +115,7 @@
   gap: var(--spacing-2);
 }
 
-/* Footer links use default <a> tag styling (Brand Standard: Magenta 80%) */
+/* Footer links use default <a> tag styling (Context-aware: Brightened navy on light backgrounds) */
 .footer-links a {
   font-size: var(--font-size-base);
 }
@@ -113,6 +138,15 @@
 
   .footer-nav {
     grid-template-columns: 1fr;
+  }
+
+  /* Reduce logo size and X measurement clearspace on mobile */
+  .footer-logo {
+    margin: var(--spacing-8) var(--spacing-8) var(--spacing-8) 0;
+  }
+
+  .footer-logo-img {
+    height: var(--spacing-10);  /* 40px - Smaller on mobile, X measurement adjusts proportionally */
   }
 }
 

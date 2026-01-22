@@ -133,7 +133,7 @@
 
 .nav-link {
   display: inline-block;
-  color: var(--color-white);
+  color: var(--text-link-on-red);  /* Context-aware: White on red background */
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xl);
@@ -147,6 +147,7 @@
 
 .nav-link:hover {
   background-color: var(--color-red-80);  /* Brand Standard: Red 80% for interactive materials */
+  color: var(--text-link-hover-on-red);  /* Stays white - background change provides feedback */
 }
 
 .nav-link:focus {
@@ -387,7 +388,7 @@
 .mobile-nav-link {
   display: block;
   padding: var(--spacing-4);
-  color: var(--text-link);  /* Brand Standard: Magenta 80% for all links */
+  color: var(--text-link);  /* Context-aware: Brightened navy on white background */
   text-decoration: none;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
@@ -397,7 +398,7 @@
 
 .mobile-nav-link:hover {
   background-color: var(--bg-page);  /* Light grey background on hover */
-  color: var(--text-link-hover);     /* Brand Standard: Full Magenta on hover */
+  color: var(--text-link-hover);     /* Context-aware: Navy on hover */
 }
 
 .mobile-nav-link:focus {
@@ -407,7 +408,7 @@
 }
 
 .mobile-nav-link[aria-current="page"] {
-  color: var(--text-link-hover);     /* Brand Standard: Full Magenta for current page */
+  color: var(--text-link-hover);     /* Context-aware: Navy for current page */
   font-weight: var(--font-weight-bold);
   background-color: var(--bg-page);  /* Light grey background for current page */
 }
