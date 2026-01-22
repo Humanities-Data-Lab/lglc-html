@@ -157,6 +157,7 @@
 }
 
 .nav-link[aria-current="page"] {
+  color: var(--text-link-on-red);  /* Same color as other nav items - white on red background */
   font-weight: var(--font-weight-semibold);
   background-color: var(--overlay-light);  /* Subtle background for current page */
 }
