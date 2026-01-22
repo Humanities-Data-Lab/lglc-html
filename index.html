@@ -32,7 +32,7 @@
 <!-- ============================================ -->
 <!-- BODY SECTION -->
 <!-- ============================================ -->
-<body>
+<body class="white-bg">
   <!-- Skip to main content link -->
   <a href="#main-content" class="skip-link">
     Skip to main content
@@ -47,9 +47,13 @@
             <a 
               href="/" 
               class="site-logo" 
-              aria-label="LGLC Home"
+              aria-label="LGLC - Lesbian and Gay Liberation in Canada Home"
             >
-              <span class="logo-text">LGLC</span>
+              <img 
+                src="media/img/LGLC Logo Black.jpg" 
+                alt="LGLC - Lesbian and Gay Liberation in Canada" 
+                class="logo-img"
+              >
             </a>
           </div>
 
@@ -142,6 +146,7 @@
   <!-- ============================================ -->
   <!-- LANDING PAGE -->
   <!-- ============================================ -->
+ 
 
   <main id="main-content" tabindex="-1"> 
     <section class="hero-section">
@@ -287,10 +292,11 @@
     </section>
   </main>
 
+
   <!-- ============================================ -->
   <!-- EVENT PAGE -->
   <!-- ============================================ -->
-<!--  
+<!--
   <main id="main-content" tabindex="-1">
     <div class="container-page">
       <section class="record-header" aria-labelledby="event-title">
@@ -311,24 +317,14 @@
         </div>
       </section>
 
+      <section class="record-section" aria-labelledby="event-citations-heading">
+        <h2 id="event-citations-heading" class="section-heading">Citations</h2>
+        <p class="section-text">(Citations list)</p>
+      </section>
+
       <section class="record-section" aria-labelledby="event-related-heading">
         <h2 id="event-related-heading" class="section-heading">Related results</h2>
-        <div class="grid grid-3" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated persons</h3>
-            <ul class="list-disc" aria-label="List of affiliated persons">
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-            </ul>
-          </div>
-
+        <div class="grid grid-4" role="list" aria-label="Related records grouped by type">
           <div class="related-card" role="listitem">
             <img 
               src="media/icons/events.png" 
@@ -346,24 +342,54 @@
 
           <div class="related-card" role="listitem">
             <img 
+              src="media/icons/people.png" 
+              alt="" 
+              class="related-icon-img"
+              aria-hidden="true"
+            >
+            <h3 class="related-heading">Affiliated persons</h3>
+            <ul class="list-disc" aria-label="List of affiliated persons">
+              <li>Person's Name (Relationship)</li>
+              <li>Person's Name (Relationship)</li>
+              <li>Person's Name (Relationship)</li>
+            </ul>
+          </div>
+
+          <div class="related-card" role="listitem">
+            <img 
+              src="media/icons/places.png" 
+              alt="" 
+              class="related-icon-img"
+              aria-hidden="true"
+            >
+            <h3 class="related-heading">Affiliated places</h3>
+            <ul class="list-disc" aria-label="List of affiliated places">
+              <li>Place</li>
+              <li>Place</li>
+              <li>Place</li>
+            </ul>
+          </div>
+
+          <div class="related-card" role="listitem">
+            <img 
               src="media/icons/periodicals.png" 
               alt="" 
               class="related-icon-img"
               aria-hidden="true"
             >
-            <h3 class="related-heading">Authored</h3>
-            <ul class="list-disc" aria-label="List of authored works">
-              <li>Title</li>
-              <li>Title</li>
-              <li>Title</li>
+            <h3 class="related-heading">Affiliated organizations</h3>
+            <ul class="list-disc" aria-label="List of affiliated organizations">
+              <li>Name</li>
+              <li>Name</li>
+              <li>Name</li>
             </ul>
           </div>
         </div>
       </section>
     </div>
   </main>
-   -->
 
+-->
   <!-- ============================================ -->
   <!-- PERSON PAGE -->
   <!-- ============================================ -->
@@ -619,11 +645,11 @@
   -->
 
   <!-- ============================================ -->
-  <!-- ORGANIZATION PAGE - ACTIVE -->
+  <!-- ORGANIZATION PAGE -->
   <!-- ============================================ -->
-
-    <!-- <main id="main-content" tabindex="-1">
-      <div class="record-container">
+  <!--
+    <main id="main-content" tabindex="-1">
+      <div class="container-page">
         <section class="record-header" aria-labelledby="organization-title">
           <h1 id="organization-title" class="record-title">Organization Name</h1>
           <p class="record-meta-line">Additional information available here.</p>
@@ -679,7 +705,221 @@
           </div>
         </section>
       </div>
-    </main> -->
+    </main>
+  -->
+
+  <!-- ============================================ -->
+  <!-- EDITORIAL PRINCIPLES PAGE -->
+  <!-- ============================================ -->
+  <!--
+  <main id="main-content" tabindex="-1">
+    <div class="container-page">
+      <section class="record-header" aria-labelledby="editorial-title">
+        <h1 id="editorial-title" class="record-title">Editorial Principles</h1>
+      </section>
+
+      <section class="record-section" aria-labelledby="our-stories-heading">
+        <h2 id="our-stories-heading" class="section-heading">Our Stories</h2>
+        <p class="section-text">
+          Lesbian and Gay Liberation in Canada (LGLC) publishes searchable event records of the gay liberation movement online. The project has been heavily influenced by the ethos of the ArQuives (formerly the Canadian Lesbian and Gay Archives), whose motto is "Keeping Our Stories Alive." Built and maintained by the community it serves, The ArQuives were established by Ron Dayman in 1973 out of The Body Politic (later Pink Triangle Press) collective's papers. The Body Politic and other gay liberation periodicals, handbills, and circulars bear important witness to the work of gay liberation activists in the 1960s and 1970s. The stories of gay liberation (and the important ways that Canadian gay liberation politics and activism differ from both gay rights politics and activism today and from analogous histories in other countries), will only live on if we, members of the generations that have followed and benefitted from gay liberation, know about the good work of the activists that have preceded us. Our hope is that the Lesbian and Gay Liberation in Canada project, and this website in particular, will help support Canadian gay cultural heritage through preservation and transmission.
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="sources">
+        <h2 id="sources" class="section-heading">Sources</h2>
+        <p class="section-text">
+          The two volumes of <em>Lesbian and Gay Liberation In Canada: A Selected Annotated Chronology</em> (spanning 1964 to 1975 and 1976 to 1981), by Donald W. McLeod, represent two decades' archival research. The LGLC event text, drawn from McLeod's volumes, was gathered primarily from the archival holdings of the Canadian Lesbian and Gay Archives in Toronto, the Archives gaies du Québec in Montreal, the Canadian Women's Movement Archives in Ottawa, the University of British Columbia archives and the New York Public Library, further supplemented by personal correspondence, and data gathered from print periodicals and online sources. The data about people, organizations, periodicals, and places builds on McLeod's text, and incorporates data from other archives, government and personal websites, and commercial research databases.
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="a-note-on-language">
+        <h2 id="a-note-on-language" class="section-heading">A Note on Language</h2>
+        <p class="section-text">
+          This is a history project: the event text represents language used between 1960s and early 1980s. Many terms that were used in the past may seem anachronistic or even offensive today. We have preserved this language in order to capture, as best as we can, the cultural context for the Canadian gay liberation movement. This includes terms that people used to define themselves, as well as terms others used to refer to them. Similarly, the project's contextual essays mix historical language with that contemporary to the 2010s. As time goes on, we will not update the 2010s language, not out of a desire to offend future readers as language and the meaning it carries evolves, but rather to leave a record of contemporary thinking about queer lives, politics, and experience.
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="cwrc">
+        <h2 id="cwrc" class="section-heading">CWRC</h2>
+        <p class="section-text">
+          LGLC is also an infrastructure pilot project of the <a href="https://beta.cwrc.ca/" target="_blank" rel="noopener noreferrer">Canadian Writing Research Collaboratory (CWRC)</a> at the University of Alberta. The TEI-XML encoded volumes of Don McLeod's chronology are housed by CWRC and are part of its Online Research Canada (ORCA) database. By being included in CWRC, LGLC content will be made available as part of an interdisciplinary, open-access library database, for use by researchers and students worldwide.
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="technical-specifications">
+        <h2 id="technical-specifications" class="section-heading">Technical Specifications</h2>
+        <p class="section-text">
+          We have encoded Don McLeod's text using a form of XML called P5 TEI (the language of the <a href="http://www.tei-c.org/" target="_blank" rel="noopener noreferrer">Text Encoding Initiative</a>). It and the CSV that underpin our prosopography has been imported into a <a href="https://neo4j.com/" target="_blank" rel="noopener noreferrer">Neo4j</a> graph database instance. The database enables dynamic search and filtering of our data. The user interface is an app built with Node.js and Jade.
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="contact-us">
+        <h2 id="contact-us" class="section-heading">Contact Us</h2>
+        <p class="section-text">
+          We are happy to share our TEI and are actively seeking contributions to our contextual essays section. If you would like to contribute an essay elucidating any of the LGLC events or suggest additions or corrections please contact us.
+        </p>
+        <p class="section-text">
+          This resource is still being updated. Both the encoding and the database that underpin lglc.ca are designed to show the connections between people, places, organizations, occupations, and events (and citations for the events' archival sources) through plain text, network graphs, maps, and timelines. The interface of this beta version of the site, however, allows for only finite graph visualizations alongside complete textual records. We are revising the names of the 5% of the people listed in the database.
+        </p>
+        <p class="section-text">
+          If you find an error of any sort please do not hesitate to contact us. We are committed to mitigating any risk to the people and organizations of the gay liberation movement, and have collected these records of Canadian LGBTQ+ history in good faith. That said, we welcome takedown requests for records that might be unfair, unlawful, or that through being online, might be otherwise deemed sensitive.
+        </p>
+        <p class="section-text">
+          Please send all correspondence to both michelle.schwartz[at]ryerson.ca and constance.crompton[at]uottawa.ca.
+        </p>
+        <p class="section-text">
+          <em>Constance Crompton and Michelle Schwartz, 2019</em>
+        </p>
+      </section>
+    </div>
+  </main>
+  -->
+
+  <!-- ============================================ -->
+  <!-- ABOUT PAGE - ACTIVE -->
+  <!-- ============================================ -->
+
+  <!-- <main id="main-content" tabindex="-1">
+    <div class="container-page">
+      <section class="record-header" aria-labelledby="about-title">
+        <h1 id="about-title" class="record-title">About</h1>
+      </section>
+
+      <section class="record-section" aria-labelledby="what-is-lglc-heading">
+        <h2 id="what-is-lglc-heading" class="section-heading">What is Lesbian and Gay Liberation in Canada?</h2>
+        <p class="section-text">
+          Lesbian and Gay Liberation in Canada (LGLC) is an interactive digital resource for the study of lesbian, gay, bisexual, and transgender (LGBT) history in Canada from 1964 to 1981. The project takes two books, Don McLeod's chronologies <em>Lesbian and Gay Liberation in Canada Volumes 1 and 2</em> (ECW Press, 1996; Homewood Books, 2014), and has converted them into a database that allows users to explore the people, places, events, and publications that defined Canadian lesbian and gay liberation history.
+        </p>
+        <p class="section-text">
+          We have supplemented the digitized text with additional data about the people, places, organizations, and periodicals mentioned in McLeod's books, including biographical information for every person mentioned in the database. These individuals worked to push through major changes to the national political and social landscape, however, because of their status as members of marginalized and persecuted groups, their efforts and identities have largely gone unrecorded. Our goal is to increase the amount of existing and publicly accessible historical information about the lesbian and gay liberation movement in Canada, and to capture for posterity the contributions that many individuals in Canada made to this movement.
+        </p>
+        <div class="content-box">
+          <p class="content-box-text">
+            <strong>Historical event content warning:</strong> The events documented in LGLC include descriptions of homophobia, lesbophobia, biphobia, transphobia, sexism, racism, colonial violence, ableism, classism, assault, sexual assault, sexual assault of minors, murder, and police violence.
+          </p>
+        </div>
+
+        <h3 id="selected-chronology-heading" class="subsection-heading">A Selected Annotated Chronology</h3>
+        <p class="section-text">
+          The LGLC project team is forever indebted to Don McLeod for so generously allowing us to work with his books, <em>Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volumes 1 and 2</em>.
+        </p>
+        <p class="section-text">
+          <em><a href="http://hdl.handle.net/1807/4397" target="_blank" rel="noopener noreferrer">Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volume 1, 1964-1975</a></em>, originally published in 1996, is a chronology of the first twelve years of the organized homophile/gay liberation movement in Canada. The start date of the chronology corresponds with the formation of the Vancouver-based Association for Social Knowledge (ASK), the first large-scale homophile organization in Canada. The end date coincides with the founding of the National Gay Rights Coalition/Coalition national pour les droits des homosexuels (NGRC/CNDH), the "first truly national coalition of Canadian lesbian and gay groups" (McLeod, Lesbian and Gay Liberation In Canada V.1 viii).
+        </p>
+        <p class="section-text">
+          <em><a href="http://hdl.handle.net/1807/74702" target="_blank" rel="noopener noreferrer">Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volume 2, 1976-1981</a></em> continues the series. The second volume concludes in 1981, "the year of the Bath Raids in Toronto and the beginning of the first press reports concerning AIDS" (McLeod, Lesbian and Gay Liberation In Canada V.2 ix).
+        </p>
+        <p class="section-text">
+          The word 'selected' in the titles of the two volumes refers to the limits that were placed on the material covered—the books focus primarily on "self-declared lesbians and gay men and their activities in regard to the forging of lesbian and gay communities and liberation in Canada" (viii). Therefore, the chronology dedicates its foremost attention to demonstrations, political actions, lobbying, and legal reforms.
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="what-is-gay-liberation-heading">
+        <h2 id="what-is-gay-liberation-heading" class="section-heading">What is Gay Liberation?</h2>
+        <p class="section-text">
+          Gay liberation was a militant, radical, and unapologetically visible gay rights movement. In stark contrast to the assimilationist politics of the 1980s and beyond, the movement rejected heterosexual norms and compulsory nuclear family structures. To counter the repression of gay men and lesbians espoused by mainstream culture, gay liberationists developed highly eroticised utopian politics in direct opposition to mainstream respectability. They pioneered new forms of consciousness raising, created a vibrant print culture, won legal reforms, and developed successful strategies for supporting survivors of assault. That said, the movement itself was not without internal schisms and debate: gay men who focused on their own sexual libertarianism could be blind to gender-based power imbalances, and lesbian groups, often finding themselves at odds with both the gay liberation and women's liberation movements, splintered off to form their own organizations based around distinct sets of demands. In its early years, few gay and lesbian liberationists addressed class- and race-based oppression or trans rights. LGLC traces the progress of the movement, its varying political aims, its developing diversity, its setbacks, and its triumphs.
+        </p>
+        <p class="section-text">
+          LGBT rights movements have remade themselves, generation after generation, often without engaging with the political work of predecessors; however, since we are all indebted to the activists who preceded us, we hope that the LGLC project will serve as a welcome resource for those who want to learn from, study, and build on the rich history of gay liberation in Canada.
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="team-heading">
+        <h2 id="team-heading" class="section-heading">The LGLC Team</h2>
+        
+        <h3 class="subsection-heading">Co-Directors</h3>
+        <ul class="list-unstyled">
+          <li>Constance Crompton (University of Ottawa)</li>
+          <li>Michelle Schwartz (Toronto Metropolitan University)</li>
+        </ul>
+
+        <h3 class="subsection-heading">Collaborators</h3>
+        <ul class="list-unstyled">
+          <li>Donald W. McLeod (University of Toronto)</li>
+          <li>Susan Brown (University of Guelph)</li>
+          <li>El Chenier (Simon Fraser University)</li>
+          <li>Fangmin Wang (Toronto Metropolitan University)</li>
+          <li>M.J. Sohonos (Toronto Metropolitan University)</li>
+          <li>Elspeth Brown (University of Toronto)</li>
+          <li>Fabien Galipeau (Archives Gaies du Québec)</li>
+        </ul>
+
+        <h3 class="subsection-heading">Managing Editor</h3>
+        <ul class="list-unstyled">
+          <li>Candice Lipski</li>
+        </ul>
+
+        <h3 class="subsection-heading">Current Research Assistants</h3>
+        <ul class="list-unstyled">
+          <li>Pascale Dangoisse (University of Ottawa)</li>
+          <li>Sam Lehn (University of Ottawa)</li>
+          <li>Moni Razavi (University of Ottawa)</li>
+          <li>Farinaz Basmechi (University of Ottawa)</li>
+          <li>Jasmin Macarios (University of Ottawa)</li>
+        </ul>
+
+        <h3 class="subsection-heading">Developers</h3>
+        <ul class="list-unstyled">
+          <li>Patrick Fung -- Toronto Metropolitan University Library (systems administration)</li>
+          <li>Rob Butz -- Oxygen Smith (prospopgraphy data ingestion and front end)</li>
+          <li>Iversoft (front end)</li>
+        </ul>
+
+        <h3 class="subsection-heading">Former Project Managers</h3>
+        <ul class="list-unstyled">
+          <li>Candice Lipski (University of British Columbia)</li>
+          <li>Raymon Sandhu (University of British Columbia)</li>
+          <li>Travis White (University of British Columbia)</li>
+          <li>Caitlin Voth (University of British Columbia)</li>
+        </ul>
+
+        <h3 class="subsection-heading">Former Research Assistants</h3>
+        <ul class="list-unstyled">
+          <li>Oxana Pilenko (University of Ottawa)</li>
+          <li>Alice Defours (Lyon 2)</li>
+          <li>Ewan Matthews (Toronto Metropolitan University)</li>
+          <li>Caitlin Voth (University of British Columbia)</li>
+          <li>Nadine Boulay (Simon Fraser University)</li>
+          <li>Jessica Bonney (University of British Columbia)</li>
+          <li>Sarah Lane (Toronto Metropolitan University)</li>
+          <li>Raymon Sandhu (University of British Columbia)</li>
+          <li>Anderson Tuguinay (Toronto Metropolitan University)</li>
+          <li>Travis White (University of British Columbia)</li>
+          <li>Stefanie Martin (Toronto Metropolitan University)</li>
+          <li>Cole Mash (University of British Columbia)</li>
+          <li>Seamus Riordan-Short (University of British Columbia)</li>
+          <li>Rebecca Desjarlais (University of British Columbia)</li>
+        </ul>
+
+        <p class="section-text">
+          <em>The LGLC project has been made possible by a SSHRC Insight Grant, the Department of Canadian Heritage, and the support of the Toronto Metropolitan University University Libraries with further support from the Faculty of Arts at the University of Ottawa, Compute Canada, the Canadian Foundation for Innovation, the British Columbia Knowledge Network, the UBC Okanagan Faculty of Creative and Critical Studies, the <a href="https://fccs.ok.ubc.ca/research/projects/hdl.html" target="_blank" rel="noopener noreferrer">UBC Okanagan Humanities Data Lab</a> now the <a href="http://amplab.ok.ubc.ca/" target="_blank" rel="noopener noreferrer">AMP Lab</a>, the <a href="https://www.torontomu.ca/centre-digital-humanities/" target="_blank" rel="noopener noreferrer">Toronto Metropolitan University Centre for Digital Humanities</a>, the <a href="https://library.torontomu.ca/collab/" target="_blank" rel="noopener noreferrer">Toronto Metropolitan University Libraries Collaboratory</a>, and the <a href="http://humanitiesdata.ca/" target="_blank" rel="noopener noreferrer">Humanities Data Lab at the University of Ottawa</a>.</em>
+        </p>
+        <p class="section-text">
+          <em>The LGLC is an infrastructure pilot project of the <a href="https://beta.cwrc.ca/" target="_blank" rel="noopener noreferrer">Canadian Research Writing Collaboratory (CWRC)</a>.</em>
+        </p>
+        <p class="section-text">
+          <em>Front end design by <a href="https://www.iversoft.ca/" target="_blank" rel="noopener noreferrer">Iversoft</a>. Logo and branding by <a href="https://thepublicstudio.ca/" target="_blank" rel="noopener noreferrer">The Public</a>.</em>
+        </p>
+        <p class="section-text">
+          <em>Banner image courtesy of <a href="https://arquives.ca/" target="_blank" rel="noopener noreferrer">The ArQuives</a>.</em>
+        </p>
+      </section>
+
+      <section class="record-section" aria-labelledby="cite-heading">
+        <h2 id="cite-heading" class="section-heading">Cite This Source</h2>
+        
+        <p class="section-text"><strong>LGLC website:</strong></p>
+        <p class="section-text">
+          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+        </p>
+        
+        <p class="section-text"><strong>Individual page:</strong></p>
+        <p class="section-text">
+          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Chris Bearchell. <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/person/CBEA
+        </p>
+      </section>
+    </div>
+  </main> -->
 
 
   <!-- ============================================ -->

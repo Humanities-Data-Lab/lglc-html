@@ -24,17 +24,21 @@
 .header-banner {
   background-color: var(--header-bg);
   color: var(--header-text);
-  height: var(--header-height);
   display: flex;
   align-items: center;
   border-bottom: var(--border-width-thin) solid var(--color-black);
+  /* Padding provides X measurement clearspace around logo (height of "L" in LGLC) */
+  /* Mobile/Tablet: Logo 6rem (96px), X measurement ~1.5rem clearspace */
+  padding-top: var(--spacing-6);    /* 1.5rem/24px */
+  padding-bottom: var(--spacing-6);  /* 1.5rem/24px */
 }
 
 .header-container {
   width: var(--size-full);
-  max-width: var(--page-max-width);
-  margin: 0 auto;
-  padding-left: var(--header-side-padding);
+  max-width: var(--content-width-xlarge);  /* Match main content max-width for alignment */
+  margin: var(--spacing-0) auto;
+  /* No left padding - logo X measurement provides left spacing to align with content */
+  padding-left: var(--spacing-0);
   padding-right: var(--header-side-padding);
 }
 
@@ -53,25 +57,34 @@
 .logo-section {
   flex-shrink: 0;
   margin-right: auto;
+  /* X measurement clearspace: left margin aligns logo with content below */
+  /* Matches .container padding at each breakpoint */
+  margin-left: var(--header-side-padding);  /* 80px - aligns with content */
+  /* Right margin auto pushes navigation to the right */
+  /* No vertical margin - centering handled by header-banner padding */
+  margin-top: var(--spacing-0);
+  margin-bottom: var(--spacing-0);
+  /* Logo section height matches header for logo to fill */
+  height: var(--size-full);
+  display: flex;
+  align-items: center;
 }
 
 .site-logo {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--color-white);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-xl);
-  line-height: var(--line-height-normal);
-  letter-spacing: var(--letter-spacing-none);
   transition: all var(--transition-fast);
-  text-transform: uppercase;
-  padding: var(--spacing-2) var(--spacing-3);
-  border-radius: var(--border-radius-sm);
+  /* Logo fills height - X measurement handled by logo-section margins */
+  height: var(--size-full);
+  /* Ensure no margin that would affect centering */
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
 }
 
 .site-logo:hover {
-  background-color: var(--color-red-80);  /* Brand Standard: Red 80% for interactive materials */
+  opacity: var(--opacity-85);
+  transform: translateY(calc(-1 * var(--spacing-px)));
 }
 
 .site-logo:focus {
@@ -80,6 +93,16 @@
   border-radius: var(--border-radius-sm);
 }
 
+/* Logo Image */
+.logo-img {
+  display: block;
+  height: var(--spacing-24);  /* 96px - default size for tablet and smaller screens */
+  width: var(--size-auto);  /* Maintain aspect ratio - never stretch per brand standards */
+  object-fit: contain;  /* Preserve logo proportions */
+  /* Logo displays directly on red header - margins provide X measurement clearspace */
+}
+
+/* Deprecated: Text logo styles (kept for fallback) */
 .logo-text {
   letter-spacing: var(--letter-spacing-wide);
 }
@@ -91,7 +114,7 @@
 .primary-nav {
   display: none;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: var(--spacing-0);
 }
 
 .nav-list {
@@ -99,8 +122,8 @@
   align-items: center;
   gap: var(--spacing-8);
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
   margin-left: auto;
 }
 
@@ -176,7 +199,7 @@
 }
 
 .mobile-menu-toggle[aria-expanded="true"] .menu-icon-bar:nth-child(2) {
-  opacity: 0;
+  opacity: var(--opacity-none);
 }
 
 .mobile-menu-toggle[aria-expanded="true"] .menu-icon-bar:nth-child(3) {
@@ -210,7 +233,7 @@
 
 .search-wrapper {
   max-width: var(--content-width-wide);
-  margin: 0 auto;
+  margin: var(--spacing-0) auto;
 }
 
 .search-label {
@@ -395,6 +418,11 @@
 
 /* Mobile Styles (default) */
 @media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
+  .logo-section {
+    /* Align with .container padding at mobile */
+    margin-left: var(--spacing-6);  /* 24px - matches content padding */
+  }
+
   .search-tabs {
     gap: var(--spacing-1);
   }
@@ -429,10 +457,6 @@
     display: none;
   }
 
-  .header-banner {
-    padding: var(--spacing-5) 0;
-  }
-
   .site-logo {
     font-size: var(--font-size-xl);
   }
@@ -450,9 +474,55 @@
   }
 }
 
-@media (min-width: 64rem) {  /* --breakpoint-lg */
+/* Tablet */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {  /* --breakpoint-md to lg-max */
+  .logo-section {
+    /* Align with .container padding at tablet */
+    margin-left: var(--spacing-8);  /* 32px - matches content padding */
+  }
+}
+
+/* Medium Desktop */
+@media (min-width: 64rem) and (max-width: 79.9375rem) {  /* --breakpoint-lg to xl-max */
+  .logo-section {
+    /* Align with .container padding at medium desktop */
+    margin-left: var(--spacing-10);  /* 40px - matches content padding */
+  }
+
+  .logo-img {
+    height: var(--spacing-32);  /* 128px - larger on desktop */
+  }
+
+  .header-banner {
+    /* Desktop: Logo 8rem (128px), X measurement ~2rem clearspace */
+    padding-top: var(--spacing-8);    /* 2rem/32px */
+    padding-bottom: var(--spacing-8);  /* 2rem/32px */
+  }
+
   .header-container {
-    padding: 0 var(--spacing-12);
+    padding: var(--spacing-0) var(--spacing-12);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 80rem) {  /* --breakpoint-xl */
+  .logo-section {
+    /* Align with .container padding at large desktop */
+    margin-left: var(--header-side-padding);  /* 80px - matches content padding */
+  }
+
+  .logo-img {
+    height: var(--spacing-32);  /* 128px - larger on desktop */
+  }
+
+  .header-banner {
+    /* Desktop: Logo 8rem (128px), X measurement ~2rem clearspace */
+    padding-top: var(--spacing-8);    /* 2rem/32px */
+    padding-bottom: var(--spacing-8);  /* 2rem/32px */
+  }
+
+  .header-container {
+    padding: var(--spacing-0);  /* No padding - logo-section margin provides alignment */
   }
 
   .nav-list {

@@ -38,7 +38,7 @@
   font-size: var(--font-size-lg);  /* Larger for emphasis in hero */
   line-height: var(--line-height-relaxed);
   color: var(--text-secondary);
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-0);
 }
 
 .hero-action {
@@ -159,7 +159,7 @@
 
 .record-header {
   margin-bottom: var(--spacing-16);
-  padding-bottom: 0;
+  padding-bottom: var(--spacing-0);
   border-bottom: none;
 }
 
@@ -169,25 +169,25 @@
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);  /* 1.2 - Tight for large headings */
   color: var(--text-primary);  /* Brand: Black */
-  margin: 0 0 var(--spacing-3) 0;
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-3) var(--spacing-0);
 }
 
 .record-meta {
   font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
   line-height: var(--line-height-loose);  /* Brand: 1.9 - Generous spacing */
   color: var(--text-secondary);  /* Brand: Navy */
-  margin: 0;
+  margin: var(--spacing-0);
 }
 
 .record-meta-line {
   font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
   line-height: var(--line-height-relaxed);  /* 1.7 - Slightly tighter for metadata */
   color: var(--text-tertiary);  /* Brand: Navy 60% */
-  margin: 0 0 var(--spacing-2) 0;
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-2) var(--spacing-0);
 }
 
 .record-meta-line:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-0);
 }
 
 .record-section {
@@ -210,7 +210,7 @@
 
   .about-image {
     position: relative;
-    top: 0;
+    top: var(--spacing-0);
   }
 
   .team-content {
@@ -241,7 +241,7 @@
 
   .hero-description {
     font-size: var(--font-size-base);
-    margin-bottom: 0;
+    margin-bottom: var(--spacing-0);
   }
 
   .hero-action {

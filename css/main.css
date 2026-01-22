@@ -151,16 +151,15 @@ main:focus {
 
 .container {
   max-width: var(--content-width-xlarge);
-  margin: 0 auto;
-  padding: 0 var(--header-side-padding);
+  margin: var(--spacing-0) auto;
+  padding: var(--spacing-0) var(--header-side-padding);
 }
 
 .container-page {
   max-width: var(--page-max-width);
-  margin: 0 auto;
+  margin: var(--spacing-0) auto;
   padding: var(--spacing-12) var(--header-side-padding) var(--spacing-16);
   background-color: transparent;
-  min-height: var(--size-screen-height);
 }
 
 /* ============================================
@@ -187,14 +186,23 @@ main:focus {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-normal);  /* 1.4 - Comfortable for subheadings */
   color: var(--text-secondary);  /* Brand: Navy for secondary headings */
-  margin: 0 0 var(--spacing-6) 0;
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-6) var(--spacing-0);
+}
+
+.subsection-heading {
+  font-family: var(--font-family-primary);  /* Brand: Josefin Sans for tertiary headings */
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);  /* 1.4 - Comfortable for subheadings */
+  color: var(--text-secondary);  /* Brand: Navy for tertiary headings */
+  margin: var(--spacing-8) 0 var(--spacing-4) 0;
 }
 
 .section-text {
   font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
   line-height: var(--line-height-loose);  /* Brand: 1.9 - Generous spacing */
   color: var(--text-secondary);  /* Brand: Navy for body copy */
-  margin: 0;
+  margin: var(--spacing-0);
 }
 
 /* ============================================
@@ -319,7 +327,7 @@ main:focus {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-  margin: 0;
+  margin: var(--spacing-0);
   line-height: var(--line-height-normal);
 }
 
@@ -356,7 +364,7 @@ main:focus {
 .list-disc {
   list-style: disc;
   padding-left: var(--spacing-5);
-  margin: 0;
+  margin: var(--spacing-0);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
@@ -386,7 +394,7 @@ main:focus {
   max-height: var(--image-height-lg);
   object-fit: cover;
   display: block;
-  border-radius: 0;
+  border-radius: var(--border-radius-none);
 }
 
 .img-about {
@@ -457,14 +465,14 @@ main:focus {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-normal);  /* 1.4 - Comfortable for subheadings */
   color: var(--text-secondary);  /* Brand: Navy for secondary headings */
-  margin: 0 0 var(--spacing-4) 0;
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
 }
 
 .content-box-text {
   font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
   line-height: var(--line-height-loose);  /* Brand: 1.9 - Generous spacing */
   color: var(--text-secondary);  /* Brand: Navy for body copy */
-  margin: 0;
+  margin: var(--spacing-0);
 }
 
 /* ============================================
@@ -490,7 +498,7 @@ main:focus {
 
 @media (max-width: 79.9375rem) {  /* --breakpoint-xl-max */
   .container {
-    padding: 0 var(--spacing-10);
+    padding: var(--spacing-0) var(--spacing-10);
   }
 
   .container-page {
@@ -500,7 +508,7 @@ main:focus {
 
 @media (max-width: 63.9375rem) {  /* --breakpoint-lg-max */
   .container {
-    padding: 0 var(--spacing-8);
+    padding: var(--spacing-0) var(--spacing-8);
   }
 
   .container-page {
@@ -514,11 +522,15 @@ main:focus {
   .section-heading {
     font-size: var(--font-size-xl);
   }
+
+  .subsection-heading {
+    font-size: var(--font-size-lg);
+  }
 }
 
 @media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
   .container {
-    padding: 0 var(--spacing-6);
+    padding: var(--spacing-0) var(--spacing-6);
   }
 
   .container-page {
@@ -551,6 +563,11 @@ main:focus {
   .section-heading {
     font-size: var(--font-size-lg);
     margin-bottom: var(--spacing-4);
+  }
+
+  .subsection-heading {
+    font-size: var(--font-size-base);
+    margin: var(--spacing-6) 0 var(--spacing-3) 0;
   }
 }
 
