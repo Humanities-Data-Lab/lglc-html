@@ -178,7 +178,7 @@ body.search-page-body {
 #ssDoSearch:focus,
 #ssDoSearch2:hover,
 #ssDoSearch2:focus {
-  transform: translateY(-0.0625rem);  /* -1px */
+  transform: var(--transform-translate-y-1);  /* -1px */
   box-shadow: 0 var(--spacing-2-5) var(--spacing-4-5) var(--color-navy-opacity-18);
 }
 
@@ -306,7 +306,7 @@ body.search-page-body {
   background: var(--color-primary-navy);
   border-color: var(--color-primary-navy);
   color: var(--color-white);
-  transform: translateY(-0.0625rem);  /* -1px */
+  transform: var(--transform-translate-y-1);  /* -1px */
 }
 
 .ssDescCheckboxList input[type="checkbox"]:focus + label {
