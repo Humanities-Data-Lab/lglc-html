@@ -82,10 +82,7 @@
   padding: var(--spacing-0);
 }
 
-.site-logo:hover {
-  opacity: var(--opacity-85);
-  transform: translateY(calc(-1 * var(--spacing-px)));
-}
+/* Logo hover removed - brand standards: never change logo colors or apply effects */
 
 .site-logo:focus {
   outline: var(--outline-width-thick) solid var(--color-primary-yellow);

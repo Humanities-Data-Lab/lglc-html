@@ -50,9 +50,7 @@
   transition: opacity var(--transition-fast);
 }
 
-.footer-logo:hover {
-  opacity: var(--opacity-85);
-}
+/* Logo hover removed - brand standards: never change logo colors or apply effects */
 
 .footer-logo:focus {
   outline: var(--outline-width-thick) solid var(--color-primary-yellow);
