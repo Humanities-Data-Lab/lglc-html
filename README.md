@@ -36,7 +36,8 @@ components built with a token-based design system.
 │   ├── icons/               # Icon images for related results
 │   ├── img/                 # Image assets and logos
 │   └── style_guide.pdf      # Official LGLC Brand Standards Manual
-├── .cursorrules             # Consolidated AI/IDE rules (for coding assistants)
+├── .cursorrules             # Consolidated AI/IDE rules (for all coding assistants)
+├── .aiderrules              # Points to .cursorrules (Aider-specific)
 ├── DESIGN-LANGUAGE.md       # Comprehensive design language documentation
 ├── index.html               # Main template (contains multiple page types)
 ├── search.html              # Search page template with staticSearch integration
@@ -343,11 +344,12 @@ Replace placeholder images with your actual project assets. Maintain the same fi
 
 ## 🤖 For AI/IDE Assistants
 
-This project includes a consolidated rules file for AI coding assistants:
+This project includes a consolidated rules file for all AI coding assistants:
 
-- **`.cursorrules`** - Comprehensive coding rules, brand standards, design token usage, and development guidelines
+- **`.cursorrules`** - Comprehensive coding rules, brand standards, design token usage, and development guidelines (consolidated file for all IDEs)
+- **`.aiderrules`** - Points to `.cursorrules` (Aider-specific reference)
 
-All AI coding assistants should reference `.cursorrules` for:
+All AI coding assistants (Cursor, Aider, etc.) should reference `.cursorrules` for:
 - Design token system requirements
 - Brand standards compliance
 - Component creation guidelines

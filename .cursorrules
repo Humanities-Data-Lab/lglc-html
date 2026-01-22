@@ -1,6 +1,6 @@
-# LGLC Website Templates - Cursor Rules
+# LGLC Website Templates - AI/IDE Rules
 
-**This is the consolidated AI/IDE rules file for this project.** All AI coding assistants should reference this file.
+**This is the consolidated AI/IDE rules file for this project.** All AI coding assistants (Cursor, Aider, etc.) should reference this file.
 
 This project uses a token-based design system for the Lesbian and Gay Liberation in Canada (LGLC) website templates.
 
