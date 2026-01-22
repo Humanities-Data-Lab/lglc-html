@@ -1,5 +1,7 @@
 # LGLC Website Templates - Cursor Rules
 
+**This is the consolidated AI/IDE rules file for this project.** All AI coding assistants should reference this file.
+
 This project uses a token-based design system for the Lesbian and Gay Liberation in Canada (LGLC) website templates.
 
 **IMPORTANT:** This project follows the official **LGLC Brand Standards Manual** (`media/style_guide.pdf`).
@@ -385,5 +387,15 @@ a { color: var(--text-link); }
 - Link Color System: `LINK-COLOR-SYSTEM.md` ← **NEW: Context-aware link colors**
 - Brand-compliant Design Tokens: `css/design-tokens.css`
 
+## Quick Checklist
 
+Before suggesting code, ensure:
+- [ ] Uses design tokens (no hardcoded values)
+- [ ] CSS import order is correct (design-tokens.css first)
+- [ ] Semantic HTML is used
+- [ ] Accessibility features included (focus, ARIA, keyboard nav)
+- [ ] Responsive design (mobile-first)
+- [ ] Follows existing component patterns
+- [ ] No inline styles
+- [ ] Touch targets are adequate (44px minimum)
 
