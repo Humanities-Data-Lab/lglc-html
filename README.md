@@ -26,14 +26,20 @@ components built with a token-based design system.
 │   ├── design-tokens.css    # Design system (colors, spacing, typography)
 │   ├── header.css           # Header component styles
 │   ├── footer.css           # Footer component styles
-│   ├── landing.css          # Landing page styles
-│   ├── records.css          # Records page styles
+│   ├── main.css             # Main shared styles
+│   ├── pages.css            # Page-specific styles (records, landing, etc.)
 │   └── search.css           # Search page styles
 ├── js/
 │   └── header.js            # Header interactivity and accessibility features
-├── media/                   # Images and assets
+├── media/                   # Images, fonts, and assets
+│   ├── fonts/               # Local font files (Josefin Sans, Aachen Std)
+│   ├── icons/               # Icon images for related results
+│   ├── img/                 # Image assets and logos
+│   └── style_guide.pdf      # Official LGLC Brand Standards Manual
+├── DESIGN-LANGUAGE.md       # Comprehensive design language documentation
 ├── index.html               # Main template (contains multiple page types)
-└── search.html              # Search page template with staticSearch integration
+├── search.html              # Search page template with staticSearch integration
+└── README.md                # This file
 ```
 
 ## 🎨 Brand Standards
@@ -47,9 +53,10 @@ All colors must match the brand standards exactly:
 - **Black:** `#000000` - Main headings (Aachen Std)
 - **Red:** `#ED1C24` - Header, interactive materials
 - **Navy:** `#1C3664` - Body copy, secondary headings (Josefin Sans)
-- **Magenta:** `#EC008C` - Accent elements
 - **Yellow:** `#F6BE38` - Accents, highlights
 - **Light Grey:** `#E6E7E8` - Page backgrounds
+
+**Note:** Magenta is part of the official brand palette but is not used in this implementation. We use a context-aware navy-based link color system instead.
 
 ### Official Typography
 
@@ -63,16 +70,31 @@ All colors must match the brand standards exactly:
 
 ### Brand Color Usage Rules
 
-- **Links:** Magenta 80% (`#EF5BA1`)
+- **Links:** Context-aware navy-based system (see [Link Colors](#-link-colors) section below)
+  - Default (on light backgrounds): Brightened navy (`#2D5A8C`) → Navy (`#1C3664`) on hover
+  - On colored backgrounds: Context-specific colors (white on red/navy/black, navy on yellow/grey)
 - **Interactive elements:** Red (`#ED1C24`) and Red 80% (`#F15B40`)
 - **Body text:** Navy (`#1C3664`)
 - **Main headings:** Black (`#000000`)
 
-For detailed brand guidelines, typography examples, and logo usage rules, see:
+For detailed brand guidelines, typography examples, logo usage rules, and complete link color specifications, see:
 - **Brand Standards Manual:** `media/style_guide.pdf`
-- **Design Language Doc:** `DESIGN-LANGUAGE.md`
+- **Design Language Doc:** `DESIGN-LANGUAGE.md` - Comprehensive guide with all design system details
 
 ---
+
+## 🔗 Link Colors
+
+LGLC uses a context-aware navy-based link color system for optimal brand harmony and accessibility:
+
+- **Default links (on white/light backgrounds):** Brightened navy (`#2D5A8C`) → Navy (`#1C3664`) on hover
+- **Links on red backgrounds:** White (background change provides hover feedback)
+- **Links on navy/dark backgrounds:** White (background change provides hover feedback)
+- **Links on black backgrounds:** White (background change provides hover feedback)
+- **Links on grey backgrounds:** Navy (`#1C3664`) → Brightened navy (`#2D5A8C`) on hover
+- **Links on yellow backgrounds:** Navy (`#1C3664`) → Black (`#000000`) on hover
+
+All link color combinations meet WCAG 2.1 accessibility standards. See `DESIGN-LANGUAGE.md` for complete specifications and usage examples.
 
 ## 🎨 Component Styling Guide
 
@@ -117,9 +139,13 @@ Never hardcode values in component stylesheets.
 
 ### Creating New Components
 
-1. **Import design tokens first:**
+1. **Import design tokens first, then your component:**
    ```html
+   <!-- Design Tokens MUST be imported first -->
    <link rel="stylesheet" href="css/design-tokens.css">
+   <!-- Main shared styles -->
+   <link rel="stylesheet" href="css/main.css">
+   <!-- Your new component -->
    <link rel="stylesheet" href="css/your-component.css">
    ```
 
@@ -267,8 +293,19 @@ These templates are designed to work in modern browsers that support:
 ## 📝 Usage
 
 1. **Set up your HTML page:**
-   - Include `css/design-tokens.css` first
-   - Add component-specific CSS files as needed
+   ```html
+   <!-- Design Tokens MUST be imported first -->
+   <link rel="stylesheet" href="css/design-tokens.css">
+   <!-- Main shared styles -->
+   <link rel="stylesheet" href="css/main.css">
+   <!-- Component-specific styles -->
+   <link rel="stylesheet" href="css/header.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <!-- Page-specific styles -->
+   <link rel="stylesheet" href="css/pages.css">
+   <!-- For search page only -->
+   <link rel="stylesheet" href="css/search.css">
+   ```
    - Include `js/header.js` before closing `</body>` tag
 
 2. **Use design tokens:**
@@ -287,12 +324,13 @@ These templates are designed to work in modern browsers that support:
 
 ## 📦 Media Assets
 
-The `media/` folder contains placeholder images and assets used in the templates:
-- Card images for landing page
-- Icon images for related results sections
-- Featured images for hero sections
+The `media/` folder contains:
+- **`fonts/`** - Local font files (Josefin Sans, Aachen Std) with fallback support
+- **`icons/`** - Icon images for related results sections (events, people, periodicals, places)
+- **`img/`** - Image assets including logos and featured images
+- **`style_guide.pdf`** - Official LGLC Brand Standards Manual
 
-Replace these with your actual project assets. Maintain the same file structure or update image paths in the HTML files accordingly.
+Replace placeholder images with your actual project assets. Maintain the same file structure or update image paths in the HTML files accordingly.
 
 ## 🔧 Technical Details
 
