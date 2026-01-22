@@ -36,6 +36,7 @@ components built with a token-based design system.
 │   ├── icons/               # Icon images for related results
 │   ├── img/                 # Image assets and logos
 │   └── style_guide.pdf      # Official LGLC Brand Standards Manual
+├── .cursorrules             # Consolidated AI/IDE rules (for coding assistants)
 ├── DESIGN-LANGUAGE.md       # Comprehensive design language documentation
 ├── index.html               # Main template (contains multiple page types)
 ├── search.html              # Search page template with staticSearch integration
@@ -340,3 +341,17 @@ Replace placeholder images with your actual project assets. Maintain the same fi
 - **Accessibility** - WCAG 2.1 compliant with semantic HTML and ARIA attributes
 - **Mobile-first** - Responsive design with mobile-first approach
 
+## 🤖 For AI/IDE Assistants
+
+This project includes a consolidated rules file for AI coding assistants:
+
+- **`.cursorrules`** - Comprehensive coding rules, brand standards, design token usage, and development guidelines
+
+All AI coding assistants should reference `.cursorrules` for:
+- Design token system requirements
+- Brand standards compliance
+- Component creation guidelines
+- Accessibility requirements
+- Code quality standards
+
+For detailed design specifications and component examples, see `DESIGN-LANGUAGE.md`.
