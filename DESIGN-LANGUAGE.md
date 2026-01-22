@@ -2,18 +2,65 @@
 
 A comprehensive guide to using design elements consistently across the Lesbian and Gay Liberation in Canada (LGLC) website.
 
+**Based on the official LGLC Brand Standards Manual**
+
+## About LGLC
+
+The Lesbian and Gay Liberation in Canada (LGLC) project is working to build an interactive digital resource for the study of LGBT history in Canada. The project takes Don McLeod's books, *Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology Volumes 1 and 2* and converts them into a visual and interactive database that will allow users to explore the people, places, events, and publications that defined the history of gay liberation in Canada between 1964 and 1981.
+
+The LGLC identity reflects this mission. It captures these historical movements while transcending to current struggles today.
+
 ## Table of Contents
 
-1. [Color System](#color-system)
-2. [Typography](#typography)
-3. [Buttons](#buttons)
-4. [Cards](#cards)
-5. [Layout Patterns](#layout-patterns)
-6. [Spacing System](#spacing-system)
-7. [Components](#components)
-8. [Form Elements](#form-elements)
-9. [Images & Media](#images--media)
-10. [Responsive Design](#responsive-design)
+1. [Brand Identity](#brand-identity)
+2. [Color System](#color-system)
+3. [Typography](#typography)
+4. [Buttons](#buttons)
+5. [Cards](#cards)
+6. [Layout Patterns](#layout-patterns)
+7. [Spacing System](#spacing-system)
+8. [Components](#components)
+9. [Form Elements](#form-elements)
+10. [Images & Media](#images--media)
+11. [Responsive Design](#responsive-design)
+
+---
+
+## Brand Identity
+
+### Logo Structure
+
+The LGLC logo is comprised of two parts:
+- **Logotype** - The text "LGLC" and tagline
+- **Symbol** - The graphical icon
+
+### Logo Versions
+
+**Full Version (with tagline and website)**
+- Use whenever possible
+- Includes logo, symbol, and logotype
+
+**Symbol Only**
+- Use when space is lacking
+- Only on LGLC-issued communications materials
+
+### Logo Spacing
+
+The space surrounding the logo should be equal to or greater than the height of the "L" in the word "LGLC" (called the "X" measurement). No elements—other logos, type, or images—should encroach upon this "X" space around the logo.
+
+### Logo Usage Don'ts
+
+❌ **NEVER:**
+- Stretch the logo horizontally or vertically
+- Place the logo on an angle
+- Reconfigure the logo elements
+- Use effects like drop shadows
+- Change the logo colors
+
+### File Types
+
+- **For Print (High-Res):** `.eps` files
+- **For Web (Low-Res):** `.jpg` files
 
 ---
 
@@ -21,67 +68,99 @@ A comprehensive guide to using design elements consistently across the Lesbian a
 
 ### Primary Colors
 
-**When to use:**
+Materials issued by LGLC should utilize the official brand palette. If limited by a one-colour option, black can be used.
 
-- **Red (`--color-primary-red`)** - Header background, primary actions, critical information
-  - Use for: Site header banner, primary call-to-action buttons, error states, important alerts
-  - Example: Header banner, search buttons
+- **Black (`--color-primary-black`)** - Primary text, headings, main emphasis
+  - **Hex:** `#000000`
+  - **RGB:** 0, 0, 0
+  - **CMYK:** 0/0/0/100
+  - Use for: Main headings (Aachen std), primary buttons, high-contrast text
+  - Example: Main page titles, `.btn-primary` buttons
 
-- **Navy (`--color-primary-navy`)** - Navigation, text on light backgrounds, primary UI elements
-  - Use for: Navigation backgrounds, primary text color, search interface backgrounds, links
-  - Example: Search tabs container, navigation bar, primary text
+- **Red (`--color-primary-red`)** - Header background, interactive elements, critical information
+  - **Hex:** `#ED1C24`
+  - **RGB:** 237, 28, 36
+  - **CMYK:** 0/100/100/0
+  - Use for: Site header banner, interactive materials (menus, maps, graphs), error states
+  - Example: Header banner, navigation highlights
 
-- **Yellow (`--color-primary-yellow`)** - Accents, highlights, focus indicators
-  - Use for: Focus outlines, warning states, accent elements, team section backgrounds
-  - Example: Focus rings, team section background
+- **Navy (`--color-primary-navy`)** - Navigation, body text, primary UI elements
+  - **Hex:** `#1C3664`
+  - **RGB:** 0, 51, 102
+  - **CMYK:** 100/87/33/23
+  - Use for: Navigation backgrounds, headings (Josefin Sans), body copy, links
+  - Example: Secondary headings, navigation bar, primary text
 
-- **Black (`--color-primary-black`)** - Primary buttons, high-contrast text
-  - Use for: Primary action buttons, main headings, high-emphasis text
-  - Example: `.btn-primary` buttons, main page titles
+- **Magenta (`--color-primary-magenta`)** - Links, accent color
+  - **Hex:** `#EC008C`
+  - **RGB:** 236, 0, 140
+  - **CMYK:** 0/100/0/0
+  - Use for: Links (80% tint), special emphasis, accent elements
+  - Example: Text links, highlighted content
 
-- **Gray (`--color-primary-gray`)** - Borders, secondary elements
-  - Use for: Button borders, dividers, disabled states, subtle separations
-  - Example: `.btn-secondary` borders, card borders
+- **Yellow (`--color-primary-yellow`)** - Accents, highlights, warm elements
+  - **Hex:** `#F6BE38`
+  - **RGB:** 246, 190, 56
+  - **CMYK:** 3/26/89/0
+  - Use for: Accents, highlights, warning states (not primary focus indicators)
+  - Example: Accent elements, decorative highlights
 
-### Secondary Colors
+### Grey Tones
 
-**When to use:**
+- **Light Grey (`--color-grey-light`)** - Backgrounds, subtle elements
+  - **Hex:** `#E6E7E8`
+  - **RGB:** 230, 231, 232
+  - **CMYK:** 0/0/0/10
+  - Use for: Page backgrounds, subtle separators, light UI elements
 
-- **Magenta (`--color-primary-magenta`)** - Accent color for special emphasis
-- **Orange (`--color-secondary-orange`)** - Hover states, warm accents
-- **Coral (`--color-secondary-coral`)** - Error backgrounds, warm highlights
-- **Charcoal (`--color-secondary-charcoal`)** - Secondary text, hover states
-  - Use for: Body text, secondary information, button hover states
-- **Dark Gray (`--color-secondary-dark-gray`)** - Tertiary text
-  - Use for: Less important text, metadata, captions
+### Secondary Colors (Tints)
+
+Tints of 80% and 60% of the primary palette can be used for variety.
+
+**80% Tints:**
+- **Black 80%:** `#58595B` (RGB: 88, 89, 91)
+- **Red 80%:** `#F15B40` (RGB: 241, 91, 64) - Use for: Interactive materials (with red)
+- **Navy 80%:** `#445078` (RGB: 68, 80, 120)
+- **Magenta 80%:** `#EF5BA1` (RGB: 239, 91, 161) - **Use for: Links**
+- **Yellow 80%:** `#F8C965` (RGB: 248, 201, 101)
+
+**60% Tints:**
+- **Black 60%:** `#808285` (RGB: 128, 130, 133)
+- **Red 60%:** `#F58466` (RGB: 245, 132, 102)
+- **Navy 60%:** `#6A6D8F` (RGB: 106, 109, 143)
+- **Magenta 60%:** `#F287B7` (RGB: 242, 135, 183)
+- **Yellow 60%:** `#FAD589` (RGB: 250, 213, 137)
 
 ### Semantic Colors
 
-**When to use:**
+**Text Colors:**
+- `--text-primary` - Main content, headings (black: `#000000`)
+- `--text-secondary` - Body text, descriptions (navy: `#1C3664`)
+- `--text-tertiary` - Metadata, less important info (navy 60%: `#6A6D8F`)
+- `--text-inverse` - Text on dark backgrounds (white)
+- `--text-link` - Links (magenta 80%: `#EF5BA1`)
 
-- **Text Colors:**
-  - `--text-primary` - Main content, headings (black)
-  - `--text-secondary` - Body text, descriptions (charcoal)
-  - `--text-tertiary` - Metadata, less important info (dark gray)
-  - `--text-inverse` - Text on dark backgrounds (white)
+**Background Colors:**
+- `--bg-page` - Page background (light grey: `#E6E7E8`)
+- `--bg-surface` - Card/container backgrounds (white)
+- `--bg-elevated` - Elevated surfaces (white with shadow)
 
-- **Background Colors:**
-  - `--bg-page` - Page background (light gray)
-  - `--bg-surface` - Card/container backgrounds (white)
-  - `--bg-elevated` - Elevated surfaces (white with shadow)
-
-### Color Usage Rules
+### Color Usage Rules (from Brand Standards)
 
 ✅ **DO:**
-- Use primary red for header and critical actions
-- Use navy for navigation and primary UI elements
-- Use yellow for focus states and accessibility
-- Use semantic text colors for consistent hierarchy
+- Use **red** and **orange** for interactive materials (menus, maps, graphs)
+- Use **magenta 80%** (`#EF5BA1`) for links
+- Use **navy** for headings and body copy
+- Use **black** for main headings (with Aachen std font)
+- Maintain the official color palette values exactly
+- Use tints (80% and 60%) for variety
 
 ❌ **DON'T:**
-- Don't use brand colors for decorative purposes only
-- Don't create new color combinations without design system approval
-- Don't use colors that aren't in the design token system
+- Don't stretch or distort logo colors
+- Don't use effects like drop shadows on brand elements
+- Don't create new colors outside the approved palette
+- Don't change the official hex values
+- Don't use colors that aren't in the brand standards
 
 ---
 
@@ -89,43 +168,69 @@ A comprehensive guide to using design elements consistently across the Lesbian a
 
 ### Font Families
 
-- **Primary Font** (`--font-family-primary`) - System font stack
-  - Use for: All body text, buttons, form inputs, general UI
-- **Heading Font** (`--font-family-heading`) - Same as primary
-  - Use for: All headings (h1-h6)
+**Official LGLC Typefaces:**
+
+- **Primary Typeface: Josefin Sans** (`--font-family-primary`)
+  - Web-friendly typeface
+  - Available weights: Light, Light Italic, Regular, Bold, Bold Italic
+  - Use for: Body copy, secondary headings, tertiary headings, all general UI
+  - **Regular** - Default body copy
+  - **Bold** - Secondary headings
+  - Example: Paragraph text, navigation, buttons, form inputs
+
+- **Secondary Typeface: Aachen Std** (`--font-family-heading`)
+  - Use for: Main headings only
+  - Bold weight
+  - Color: Black (`#000000`)
+  - Size: 18pt+ (1.125rem+)
+  - Example: Page titles, major section headings
+
 - **Mono Font** (`--font-family-mono`) - Monospace stack
-  - Use for: Code, technical content, data tables
+  - Use for: Code, technical content, data tables (if needed)
 
 ### Font Sizes
 
-**When to use each size:**
+**Typography Hierarchy (from Brand Standards):**
 
-- **5xl (3rem/48px)** - Hero titles, landing page main headings
-  - Example: `.hero-title`, main page headlines
+- **Main Heading** - 18pt+ (1.5rem/24px) - Aachen Std, Black
+  - Use for: Page titles, major section headings
+  - Font: `--font-family-heading` (Aachen Std)
+  - Token: `--font-size-main-heading`
+  - Color: `--text-primary` (Black #000000)
+  - Example: "LOREM IPSUM DOLOR", main page titles
   
-- **4xl (2.25rem/36px)** - Section titles, major page headings
-  - Example: `.section-title`, `.team-title`
+- **Secondary Heading** - 14pt+ (1.167rem/~19px) - Josefin Sans Bold, Navy
+  - Use for: Section subheadings, important subsections
+  - Font: `--font-family-primary` (Josefin Sans Bold)
+  - Token: `--font-size-secondary-heading`
+  - Color: `--text-secondary` (Navy #1C3664)
+  - Example: Section titles, card headings
   
-- **3xl (1.875rem/30px)** - Subsection headings, large content titles
-  - Example: Mobile hero titles, large card titles
+- **Tertiary Heading** - 11pt+ (0.917rem/~15px) - Josefin Sans Bold, Navy
+  - Use for: Smaller headings, card titles, emphasized labels
+  - Font: `--font-family-primary` (Josefin Sans Bold)
+  - Token: `--font-size-tertiary-heading`
+  - Color: `--text-secondary` (Navy #1C3664)
+  - Example: Small section titles, form group labels
   
-- **2xl (1.5rem/24px)** - Medium headings, section subheadings
-  - Example: `.details-heading`, `.related-heading`
-  
-- **xl (1.25rem/20px)** - Small headings, card titles
-  - Example: `.card-title`, `.about-subheading`
-  
-- **lg (1.125rem/18px)** - Large body text, emphasized content
-  - Example: `.hero-description`, search tab links
-  
-- **base (1rem/16px)** - Default body text, buttons, form inputs
-  - Example: Most content, button text, form labels
-  
-- **sm (0.875rem/14px)** - Small text, captions, metadata
-  - Example: Form labels, footer links, search filters
-  
-- **xs (0.75rem/12px)** - Tiny text, fine print
-  - Example: Copyright text, very small labels
+- **Body Copy** - 10pt+ (0.875rem/14px) - Josefin Sans Regular, Navy
+  - Use for: All body text, paragraph content
+  - Font: `--font-family-primary` (Josefin Sans Regular)
+  - Token: `--font-size-body`
+  - Color: `--text-secondary` (Navy #1C3664)
+  - Example: Main content, descriptions, general text (like Jane Rule biography)
+
+**Additional Size Scale:**
+
+- **5xl (3rem/48px)** - Hero titles, landing page headlines
+- **4xl (2.25rem/36px)** - Large section titles
+- **3xl (1.875rem/30px)** - Subsection headings
+- **2xl (1.5rem/24px)** - Main headings (18pt) when used in large contexts
+- **xl (1.25rem/20px)** - Large emphasis text
+- **lg (1.125rem/18px)** - Large body text, descriptions
+- **base (1rem/16px)** - UI elements (buttons, inputs, labels)
+- **sm (0.875rem/14px)** - Body copy (10.5pt, meets 10pt+ requirement)
+- **xs (0.75rem/12px)** - Small text, captions, metadata
 
 ### Font Weights
 
@@ -137,23 +242,31 @@ A comprehensive guide to using design elements consistently across the Lesbian a
 
 ### Line Heights
 
-- **Tight (1.25)** - Headings, short text blocks
-- **Normal (1.5)** - Body text, general content
-- **Relaxed (1.75)** - Long-form content, descriptions
-- **Loose (2)** - Very long-form content, poetry
+Based on the brand guide visual examples:
+
+- **Tight (1.2)** - Main headings (Aachen Std), large display text
+- **Normal (1.4)** - Secondary and tertiary headings (Josefin Sans Bold)
+- **Relaxed (1.7)** - Short paragraphs, descriptions, metadata
+- **Loose (1.9)** - Body copy, long-form content (per brand guide example)
 
 ### Typography Usage Rules
 
 ✅ **DO:**
-- Use size hierarchy to establish information importance
-- Use tight line-height for headings
+- Use **Aachen Std** for main headings (18pt+) in black
+- Use **Josefin Sans Bold** for secondary and tertiary headings in navy
+- Use **Josefin Sans Regular** for all body copy in navy
+- Use **Magenta 80%** (`#EF5BA1`) for links
+- Use the official brand font hierarchy
+- Maintain tight line-height for headings
 - Use relaxed line-height for body text
-- Maintain consistent font weights within component types
 
 ❌ **DON'T:**
-- Don't mix font families unnecessarily
-- Don't use more than 3 font sizes in a single section
-- Don't use font-weight to create hierarchy when size would be more appropriate
+- Don't use Josefin Sans for main headings (use Aachen Std instead)
+- Don't use Aachen Std for body copy (use Josefin Sans instead)
+- Don't use colors other than black for main headings (Aachen Std)
+- Don't use colors other than navy for secondary/tertiary headings and body copy
+- Don't mix font families outside the brand standards
+- Don't use font weights not specified in the brand standards
 
 ---
 
@@ -595,26 +708,133 @@ Use spacing tokens consistently:
 
 ### Color Quick Reference
 
-| Color | Token | Use For |
-|-------|-------|---------|
-| Red | `--color-primary-red` | Header, primary actions |
-| Navy | `--color-primary-navy` | Navigation, search UI |
-| Yellow | `--color-primary-yellow` | Focus, accents, team section |
-| Black | `--color-primary-black` | Primary buttons, headings |
-| Charcoal | `--color-secondary-charcoal` | Body text, secondary info |
+| Color | Hex | Token | Use For |
+|-------|-----|-------|---------|
+| Black | `#000000` | `--color-primary-black` | Main headings (Aachen), primary text |
+| Red | `#ED1C24` | `--color-primary-red` | Header, interactive materials |
+| Navy | `#1C3664` | `--color-primary-navy` | Headings (Josefin), body copy, navigation |
+| Magenta | `#EC008C` | `--color-primary-magenta` | Accent elements |
+| Yellow | `#F6BE38` | `--color-primary-yellow` | Accents, highlights |
+| Light Grey | `#E6E7E8` | `--color-grey-light` | Backgrounds, subtle elements |
+| Magenta 80% | `#EF5BA1` | `--color-magenta-80` | **Links** |
+| Red 80% | `#F15B40` | `--color-red-80` | Interactive materials (with red) |
 
 ---
 
 ## Design Principles
 
-1. **Consistency** - Use design tokens consistently across all pages
-2. **Hierarchy** - Establish clear visual hierarchy with typography and spacing
-3. **Accessibility** - Ensure all elements are accessible and keyboard navigable
-4. **Responsive** - Design mobile-first, enhance for larger screens
-5. **Clarity** - Use clear, semantic HTML and appropriate components
-6. **Brand** - Maintain brand colors and identity throughout
+1. **Brand Integrity** - Follow the official LGLC Brand Standards Manual exactly
+2. **Consistency** - Use design tokens consistently across all pages
+3. **Hierarchy** - Establish clear visual hierarchy with typography (Aachen for main, Josefin for secondary)
+4. **Accessibility** - Ensure all elements are accessible and keyboard navigable
+5. **Responsive** - Design mobile-first, enhance for larger screens
+6. **Clarity** - Use clear, semantic HTML and appropriate components
+7. **Historical Mission** - Honor the historical LGBT liberation movement while remaining relevant today
 
 ---
 
-*Last updated: Based on current design system implementation*
+## Brand Standards Reference
+
+This design language is based on the **LGLC Brand Standards Manual**. For official logo files, detailed spacing guidelines, and additional brand usage rules, refer to:
+
+- **Document:** `media/style_guide.pdf`
+- **Contact:** www.lglc.ca
+
+### Key Brand Rules
+
+1. ✅ Use exact hex values from the brand palette
+2. ✅ Use Aachen Std for main headings only
+3. ✅ Use Josefin Sans for body copy and secondary headings
+4. ✅ Use Magenta 80% (#EF5BA1) for all links
+5. ✅ Maintain proper logo spacing (X measurement)
+6. ❌ Never stretch, rotate, or apply effects to the logo
+7. ❌ Never change brand colors or create new combinations
+8. ❌ Never use fonts outside Aachen Std and Josefin Sans
+
+---
+
+## Implementation Guide
+
+### How to Apply Brand Standards to Components
+
+**1. Headings:**
+
+```css
+/* Main Heading (h1) - Brand Standard */
+h1 {
+  font-family: var(--font-family-heading);     /* Aachen Std */
+  font-size: var(--font-size-main-heading);    /* 18pt+ (1.5rem/24px) */
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);                  /* Black #000000 */
+  line-height: var(--line-height-tight);       /* 1.2 - Tight for large headings */
+}
+
+/* Secondary Heading (h2) - Brand Standard */
+h2 {
+  font-family: var(--font-family-primary);         /* Josefin Sans */
+  font-size: var(--font-size-secondary-heading);   /* 14pt+ (1.167rem/~19px) */
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);                    /* Navy #1C3664 */
+  line-height: var(--line-height-normal);          /* 1.4 - Comfortable for subheadings */
+}
+
+/* Tertiary Heading (h3) - Brand Standard */
+h3 {
+  font-family: var(--font-family-primary);        /* Josefin Sans */
+  font-size: var(--font-size-tertiary-heading);   /* 11pt+ (0.917rem/~15px) */
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);                   /* Navy #1C3664 */
+  line-height: var(--line-height-normal);         /* 1.4 - Comfortable for small headings */
+}
+```
+
+**2. Body Text:**
+
+```css
+/* Body Element - Brand Standard */
+body {
+  font-family: var(--font-family-primary);  /* Josefin Sans */
+  font-size: var(--font-size-body);         /* 10pt+ (0.875rem/14px) */
+  font-weight: var(--font-weight-normal);
+  color: var(--text-secondary);             /* Navy #1C3664 */
+  line-height: var(--line-height-loose);    /* 1.9 - Generous spacing per brand guide */
+}
+
+/* Paragraphs - Brand Standard */
+p {
+  font-family: var(--font-family-primary);  /* Josefin Sans */
+  font-size: var(--font-size-body);         /* 10pt+ (0.875rem/14px) */
+  color: var(--text-secondary);             /* Navy #1C3664 */
+  line-height: var(--line-height-loose);    /* 1.9 - Generous spacing per brand guide */
+}
+```
+
+**3. Links:**
+
+```css
+a {
+  color: var(--text-link);                  /* Magenta 80% #EF5BA1 */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--text-link-hover);            /* Full Magenta #EC008C */
+}
+```
+
+**4. Interactive Elements (Buttons, Menus):**
+
+```css
+.interactive-element {
+  background-color: var(--color-primary-red);     /* Red #ED1C24 */
+}
+
+.interactive-element:hover {
+  background-color: var(--color-red-80);          /* Red 80% #F15B40 */
+}
+```
+
+---
+
+*Last updated: Based on official LGLC Brand Standards Manual*
 

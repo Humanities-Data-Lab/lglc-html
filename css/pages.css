@@ -1,0 +1,313 @@
+/**
+ * LGLC Page-Specific Styles
+ * Styles unique to landing pages and record detail pages
+ * Uses design tokens from design-tokens.css
+ */
+
+/* ============================================
+   HERO SECTION (Landing Page)
+   ============================================ */
+
+.hero-section {
+  padding: var(--spacing-20) 0 var(--spacing-16) 0;
+  background-color: var(--bg-surface);
+}
+
+.hero-title {
+  font-family: var(--font-family-heading);  /* Brand Standard: Aachen Std for main headings */
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);  /* 1.2 - Tight for large headings */
+  color: var(--text-primary);  /* Brand Standard: Black */
+  margin-bottom: var(--spacing-12);
+}
+
+.hero-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  justify-content: space-between;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: var(--content-width-narrow);
+}
+
+.hero-description {
+  font-size: var(--font-size-lg);  /* Larger for emphasis in hero */
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.hero-action {
+  flex-shrink: 0;
+}
+
+/* ============================================
+   FEATURED IMAGE SECTION (Landing Page)
+   ============================================ */
+
+.featured-image-section {
+  padding: var(--spacing-12) 0 var(--spacing-16) 0;
+  background-color: var(--bg-surface);
+}
+
+/* ============================================
+   GET STARTED SECTION (Landing Page)
+   ============================================ */
+
+.get-started-section {
+  padding: var(--spacing-20) 0;
+  background-color: var(--bg-surface);
+}
+
+/* ============================================
+   ABOUT SECTION (Landing Page)
+   ============================================ */
+
+.about-section {
+  padding: var(--spacing-20) 0;
+  background-color: var(--bg-surface);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: var(--spacing-16);
+  align-items: start;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.about-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.about-subheading {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: var(--line-height-normal);
+}
+
+.about-body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+}
+
+.about-buttons {
+  display: flex;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.about-image {
+  position: sticky;
+  top: var(--spacing-8);
+  z-index: var(--z-index-base);
+  align-self: flex-start;
+}
+
+/* ============================================
+   TEAM SECTION (Landing Page)
+   ============================================ */
+
+.team-section {
+  padding: var(--spacing-16) 0;
+  background-color: var(--color-primary-yellow);
+}
+
+.team-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.team-title {
+  font-family: var(--font-family-heading);  /* Brand Standard: Aachen Std for main headings */
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);  /* Brand Standard: Black */
+  line-height: var(--line-height-tight);  /* 1.2 - Tight for large headings */
+}
+
+.team-buttons {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+/* Special focus state for yellow background */
+.team-section .btn-primary:focus,
+.team-section .btn-white:focus {
+  outline: var(--outline-width-thick) solid var(--color-primary-navy);
+  outline-offset: var(--outline-offset-sm);
+}
+
+/* ============================================
+   RECORD PAGES
+   ============================================ */
+
+.record-header {
+  margin-bottom: var(--spacing-16);
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.record-title {
+  font-family: var(--font-family-heading);  /* Brand: Aachen Std for main headings */
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);  /* 1.2 - Tight for large headings */
+  color: var(--text-primary);  /* Brand: Black */
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.record-meta {
+  font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
+  line-height: var(--line-height-loose);  /* Brand: 1.9 - Generous spacing */
+  color: var(--text-secondary);  /* Brand: Navy */
+  margin: 0;
+}
+
+.record-meta-line {
+  font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
+  line-height: var(--line-height-relaxed);  /* 1.7 - Slightly tighter for metadata */
+  color: var(--text-tertiary);  /* Brand: Navy 60% */
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.record-meta-line:last-of-type {
+  margin-bottom: 0;
+}
+
+.record-section {
+  margin-bottom: var(--spacing-12);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - LANDING PAGE
+   ============================================ */
+
+@media (max-width: 63.9375rem) {  /* --breakpoint-lg-max */
+  .hero-content-wrapper {
+    gap: var(--spacing-8);
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-12);
+  }
+
+  .about-image {
+    position: relative;
+    top: 0;
+  }
+
+  .team-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
+  .hero-section {
+    padding: var(--spacing-16) 0 var(--spacing-12) 0;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-8);
+  }
+
+  .hero-content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-8);
+  }
+
+  .hero-content {
+    max-width: var(--size-full);
+  }
+
+  .hero-description {
+    font-size: var(--font-size-base);
+    margin-bottom: 0;
+  }
+
+  .hero-action {
+    width: var(--size-full);
+  }
+
+  .hero-action .btn-primary {
+    width: var(--size-full);
+    text-align: center;
+  }
+
+  .about-section {
+    padding: var(--spacing-16) 0;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: var(--size-full);
+    text-align: center;
+  }
+
+  .team-section {
+    padding: var(--spacing-12) 0;
+  }
+
+  .team-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .team-buttons {
+    flex-direction: column;
+    width: var(--size-full);
+  }
+
+  .team-buttons .btn-primary,
+  .team-buttons .btn-white {
+    width: var(--size-full);
+    text-align: center;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - RECORD PAGES
+   ============================================ */
+
+@media (max-width: 63.9375rem) {  /* --breakpoint-lg-max */
+  .record-title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
+  .record-header {
+    margin-bottom: var(--spacing-8);
+    padding-bottom: var(--spacing-6);
+  }
+
+  .record-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .record-section {
+    margin-bottom: var(--spacing-8);
+  }
+}

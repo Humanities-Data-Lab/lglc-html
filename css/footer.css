@@ -39,7 +39,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .footer-social {
@@ -47,25 +47,19 @@
   gap: var(--spacing-4);
 }
 
+/* Social links use default <a> tag colors (Brand Standard: Magenta 80%) with custom sizing */
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
   width: var(--touch-target-sm);
   height: var(--touch-target-sm);
-  color: var(--text-tertiary);
-  transition: color var(--transition-fast);
   border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
 }
 
 .social-link:hover {
-  color: var(--color-primary-red);
   background-color: var(--bg-page);
-}
-
-.social-link:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
-  outline-offset: var(--outline-offset-sm);
 }
 
 .footer-nav {
@@ -96,22 +90,9 @@
   gap: var(--spacing-2);
 }
 
+/* Footer links use default <a> tag styling (Brand Standard: Magenta 80%) */
 .footer-links a {
   font-size: var(--font-size-base);
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.footer-links a:hover {
-  color: var(--color-primary-red);
-  text-decoration: underline;
-}
-
-.footer-links a:focus {
-  outline: var(--outline-width-thin) solid var(--color-primary-yellow);
-  outline-offset: var(--outline-offset-sm);
-  border-radius: var(--border-radius-xs);
 }
 
 /* ============================================

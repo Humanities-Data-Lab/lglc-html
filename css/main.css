@@ -1,0 +1,571 @@
+/**
+ * LGLC Main Styles
+ * Shared base styles, typography, containers, buttons, grids, and common components
+ * Uses design tokens from design-tokens.css
+ */
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: var(--size-full);
+}
+
+body {
+  min-height: var(--size-screen-height);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-primary);  /* Brand: Josefin Sans */
+  font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
+  line-height: var(--line-height-loose);  /* Brand: 1.9 - Generous spacing */
+  color: var(--text-secondary);  /* Brand: Navy #1C3664 */
+  background-color: var(--bg-page);  /* Brand: Light Grey #E6E7E8 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* White background for record pages */
+body.white-bg {
+  background-color: var(--color-white);
+}
+
+/* ============================================
+   ACCESSIBILITY UTILITIES
+   ============================================ */
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================
+   TYPOGRAPHY - BRAND STANDARDS
+   ============================================ */
+
+/* Main Headings: Aachen Std, Black, 18pt+ */
+h1 {
+  font-family: var(--font-family-heading);  /* Aachen Std */
+  font-size: var(--font-size-main-heading);  /* 18pt+ (24px) */
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);  /* Black #000000 */
+  line-height: var(--line-height-tight);  /* 1.2 - Tight for large headings */
+}
+
+/* Secondary Headings: Josefin Sans Bold, Navy, 14pt+ */
+h2 {
+  font-family: var(--font-family-primary);  /* Josefin Sans */
+  font-size: var(--font-size-secondary-heading);  /* 14pt+ (~19px) */
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);  /* Navy #1C3664 */
+  line-height: var(--line-height-normal);  /* 1.4 - Comfortable for subheadings */
+}
+
+/* Tertiary Headings: Josefin Sans Bold, Navy, 11pt+ */
+h3 {
+  font-family: var(--font-family-primary);  /* Josefin Sans */
+  font-size: var(--font-size-tertiary-heading);  /* 11pt+ (~15px) */
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);  /* Navy #1C3664 */
+  line-height: var(--line-height-normal);  /* 1.4 - Comfortable for small headings */
+}
+
+/* Paragraphs - Brand Standard Copy */
+p {
+  font-family: var(--font-family-primary);  /* Josefin Sans */
+  font-size: var(--font-size-body);  /* 10pt+ */
+  color: var(--text-secondary);  /* Navy */
+  line-height: var(--line-height-loose);  /* 1.9 - Generous spacing per brand guide */
+}
+
+/* Links: Magenta 80% */
+a {
+  color: var(--text-link);  /* Magenta 80% #EF5BA1 */
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-link-hover);  /* Full Magenta #EC008C */
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline-offset: var(--outline-offset-sm);
+}
+
+/* ============================================
+   SKIP LINK (Accessibility)
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: calc(-1 * var(--spacing-16));
+  left: var(--spacing-4);
+  padding: var(--spacing-3) var(--spacing-6);
+  background-color: var(--color-primary-red);
+  color: var(--text-inverse);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  z-index: calc(var(--z-index-tooltip) + 100);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--spacing-4);
+  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline-offset: var(--outline-offset-sm);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+main {
+  flex: 1 0 auto;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* ============================================
+   CONTAINERS
+   ============================================ */
+
+.container {
+  max-width: var(--content-width-xlarge);
+  margin: 0 auto;
+  padding: 0 var(--header-side-padding);
+}
+
+.container-page {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-12) var(--header-side-padding) var(--spacing-16);
+  background-color: transparent;
+  min-height: var(--size-screen-height);
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.section {
+  padding: var(--spacing-20) 0;
+  background-color: var(--bg-surface);
+}
+
+.section-title {
+  font-family: var(--font-family-heading);  /* Brand Standard: Aachen Std for main headings */
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);  /* 1.2 - Tight for large headings */
+  color: var(--text-primary);  /* Brand Standard: Black */
+  margin-bottom: var(--spacing-12);
+}
+
+.section-heading {
+  font-family: var(--font-family-primary);  /* Brand: Josefin Sans for secondary headings */
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);  /* 1.4 - Comfortable for subheadings */
+  color: var(--text-secondary);  /* Brand: Navy for secondary headings */
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+.section-text {
+  font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
+  line-height: var(--line-height-loose);  /* Brand: 1.9 - Generous spacing */
+  color: var(--text-secondary);  /* Brand: Navy for body copy */
+  margin: 0;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+/* Base Button - Shared properties for all buttons */
+.btn-primary,
+.btn-secondary,
+.btn-white {
+  display: inline-block;
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-primary);
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  border: var(--border-width-medium) solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+/* Primary Button - Black background, white text */
+.btn-primary {
+  background-color: var(--color-primary-black);
+  color: var(--text-inverse);
+  border-color: var(--color-primary-black);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-black-80);  /* Brand Standard: Black 80% tint */
+  border-color: var(--color-black-80);
+  transform: var(--transform-translate-y-2);
+  box-shadow: var(--shadow-md);
+}
+
+/* Secondary Button - Transparent background, border */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--color-grey-light);  /* Brand Standard */
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-grey-light);  /* Brand Standard */
+  border-color: var(--color-navy-60);  /* Brand Standard */
+}
+
+/* White Button - For colored backgrounds (like yellow team section) */
+.btn-white {
+  background-color: var(--color-white);
+  color: var(--text-primary);
+  border-color: var(--color-white);
+}
+
+.btn-white:hover {
+  background-color: var(--color-bg-lighter-gray);
+  border-color: var(--color-grey-light);  /* Brand Standard */
+}
+
+/* Shared focus state for all buttons */
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-white:focus {
+  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline-offset: var(--outline-offset-sm);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+  background-color: var(--bg-surface);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: var(--transform-translate-y-4);
+  box-shadow: var(--shadow-xl);
+}
+
+.card:focus-within {
+  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline-offset: var(--outline-offset-sm);
+}
+
+.card-image {
+  width: var(--size-full);
+  height: var(--image-height-md);
+  object-fit: cover;
+  display: block;
+}
+
+.card-title {
+  padding: var(--spacing-6) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+}
+
+/* Related Cards (for record pages) */
+.related-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.related-icon-img {
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  border-radius: var(--border-radius-full);
+}
+
+.related-heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+/* ============================================
+   GRIDS
+   ============================================ */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-8);
+}
+
+.grid-3 {
+  grid-template-columns: var(--grid-columns-three);
+}
+
+.grid-4 {
+  grid-template-columns: var(--grid-columns-four);
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+.list-unstyled {
+  list-style: none;
+  padding: var(--spacing-0);
+  margin: var(--spacing-0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.list-disc {
+  list-style: disc;
+  padding-left: var(--spacing-5);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.list-disc li {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+/* All links use default <a> tag styling defined above in base styles.
+   Brand Standard: Magenta 80% (#EF5BA1) for all content links.
+   Navigation links on colored backgrounds use custom .nav-link or .mobile-nav-link classes. */
+
+/* ============================================
+   IMAGES
+   ============================================ */
+
+.img-featured {
+  width: var(--size-full);
+  height: var(--size-auto);
+  max-height: var(--image-height-lg);
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+.img-about {
+  width: var(--size-full);
+  height: var(--size-auto);
+  min-height: var(--image-height-xl);
+  max-height: var(--image-height-2xl);
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   DATA TABLES
+   ============================================ */
+
+.table-wrapper {
+  background-color: var(--color-bg-lighter-gray);
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-md);
+  overflow-x: auto;
+}
+
+.table {
+  width: var(--size-full);
+  border-collapse: collapse;
+  font-size: var(--font-size-base);
+}
+
+.table thead {
+  background-color: var(--color-white);
+}
+
+.table th {
+  padding: var(--spacing-4) var(--spacing-6);
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  border-bottom: var(--border-width-medium) solid var(--border-color-light);
+}
+
+.table td {
+  padding: var(--spacing-4) var(--spacing-6);
+  color: var(--text-secondary);
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--overlay-dark);
+}
+
+/* ============================================
+   CONTENT BOXES
+   ============================================ */
+
+.content-box {
+  background-color: var(--color-bg-lighter-gray);
+  padding: var(--spacing-8);
+  border-radius: var(--border-radius-lg);
+}
+
+.content-box-heading {
+  font-family: var(--font-family-primary);  /* Brand: Josefin Sans for secondary headings */
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);  /* 1.4 - Comfortable for subheadings */
+  color: var(--text-secondary);  /* Brand: Navy for secondary headings */
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.content-box-text {
+  font-size: var(--font-size-body);  /* Brand: 10pt+ body copy */
+  line-height: var(--line-height-loose);  /* Brand: 1.9 - Generous spacing */
+  color: var(--text-secondary);  /* Brand: Navy for body copy */
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - GRIDS
+   ============================================ */
+
+@media (max-width: 79.9375rem) {  /* --breakpoint-xl-max */
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 63.9375rem) {  /* --breakpoint-lg-max */
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - CONTAINERS
+   ============================================ */
+
+@media (max-width: 79.9375rem) {  /* --breakpoint-xl-max */
+  .container {
+    padding: 0 var(--spacing-10);
+  }
+
+  .container-page {
+    padding: var(--spacing-10) var(--spacing-10);
+  }
+}
+
+@media (max-width: 63.9375rem) {  /* --breakpoint-lg-max */
+  .container {
+    padding: 0 var(--spacing-8);
+  }
+
+  .container-page {
+    padding: var(--spacing-8) var(--spacing-8);
+  }
+
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .section-heading {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
+  .container {
+    padding: 0 var(--spacing-6);
+  }
+
+  .container-page {
+    padding: var(--spacing-6) var(--spacing-6);
+  }
+
+  .card-image {
+    height: var(--image-height-sm);
+  }
+
+  .related-icon-img {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+  }
+
+  .table-wrapper {
+    padding: var(--spacing-4);
+  }
+
+  .table th,
+  .table td {
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+
+  .content-box {
+    padding: var(--spacing-6);
+  }
+
+  .section-heading {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-4);
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .container-page {
+    padding: var(--spacing-4);
+    max-width: var(--size-full);
+  }
+
+  .related-icon-img {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

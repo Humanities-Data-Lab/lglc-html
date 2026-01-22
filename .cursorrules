@@ -2,13 +2,65 @@
 
 This project uses a token-based design system for the Lesbian and Gay Liberation in Canada (LGLC) website templates.
 
+**IMPORTANT:** This project follows the official **LGLC Brand Standards Manual** (`media/style_guide.pdf`).
+
 ## Core Principles
 
-1. **Always use design tokens** - Never hardcode CSS values. All styling must use tokens from `css/design-tokens.css`
-2. **Mobile-first responsive design** - Design for mobile first, enhance for larger screens
-3. **Accessibility first** - Ensure all interactive elements are keyboard accessible and meet WCAG 2.1 standards
-4. **Semantic HTML** - Use proper HTML5 elements and ARIA attributes
-5. **Component isolation** - Each component in its own CSS file
+1. **Follow brand standards** - Use exact colors, typography, and design elements from the official brand manual
+2. **Always use design tokens** - Never hardcode CSS values. All styling must use tokens from `css/design-tokens.css`
+3. **Mobile-first responsive design** - Design for mobile first, enhance for larger screens
+4. **Accessibility first** - Ensure all interactive elements are keyboard accessible and meet WCAG 2.1 standards
+5. **Semantic HTML** - Use proper HTML5 elements and ARIA attributes
+6. **Component isolation** - Each component in its own CSS file
+
+## Official Brand Standards
+
+### Brand Colors (MUST USE EXACT VALUES)
+
+**Primary Colors:**
+- **Black:** `#000000` (CMYK: 0/0/0/100, RGB: 0/0/0)
+- **Red:** `#ED1C24` (CMYK: 0/100/100/0, RGB: 237/28/36)
+- **Navy:** `#1C3664` (CMYK: 100/87/33/23, RGB: 0/51/102)
+- **Magenta:** `#EC008C` (CMYK: 0/100/0/0, RGB: 236/0/140)
+- **Yellow:** `#F6BE38` (CMYK: 3/26/89/0, RGB: 246/190/56)
+- **Light Grey:** `#E6E7E8` (CMYK: 0/0/0/10, RGB: 230/231/232)
+
+**Secondary Colors (80% Tints):**
+- **Black 80%:** `#58595B` (RGB: 88/89/91)
+- **Red 80%:** `#F15B40` (RGB: 241/91/64)
+- **Navy 80%:** `#445078` (RGB: 68/80/120)
+- **Magenta 80%:** `#EF5BA1` (RGB: 239/91/161) - **USE FOR ALL LINKS**
+- **Yellow 80%:** `#F8C965` (RGB: 248/201/101)
+
+**Secondary Colors (60% Tints):**
+- **Black 60%:** `#808285`, **Red 60%:** `#F58466`, **Navy 60%:** `#6A6D8F`, **Magenta 60%:** `#F287B7`, **Yellow 60%:** `#FAD589`
+
+### Official Typography Hierarchy
+
+**Primary Typeface: Josefin Sans** (web-friendly)
+- Available weights: Light, Light Italic, Regular, Bold, Bold Italic
+- Use for: Body copy, secondary headings, tertiary headings, all UI elements
+
+**Secondary Typeface: Aachen Std**
+- Use for: Main headings ONLY (18pt+)
+- Bold weight only
+
+**Typography & Color Standards:**
+- **Main Heading:** Aachen Std, Black (`#000000`), 18pt+ (`--font-size-lg`)
+- **Secondary Heading:** Josefin Sans Bold, Navy (`#1C3664`), 14pt+ (`--font-size-sm`)
+- **Tertiary Heading:** Josefin Sans Bold, Navy (`#1C3664`), 11pt+ (0.6875rem)
+- **Body Copy:** Josefin Sans Regular, Navy (`#1C3664`), 10pt+ (0.625rem)
+- **Links:** Magenta 80% (`#EF5BA1`)
+- **Interactive Materials** (menus, maps, graphs): Red (`#ED1C24`) and Red 80% (`#F15B40`)
+
+### Logo Usage Don'ts
+
+❌ **NEVER:**
+- Stretch the logo horizontally or vertically
+- Place the logo on an angle
+- Reconfigure the logo elements
+- Use effects like drop shadows on the logo
+- Change the logo colors
 
 ## CSS Rules
 
@@ -104,20 +156,51 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
 
 ## Design Token Categories
 
-### Colors
-- Primary: `--color-primary-red`, `--color-primary-navy`, `--color-primary-yellow`, `--color-primary-black`, `--color-primary-gray`
-- Secondary: `--color-secondary-*` variants
-- Semantic: `--text-primary`, `--text-secondary`, `--text-tertiary`, `--text-inverse`
-- Backgrounds: `--bg-page`, `--bg-surface`, `--bg-elevated`
+### Colors (Brand Standards Compliant)
+- **Primary:** 
+  - `--color-primary-black` (#000000) - Main headings
+  - `--color-primary-red` (#ED1C24) - Header, interactive materials
+  - `--color-primary-navy` (#1C3664) - Body copy, secondary headings
+  - `--color-primary-magenta` (#EC008C) - Accent elements
+  - `--color-primary-yellow` (#F6BE38) - Accents, highlights
+  - `--color-grey-light` (#E6E7E8) - Page backgrounds
+  
+- **Tints (80% and 60%):**
+  - `--color-magenta-80` (#EF5BA1) - **USE FOR ALL LINKS**
+  - `--color-red-80` (#F15B40) - Interactive materials
+  - `--color-navy-80`, `--color-black-80`, `--color-yellow-80`
+  - `--color-*-60` variants for 60% tints
+  
+- **Semantic:** 
+  - `--text-primary` → Black (#000000) - Main headings (Aachen)
+  - `--text-secondary` → Navy (#1C3664) - Body copy, secondary headings (Josefin)
+  - `--text-tertiary` → Navy 60% (#6A6D8F) - Less important text
+  - `--text-link` → Magenta 80% (#EF5BA1) - **ALL LINKS**
+  - `--text-inverse` → White - Text on dark backgrounds
+  
+- **Backgrounds:** 
+  - `--bg-page` → Light Grey (#E6E7E8)
+  - `--bg-surface` → White
+  - `--bg-elevated` → White
 
 ### Spacing
 - Use `--spacing-1` through `--spacing-24` (0.25rem to 6rem)
 - Never hardcode spacing values
 
-### Typography
-- Font sizes: `--font-size-xs` through `--font-size-5xl`
-- Font weights: `--font-weight-normal` through `--font-weight-extrabold`
-- Line heights: `--line-height-tight`, `--line-height-normal`, `--line-height-relaxed`, `--line-height-loose`
+### Typography (Brand Standards Compliant)
+- **Font Families:**
+  - `--font-family-primary`: Josefin Sans (body, secondary/tertiary headings, UI)
+  - `--font-family-heading`: Aachen Std (main headings ONLY, 18pt+)
+  
+- **Brand Typography Hierarchy:**
+  - `--font-size-main-heading`: 1.125rem (18pt+) - Aachen Std, Black
+  - `--font-size-secondary-heading`: 0.875rem (14pt+) - Josefin Sans Bold, Navy
+  - `--font-size-tertiary-heading`: 0.6875rem (11pt) - Josefin Sans Bold, Navy
+  - `--font-size-body`: 0.625rem (10pt+) - Josefin Sans Regular, Navy
+  
+- **Extended Font Sizes:** `--font-size-xs` through `--font-size-5xl`
+- **Font Weights:** `--font-weight-normal` (400) through `--font-weight-extrabold` (800)
+- **Line Heights:** `--line-height-tight`, `--line-height-normal`, `--line-height-relaxed`, `--line-height-loose`
 
 ### Borders
 - Widths: `--border-width-thin`, `--border-width-medium`, `--border-width-thick`
@@ -245,10 +328,30 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
 8. ❌ Making touch targets too small (< 44px)
 
 ### When in Doubt
+- **Check brand standards:** `media/style_guide.pdf` for official colors, typography, and logo usage
+- **Check design language:** `DESIGN-LANGUAGE.md` for detailed component guidelines and brand implementation
 - Check `css/design-tokens.css` for available tokens
 - Look at existing components (`css/header.css`, `css/footer.css`) for patterns
-- Refer to `DESIGN-LANGUAGE.md` for detailed component guidelines
 - Refer to `README.md` for project structure and usage
+
+## Brand Standards Summary
+
+**Critical Brand Rules:**
+1. ✅ Use **exact** hex values from brand palette (no approximations)
+2. ✅ Use **Aachen Std** for main headings ONLY (18pt+, Black)
+3. ✅ Use **Josefin Sans** for all other text (Regular/Bold, Navy for body/headings)
+4. ✅ Use **Magenta 80%** (#EF5BA1) for ALL links
+5. ✅ Use **Navy** (#1C3664) for body copy and secondary headings
+6. ✅ Use **Red** (#ED1C24) and **Red 80%** (#F15B40) for interactive materials
+7. ✅ Use **Light Grey** (#E6E7E8) for page backgrounds
+8. ❌ NEVER stretch, rotate, or apply effects to logos
+9. ❌ NEVER use colors outside the approved brand palette
+10. ❌ NEVER use Josefin Sans for main headings (use Aachen Std)
+
+**For complete brand guidelines, see:**
+- Official Brand Standards Manual: `media/style_guide.pdf`
+- Design Language Documentation: `DESIGN-LANGUAGE.md`
+- Brand-compliant Design Tokens: `css/design-tokens.css`
 
 
 

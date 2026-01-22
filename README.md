@@ -36,6 +36,44 @@ components built with a token-based design system.
 └── search.html              # Search page template with staticSearch integration
 ```
 
+## 🎨 Brand Standards
+
+**IMPORTANT:** This project follows the official **LGLC Brand Standards Manual** (see `media/style_guide.pdf`).
+
+### Official Brand Colors
+
+All colors must match the brand standards exactly:
+
+- **Black:** `#000000` - Main headings (Aachen Std)
+- **Red:** `#ED1C24` - Header, interactive materials
+- **Navy:** `#1C3664` - Body copy, secondary headings (Josefin Sans)
+- **Magenta:** `#EC008C` - Accent elements
+- **Yellow:** `#F6BE38` - Accents, highlights
+- **Light Grey:** `#E6E7E8` - Page backgrounds
+
+### Official Typography
+
+**Primary Typeface: Josefin Sans**
+- Body copy (Regular, Navy, 10pt+)
+- Secondary headings (Bold, Navy, 14pt+)
+- Tertiary headings (Bold, Navy, 11pt+)
+
+**Secondary Typeface: Aachen Std**
+- Main headings only (Bold, Black, 18pt+)
+
+### Brand Color Usage Rules
+
+- **Links:** Magenta 80% (`#EF5BA1`)
+- **Interactive elements:** Red (`#ED1C24`) and Red 80% (`#F15B40`)
+- **Body text:** Navy (`#1C3664`)
+- **Main headings:** Black (`#000000`)
+
+For detailed brand guidelines, typography examples, and logo usage rules, see:
+- **Brand Standards Manual:** `media/style_guide.pdf`
+- **Design Language Doc:** `DESIGN-LANGUAGE.md`
+
+---
+
 ## 🎨 Component Styling Guide
 
 ### Design Token System

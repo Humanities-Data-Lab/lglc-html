@@ -1,32 +1,133 @@
 /**
  * LGLC Design System - CSS Custom Properties
- * Design tokens extracted from the LGLC PE Website Mockup
+ * Based on the official LGLC Brand Standards Manual
+ * 
+ * Official Brand Colors:
+ * - Black: #000000 | Red: #ED1C24 | Navy: #1C3664
+ * - Magenta: #EC008C | Yellow: #F6BE38
+ * 
+ * Official Typography:
+ * - Main Headings: Aachen Std, Black, 18pt+
+ * - Secondary/Tertiary Headings: Josefin Sans Bold, Navy, 14pt+/11pt+
+ * - Body Copy: Josefin Sans Regular, Navy, 10pt+
+ * - Links: Magenta 80% (#EF5BA1)
  */
+
+/* ============================================
+   FONT FACE DECLARATIONS
+   ============================================ */
+
+/* Google Fonts: Josefin Sans loaded via <link> in HTML <head>
+   This provides better performance than @import
+   Weights: 300 (Light), 400 (Regular), 600 (SemiBold), 700 (Bold)
+   Styles: normal, italic
+   See: https://fonts.google.com/specimen/Josefin+Sans */
+
+/* ============================================
+   LOCAL FONT FACE DECLARATIONS (Fallback)
+   ============================================ */
+
+/* Josefin Sans - Local Fallback */
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefin Sans Local';
+  src: url('../media/fonts/Josefin Sans/JosefinSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Aachen Std - Secondary Typeface (Main Headings Only) */
+@font-face {
+  font-family: 'Aachen Std';
+  src: url('../media/fonts/Aachen Std/AachenStd-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
 
 :root {
   /* ============================================
      COLOR PALETTE - LGLC BRAND COLORS
      ============================================ */
   
-  /* LGLC Primary Colors */
-  --color-primary-yellow: #F5B841;
-  --color-primary-magenta: #E91E8C;
-  --color-primary-red: #ED1C24;
-  --color-primary-navy: #1B2E4B;
-  --color-primary-black: #000000;
-  --color-primary-gray: #CDCFD1;
+  /* LGLC Primary Colors - Official Brand Standards */
+  --color-primary-black: #000000;     /* CMYK: 0/0/0/100, RGB: 0/0/0 */
+  --color-primary-red: #ED1C24;       /* CMYK: 0/100/100/0, RGB: 237/28/36 */
+  --color-primary-navy: #1C3664;      /* CMYK: 100/87/33/23, RGB: 0/51/102 */
+  --color-primary-magenta: #EC008C;   /* CMYK: 0/100/0/0, RGB: 236/0/140 */
+  --color-primary-yellow: #F6BE38;    /* CMYK: 3/26/89/0, RGB: 246/190/56 */
   
-  /* LGLC Secondary Colors */
-  --color-secondary-pale-yellow: #F9E5B8;
-  --color-secondary-orange: #F5A623;
-  --color-secondary-light-pink: #F8B5D4;
-  --color-secondary-pink: #EC4E8E;
-  --color-secondary-coral: #F47E5C;
-  --color-secondary-orange-red: #ED5A3D;
-  --color-secondary-purple-gray: #6B6C7E;
-  --color-secondary-dark-navy: #2D3E5C;
-  --color-secondary-dark-gray: #666666;
-  --color-secondary-charcoal: #4A4A4A;
+  /* Grey Tones */
+  --color-grey-light: #E6E7E8;        /* CMYK: 0/0/0/10, RGB: 230/231/232 */
+  
+  
+  /* LGLC Secondary Colors - Brand Standards Tints */
+  
+  /* 80% Tints */
+  --color-black-80: #58595B;          /* RGB: 88/89/91 */
+  --color-red-80: #F15B40;            /* RGB: 241/91/64 - For interactive materials */
+  --color-navy-80: #445078;           /* RGB: 68/80/120 */
+  --color-magenta-80: #EF5BA1;        /* RGB: 239/91/161 - PRIMARY LINK COLOR */
+  --color-yellow-80: #F8C965;         /* RGB: 248/201/101 */
+  
+  /* 60% Tints */
+  --color-black-60: #808285;          /* RGB: 128/130/133 */
+  --color-red-60: #F58466;            /* RGB: 245/132/102 */
+  --color-navy-60: #6A6D8F;           /* RGB: 106/109/143 */
+  --color-magenta-60: #F287B7;        /* RGB: 242/135/183 */
+  --color-yellow-60: #FAD589;         /* RGB: 250/213/137 */
+  
   
   /* Backgrounds & Neutrals */
   --color-bg-lighter-gray: #F5F5F5;
@@ -34,60 +135,68 @@
   --color-black: #000000;
   
   /* ============================================
-     GRADIENTS
+     BRAND STANDARDS COLOR USAGE
+     ============================================ 
+     
+     Main Headings (Aachen Std, 18pt+):
+       - Color: Black (#000000)
+       - Font: --font-family-heading
+     
+     Secondary Headings (Josefin Sans Bold, 14pt+):
+       - Color: Navy (#1C3664)
+       - Font: --font-family-primary, Bold weight
+     
+     Tertiary Headings (Josefin Sans Bold, 11pt+):
+       - Color: Navy (#1C3664)
+       - Font: --font-family-primary, Bold weight
+     
+     Body Copy (Josefin Sans Regular, 10pt+):
+       - Color: Navy (#1C3664)
+       - Font: --font-family-primary, Regular weight
+     
+     Links:
+       - Color: Magenta 80% (#EF5BA1)
+       - Hover: Full Magenta (#EC008C)
+     
+     Interactive Materials (menus, maps, graphs):
+       - Colors: Red (#ED1C24) and Red 80% (#F15B40)
+     
      ============================================ */
-  
-  --gradient-navy-pink: linear-gradient(
-    90deg, 
-    var(--color-primary-navy) 0%, 
-    var(--color-secondary-dark-navy) 33%, 
-    var(--color-primary-magenta) 66%, 
-    var(--color-secondary-pink) 100%
-  );
-  
-  --gradient-navy-orange: linear-gradient(
-    90deg, 
-    var(--color-primary-navy) 0%, 
-    var(--color-secondary-dark-navy) 25%, 
-    var(--color-secondary-orange) 75%, 
-    var(--color-primary-yellow) 100%
-  );
-  
-  --gradient-purple-yellow: linear-gradient(
-    90deg, 
-    var(--color-secondary-purple-gray) 0%, 
-    var(--color-primary-magenta) 33%, 
-    var(--color-secondary-orange) 66%, 
-    var(--color-primary-yellow) 100%
-  );
-  
-  --gradient-red-orange: linear-gradient(
-    90deg, 
-    var(--color-primary-red) 0%, 
-    var(--color-secondary-orange-red) 33%, 
-    var(--color-secondary-coral) 66%, 
-    var(--color-secondary-orange) 100%
-  );
   
   /* ============================================
      TYPOGRAPHY
      ============================================ */
   
-  /* Font Families */
-  --font-family-primary: -apple-system, BlinkMacSystemFont, 
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+  /* Font Families - Official Brand Standards */
+  
+  /* Primary: Josefin Sans (Google Fonts) - Body copy, secondary/tertiary headings
+     Google Fonts loaded first, local files as fallback, then system fonts */
+  --font-family-primary: "Josefin Sans", "Josefin Sans Local", -apple-system, 
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-family-heading: var(--font-family-primary);
+  
+  /* Secondary: Aachen Std - Main headings only (18pt+)
+     Only available locally, fallback to serif fonts */
+  --font-family-heading: "Aachen Std", Georgia, "Times New Roman", serif;
+  
+  /* Monospace - Technical content */
   --font-family-mono: "SF Mono", Monaco, "Cascadia Code", 
     "Roboto Mono", Consolas, "Courier New", monospace;
   
-  /* Font Sizes */
+  /* Font Sizes - Brand Standards Typography Hierarchy
+     Note: Correct pt-to-rem conversion (assuming 96dpi, 16px base) */
+  --font-size-main-heading: 1.5rem;      /* 24px = 18pt+ - Aachen Std, Black */
+  --font-size-secondary-heading: 1.167rem; /* ~18.67px = 14pt+ - Josefin Sans Bold, Navy */
+  --font-size-tertiary-heading: 0.917rem; /* ~14.67px = 11pt+ - Josefin Sans Bold, Navy */
+  --font-size-body: 0.875rem;            /* 14px = ~10.5pt (10pt+) - Josefin Sans Regular, Navy */
+  
+  /* Extended Font Size Scale */
   --font-size-xs: 0.75rem;      /* 12px */
-  --font-size-sm: 0.875rem;     /* 14px */
-  --font-size-base: 1rem;       /* 16px */
+  --font-size-sm: 0.875rem;     /* 14px - Body copy size */
+  --font-size-base: 1rem;       /* 16px - UI elements (buttons, inputs) */
   --font-size-lg: 1.125rem;     /* 18px */
   --font-size-xl: 1.25rem;      /* 20px */
-  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-2xl: 1.5rem;      /* 24px - Main heading size (18pt) */
   --font-size-3xl: 1.875rem;    /* 30px */
   --font-size-4xl: 2.25rem;     /* 36px */
   --font-size-5xl: 3rem;        /* 48px */
@@ -99,11 +208,18 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   
-  /* Line Heights */
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-  --line-height-loose: 2;
+  /* Line Heights - Based on Brand Guide Visual Examples */
+  --line-height-tight: 1.2;      /* Main headings (Aachen Std) */
+  --line-height-normal: 1.4;     /* Secondary/tertiary headings (Josefin Sans Bold) */
+  --line-height-relaxed: 1.7;    /* Short paragraphs, descriptions */
+  --line-height-loose: 1.9;      /* Body copy, long-form content */
+
+  /* Letter Spacing */
+  --letter-spacing-none: 0;
+  --letter-spacing-tight: 0.025em;
+  --letter-spacing-normal: 0.05em;
+  --letter-spacing-wide: 0.1em;
+  --letter-spacing-wider: 0.15em;
   
   /* ============================================
      SPACING
@@ -125,6 +241,8 @@
   --spacing-16: 4rem;     /* 64px */
   --spacing-20: 5rem;     /* 80px */
   --spacing-24: 6rem;     /* 96px */
+  --spacing-13: 3.25rem;  /* 52px */
+  --spacing-15: 3.75rem;  /* 60px */
   
   /* ============================================
      BORDERS
@@ -149,10 +267,10 @@
   --border-radius-3rem: 3rem;      /* 48px */
   --border-radius-full: 62.5rem;  /* 1000px - effectively full */
   
-  /* Border Colors */
-  --border-color-light: var(--color-primary-gray);
-  --border-color-medium: var(--color-secondary-dark-gray);
-  --border-color-dark: var(--color-secondary-charcoal);
+  /* Border Colors - Brand Standards */
+  --border-color-light: var(--color-grey-light);
+  --border-color-medium: var(--color-navy-60);
+  --border-color-dark: var(--color-navy-80);
   
   /* ============================================
      SHADOWS
@@ -168,6 +286,7 @@
   --shadow-xl: 0 1.25rem 1.5625rem -0.3125rem rgba(0, 0, 0, 0.1), 
     0 0.5rem 0.625rem -0.375rem rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+  --shadow-navy-md: 0 0.625rem 1.125rem rgba(27, 46, 75, 0.18);
   
   /* ============================================
      OPACITY
@@ -273,28 +392,30 @@
   --header-height: 10.25rem;      /* 164px */
   --header-side-padding: 5rem;    /* 80px */
   
-  /* Navigation */
-  --nav-bg: var(--color-primary-navy);
+  /* Navigation - Brand Standards */
+  --nav-bg: var(--color-primary-red);
   --nav-bg-active: var(--color-white);
   --nav-text: var(--color-white);
   --nav-text-active: var(--color-primary-navy);
   --nav-border-radius: var(--border-radius-xl);
+  --nav-hover-bg: var(--color-red-80);
   
   /* Cards */
   --card-bg: var(--color-white);
-  --card-border: var(--border-color-light);
+  --card-border: var(--color-grey-light);
   --card-shadow: var(--shadow-sm);
   --card-shadow-hover: var(--shadow-md);
   --card-border-radius: var(--border-radius-lg);
   --card-padding: var(--spacing-6);
   
-  /* Buttons */
-  --button-primary-bg: var(--color-primary-red);
+  /* Buttons - Brand Standards Compliant */
+  --button-primary-bg: var(--color-primary-black);
   --button-primary-text: var(--color-white);
-  --button-primary-hover: var(--color-secondary-orange-red);
-  --button-secondary-bg: var(--color-primary-yellow);
-  --button-secondary-text: var(--color-primary-navy);
-  --button-secondary-hover: var(--color-secondary-orange);
+  --button-primary-hover: var(--color-black-80);
+  --button-secondary-bg: transparent;
+  --button-secondary-text: var(--text-primary);
+  --button-secondary-border: var(--color-grey-light);
+  --button-secondary-hover-bg: var(--color-grey-light);
   --button-padding-y: var(--spacing-3);
   --button-padding-x: var(--spacing-6);
   --button-border-radius: var(--border-radius-md);
@@ -307,12 +428,15 @@
   
   /* Grid & Layout */
   --grid-column-label: 15rem;  /* 240px */
+  --grid-columns-three: repeat(3, 1fr);
+  --grid-columns-four: repeat(4, 1fr);
   --background-size-icon-sm: 0.75rem;  /* 12px */
   --background-size-icon-md: 0.5rem;    /* 8px */
   
   /* Transform values */
   --transform-translate-y-1: translateY(-0.0625rem);  /* -1px */
   --transform-translate-y-2: translateY(-0.125rem);   /* -2px */
+  --transform-translate-y-4: translateY(-0.25rem);    /* -4px */
   
   /* Touch Targets (Accessibility) */
   --touch-target-min: 2.75rem;  /* 44px */
@@ -336,6 +460,16 @@
   --image-height-lg: 31.25rem;  /* 500px */
   --image-height-xl: 37.5rem;   /* 600px */
   --image-height-2xl: 50rem;    /* 800px */
+  
+  /* Common Size Values - Use these instead of hardcoded values */
+  --size-full: 100%;          /* Full width/height */
+  --size-screen-height: 100vh; /* Full viewport height */
+  --size-screen-width: 100vw;  /* Full viewport width */
+  --size-auto: auto;          /* Auto size */
+  --size-min-content: min-content;
+  --size-max-content: max-content;
+  --size-fit-content: fit-content;
+  --size-none: 0;             /* Zero size */
 }
 
 /* ============================================
@@ -343,25 +477,27 @@
    ============================================ */
 
 :root {
-  /* Feedback Colors */
+  /* Feedback Colors - Based on Brand Standards */
   --color-success: #52B788;
   --color-success-bg: #74C69D;
   --color-info: var(--color-primary-navy);
-  --color-info-bg: var(--color-secondary-dark-navy);
+  --color-info-bg: var(--color-navy-80);
   --color-warning: var(--color-primary-yellow);
-  --color-warning-bg: var(--color-secondary-pale-yellow);
+  --color-warning-bg: var(--color-yellow-60);
   --color-error: var(--color-primary-red);
-  --color-error-bg: var(--color-secondary-coral);
+  --color-error-bg: var(--color-red-60);
   
-  /* Text Colors */
-  --text-primary: var(--color-primary-black);
-  --text-secondary: var(--color-secondary-charcoal);
-  --text-tertiary: var(--color-secondary-dark-gray);
+  /* Text Colors - Brand Standards */
+  --text-primary: var(--color-primary-black);        /* Main headings (Aachen) */
+  --text-secondary: var(--color-primary-navy);       /* Body copy, secondary headings (Josefin) */
+  --text-tertiary: var(--color-navy-60);             /* Less important text */
   --text-disabled: var(--color-primary-gray);
   --text-inverse: var(--color-white);
+  --text-link: var(--color-magenta-80);              /* Links - Magenta 80% (#EF5BA1) */
+  --text-link-hover: var(--color-primary-magenta);   /* Link hover - Full magenta */
   
-  /* Background Colors */
-  --bg-page: var(--color-bg-lighter-gray);
+  /* Background Colors - Brand Standards */
+  --bg-page: var(--color-grey-light);                /* Light grey (#E6E7E8) */
   --bg-surface: var(--color-white);
   --bg-elevated: var(--color-white);
   --bg-overlay: rgba(0, 0, 0, 0.5);

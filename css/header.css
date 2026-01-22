@@ -1,58 +1,8 @@
 /**
  * LGLC Header Styles
+ * Header-specific styles only
  * Uses design tokens from design-tokens.css
  */
-
-/* ============================================
-   RESET & BASE STYLES
-   ============================================ */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
-  color: var(--text-primary);
-  background-color: var(--bg-page);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ============================================
-   SKIP LINK (Accessibility)
-   ============================================ */
-
-.skip-link {
-  position: absolute;
-  top: calc(-1 * var(--spacing-16));
-  left: var(--spacing-4);
-  padding: var(--spacing-3) var(--spacing-6);
-  background-color: var(--color-primary-red);
-  color: var(--text-inverse);
-  font-weight: var(--font-weight-bold);
-  text-decoration: none;
-  border-radius: var(--border-radius-md);
-  z-index: calc(var(--z-index-tooltip) + 100);
-  transition: top var(--transition-fast);
-}
-
-.skip-link:focus {
-  top: var(--spacing-4);
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
-  outline-offset: var(--outline-offset-sm);
-}
 
 /* ============================================
    SITE HEADER
@@ -81,7 +31,7 @@ body {
 }
 
 .header-container {
-  width: 100%;
+  width: var(--size-full);
   max-width: var(--page-max-width);
   margin: 0 auto;
   padding-left: var(--header-side-padding);
@@ -93,7 +43,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-4);
-  width: 100%;
+  width: var(--size-full);
 }
 
 /* ============================================
@@ -113,24 +63,25 @@ body {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xl);
   line-height: var(--line-height-normal);
-  letter-spacing: 0;
-  transition: opacity var(--transition-fast);
+  letter-spacing: var(--letter-spacing-none);
+  transition: all var(--transition-fast);
   text-transform: uppercase;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius-sm);
 }
 
-.site-logo:hover,
-.site-logo:focus {
-  opacity: var(--opacity-hover-light);
+.site-logo:hover {
+  background-color: var(--color-red-80);  /* Brand Standard: Red 80% for interactive materials */
 }
 
 .site-logo:focus {
   outline: var(--outline-width-thick) solid var(--color-primary-yellow);
-  outline-offset: var(--outline-offset-md);
+  outline-offset: var(--outline-offset-sm);
   border-radius: var(--border-radius-sm);
 }
 
 .logo-text {
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 /* ============================================
@@ -164,23 +115,26 @@ body {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xl);
   line-height: var(--line-height-normal);
-  letter-spacing: 0;
-  transition: opacity var(--transition-fast);
+  letter-spacing: var(--letter-spacing-none);
+  transition: all var(--transition-fast);
   position: relative;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius-sm);
 }
 
 .nav-link:hover {
-  opacity: var(--opacity-hover);
+  background-color: var(--color-red-80);  /* Brand Standard: Red 80% for interactive materials */
 }
 
 .nav-link:focus {
-  outline: var(--outline-width-thin) solid var(--color-primary-yellow);
-  outline-offset: var(--outline-offset-md);
-  border-radius: var(--border-radius-xs);
+  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline-offset: var(--outline-offset-sm);
+  border-radius: var(--border-radius-sm);
 }
 
 .nav-link[aria-current="page"] {
   font-weight: var(--font-weight-semibold);
+  background-color: var(--overlay-light);  /* Subtle background for current page */
 }
 
 /* ============================================
@@ -238,7 +192,7 @@ body {
 
 .menu-icon-bar {
   display: block;
-  width: 100%;
+  width: var(--size-full);
   height: var(--border-width-medium);
   background-color: currentColor;
   transition: all var(--transition-base);
@@ -272,7 +226,7 @@ body {
    ============================================ */
 
 .search-tabs-container {
-  background-color: var(--color-secondary-dark-navy);
+  background-color: var(--color-navy-80);  /* Brand Standard: Navy 80% tint */
   border-radius: var(--border-radius-2xl);
   padding: var(--spacing-4);
   box-shadow: var(--shadow-lg);
@@ -285,7 +239,11 @@ body {
   flex-wrap: wrap;
 }
 
+/* Tab component - For navigation within navy/colored backgrounds */
 .search-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--spacing-3) var(--spacing-6);
   background-color: transparent;
   color: var(--text-inverse);
@@ -297,6 +255,7 @@ body {
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .search-tab:hover {
@@ -309,7 +268,8 @@ body {
 }
 
 .search-tab.active,
-.search-tab[aria-selected="true"] {
+.search-tab[aria-selected="true"],
+.search-tab[aria-current="page"] {
   background-color: var(--color-white);
   color: var(--color-primary-navy);
 }
@@ -332,7 +292,7 @@ body {
 }
 
 .search-form {
-  width: 100%;
+  width: var(--size-full);
 }
 
 .search-input-wrapper {
@@ -341,8 +301,8 @@ body {
   background: linear-gradient(
     90deg, 
     var(--color-primary-yellow) 0%, 
-    var(--color-secondary-pale-yellow) 100%
-  );
+    var(--color-yellow-60) 100%
+  );  /* Brand Standard: Yellow gradient using official tints */
   border-radius: var(--border-radius-xl);
   padding: var(--spacing-3);
   box-shadow: var(--shadow-md);
@@ -369,27 +329,9 @@ body {
   color: var(--text-tertiary);
 }
 
+/* Search button uses .btn-primary from main.css with custom responsive width */
 .search-button {
-  padding: var(--spacing-3) var(--spacing-8);
-  background-color: var(--button-primary-bg);
-  color: var(--button-primary-text);
-  border: none;
-  border-radius: var(--border-radius-lg);
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-  cursor: pointer;
-  transition: background-color var(--transition-fast);
   white-space: nowrap;
-}
-
-.search-button:hover {
-  background-color: var(--button-primary-hover);
-}
-
-.search-button:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
-  outline-offset: var(--outline-offset-sm);
 }
 
 /* ============================================
@@ -422,27 +364,29 @@ body {
 .mobile-nav-link {
   display: block;
   padding: var(--spacing-4);
-  color: var(--text-primary);
+  color: var(--text-link);  /* Brand Standard: Magenta 80% for all links */
   text-decoration: none;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   transition: all var(--transition-fast);
+  border-radius: var(--border-radius-sm);
 }
 
 .mobile-nav-link:hover {
-  background-color: var(--bg-page);
-  color: var(--color-primary-red);
+  background-color: var(--bg-page);  /* Light grey background on hover */
+  color: var(--text-link-hover);     /* Brand Standard: Full Magenta on hover */
 }
 
 .mobile-nav-link:focus {
   outline: var(--outline-width-thick) solid var(--color-primary-yellow);
   outline-offset: var(--outline-offset-inner);
+  background-color: var(--color-white);  /* Keep background visible on focus */
 }
 
 .mobile-nav-link[aria-current="page"] {
-  color: var(--color-primary-red);
+  color: var(--text-link-hover);     /* Brand Standard: Full Magenta for current page */
   font-weight: var(--font-weight-bold);
-  background-color: var(--bg-page);
+  background-color: var(--bg-page);  /* Light grey background for current page */
 }
 
 /* ============================================
@@ -466,7 +410,7 @@ body {
   }
 
   .search-button {
-    width: 100%;
+    width: var(--size-full);
     justify-content: center;
   }
 
@@ -527,32 +471,3 @@ body {
     font-size: var(--font-size-lg);
   }
 }
-
-/* ============================================
-   MAIN CONTENT STYLES (Placeholder)
-   ============================================ */
-
-main {
-  flex: 1 0 auto;
-}
-
-main:focus {
-  outline: none;
-}
-
-.content-placeholder {
-  padding: var(--spacing-16) 0;
-}
-
-.content-placeholder h1 {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-4);
-}
-
-.content-placeholder p {
-  font-size: var(--font-size-xl);
-  color: var(--text-secondary);
-}
-

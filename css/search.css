@@ -4,8 +4,8 @@
    ============================================ */
 
 body.search-page-body {
-  background-color: var(--color-bg-lighter-gray);
-  color: var(--color-secondary-charcoal);
+  background-color: var(--bg-page);
+  color: var(--text-secondary);
   font-family: var(--font-family-primary);
 }
 
@@ -137,7 +137,7 @@ body.search-page-body {
   content: "Search by keywords";
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-secondary-charcoal);
+  color: var(--text-secondary);
 }
 
 #ssQuery {
@@ -145,9 +145,9 @@ body.search-page-body {
   padding: var(--spacing-3) var(--spacing-4);
   border-radius: var(--border-radius-lg);
   border: var(--border-width-thin) solid var(--color-navy-opacity-15);
-  background: var(--color-bg-lighter-gray);
+  background: var(--bg-page);
   font-size: var(--font-size-base);
-  color: var(--color-secondary-charcoal);
+  color: var(--text-secondary);
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
@@ -212,7 +212,7 @@ body.search-page-body {
 .ssFieldset legend {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-secondary-charcoal);
+  color: var(--text-secondary);
 }
 
 .ssFieldset > *:not(legend) {
@@ -239,9 +239,9 @@ body.search-page-body {
   padding: var(--spacing-3) var(--spacing-4);
   border-radius: var(--border-radius-lg);
   border: var(--border-width-thin) solid var(--color-navy-opacity-15);
-  background: var(--color-bg-lighter-gray);
+  background: var(--bg-page);
   font-size: var(--font-size-base);
-  color: var(--color-secondary-charcoal);
+  color: var(--text-secondary);
   transition: border-color var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
 }
 
@@ -263,7 +263,7 @@ body.search-page-body {
   display: block;
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-extrabold);
-  color: var(--color-secondary-charcoal);
+  color: var(--text-secondary);
   margin: var(--spacing-6) 0 var(--spacing-2);
 }
 
@@ -297,7 +297,7 @@ body.search-page-body {
   border: var(--border-width-thin) solid var(--color-navy-opacity-15);
   background: var(--color-navy-bg-opacity-05);
   font-size: var(--font-size-sm);
-  color: var(--color-secondary-charcoal);
+  color: var(--text-secondary);
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
   cursor: pointer;
 }
