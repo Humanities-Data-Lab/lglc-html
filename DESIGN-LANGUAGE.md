@@ -6,7 +6,7 @@ A comprehensive guide to using design elements consistently across the Lesbian a
 
 ## About LGLC
 
-The Lesbian and Gay Liberation in Canada (LGLC) project is working to build an interactive digital resource for the study of LGBT history in Canada. The project takes Don McLeod's books, *Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology Volumes 1 and 2* and converts them into a visual and interactive database that will allow users to explore the people, places, events, and publications that defined the history of gay liberation in Canada between 1964 and 1981.
+The Lesbian and Gay Liberation in Canada (LGLC) project is working to build an interactive digital resource for the study of LGBT history in Canada. The project takes Don McLeod's books, *Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology Volumes 1 and 2* and will convert them into a visual and interactive database that will allow users to explore the people, places, events, and publications that defined the history of gay liberation in Canada between 1964 and 1981. While being a pilot project within the Canadian Writing Research Collaboratory, this project will be available as part of an interdisciplinary, open-access library database, for use by researchers and students worldwide.
 
 The LGLC identity reflects this mission. It captures these historical movements while transcending to current struggles today.
 
@@ -46,7 +46,12 @@ The LGLC logo is comprised of two parts:
 
 ### Logo Spacing
 
-The space surrounding the logo should be equal to or greater than the height of the "L" in the word "LGLC" (called the "X" measurement). No elements—other logos, type, or images—should encroach upon this "X" space around the logo.
+The "X" measurement represents the height of the first "L" in "LGLC". This measurement is the basis for all spacing guidelines.
+
+**Spacing Rules:**
+- The space surrounding the logo should be equal to or greater than the height of the "L" in the word "LGLC" (the "X" measurement)
+- No elements—other logos, type, or images—should encroach upon the "X" space around the logo
+- This applies to both the full version and symbol-only versions of the logo
 
 ### Logo Usage Don'ts
 
@@ -59,8 +64,15 @@ The space surrounding the logo should be equal to or greater than the height of 
 
 ### File Types
 
-- **For Print (High-Res):** `.eps` files
-- **For Web (Low-Res):** `.jpg` files
+LGLC's logo is available in several different file types. File selection is determined by the media:
+
+**For Print (High-Res):**
+- Main Identity: `LGLC Logo Black.eps`
+- Symbol only: `LGLC Logo Icon Black.eps`
+
+**For Web (Low-Res):**
+- Main Identity: `LGLC Logo Black.jpg`
+- Symbol only: `LGLC Logo Icon Black.jpg`
 
 ---
 
@@ -86,9 +98,9 @@ Materials issued by LGLC should utilize the official brand palette. If limited b
 
 - **Navy (`--color-primary-navy`)** - Navigation, body text, primary UI elements
   - **Hex:** `#1C3664`
-  - **RGB:** 0, 51, 102
+  - **RGB:** 28, 54, 100 (Note: Brand manual shows 0/51/102, but hex `#1C3664` = RGB 28/54/100)
   - **CMYK:** 100/87/33/23
-  - Use for: Navigation backgrounds, headings (Josefin Sans), body copy, links
+  - Use for: Navigation backgrounds, headings (Josefin Sans), body copy
   - Example: Secondary headings, navigation bar, primary text
 
 - **Magenta (`--color-primary-magenta`)** - Links, accent color
@@ -118,18 +130,18 @@ Materials issued by LGLC should utilize the official brand palette. If limited b
 Tints of 80% and 60% of the primary palette can be used for variety.
 
 **80% Tints:**
-- **Black 80%:** `#58595B` (RGB: 88, 89, 91)
-- **Red 80%:** `#F15B40` (RGB: 241, 91, 64) - Use for: Interactive materials (with red)
-- **Navy 80%:** `#445078` (RGB: 68, 80, 120)
-- **Magenta 80%:** `#EF5BA1` (RGB: 239, 91, 161) - **Use for: Links**
-- **Yellow 80%:** `#F8C965` (RGB: 248, 201, 101)
+- **Black 80%:** `#58595B` (RGB: 88, 89, 91, CMYK: 0/0/0/80)
+- **Red 80%:** `#F15B40` (RGB: 241, 91, 64, CMYK: 0/80/80/0) - Use for: Interactive materials (with red)
+- **Navy 80%:** `#445078` (RGB: 68, 80, 120, CMYK: 80/69/26/18)
+- **Magenta 80%:** `#EF5BA1` (RGB: 239, 91, 161, CMYK: 0/80/0/0) - **Note:** Brand manual specifies this for links, but we use context-aware navy-based system (see Link Colors section)
+- **Yellow 80%:** `#F8C965` (RGB: 248, 201, 101, CMYK: 2/21/71/0)
 
 **60% Tints:**
-- **Black 60%:** `#808285` (RGB: 128, 130, 133)
-- **Red 60%:** `#F58466` (RGB: 245, 132, 102)
-- **Navy 60%:** `#6A6D8F` (RGB: 106, 109, 143)
-- **Magenta 60%:** `#F287B7` (RGB: 242, 135, 183)
-- **Yellow 60%:** `#FAD589` (RGB: 250, 213, 137)
+- **Black 60%:** `#808285` (RGB: 128, 130, 133, CMYK: 0/0/0/60)
+- **Red 60%:** `#F58466` (RGB: 245, 132, 102, CMYK: 0/60/60/0)
+- **Navy 60%:** `#6A6D8F` (RGB: 106, 109, 143, CMYK: 60/52/20/14)
+- **Magenta 60%:** `#F287B7` (RGB: 242, 135, 183, CMYK: 0/60/0/0)
+- **Yellow 60%:** `#FAD589` (RGB: 250, 213, 137, CMYK: 2/16/53/0)
 
 ### Semantic Colors
 
@@ -138,7 +150,8 @@ Tints of 80% and 60% of the primary palette can be used for variety.
 - `--text-secondary` - Body text, descriptions (navy: `#1C3664`)
 - `--text-tertiary` - Metadata, less important info (navy 60%: `#6A6D8F`)
 - `--text-inverse` - Text on dark backgrounds (white)
-- `--text-link` - Links (magenta 80%: `#EF5BA1`)
+- `--text-link` - Links (context-aware navy-based system: brightened navy `#2D5A8C` on light backgrounds)
+  - **Note:** Brand manual specifies magenta 80% for links, but we use a context-aware navy-based system (see [Link Colors](#link-colors-implementation-note) section)
 
 **Background Colors:**
 - `--bg-page` - Page background (light grey: `#E6E7E8`)
@@ -148,12 +161,12 @@ Tints of 80% and 60% of the primary palette can be used for variety.
 ### Color Usage Rules (from Brand Standards)
 
 ✅ **DO:**
-- Use **red** and **orange** for interactive materials (menus, maps, graphs)
-- Use **magenta 80%** (`#EF5BA1`) for links
-- Use **navy** for headings and body copy
-- Use **black** for main headings (with Aachen std font)
+- Use **red** (`#ED1C24`) and **red 80%** (`#F15B40`) for interactive materials (menus, maps, graphs)
+- Use **navy** (`#1C3664`) for headings and body copy
+- Use **black** (`#000000`) for main headings (with Aachen std font)
 - Maintain the official color palette values exactly
 - Use tints (80% and 60%) for variety
+- If limited by a one-colour option, black can be used
 
 ❌ **DON'T:**
 - Don't stretch or distort logo colors
@@ -161,6 +174,16 @@ Tints of 80% and 60% of the primary palette can be used for variety.
 - Don't create new colors outside the approved palette
 - Don't change the official hex values
 - Don't use colors that aren't in the brand standards
+
+### Link Colors (Implementation Note)
+
+**Brand Manual Specification:** The brand standards manual specifies that 80% magenta (`#EF5BA1`) should be used for links.
+
+**Our Implementation:** We use a context-aware navy-based link color system instead, which provides better brand harmony and accessibility. This system uses:
+- **Default links (on light backgrounds):** Brightened navy (`#2D5A8C`) → Navy (`#1C3664`) on hover
+- **Links on colored backgrounds:** Context-specific colors (white on red/navy/black, navy on yellow/grey)
+
+This approach maintains brand cohesion while ensuring optimal contrast and accessibility across all contexts. See the [Typography & Color](#typography--color) section for complete link color specifications.
 
 ---
 
@@ -249,16 +272,33 @@ Based on the brand guide visual examples:
 - **Relaxed (1.7)** - Short paragraphs, descriptions, metadata
 - **Loose (1.9)** - Body copy, long-form content (per brand guide example)
 
+### Typography & Color (Brand Standards)
+
+LGLC applications should use the following styles and colors as a base for all LGLC materials:
+
+**Typography Hierarchy:**
+- **Main Heading:** Aachen Std | Color: Black (`#000000`) | Size: 18pt+
+- **Secondary Heading:** Josefin Sans Bold | Color: Navy (`#1C3664`) | Size: 14pt+
+- **Tertiary Heading:** Josefin Sans Bold | Color: Navy (`#1C3664`) | Size: 11pt+
+- **Body Copy:** Josefin Sans Regular | Color: Navy (`#1C3664`) | Size: 10pt+
+
+**Interactive Materials:**
+- **Red** (`#ED1C24`) and **Red 80%** (`#F15B40`) should be used for interactive materials (e.g., menus, maps, graphs)
+
+**Links:**
+- **Brand Manual:** 80% magenta (`#EF5BA1`) should be used for links
+- **Our Implementation:** Context-aware navy-based system (see [Link Colors](#link-colors-implementation-note) section)
+
 ### Typography Usage Rules
 
 ✅ **DO:**
 - Use **Aachen Std** for main headings (18pt+) in black
 - Use **Josefin Sans Bold** for secondary and tertiary headings in navy
 - Use **Josefin Sans Regular** for all body copy in navy
-- Use **Magenta 80%** (`#EF5BA1`) for links
 - Use the official brand font hierarchy
 - Maintain tight line-height for headings
 - Use relaxed line-height for body text
+- Use **red** and **red 80%** for interactive materials (menus, maps, graphs)
 
 ❌ **DON'T:**
 - Don't use Josefin Sans for main headings (use Aachen Std instead)
@@ -740,16 +780,35 @@ This design language is based on the **LGLC Brand Standards Manual**. For offici
 - **Document:** `media/style_guide.pdf`
 - **Contact:** www.lglc.ca
 
+### Brand Standards Manual Contents
+
+The official LGLC Brand Standards Manual includes:
+
+1. **File Types** - Logo file formats for print (`.eps`) and web (`.jpg`)
+2. **Structure** - Full version (with tagline and website) and symbol-only versions
+3. **Spacing** - X measurement guidelines for logo placement
+4. **Colour Palette** - Primary colors, grey tones, and secondary tints (80% and 60%)
+5. **Typography** - Primary typeface (Josefin Sans) and secondary typeface (Aachen Std)
+6. **Typography & Colour** - Usage guidelines for headings, body copy, and interactive materials
+7. **Don'ts** - Logo usage restrictions
+8. **Contact Information** - www.lglc.ca
+
 ### Key Brand Rules
 
 1. ✅ Use exact hex values from the brand palette
-2. ✅ Use Aachen Std for main headings only
-3. ✅ Use Josefin Sans for body copy and secondary headings
-4. ✅ Use Magenta 80% (#EF5BA1) for all links
+2. ✅ Use Aachen Std for main headings only (18pt+, black)
+3. ✅ Use Josefin Sans for body copy and secondary/tertiary headings (navy)
+4. ✅ Use red and red 80% for interactive materials (menus, maps, graphs)
 5. ✅ Maintain proper logo spacing (X measurement)
-6. ❌ Never stretch, rotate, or apply effects to the logo
-7. ❌ Never change brand colors or create new combinations
-8. ❌ Never use fonts outside Aachen Std and Josefin Sans
+6. ✅ Use tints (80% and 60%) for variety
+7. ✅ If limited by one-colour option, use black
+8. ❌ Never stretch, rotate, or apply effects to the logo
+9. ❌ Never change brand colors or create new combinations
+10. ❌ Never use fonts outside Aachen Std and Josefin Sans
+11. ❌ Never reconfigure logo elements
+12. ❌ Never place logo on an angle
+
+**Note on Links:** The brand manual specifies magenta 80% for links, but we implement a context-aware navy-based system for better brand harmony and accessibility.
 
 ---
 
