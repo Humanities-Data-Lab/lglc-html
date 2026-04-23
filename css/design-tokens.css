@@ -365,6 +365,13 @@
   --touch-target-min: 2.75rem;
   --touch-target-sm: 2.5rem;
 
+  /* Form inputs — per Figma spec: 79px tall, 5px radius, 14px/20px padding */
+  --input-border-radius: 0.3125rem;   /* 5px */
+  --input-padding-block: 0.875rem;    /* 14px */
+  --input-padding-inline: 1.25rem;    /* 20px */
+  --input-height-lg: 4.9375rem;       /* 79px — prominent search */
+  --input-height-md: 3.5rem;          /* 56px — secondary inputs */
+
   --page-max-width: 80rem;
   --page-padding-x: var(--spacing-6);
   --page-padding-y: var(--spacing-8);

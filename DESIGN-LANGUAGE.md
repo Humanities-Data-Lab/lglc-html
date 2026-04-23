@@ -22,12 +22,13 @@ The Lesbian and Gay Liberation in Canada (LGLC) project is building an interacti
 10. [Forms & Search](#forms--search)
 11. [Homepage Pattern](#homepage-pattern)
 12. [Record / Results Page Pattern](#record--results-page-pattern)
-13. [Images & Media](#images--media)
-14. [Responsive Design](#responsive-design)
-15. [Accessibility](#accessibility)
-16. [Quick Reference](#quick-reference)
-17. [Design Principles](#design-principles)
-18. [Implementation Note](#implementation-note)
+13. [Editorial Page Pattern](#editorial-page-pattern)
+14. [Images & Media](#images--media)
+15. [Responsive Design](#responsive-design)
+16. [Accessibility](#accessibility)
+17. [Quick Reference](#quick-reference)
+18. [Design Principles](#design-principles)
+19. [Implementation Note](#implementation-note)
 
 ---
 
@@ -232,7 +233,7 @@ The record page (person, event, place, periodical, organization) uses a **two-co
 
 Fixed ~288px wide; sticks to the top on desktop. Stacks **above** the main column on tablet / mobile.
 
-- **Record title:** Montserrat ExtraBold, large (use the `5xl` step at desktop, scaling down at smaller breakpoints). Color: Black for maximum ink weight — the title is the primary visual anchor of the page.
+- **Record title:** Montserrat ExtraBold, `4xl` step at desktop, scaling down at smaller breakpoints. Color: Black for maximum ink weight — the title is the primary visual anchor of the page. Long titles wrap at word boundaries (`overflow-wrap: break-word; hyphens: auto`).
 - **Facts list (dl):** grouped `dt`/`dd` pairs (e.g. `Occupation` / `Writer` / `Columnist`).
   - `dt`: Montserrat Bold, Label size, Black.
   - `dd`: Open Sans, Body Small, Dark Grey. Multiple `dd` values stack tightly, one per line.
@@ -272,6 +273,24 @@ Vertical stack of semantic blocks separated by `spacing-xl`–`spacing-2xl`.
 - Provide meaningful **alt** text for informative images; empty `alt` for decorative images.
 - Use consistent aspect ratios within grids; avoid stretching logos or portraits.
 - Optimize file size for web delivery.
+
+---
+
+## Editorial Page Pattern
+
+Used for **About**, **Editorial Principles**, and other long-form reading pages. Content is centered in a narrow column on a white surface, with hero-style headings that punctuate sections rather than outline-style `h2`s.
+
+- **Container:** `container-page editorial-page` — centered, `max-width` at `content-width-wide`, `text-align: center` at the section level so headings, kickers, figures, and CTAs all center automatically.
+- **Body column:** a `.editorial-body` wrapper re-sets `text-align: left` and constrains to `content-width-medium` so paragraphs stay comfortable to read. Paragraphs use `.editorial-text` (Open Sans, Body Main, Dark Grey, `line-height-relaxed`).
+- **`ABOUT` kicker (`.editorial-kicker`):** uppercase Montserrat Bold Label, black text, with a 4px gold underline. Sits directly above the H1.
+- **Section title (`.editorial-title`):** Montserrat Bold, H1 scale, centered, black — used for the page’s primary heading.
+- **Section heading (`.editorial-heading`):** Montserrat Bold, H2 scale, centered, black. Modifiers:
+  - `.editorial-heading--display` bumps to H1 scale for marquee sections (“A Selected Annotated Chronology”).
+  - `.editorial-heading--eyebrow` drops to H4 scale and uses uppercase + letter-spacing for smaller sub-sections (“What is Gay Liberation?”).
+- **Figure (`.editorial-figure`/`.editorial-image`):** inline historical photograph, full column width, no border or radius, capped at `image-height-lg` and cover-cropped. Generous vertical rhythm above/below.
+- **CTA (`.editorial-cta`):** centered `btn-primary` anchor after the final body block — e.g. *See our editorial principles*.
+
+Headings step down (H1 → eyebrow H2 → display H2) so screen readers still get a logical outline while the visual hierarchy favours the display sections.
 
 ---
 
