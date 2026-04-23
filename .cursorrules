@@ -6,6 +6,8 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
 
 **IMPORTANT:** This project follows the official **LGLC Brand Standards Manual** (`media/style_guide.pdf`).
 
+**Digital longevity:** This project aligns with **[Project Endings](https://endings.uvic.ca/principles.html)**—[Endings Principles for Digital Longevity](https://endings.uvic.ca/principles.html) (five components: Data, Documentation, Processing, Products, Release management). When brand rules and Endings overlap (e.g. static HTML, vanilla JS, no gratuitous dependencies), treat both as requirements.
+
 ## Core Principles
 
 1. **Follow brand standards** - Use exact colors, typography, and design elements from the official brand manual
@@ -14,6 +16,45 @@ This project uses a token-based design system for the Lesbian and Gay Liberation
 4. **Accessibility first** - Ensure all interactive elements are keyboard accessible and meet WCAG 2.1 standards
 5. **Semantic HTML** - Use proper HTML5 elements and ARIA attributes
 6. **Component isolation** - Each component in its own CSS file
+7. **Endings-aligned delivery** - Prefer static, standards-based artifacts and minimal dependencies (see **Project Endings** below)
+
+## Project Endings (digital longevity)
+
+**Canonical reference:** [https://endings.uvic.ca/principles.html](https://endings.uvic.ca/principles.html)
+
+Assistants should honor these project commitments when suggesting architecture, dependencies, URLs, or release practices:
+
+### Data & documentation
+
+- Store and exchange project data in **open, processable formats** where applicable (e.g. TEI XML, plain text, open document formats—not proprietary lock-in).
+- Keep **data and documentation under version control**; treat data models (fields, meanings, controlled values) as **documented artifacts** shipped with or alongside the work.
+- **Rights and licensing** should be explicit; prefer **open licenses** for data and products when possible (e.g. Creative Commons, OSI-approved licenses).
+
+### Processing
+
+- Prefer pipelines with **validation**: invalid inputs/outputs should fail loudly and block further steps until fixed.
+- Treat **source data changes** as requiring a **full, reproducible rebuild** of site outputs when this project uses a build step; automate that where practical (**continuous integration** mindset).
+- **Processing code is contingent** (not expected to last forever); still align with open standards and the same longevity goals as data and products when possible.
+
+### Web products (templates and shipped pages)
+
+- **Static-first:** target **static HTML + CSS + JavaScript** with **no required server-side runtime** (no database-backed pages, PHP, or Python *as part of the delivered site*). Server-side search/index tools (e.g. Solr, eXist) are an **optional enhancement** only after the static site works on its own—see concessions on the Endings page.
+- **Standards, not fashion:** use **HTML5, CSS, and JavaScript** supported broadly and long-term; do not introduce **boutique stacks** or heavy client frameworks by default.
+- **Minimal third-party surface:** avoid **external libraries and services** (e.g. jQuery, Bootstrap from CDN, proprietary widgets) unless the project explicitly approves an **Endings-style exception** (open source, widely used, ideally no transitive dependency chain)—see **4.9** on the Endings page.
+- **Clean URLs:** avoid **query strings** for stable entity pages; each entity should have a **predictable, portable path** that works on any host.
+- **Inclusion & redundancy:** favor shipping **documented source data** with the project where relevant; **self-contained pages** (header, nav, footer, key content) so a page remains usable even if other site assets are missing.
+- **Graceful degradation:** core **content and navigation must remain usable** without JavaScript and remain **readable** without CSS (Endings **4.7**).
+
+### Release management
+
+- Prefer **planned, coherent releases** over endless “rolling” partial deploys; a release should be **complete and validated**.
+- **Identify builds** with a **version and/or build date** in a consistent place (footer or colophon) when the project maintains that convention.
+- Provide **clear citation guidance** for web resources when the project exposes it.
+- **Stable URLs across editions** when content is versioned; use redirects for moved or retired resources.
+
+### When Endings and brand rules conflict
+
+**Brand standards and design tokens take precedence for visual identity** (colors, type, components). For **technology choices** (static site, dependencies, URLs, documentation), **Endings principles apply** unless the maintainers document a deliberate exception.
 
 ## Official Brand Standards
 
@@ -358,9 +399,11 @@ a { color: var(--text-link); }
 6. ❌ Creating components without checking existing patterns
 7. ❌ Not including accessibility features (focus states, ARIA)
 8. ❌ Making touch targets too small (< 44px)
+9. ❌ Introducing server-side page generation, databases, or heavy third-party client stacks as required dependencies (conflicts with [Project Endings](https://endings.uvic.ca/principles.html) unless maintainers document an exception)
 
 ### When in Doubt
 - **Check brand standards:** `media/style_guide.pdf` for official colors, typography, and logo usage
+- **Check Endings principles:** [endings.uvic.ca/principles.html](https://endings.uvic.ca/principles.html) for digital longevity (static-first, minimal dependencies, clean URLs, documented data, release discipline)
 - **Check design language:** `DESIGN-LANGUAGE.md` for detailed component guidelines and brand implementation
 - Check `css/design-tokens.css` for available tokens
 - Look at existing components (`css/header.css`, `css/footer.css`) for patterns
@@ -398,4 +441,7 @@ Before suggesting code, ensure:
 - [ ] Follows existing component patterns
 - [ ] No inline styles
 - [ ] Touch targets are adequate (44px minimum)
+- [ ] Endings-aligned: static HTML/CSS/JS bias; no new heavy frameworks or CDN dependencies without explicit project approval
+- [ ] Core content works without JavaScript; readable without CSS where applicable
+- [ ] Entity URLs avoid query strings when the project uses stable record pages
 

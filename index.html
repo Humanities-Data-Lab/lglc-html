@@ -14,10 +14,10 @@
     LGLC - Lesbian and Gay Liberation in Canada
   </title>
   
-  <!-- Google Fonts: Josefin Sans -->
+  <!-- Google Fonts: Montserrat + Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- Design Tokens MUST be imported first -->
   <link rel="stylesheet" href="css/design-tokens.css">
@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="css/footer.css">
   <!-- Page-specific styles -->
   <link rel="stylesheet" href="css/pages.css">
+  <!-- UI components (cards, tags, tertiary buttons) -->
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <!-- ============================================ -->
 <!-- BODY SECTION -->
@@ -73,17 +75,12 @@
               </li>
               <li class="nav-item">
                 <a href="/about" class="nav-link">
-                  About
+                  About Us
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/editorial-principles" class="nav-link">
-                  Editorial Principles
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/resources" class="nav-link">
-                  Resources
+                <a href="/search" class="nav-link">
+                  Search
                 </a>
               </li>
             </ul>
@@ -122,20 +119,12 @@
         </li>
         <li class="mobile-nav-item">
           <a href="/about" class="mobile-nav-link">
-            About
+            About Us
           </a>
         </li>
         <li class="mobile-nav-item">
-          <a 
-            href="/editorial-principles" 
-            class="mobile-nav-link"
-          >
-            Editorial Principles
-          </a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="/resources" class="mobile-nav-link">
-            Resources
+          <a href="/search" class="mobile-nav-link">
+            Search
           </a>
         </li>
       </ul>
@@ -148,146 +137,155 @@
   <!-- ============================================ -->
  
 
-  <main id="main-content" tabindex="-1"> 
-    <section class="hero-section">
+  <main id="main-content" tabindex="-1">
+    <div class="homepage-top">
+      <section class="homepage-hero" aria-labelledby="homepage-title">
+        <div class="container">
+          <p class="tag homepage-kicker">A selected chronology</p>
+          <h1 id="homepage-title" class="homepage-title">Lesbian and Gay Liberation in Canada Project</h1>
+          <p class="homepage-lead">
+            The Lesbian and Gay Liberation in Canada (LGLC) project brings together accounts of over 34,000 events, people,
+            and places that led to the creation of gay political consciousness in Canada. Explore the movement, its politics,
+            its victories, and its challenges through the LGLC database and contextual essays.
+          </p>
+          <p class="homepage-warning">
+            Historical event content warning: The events documented in LGLC include descriptions of homophobia, lesbophobia,
+            biphobia, transphobia, sexism, racism, colonial violence, ableism, classism, assault, sexual assault, sexual
+            assault of minors, murder, and police violence.
+          </p>
+          <a href="/about" class="btn-learn-more"><span aria-hidden="true" class="btn-learn-more__glyph">&lt;&lt;</span> Learn More <span aria-hidden="true" class="btn-learn-more__glyph">&gt;&gt;</span></a>
+        </div>
+      </section>
+
+      <section class="homepage-search" aria-label="Search controls">
+        <div class="container">
+          <form class="homepage-search-form" action="/search" method="get">
+            <label class="visually-hidden" for="home-filter">Filter chronology</label>
+            <select id="home-filter" name="filter" class="homepage-filter">
+              <option value="">Filter</option>
+              <option value="people">People</option>
+              <option value="organization">Organization</option>
+              <option value="place">Place</option>
+              <option value="event">Event</option>
+            </select>
+
+            <label class="visually-hidden" for="home-search-input">Search database</label>
+            <div class="homepage-search-input-wrap">
+              <input
+                id="home-search-input"
+                name="q"
+                type="search"
+                class="homepage-search-input"
+                placeholder="Search Database"
+                autocomplete="off"
+              >
+              <button type="submit" class="homepage-search-submit" aria-label="Submit database search">
+                <svg class="homepage-search-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <section class="timeline-section" aria-labelledby="timeline-heading">
       <div class="container">
-        <h1 class="hero-title">
-          Lesbian and Gay Liberation in Canada
-        </h1>
-        <div class="hero-content-wrapper">
-          <div class="hero-content">
-            <p class="hero-description">
-              The Lesbian and Gay Liberation in Canada (LGLC) project 
-              brings together accounts of over 34,000 events, people, 
-              and places that led to the creation of gay political 
-              consciousness in Canada. Explore the movement, its 
-              politics, its victories, and its challenges through the 
-              LGLC database and contextual essays.
-            </p>
-          </div>
-          <div class="hero-action">
-            <a href="/search" class="btn-primary">
-              Search Database
-            </a>
-          </div>
+        <p class="timeline-kicker">The timeline</p>
+        <h2 id="timeline-heading" class="timeline-title">Discover over the years</h2>
+        <p class="timeline-note">*These featured articles highlight selected results and are not an exhaustive list.</p>
+
+        <nav class="timeline-nav" aria-label="Timeline decades">
+          <a href="/search?year=1960" class="timeline-nav__item">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1960s</span>
+          </a>
+          <a href="/search?year=1970" class="timeline-nav__item is-active" aria-current="page">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1970s</span>
+          </a>
+          <a href="/search?year=1980" class="timeline-nav__item">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1980s</span>
+          </a>
+          <a href="/search?year=1990" class="timeline-nav__item">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1990s</span>
+          </a>
+        </nav>
+
+        <div class="grid grid-3 grid--cards homepage-card-grid">
+          <article class="card chronology-card">
+            <div class="chronology-card__media">
+              <img
+                src="media/img/homosexuals-are-human-beings.png"
+                alt=""
+                class="chronology-card__image"
+              >
+            </div>
+            <div class="card-body">
+              <p class="chronology-card__type">Person</p>
+              <h3 class="card-title">Charles Hill</h3>
+              <p class="card-excerpt">
+                In 1967 it was part of the first large-scale gay rights protest in Canada. We demand, on Parliament Hill.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="/person/charles-hill" class="btn-primary">View Data</a>
+            </div>
+          </article>
+
+          <article class="card chronology-card">
+            <div class="chronology-card__media">
+              <img
+                src="media/Image.png"
+                alt=""
+                class="chronology-card__image"
+              >
+            </div>
+            <div class="card-body">
+              <p class="chronology-card__type">Organization</p>
+              <h3 class="card-title">Calgary Club Carousel</h3>
+              <p class="card-excerpt">
+                Calgary Club Carousel, a private social club created, operated, and financed by lesbians and gays.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="/organization/calgary-club-carousel" class="btn-primary">View Data</a>
+            </div>
+          </article>
+
+          <article class="card chronology-card">
+            <div class="chronology-card__media">
+              <img
+                src="media/img/lesbian-gay-liberation-canada.png"
+                alt=""
+                class="chronology-card__image"
+              >
+            </div>
+            <div class="card-body">
+              <p class="chronology-card__type">Organization</p>
+              <h3 class="card-title">CBC</h3>
+              <p class="card-excerpt">
+                Canadian Broadcasting Corporation. Canadian public broadcaster for both radio and television.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="/organization/cbc" class="btn-primary">View Data</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="featured-image-section" aria-label="Historical photograph">
       <div class="container">
-        <img 
-          src="media/img/lesbian-organization-toronto.png" 
-          alt="Historical photograph of the Lesbian Organization of Toronto banner being carried by activists at a pride march or demonstration" 
+        <img
+          src="media/img/lesbian-organization-toronto.png"
+          alt="Historical photograph of the Lesbian Organization of Toronto banner being carried by activists at a pride march or demonstration"
           class="img-featured"
         >
-      </div>
-    </section>
-
-    <section class="get-started-section">
-      <div class="container">
-        <h2 class="section-title">
-          How do I get started with the LGLC?
-        </h2>
-        <div class="grid grid-3">
-          <article class="card">
-            <a href="/datasets" aria-label="Learn about LGLC datasets">
-              <img 
-                src="media/img/homosexuals-are-human-beings.png" 
-                alt="Historical protest photograph showing demonstrators holding signs reading 'Homosexuals are Human Beings'" 
-                class="card-image"
-              >
-              <h3 class="card-title">
-                What datasets does LGLC have?
-              </h3>
-            </a>
-          </article>
-          <article class="card">
-            <a href="/search-guide" aria-label="Learn how to search the datasets">
-              <img 
-                src="media/Image.png" 
-                alt="Historical photograph of activists holding a banner that reads 'Lesbians Make History'" 
-                class="card-image"
-              >
-              <h3 class="card-title">
-                How to search the datasets?
-              </h3>
-            </a>
-          </article>
-          <article class="card">
-            <a href="/editorial-principles" aria-label="Learn about LGLC's ethical approach">
-              <img 
-                class="card-image"
-                src="media/img/lesbian-gay-liberation-canada.png" 
-                alt="Book cover titled 'Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology'" 
-              >
-              <h3 class="card-title">
-                How does LGLC approach ethics?
-              </h3>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2 class="section-title">
-              What is Lesbian and Gay Liberation in Canada?
-            </h2>
-            
-            <div class="about-block">
-              <h3 class="about-subheading">Subheading</h3>
-              <p class="about-body">
-                Body text for whatever you'd like to expand on 
-                the main point.
-              </p>
-            </div>
-
-            <div class="about-block">
-              <h3 class="about-subheading">Subheading</h3>
-              <p class="about-body">
-                Body text for whatever you'd like to say. Add main 
-                takeaway points, quotes, anecdotes.
-              </p>
-            </div>
-
-            <div class="about-block">
-              <h3 class="about-subheading">Subheading</h3>
-              <p class="about-body">
-                Body text for whatever you'd like to add more to 
-                the main point. It provides details, explanations, 
-                and context.
-              </p>
-            </div>
-
-            <div class="about-buttons">
-              <a href="/about" class="btn-primary">Learn More About LGLC</a>
-              <a href="/get-involved" class="btn-secondary">Get Involved</a>
-            </div>
-          </div>
-          <div class="about-image">
-            <img 
-              src="media/img/demonstration-steps.png" 
-              alt="Historical photograph of activists gathered on the steps of a building during a gay rights demonstration" 
-              class="img-about"
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="team-section">
-      <div class="container">
-        <div class="team-content">
-          <h2 class="team-title">Meet our team</h2>
-          <div class="team-buttons">
-            <a href="/about" class="btn-primary">About</a>
-            <a href="/contact" class="btn-secondary">Contact</a>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -297,93 +295,101 @@
   <!-- EVENT PAGE -->
   <!-- ============================================ -->
 <!--
-  <main id="main-content" tabindex="-1">
+  <main id="main-content" class="record-page" tabindex="-1">
     <div class="container-page">
-      <section class="record-header" aria-labelledby="event-title">
-        <h1 id="event-title" class="record-title">(Event)</h1>
-        <p class="record-meta-line">Role or specific information about the person</p>
-        <p class="record-meta-line">Details, describers and identifying information</p>
+      <header class="record-hero" aria-labelledby="event-title">
+        <h1 id="event-title" class="record-title">Parliament Hill demonstration</h1>
+        <p class="record-subtitle">First large-scale gay rights protest in Canada (sample record)</p>
+      </header>
+
+      <section class="record-facts" aria-label="Event summary">
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Date</h2>
+          <p class="record-facts__value">August 28, 1971</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Location</h2>
+          <p class="record-facts__value">Ottawa, Ontario</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Record type</h2>
+          <p class="record-facts__value">Demonstration / public action</p>
+        </div>
       </section>
 
       <section class="record-section" aria-labelledby="event-details-heading">
         <div class="content-box">
           <h2 id="event-details-heading" class="content-box-heading">Details</h2>
           <p class="content-box-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque nulla non magna mattis, nec 
-            condimentum ligula eleifend. Phasellus vel porta libero. In eu nisi volutpat, consequat neque a, vehicula 
-            neque. Maecenas vitae hendrerit orci, et fringilla ligula. Donec gravida pellentesque tempus. Curabitur at velit 
-            in turpis aliquam iaculis non at nibh. Nunc consectetur fermentum varius. Morbi quis placerat urna.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Chronology text from the annotated volumes would appear
+            here, with archival tone and citations to sources. This block matches the “Details” treatment in the result
+            layout (designs/Results.pdf).
           </p>
         </div>
       </section>
 
       <section class="record-section" aria-labelledby="event-citations-heading">
         <h2 id="event-citations-heading" class="section-heading">Citations</h2>
-        <p class="section-text">(Citations list)</p>
+        <p class="section-text">
+          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/
+        </p>
       </section>
 
-      <section class="record-section" aria-labelledby="event-related-heading">
-        <h2 id="event-related-heading" class="section-heading">Related results</h2>
-        <div class="grid grid-4" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated events</h3>
-            <ul class="list-disc" aria-label="List of affiliated events">
-              <li>Event</li>
-              <li>Event</li>
-              <li>Event</li>
-            </ul>
-          </div>
+      <section class="record-section record-section--related" aria-labelledby="event-related-heading">
+        <h2 id="event-related-heading" class="section-heading">Related Entries in LGLC</h2>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated persons</h3>
-            <ul class="list-disc" aria-label="List of affiliated persons">
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-            </ul>
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Associated People</h3>
+            <span class="related-block__count">1 People</span>
           </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/person/charles-hill">Charles Hill</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Participant</dd>
+                    <dt>Citation</dt>
+                    <dd>McLeod, D. W., <em>Lesbian and Gay Liberation in Canada</em>, Vol. 1.</dd>
+                    <dt>Record Date</dt>
+                    <dd>August 28, 1971</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/person/charles-hill" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/places.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated places</h3>
-            <ul class="list-disc" aria-label="List of affiliated places">
-              <li>Place</li>
-              <li>Place</li>
-              <li>Place</li>
-            </ul>
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Associated Places</h3>
+            <span class="related-block__count">1 Places</span>
           </div>
-
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/periodicals.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated organizations</h3>
-            <ul class="list-disc" aria-label="List of affiliated organizations">
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/place/ottawa">Ottawa</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Location of event</dd>
+                    <dt>Citation</dt>
+                    <dd>Chronology entry; archival notes on file.</dd>
+                    <dt>Record Date</dt>
+                    <dd>August 28, 1971</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/place/ottawa" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
     </div>
@@ -394,138 +400,170 @@
   <!-- PERSON PAGE -->
   <!-- ============================================ -->
   <!--
-  <main id="main-content" tabindex="-1">
+  <main id="main-content" class="record-page" tabindex="-1">
     <div class="container-page">
-      <section class="record-header" aria-labelledby="person-title">
+      <header class="record-hero" aria-labelledby="person-title">
         <h1 id="person-title" class="record-title">Jane Rule</h1>
-        <p class="record-meta-line">Also known as Jane Vance Rule</p>
-        <p class="record-meta-line">Born 1931/03/28, in Plainfield</p>
-        <p class="record-meta-line">Died 2007/11/28, in Galiano Island</p>
-        <p class="record-meta-line">
-          <a 
-            href="http://viaf.org/fr/viaf/62399671" 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            http://viaf.org/fr/viaf/62399671
-          </a>
-        </p>
-      </section>
+        <p class="record-subtitle">Also known as Jane Vance Rule</p>
+      </header>
 
-      <section class="record-section" aria-labelledby="person-biography-heading">
-        <div class="content-box">
-          <h2 id="person-biography-heading" class="content-box-heading">Biography</h2>
-          <p class="content-box-text">
-            Jane Rule was a teacher, activist, and writer who explored lesbian relationships and themes in her work. Her 
-            writing regularly featured in the media and also appeared in periodicals such as The Ladder. Her first novel, 
-            Desert of the Heart (1964), is considered a classic of lesbian literature and was adapted into a film in 1985. 
-            In 1978, she won the Canadian Author's Association award for Best Novel for The Young in One Another's Arm. 
-            Rule's work is considered significant in that it portrayed the everyday lives of lesbian women in a time when 
-            it was considered taboo. Rule was awarded the Order of British Columbia in 1998 and the Order of Canada in 2007.
+      <section class="record-facts" aria-label="Person summary">
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Occupation</h2>
+          <ul class="record-facts__list">
+            <li>Writer</li>
+            <li>Columnist</li>
+            <li>Professor of English Higher Education</li>
+          </ul>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Born</h2>
+          <p class="record-facts__value">March 28, 1931 — Plainfield, New Jersey, U.S.</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Died</h2>
+          <p class="record-facts__value">November 27, 2007 (aged 76) — Galiano Island, British Columbia, Canada</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Order of Merit</h2>
+          <p class="record-facts__value">Member of the Order of Canada (2006-10-05); Order of British Columbia (1998)</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Authority</h2>
+          <p class="record-facts__value">
+            <a href="http://viaf.org/viaf/62399671" target="_blank" rel="noopener noreferrer">VIAF 62399671</a>
           </p>
         </div>
       </section>
 
-      <section class="record-section" aria-labelledby="person-occupation-heading">
-        <h2 id="person-occupation-heading" class="section-heading">Occupation</h2>
-        <ul class="list-unstyled">
-          <li>Writer</li>
-          <li>Columnist</li>
-          <li>Professor of English HigherEducation</li>
-        </ul>
-      </section>
+      <section class="record-section record-section--related" aria-labelledby="person-related-entries-heading">
+        <h2 id="person-related-entries-heading" class="section-heading">Related Entries in LGLC</h2>
 
-      <section class="record-section" aria-labelledby="person-merit-heading">
-        <h2 id="person-merit-heading" class="section-heading">Order of merit</h2>
-        <p class="section-text">
-          Member of the Order of Canada (2006-10-05)Order of British Columbia (1998)
-        </p>
-      </section>
-
-      <section class="record-section" aria-labelledby="person-related-heading">
-        <h2 id="person-related-heading" class="section-heading">Related results</h2>
-        
-        <div class="grid grid-4" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated People</h3>
-            <ul class="list-disc" aria-label="List of associated people">
-              <li>
-                <a href="#">
-                  Helen Sonthoff (Lovers)<br>
-                  Personal<br>
-                  Romantic<br>
-                  1975/12/01<br>
-                  BCDF["Jane Rule" vertical file, Canadian Lesbian and Gay Archives, Toronto]
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/places.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated Places</h3>
-            <ul class="list-disc" aria-label="List of associated places">
-              <li>
-                <a href="#">
-                  University of British Columbia (Employee)<br>
-                  12/1/1975<br>
-                  "Jane Rule: The Woman Behind Lesbian Images," Body Politic, no. 21 (1975),p. 14
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated Event</h3>
-            <ul class="list-disc" aria-label="List of associated events">
-              <li>
-                <a href="#">TBF</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/periodicals.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated Periodicals</h3>
-            <ul class="list-disc" aria-label="List of associated periodicals">
-              <li>
-                <a href="#">
-                  The Body Politic (Columnist)<br>
-                  1979 - 1985<br>
-                  http://www.glbtq.com/literature/rule_j.html(http://goo.gl/mLUoUq)
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  The Ladder (Writer)<br>
-                  BE [n75.10]
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div class="content-box record-bio">
+          <h3 class="content-box-heading" id="person-biography-heading">Biography</h3>
+          <p class="content-box-text">
+            Jane Vance Rule was a teacher, activist, and writer who explored lesbian relationships and themes in her work. Her writing
+            was regularly featured in the <em>Body Politic</em>, and also appeared in periodicals such as <em>The Ladder</em>. Her first novel,
+            <em>Desert of the Heart</em> (1964), is considered a classic of lesbian literature and was adapted into a film in 1985. In 1978, she won the
+            Canadian Authors Association award for Best Novel for <em>The Young in One Another’s Arms</em>. Rule’s work is considered
+            significant in that it portrayed the everyday lives of lesbian women in a time when it was considered taboo. Rule was
+            awarded the Order of British Columbia in 1998 and the Order of Canada in 2007.
+          </p>
         </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Associated People</h3>
+            <span class="related-block__count">1 People</span>
+          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/person/helen-sonthoff">Helen Sonthoff</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Lovers, Personal, Romantic</dd>
+                    <dt>Citation</dt>
+                    <dd>BCDF["Jane Rule" vertical file, Canadian Lesbian and Gay Archives, Toronto]</dd>
+                    <dt>Record Date</dt>
+                    <dd>December 1, 1975</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/person/helen-sonthoff" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Associated Places</h3>
+            <span class="related-block__count">1 Places</span>
+          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/place/ubc">University of British Columbia</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Employee</dd>
+                    <dt>Citation</dt>
+                    <dd>“Jane Rule: The Woman Behind Lesbian Images,” <em>Body Politic</em>, no. 21 (1975), p. 14</dd>
+                    <dt>Record Date</dt>
+                    <dd>December 1, 1975</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/place/ubc" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Associated Periodicals</h3>
+            <span class="related-block__count">2 Periodicals</span>
+          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/periodical/body-politic">The Body Politic</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Columnist</dd>
+                    <dt>Citation</dt>
+                    <dd>http://www.glbtq.com/literature/rule_j.html</dd>
+                    <dt>Record Date</dt>
+                    <dd>1979 – 1985</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/periodical/body-politic" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/periodical/ladder">The Ladder</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Writer</dd>
+                    <dt>Citation</dt>
+                    <dd>BE [n75.10]</dd>
+                    <dt>Record Date</dt>
+                    <dd>N/A</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/periodical/ladder" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Associated Events</h3>
+            <span class="related-block__count">0 Events</span>
+          </div>
+          <p class="section-text">No linked events in this sample.</p>
+        </div>
+      </section>
+
+      <section class="record-section" aria-labelledby="person-cite-heading">
+        <h2 id="person-cite-heading" class="section-heading">Citations</h2>
+        <p class="section-text">
+          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/
+        </p>
       </section>
     </div>
   </main>
@@ -535,46 +573,87 @@
   <!-- PLACE PAGE -->
   <!-- ============================================ -->
   <!--
-  <main id="main-content" tabindex="-1">
+  <main id="main-content" class="record-page" tabindex="-1">
     <div class="container-page">
-      <section class="record-header" aria-labelledby="place-title">
-        <h1 id="place-title" class="record-title">Place's name</h1>
-        <p class="record-meta-line">Additional information available here.</p>
+      <header class="record-hero" aria-labelledby="place-title">
+        <h1 id="place-title" class="record-title">University of British Columbia</h1>
+        <p class="record-subtitle">Vancouver, British Columbia, Canada</p>
+      </header>
+
+      <section class="record-facts" aria-label="Place summary">
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Jurisdiction</h2>
+          <p class="record-facts__value">British Columbia</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Type</h2>
+          <p class="record-facts__value">Educational institution</p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="place-related-heading">
-        <h2 id="place-related-heading" class="section-heading">Related results</h2>
-        <div class="grid grid-3" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated people</h3>
-            <ul class="related-list" aria-label="List of affiliated people">
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-            </ul>
-          </div>
+      <section class="record-section record-section--related" aria-labelledby="place-related-heading">
+        <h2 id="place-related-heading" class="section-heading">Related Entries in LGLC</h2>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated events</h3>
-            <ul class="list-disc" aria-label="List of affiliated events">
-              <li>Event</li>
-              <li>Event</li>
-              <li>Event</li>
-            </ul>
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Affiliated People</h3>
+            <span class="related-block__count">1 People</span>
           </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/person/jane-rule">Jane Rule</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Employee</dd>
+                    <dt>Citation</dt>
+                    <dd>“Jane Rule: The Woman Behind Lesbian Images,” <em>Body Politic</em>, no. 21 (1975), p. 14</dd>
+                    <dt>Record Date</dt>
+                    <dd>December 1, 1975</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/person/jane-rule" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Affiliated Events</h3>
+            <span class="related-block__count">2 Events</span>
+          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/event/sample-1">Public lecture (sample)</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Hosted at location</dd>
+                    <dt>Citation</dt>
+                    <dd>Chronology volume reference</dd>
+                    <dt>Record Date</dt>
+                    <dd>1975-03-15</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/event/sample-1" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="record-section" aria-labelledby="place-cite-heading">
+        <h2 id="place-cite-heading" class="section-heading">Citations</h2>
+        <p class="section-text">
+          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/
+        </p>
       </section>
     </div>
   </main>
@@ -584,61 +663,87 @@
   <!-- PERIODICAL PAGE -->
   <!-- ============================================ -->
   <!--
-  <main id="main-content" tabindex="-1">
+  <main id="main-content" class="record-page" tabindex="-1">
     <div class="container-page">
-      <section class="record-header" aria-labelledby="periodical-title">
-        <h1 id="periodical-title" class="record-title">Periodical's name</h1>
-        <p class="record-meta-line">Additional information available here.</p>
+      <header class="record-hero" aria-labelledby="periodical-title">
+        <h1 id="periodical-title" class="record-title">The Body Politic</h1>
+        <p class="record-subtitle">Toronto-based gay liberation periodical (sample record)</p>
+      </header>
+
+      <section class="record-facts" aria-label="Periodical summary">
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Publisher</h2>
+          <p class="record-facts__value">Pink Triangle Press (historical)</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Years active</h2>
+          <p class="record-facts__value">1971 – 1987</p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="periodical-related-heading">
-        <h2 id="periodical-related-heading" class="section-heading">Related results</h2>
-        <div class="grid grid-3" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Authored by</h3>
-            <ul class="list-disc" aria-label="List of authors">
-              <li>Person's Name</li>
-              <li>Person's Name</li>
-              <li>Person's Name</li>
-            </ul>
-          </div>
+      <section class="record-section record-section--related" aria-labelledby="periodical-related-heading">
+        <h2 id="periodical-related-heading" class="section-heading">Related Entries in LGLC</h2>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated events</h3>
-            <ul class="list-disc" aria-label="List of affiliated events">
-              <li>Event</li>
-              <li>Event</li>
-              <li>Event</li>
-            </ul>
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Authored by / Contributors</h3>
+            <span class="related-block__count">1 People</span>
           </div>
-
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/periodicals.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated Places</h3>
-            <ul class="list-disc" aria-label="List of affiliated places">
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/person/jane-rule">Jane Rule</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Columnist</dd>
+                    <dt>Citation</dt>
+                    <dd>Contributor index; sample citation string.</dd>
+                    <dt>Record Date</dt>
+                    <dd>1979 – 1985</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/person/jane-rule" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Affiliated Places</h3>
+            <span class="related-block__count">1 Places</span>
+          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/place/toronto">Toronto</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Place of publication</dd>
+                    <dt>Citation</dt>
+                    <dd>Masthead / imprint</dd>
+                    <dt>Record Date</dt>
+                    <dd>N/A</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/place/toronto" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="record-section" aria-labelledby="periodical-cite-heading">
+        <h2 id="periodical-cite-heading" class="section-heading">Citations</h2>
+        <p class="section-text">
+          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/
+        </p>
       </section>
     </div>
   </main>
@@ -648,64 +753,117 @@
   <!-- ORGANIZATION PAGE -->
   <!-- ============================================ -->
   <!--
-    <main id="main-content" tabindex="-1">
-      <div class="container-page">
-        <section class="record-header" aria-labelledby="organization-title">
-          <h1 id="organization-title" class="record-title">Organization Name</h1>
-          <p class="record-meta-line">Additional information available here.</p>
-        </section>
+  <main id="main-content" class="record-page" tabindex="-1">
+    <div class="container-page">
+      <header class="record-hero" aria-labelledby="organization-title">
+        <h1 id="organization-title" class="record-title">Lesbian Organization of Toronto</h1>
+        <p class="record-subtitle">Community organization (sample record)</p>
+      </header>
 
-        <section class="record-section" aria-labelledby="organization-related-heading">
-          <h2 id="organization-related-heading" class="section-heading">Related results</h2>
-          <div class="grid grid-3" role="list" aria-label="Related records grouped by type">
-            <div class="related-card" role="listitem">
-              <img 
-                src="media/icons/people.png" 
-                alt="" 
-                class="related-icon-img"
-                aria-hidden="true"
-              >
-              <h3 class="related-heading">Affiliated persons</h3>
-              <ul class="list-disc" aria-label="List of affiliated persons">
-                <li>Person's Name</li>
-                <li>Person's Name</li>
-                <li>Person's Name</li>
-              </ul>
-            </div>
+      <section class="record-facts" aria-label="Organization summary">
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Location</h2>
+          <p class="record-facts__value">Toronto, Ontario</p>
+        </div>
+        <div class="record-facts__group">
+          <h2 class="record-facts__label">Years active</h2>
+          <p class="record-facts__value">1970s – 1980s (illustrative)</p>
+        </div>
+      </section>
 
-            <div class="related-card" role="listitem">
-              <img 
-                src="media/icons/events.png" 
-                alt="" 
-                class="related-icon-img"
-                aria-hidden="true"
-              >
-              <h3 class="related-heading">Affiliated events</h3>
-              <ul class="list-disc" aria-label="List of affiliated events">
-                <li>Event</li>
-                <li>Event</li>
-                <li>Event</li>
-              </ul>
-            </div>
+      <section class="record-section record-section--related" aria-labelledby="organization-related-heading">
+        <h2 id="organization-related-heading" class="section-heading">Related Entries in LGLC</h2>
 
-            <div class="related-card" role="listitem">
-              <img 
-                src="media/icons/periodicals.png" 
-                alt="" 
-                class="related-icon-img"
-                aria-hidden="true"
-              >
-              <h3 class="related-heading">Affiliated periodicals</h3>
-              <ul class="list-disc" aria-label="List of affiliated periodicals">
-                <li>Title</li>
-                <li>Title</li>
-                <li>Title</li>
-              </ul>
-            </div>
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Affiliated Persons</h3>
+            <span class="related-block__count">1 People</span>
           </div>
-        </section>
-      </div>
-    </main>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/person/sample">Sample member</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Member</dd>
+                    <dt>Citation</dt>
+                    <dd>Organization file / chronology cross-reference</dd>
+                    <dt>Record Date</dt>
+                    <dd>1978-06-01</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/person/sample" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Affiliated Events</h3>
+            <span class="related-block__count">1 Events</span>
+          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/event/march-sample">Pride march (sample)</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Organizer</dd>
+                    <dt>Citation</dt>
+                    <dd>Photograph and chronology entry</dd>
+                    <dt>Record Date</dt>
+                    <dd>1981-06-28</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/event/march-sample" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="related-block">
+          <div class="related-block__header">
+            <h3 class="related-block__title">Affiliated Periodicals</h3>
+            <span class="related-block__count">1 Periodicals</span>
+          </div>
+          <ul class="related-entry-list">
+            <li>
+              <article class="related-entry">
+                <div class="related-entry__body">
+                  <h4 class="related-entry__title"><a href="/periodical/body-politic">The Body Politic</a></h4>
+                  <dl class="related-entry__meta">
+                    <dt>Relation</dt>
+                    <dd>Coverage / mention</dd>
+                    <dt>Citation</dt>
+                    <dd>Issue reference</dd>
+                    <dt>Record Date</dt>
+                    <dd>1979-04-01</dd>
+                  </dl>
+                </div>
+                <div class="related-entry__actions">
+                  <a href="/periodical/body-politic" class="btn-primary">View Page</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="record-section" aria-labelledby="organization-cite-heading">
+        <h2 id="organization-cite-heading" class="section-heading">Citations</h2>
+        <p class="section-text">
+          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/
+        </p>
+      </section>
+    </div>
+  </main>
   -->
 
   <!-- ============================================ -->
@@ -930,122 +1088,94 @@
       <div class="footer-content">
         <div class="footer-brand">
           <a href="/" class="footer-logo" aria-label="LGLC Home">
-            <img 
-              src="media/img/LGLC Logo Icon Black.jpg" 
-              alt="LGLC Logo" 
+            <img
+              src="media/img/LGLC Logo Icon Black.jpg"
+              alt="LGLC Logo"
               class="footer-logo-img"
             >
           </a>
-          <div class="footer-social">
-            <a 
-              href="https://www.facebook.com/lglc" 
-              aria-label="Visit LGLC on Facebook" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
-                />
-              </svg>
-            </a>
-            <a 
-              href="https://twitter.com/lglc" 
-              aria-label="Visit LGLC on Twitter" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                />
-              </svg>
-            </a>
-            <a 
-              href="https://www.linkedin.com/company/lglc" 
-              aria-label="Visit LGLC on LinkedIn" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
-                />
-              </svg>
-            </a>
-            <a 
-              href="https://www.instagram.com/lglc" 
-              aria-label="Visit LGLC on Instagram" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                />
-              </svg>
-            </a>
-          </div>
         </div>
-        
-        <nav class="footer-nav" aria-label="Footer navigation">
+
+        <nav class="footer-nav footer-nav--menu" aria-label="Footer navigation">
           <div class="footer-column">
-            <h4 class="footer-heading">About LGLC</h4>
+            <h4 class="footer-heading">Menu</h4>
             <ul class="footer-links">
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/mission">Our Mission</a></li>
-              <li><a href="/team">Team</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4 class="footer-heading">Resources</h4>
-            <ul class="footer-links">
-              <li><a href="/search">Search Database</a></li>
-              <li><a href="/editorial-principles">Editorial Principles</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4 class="footer-heading">Legal</h4>
-            <ul class="footer-links">
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/terms">Terms of Use</a></li>
-              <li><a href="/accessibility">Accessibility</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/search">Search</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
         </nav>
+
+        <div class="footer-contact">
+          <h4 class="footer-heading">Contact Us</h4>
+          <p class="footer-contact-text footer-contact-intro">*Please send all correspondence to both</p>
+          <p class="footer-contact-text">
+            Michelle Schwartz — <a href="mailto:michelle.schwartz@torontomu.ca">michelle.schwartz@torontomu.ca</a>
+          </p>
+          <p class="footer-contact-text">
+            Constance Crompton — <a href="mailto:constance.crompton@uottawa.ca">constance.crompton@uottawa.ca</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">Lesbian and Gay Liberation in Canada © 2026. All rights reserved.</p>
+        <ul class="footer-social">
+          <li>
+          <a
+            href="https://www.youtube.com/"
+            aria-label="Visit LGLC on YouTube"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          </li>
+          <li>
+          <a
+            href="https://www.facebook.com/lglc"
+            aria-label="Visit LGLC on Facebook"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+            </svg>
+          </a>
+          </li>
+          <li>
+          <a
+            href="https://www.instagram.com/lglc"
+            aria-label="Visit LGLC on Instagram"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          </li>
+          <li>
+          <a
+            href="https://www.linkedin.com/company/lglc"
+            aria-label="Visit LGLC on LinkedIn"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+            </svg>
+          </a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>

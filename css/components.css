@@ -1,0 +1,330 @@
+/**
+ * UI components — designs/Design Components.png + DESIGN-LANGUAGE.md
+ * Load after main.css
+ */
+
+/* ============================================
+   CARDS (result / content cards)
+   ============================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border: var(--border-width-thin) solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: var(--transform-translate-y-2);
+}
+
+.card:focus-within {
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
+  outline-offset: var(--outline-offset-sm);
+}
+
+.card-image {
+  width: var(--size-full);
+  height: var(--image-height-md);
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--card-body-padding);
+}
+
+.card-title {
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-h4);
+  color: var(--text-secondary);
+}
+
+a.card-title-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+a.card-title-link:hover {
+  text-decoration: underline;
+}
+
+.card-excerpt {
+  margin: var(--spacing-0);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  color: var(--text-tertiary);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 var(--card-body-padding) var(--card-body-padding);
+  margin-top: auto;
+}
+
+.card-footer .btn-primary {
+  width: auto;
+}
+
+/* Homepage timeline feature cards — image + meta + CTA (Design Components.png) */
+.chronology-card .chronology-card__media {
+  width: var(--size-full);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--color-grey-light);
+}
+
+.chronology-card .chronology-card__image {
+  width: var(--size-full);
+  height: var(--size-full);
+  object-fit: cover;
+  display: block;
+}
+
+.chronology-card .card-title {
+  color: var(--color-primary-navy);
+}
+
+/* ============================================
+   RELATED RESULT CARDS (record pages)
+   ============================================ */
+
+.related-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  padding: var(--card-body-padding);
+  background-color: var(--card-bg);
+  border: var(--border-width-thin) solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.related-heading {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);
+  margin: var(--spacing-0);
+  line-height: var(--line-height-normal);
+}
+
+.related-icon-img {
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  border-radius: var(--border-radius-full);
+}
+
+/* ============================================
+   TAGS / BADGES (filters, categories)
+   ============================================ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-family: var(--font-family-label);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body-small);
+  color: var(--tag-text);
+  background-color: var(--tag-bg);
+  border-radius: var(--tag-radius);
+  border: none;
+}
+
+.tag:focus {
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
+  outline-offset: var(--outline-offset-sm);
+}
+
+.tag__icon {
+  flex-shrink: 0;
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+  object-fit: contain;
+}
+
+/* ============================================
+   TEAM — profile cards (Design Components.png)
+   ============================================ */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  list-style: none;
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border: var(--border-width-thin) solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.team-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: var(--transform-translate-y-2);
+}
+
+.team-card:focus-within {
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
+  outline-offset: var(--outline-offset-sm);
+}
+
+.team-card__media {
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-grey-light);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-navy-opacity-08) 0%,
+    var(--color-navy-bg-opacity-05) 100%
+  );
+}
+
+.team-card__image {
+  width: var(--size-full);
+  height: var(--size-full);
+  object-fit: cover;
+  display: block;
+}
+
+.team-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--card-body-padding);
+}
+
+.team-card__name {
+  margin: var(--spacing-0);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  color: var(--color-primary-navy);
+}
+
+.team-card__role {
+  margin: var(--spacing-0);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  color: var(--text-tertiary);
+}
+
+.team-card__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--card-body-padding) var(--card-body-padding);
+  margin-top: auto;
+}
+
+.team-card__footer .btn-primary {
+  width: auto;
+}
+
+/* ============================================
+   TERTIARY / LINK BUTTON (chevron pattern)
+   ============================================ */
+
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-2) var(--spacing-2);
+  min-height: var(--touch-target-min);
+  font-family: var(--font-family-label);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body-small);
+  color: var(--color-primary-navy);
+  background: transparent;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-tertiary::after {
+  content: ">>";
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.btn-tertiary:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+
+.btn-tertiary:focus {
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
+  outline-offset: var(--outline-offset-sm);
+}
+
+/* ============================================
+   GRID — card grids (8px rhythm spacing)
+   ============================================ */
+
+.grid--cards {
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 63.9375rem) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 47.9375rem) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-footer {
+    justify-content: stretch;
+  }
+
+  .card-footer .btn-primary {
+    width: var(--size-full);
+    text-align: center;
+  }
+
+  .team-card__footer {
+    justify-content: stretch;
+  }
+
+  .team-card__footer .btn-primary {
+    width: var(--size-full);
+    text-align: center;
+  }
+}

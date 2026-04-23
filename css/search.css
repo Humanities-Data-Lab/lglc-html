@@ -73,6 +73,11 @@ body.search-page-body {
   opacity: var(--opacity-full);
 }
 
+.search-tabs__link:focus-visible {
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
+  outline-offset: var(--outline-offset-sm);
+}
+
 .search-tabs__link.is-active,
 .search-tabs__link[aria-current="page"] {
   background: var(--color-white);
@@ -175,11 +180,17 @@ body.search-page-body {
 }
 
 #ssDoSearch:hover,
-#ssDoSearch:focus,
-#ssDoSearch2:hover,
-#ssDoSearch2:focus {
-  transform: var(--transform-translate-y-1);  /* -1px */
+#ssDoSearch2:hover {
+  transform: var(--transform-translate-y-1);
   box-shadow: 0 var(--spacing-2-5) var(--spacing-4-5) var(--color-navy-opacity-18);
+}
+
+#ssDoSearch:focus,
+#ssDoSearch2:focus {
+  transform: var(--transform-translate-y-1);
+  box-shadow: 0 var(--spacing-2-5) var(--spacing-4-5) var(--color-navy-opacity-18);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
+  outline-offset: var(--outline-offset-sm);
 }
 
 #ssDoSearch2 {
@@ -310,7 +321,7 @@ body.search-page-body {
 }
 
 .ssDescCheckboxList input[type="checkbox"]:focus + label {
-  outline: var(--outline-width-thick) solid var(--color-navy-opacity-20);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
   outline-offset: var(--spacing-3);
 }
 
@@ -330,7 +341,7 @@ body.search-page-body {
 
 .ssBoolFilters select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231B2E4B' d='M1.41 0L6 4.58 10.59 0 12 1.41 6 7.41 0 1.41z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23002D56' d='M1.41 0L6 4.58 10.59 0 12 1.41 6 7.41 0 1.41z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--spacing-4) center;
   background-size: var(--background-size-icon-sm) var(--background-size-icon-md);

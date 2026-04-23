@@ -13,12 +13,11 @@
   position: sticky;
   top: 0;
   z-index: var(--z-index-sticky);
-  background-color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  background-color: var(--header-bg);
 }
 
 /* ============================================
-   HEADER BANNER (Red top section)
+   HEADER BANNER (logo + primary nav)
    ============================================ */
 
 .header-banner {
@@ -26,7 +25,7 @@
   color: var(--header-text);
   display: flex;
   align-items: center;
-  border-bottom: var(--border-width-thin) solid var(--color-black);
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
   /* Padding provides X measurement clearspace around logo (height of "L" in LGLC) */
   /* Mobile/Tablet: Logo 6rem (96px), X measurement ~1.5rem clearspace */
   padding-top: var(--spacing-6);    /* 1.5rem/24px */
@@ -85,7 +84,7 @@
 /* Logo hover removed - brand standards: never change logo colors or apply effects */
 
 .site-logo:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
   outline-offset: var(--outline-offset-sm);
   border-radius: var(--border-radius-sm);
 }
@@ -130,10 +129,11 @@
 
 .nav-link {
   display: inline-block;
-  color: var(--text-link-on-red);  /* Context-aware: White on red background */
+  color: var(--text-link);
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-xl);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
   line-height: var(--line-height-normal);
   letter-spacing: var(--letter-spacing-none);
   transition: all var(--transition-fast);
@@ -143,20 +143,37 @@
 }
 
 .nav-link:hover {
-  background-color: var(--color-red-80);  /* Brand Standard: Red 80% for interactive materials */
-  color: var(--text-link-hover-on-red);  /* Stays white - background change provides feedback */
+  background-color: var(--nav-hover-bg);
+  color: var(--text-link-hover);
+}
+
+.nav-link[aria-current="page"]:hover {
+  background-color: transparent;
+  color: var(--color-primary-navy);
 }
 
 .nav-link:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
   outline-offset: var(--outline-offset-sm);
   border-radius: var(--border-radius-sm);
 }
 
+/* Active item — gold underline (designs/Homepage.png, Design System.png) */
 .nav-link[aria-current="page"] {
-  color: var(--text-link-on-red);  /* Same color as other nav items - white on red background */
-  font-weight: var(--font-weight-semibold);
-  background-color: var(--overlay-light);  /* Subtle background for current page */
+  color: var(--color-primary-navy);
+  font-weight: var(--font-weight-bold);
+  background-color: transparent;
+}
+
+.nav-link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: var(--spacing-0);
+  left: var(--spacing-3);
+  right: var(--spacing-3);
+  height: var(--border-width-thick);
+  background-color: var(--color-secondary-gold);
+  border-radius: var(--border-radius-xs);
 }
 
 /* ============================================
@@ -177,19 +194,19 @@
   height: var(--touch-target-min);
   padding: var(--spacing-2);
   background: transparent;
-  border: var(--border-width-medium) solid var(--color-white);
+  border: var(--border-width-medium) solid var(--color-primary-navy);
   border-radius: var(--border-radius-md);
-  color: var(--text-inverse);
+  color: var(--color-primary-navy);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .mobile-menu-toggle:hover {
-  background-color: var(--overlay-light);
+  background-color: var(--nav-hover-bg);
 }
 
 .mobile-menu-toggle:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
   outline-offset: var(--outline-offset-sm);
 }
 
@@ -271,7 +288,7 @@
   color: var(--text-inverse);
   border: none;
   border-radius: var(--border-radius-xl);
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-label);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
@@ -285,7 +302,7 @@
 }
 
 .search-tab:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
   outline-offset: var(--outline-offset-sm);
 }
 
@@ -321,10 +338,10 @@
   display: flex;
   gap: var(--spacing-3);
   background: linear-gradient(
-    90deg, 
-    var(--color-primary-yellow) 0%, 
-    var(--color-yellow-60) 100%
-  );  /* Brand Standard: Yellow gradient using official tints */
+    90deg,
+    var(--color-secondary-gold) 0%,
+    var(--color-gold-60) 100%
+  );
   border-radius: var(--border-radius-xl);
   padding: var(--spacing-3);
   box-shadow: var(--shadow-md);
@@ -400,15 +417,17 @@
 }
 
 .mobile-nav-link:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
   outline-offset: var(--outline-offset-inner);
-  background-color: var(--color-white);  /* Keep background visible on focus */
+  background-color: var(--color-white);
 }
 
 .mobile-nav-link[aria-current="page"] {
-  color: var(--text-link-hover);     /* Context-aware: Navy for current page */
+  color: var(--color-primary-navy);
   font-weight: var(--font-weight-bold);
-  background-color: var(--bg-page);  /* Light grey background for current page */
+  background-color: transparent;
+  border-left: var(--border-width-thick) solid var(--color-secondary-gold);
+  padding-left: calc(var(--spacing-4) - var(--border-width-thick));
 }
 
 /* ============================================
