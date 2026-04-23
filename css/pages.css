@@ -24,8 +24,18 @@
 }
 
 .homepage-kicker {
-  margin-bottom: var(--spacing-4);
+  display: inline-block;
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-6);
+  padding: var(--spacing-1) var(--spacing-2);
+  font-family: var(--font-family-label);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body-small);
+  color: var(--color-primary-navy);
+  background-color: var(--color-gold-60);
   text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  border-radius: var(--border-radius-sm);
 }
 
 /* H1 — design language: 48px / 1.25 (Montserrat) */
@@ -91,12 +101,16 @@
 }
 
 .homepage-search {
-  padding: var(--spacing-4) 0 var(--spacing-12) 0;
+  padding: var(--spacing-6) 0 var(--spacing-16) 0;
   background-color: var(--bg-surface);
 }
 
-.homepage-search-form {
+.homepage-search .container {
   max-width: var(--content-width-wide);
+}
+
+.homepage-search-form {
+  width: var(--size-full);
 }
 
 .homepage-search-input {
