@@ -14,10 +14,10 @@
     LGLC - Lesbian and Gay Liberation in Canada
   </title>
   
-  <!-- Google Fonts: Josefin Sans -->
+  <!-- Google Fonts: Montserrat + Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- Design Tokens MUST be imported first -->
   <link rel="stylesheet" href="css/design-tokens.css">
@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="css/footer.css">
   <!-- Page-specific styles -->
   <link rel="stylesheet" href="css/pages.css">
+  <!-- UI components (cards, tags, tertiary buttons) -->
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <!-- ============================================ -->
 <!-- BODY SECTION -->
@@ -42,104 +44,29 @@
   <header class="site-header" role="banner">
     <div class="header-banner">
       <div class="header-container">
-        <div class="header-content">
-          <div class="logo-section">
-            <a 
-              href="/" 
-              class="site-logo" 
-              aria-label="LGLC - Lesbian and Gay Liberation in Canada Home"
+        <a href="/" class="site-wordmark" aria-label="Lesbian and Gay Liberation in Canada — Home">
+          Lesbian and Gay Liberation in Canada
+        </a>
+        <form class="header-search-form" action="/search" method="get" role="search">
+          <label class="visually-hidden" for="header-search-input">Search database</label>
+          <div class="header-search-input-wrap">
+            <input
+              id="header-search-input"
+              name="q"
+              type="search"
+              class="header-search-input"
+              placeholder="Search Database"
+              autocomplete="off"
             >
-              <img 
-                src="media/img/LGLC Logo Black.jpg" 
-                alt="LGLC - Lesbian and Gay Liberation in Canada" 
-                class="logo-img"
-              >
-            </a>
-          </div>
-
-          <nav 
-            class="primary-nav" 
-            aria-label="Primary navigation"
-          >
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a 
-                  href="/" 
-                  class="nav-link" 
-                  aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/about" class="nav-link">
-                  About
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/editorial-principles" class="nav-link">
-                  Editorial Principles
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/resources" class="nav-link">
-                  Resources
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="header-actions">
-            <button
-              type="button"
-              class="mobile-menu-toggle"
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-              aria-label="Toggle navigation menu"
-            >
-              <span class="menu-icon">
-                <span class="menu-icon-bar"></span>
-                <span class="menu-icon-bar"></span>
-                <span class="menu-icon-bar"></span>
-              </span>
+            <button type="submit" class="header-search-submit" aria-label="Submit database search">
+              <svg class="header-search-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              </svg>
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
-
-    <nav 
-      id="mobile-menu" 
-      class="mobile-nav" 
-      aria-label="Mobile navigation"
-      hidden
-    >
-      <ul class="mobile-nav-list">
-        <li class="mobile-nav-item">
-          <a href="/" class="mobile-nav-link" aria-current="page">
-            Home
-          </a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="/about" class="mobile-nav-link">
-            About
-          </a>
-        </li>
-        <li class="mobile-nav-item">
-          <a 
-            href="/editorial-principles" 
-            class="mobile-nav-link"
-          >
-            Editorial Principles
-          </a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="/resources" class="mobile-nav-link">
-            Resources
-          </a>
-        </li>
-      </ul>
-    </nav>
   </header>
   <!-- End Header Component -->
 
@@ -148,146 +75,146 @@
   <!-- ============================================ -->
  
 
-  <main id="main-content" tabindex="-1"> 
-    <section class="hero-section">
+  <main id="main-content" tabindex="-1">
+    <div class="homepage-top">
+      <section class="homepage-hero" aria-labelledby="homepage-title">
+        <div class="container">
+          <p class="homepage-kicker">A selected chronology</p>
+          <h1 id="homepage-title" class="homepage-title">Lesbian and Gay Liberation in Canada</h1>
+          <p class="homepage-lead">
+            The Lesbian and Gay Liberation in Canada (LGLC) project brings together accounts of over 34,000 events, people,
+            and places that led to the creation of gay political consciousness in Canada. Explore the movement, its politics,
+            its victories, and its challenges through the LGLC database and contextual essays.
+          </p>
+          <p class="homepage-warning">
+            Historical event content warning: The events documented in LGLC include descriptions of homophobia, lesbophobia,
+            biphobia, transphobia, sexism, racism, colonial violence, ableism, classism, assault, sexual assault, sexual
+            assault of minors, murder, and police violence.
+          </p>
+          <a href="/about" class="btn-learn-more"><span aria-hidden="true" class="btn-learn-more__glyph">&lt;&lt;</span> Learn More <span aria-hidden="true" class="btn-learn-more__glyph">&gt;&gt;</span></a>
+        </div>
+      </section>
+
+      <section class="homepage-search" aria-label="Search controls">
+        <div class="container">
+          <form class="homepage-search-form" action="/search" method="get">
+            <label class="visually-hidden" for="home-search-input">Search database</label>
+            <div class="homepage-search-input-wrap">
+              <input
+                id="home-search-input"
+                name="q"
+                type="search"
+                class="homepage-search-input"
+                placeholder="Search Database"
+                autocomplete="off"
+              >
+              <button type="submit" class="homepage-search-submit" aria-label="Submit database search">
+                <svg class="homepage-search-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <section class="timeline-section" aria-labelledby="timeline-heading">
       <div class="container">
-        <h1 class="hero-title">
-          Lesbian and Gay Liberation in Canada
-        </h1>
-        <div class="hero-content-wrapper">
-          <div class="hero-content">
-            <p class="hero-description">
-              The Lesbian and Gay Liberation in Canada (LGLC) project 
-              brings together accounts of over 34,000 events, people, 
-              and places that led to the creation of gay political 
-              consciousness in Canada. Explore the movement, its 
-              politics, its victories, and its challenges through the 
-              LGLC database and contextual essays.
-            </p>
-          </div>
-          <div class="hero-action">
-            <a href="/search" class="btn-primary">
-              Search Database
-            </a>
-          </div>
+        <p class="timeline-kicker">The timeline</p>
+        <h2 id="timeline-heading" class="timeline-title">Discover over the years</h2>
+        <p class="timeline-note">*These featured articles highlight selected results and are not an exhaustive list.</p>
+
+        <nav class="timeline-nav" aria-label="Timeline decades">
+          <a href="/search?year=1960" class="timeline-nav__item">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1960s</span>
+          </a>
+          <a href="/search?year=1970" class="timeline-nav__item is-active" aria-current="page">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1970s</span>
+          </a>
+          <a href="/search?year=1980" class="timeline-nav__item">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1980s</span>
+          </a>
+          <a href="/search?year=1990" class="timeline-nav__item">
+            <span class="timeline-nav__dot" aria-hidden="true"></span>
+            <span class="timeline-nav__label">1990s</span>
+          </a>
+        </nav>
+
+        <div class="grid grid-3 grid--cards homepage-card-grid">
+          <article class="card chronology-card">
+            <div class="chronology-card__media">
+              <img
+                src="media/img/homosexuals-are-human-beings.png"
+                alt=""
+                class="chronology-card__image"
+              >
+            </div>
+            <div class="card-body">
+              <p class="chronology-card__type">Person</p>
+              <h3 class="card-title">Charles Hill</h3>
+              <p class="card-excerpt">
+                In 1967 it was part of the first large-scale gay rights protest in Canada. We demand, on Parliament Hill.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="/person/charles-hill" class="btn-primary">View Data</a>
+            </div>
+          </article>
+
+          <article class="card chronology-card">
+            <div class="chronology-card__media">
+              <img
+                src="media/Image.png"
+                alt=""
+                class="chronology-card__image"
+              >
+            </div>
+            <div class="card-body">
+              <p class="chronology-card__type">Organization</p>
+              <h3 class="card-title">Calgary Club Carousel</h3>
+              <p class="card-excerpt">
+                Calgary Club Carousel, a private social club created, operated, and financed by lesbians and gays.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="/organization/calgary-club-carousel" class="btn-primary">View Data</a>
+            </div>
+          </article>
+
+          <article class="card chronology-card">
+            <div class="chronology-card__media">
+              <img
+                src="media/img/lesbian-gay-liberation-canada.png"
+                alt=""
+                class="chronology-card__image"
+              >
+            </div>
+            <div class="card-body">
+              <p class="chronology-card__type">Organization</p>
+              <h3 class="card-title">CBC</h3>
+              <p class="card-excerpt">
+                Canadian Broadcasting Corporation. Canadian public broadcaster for both radio and television.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="/organization/cbc" class="btn-primary">View Data</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="featured-image-section" aria-label="Historical photograph">
       <div class="container">
-        <img 
-          src="media/img/lesbian-organization-toronto.png" 
-          alt="Historical photograph of the Lesbian Organization of Toronto banner being carried by activists at a pride march or demonstration" 
+        <img
+          src="media/img/lesbian-organization-toronto.png"
+          alt="Historical photograph of the Lesbian Organization of Toronto banner being carried by activists at a pride march or demonstration"
           class="img-featured"
         >
-      </div>
-    </section>
-
-    <section class="get-started-section">
-      <div class="container">
-        <h2 class="section-title">
-          How do I get started with the LGLC?
-        </h2>
-        <div class="grid grid-3">
-          <article class="card">
-            <a href="/datasets" aria-label="Learn about LGLC datasets">
-              <img 
-                src="media/img/homosexuals-are-human-beings.png" 
-                alt="Historical protest photograph showing demonstrators holding signs reading 'Homosexuals are Human Beings'" 
-                class="card-image"
-              >
-              <h3 class="card-title">
-                What datasets does LGLC have?
-              </h3>
-            </a>
-          </article>
-          <article class="card">
-            <a href="/search-guide" aria-label="Learn how to search the datasets">
-              <img 
-                src="media/Image.png" 
-                alt="Historical photograph of activists holding a banner that reads 'Lesbians Make History'" 
-                class="card-image"
-              >
-              <h3 class="card-title">
-                How to search the datasets?
-              </h3>
-            </a>
-          </article>
-          <article class="card">
-            <a href="/editorial-principles" aria-label="Learn about LGLC's ethical approach">
-              <img 
-                class="card-image"
-                src="media/img/lesbian-gay-liberation-canada.png" 
-                alt="Book cover titled 'Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology'" 
-              >
-              <h3 class="card-title">
-                How does LGLC approach ethics?
-              </h3>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2 class="section-title">
-              What is Lesbian and Gay Liberation in Canada?
-            </h2>
-            
-            <div class="about-block">
-              <h3 class="about-subheading">Subheading</h3>
-              <p class="about-body">
-                Body text for whatever you'd like to expand on 
-                the main point.
-              </p>
-            </div>
-
-            <div class="about-block">
-              <h3 class="about-subheading">Subheading</h3>
-              <p class="about-body">
-                Body text for whatever you'd like to say. Add main 
-                takeaway points, quotes, anecdotes.
-              </p>
-            </div>
-
-            <div class="about-block">
-              <h3 class="about-subheading">Subheading</h3>
-              <p class="about-body">
-                Body text for whatever you'd like to add more to 
-                the main point. It provides details, explanations, 
-                and context.
-              </p>
-            </div>
-
-            <div class="about-buttons">
-              <a href="/about" class="btn-primary">Learn More About LGLC</a>
-              <a href="/get-involved" class="btn-secondary">Get Involved</a>
-            </div>
-          </div>
-          <div class="about-image">
-            <img 
-              src="media/img/demonstration-steps.png" 
-              alt="Historical photograph of activists gathered on the steps of a building during a gay rights demonstration" 
-              class="img-about"
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="team-section">
-      <div class="container">
-        <div class="team-content">
-          <h2 class="team-title">Meet our team</h2>
-          <div class="team-buttons">
-            <a href="/about" class="btn-primary">About</a>
-            <a href="/contact" class="btn-secondary">Contact</a>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -297,95 +224,117 @@
   <!-- EVENT PAGE -->
   <!-- ============================================ -->
 <!--
-  <main id="main-content" tabindex="-1">
-    <div class="container-page">
-      <section class="record-header" aria-labelledby="event-title">
-        <h1 id="event-title" class="record-title">(Event)</h1>
-        <p class="record-meta-line">Role or specific information about the person</p>
-        <p class="record-meta-line">Details, describers and identifying information</p>
-      </section>
+  <main id="main-content" class="record-page" tabindex="-1">
+    <div class="container-page record-layout">
+      <aside class="record-sidebar" aria-label="Event summary">
+        <h1 id="event-title" class="record-title">Parliament Hill demonstration</h1>
 
-      <section class="record-section" aria-labelledby="event-details-heading">
-        <div class="content-box">
-          <h2 id="event-details-heading" class="content-box-heading">Details</h2>
-          <p class="content-box-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque nulla non magna mattis, nec 
-            condimentum ligula eleifend. Phasellus vel porta libero. In eu nisi volutpat, consequat neque a, vehicula 
-            neque. Maecenas vitae hendrerit orci, et fringilla ligula. Donec gravida pellentesque tempus. Curabitur at velit 
-            in turpis aliquam iaculis non at nibh. Nunc consectetur fermentum varius. Morbi quis placerat urna.
+        <dl class="record-facts-list">
+          <div class="record-facts-list__group">
+            <dt>Date</dt>
+            <dd>August 28, 1971</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Location</dt>
+            <dd>Ottawa, Ontario</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Record type</dt>
+            <dd>Demonstration / public action</dd>
+          </div>
+        </dl>
+
+        <div class="record-sidebar__related">
+          <h2 class="record-sidebar-heading">Related Entries in LGLC</h2>
+          <ul class="record-count-cards">
+            <li>
+              <a href="#associated-people" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                  People
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-places" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  Places
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="record-main">
+        <section class="record-intro" aria-labelledby="event-details-heading">
+          <p class="record-section-tag" id="event-details-heading">Details</p>
+          <p class="record-intro__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Chronology text from the annotated volumes would appear here, with archival tone and citations to sources.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <section class="record-section" aria-labelledby="event-citations-heading">
-        <h2 id="event-citations-heading" class="section-heading">Citations</h2>
-        <p class="section-text">(Citations list)</p>
-      </section>
-
-      <section class="record-section" aria-labelledby="event-related-heading">
-        <h2 id="event-related-heading" class="section-heading">Related results</h2>
-        <div class="grid grid-4" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated events</h3>
-            <ul class="list-disc" aria-label="List of affiliated events">
-              <li>Event</li>
-              <li>Event</li>
-              <li>Event</li>
-            </ul>
+        <details class="record-accordion" id="associated-people" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span class="record-accordion__title">Associated People</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Charles Hill</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Participant</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> McLeod, D. W., Lesbian and Gay Liberation in Canada, Vol. 1.</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> August 28, 1971</p>
+                </div>
+              </div>
+              <a href="/person/charles-hill" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
+        </details>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated persons</h3>
-            <ul class="list-disc" aria-label="List of affiliated persons">
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-            </ul>
+        <details class="record-accordion" id="associated-places" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span class="record-accordion__title">Associated Places</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Ottawa</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Location of event</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Chronology entry; archival notes on file.</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> August 28, 1971</p>
+                </div>
+              </div>
+              <a href="/place/ottawa" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
+        </details>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/places.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated places</h3>
-            <ul class="list-disc" aria-label="List of affiliated places">
-              <li>Place</li>
-              <li>Place</li>
-              <li>Place</li>
-            </ul>
-          </div>
-
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/periodicals.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated organizations</h3>
-            <ul class="list-disc" aria-label="List of affiliated organizations">
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        <section class="record-citations" aria-labelledby="event-citations-heading">
+          <h2 id="event-citations-heading" class="record-citations__heading">
+            <span>Citations</span>
+            <svg class="record-citations__info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1.1-1 1.7"/></svg>
+          </h2>
+          <p class="record-citations__text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -394,139 +343,171 @@
   <!-- PERSON PAGE -->
   <!-- ============================================ -->
   <!--
-  <main id="main-content" tabindex="-1">
-    <div class="container-page">
-      <section class="record-header" aria-labelledby="person-title">
+  <main id="main-content" class="record-page" tabindex="-1">
+    <div class="container-page record-layout">
+      <aside class="record-sidebar" aria-label="Person summary">
         <h1 id="person-title" class="record-title">Jane Rule</h1>
-        <p class="record-meta-line">Also known as Jane Vance Rule</p>
-        <p class="record-meta-line">Born 1931/03/28, in Plainfield</p>
-        <p class="record-meta-line">Died 2007/11/28, in Galiano Island</p>
-        <p class="record-meta-line">
-          <a 
-            href="http://viaf.org/fr/viaf/62399671" 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            http://viaf.org/fr/viaf/62399671
-          </a>
-        </p>
-      </section>
 
-      <section class="record-section" aria-labelledby="person-biography-heading">
-        <div class="content-box">
-          <h2 id="person-biography-heading" class="content-box-heading">Biography</h2>
-          <p class="content-box-text">
-            Jane Rule was a teacher, activist, and writer who explored lesbian relationships and themes in her work. Her 
-            writing regularly featured in the media and also appeared in periodicals such as The Ladder. Her first novel, 
-            Desert of the Heart (1964), is considered a classic of lesbian literature and was adapted into a film in 1985. 
-            In 1978, she won the Canadian Author's Association award for Best Novel for The Young in One Another's Arm. 
-            Rule's work is considered significant in that it portrayed the everyday lives of lesbian women in a time when 
-            it was considered taboo. Rule was awarded the Order of British Columbia in 1998 and the Order of Canada in 2007.
+        <dl class="record-facts-list">
+          <div class="record-facts-list__group">
+            <dt>Occupation</dt>
+            <dd>Writer</dd>
+            <dd>Columnist</dd>
+            <dd>Professor of English Higher Education</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Born</dt>
+            <dd>March 28, 1931</dd>
+            <dd>Plainfield, New Jersey, U.S</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Died</dt>
+            <dd>27 November 2007 (aged 76)</dd>
+            <dd>Galiano Island, British Columbia, Canada</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Order of Merit</dt>
+            <dd>Member of the Order of Canada</dd>
+            <dd>(2006-10-05) Order of British Columbia (1998)</dd>
+          </div>
+        </dl>
+
+        <div class="record-sidebar__related">
+          <h2 class="record-sidebar-heading">Related Entries in LGLC</h2>
+          <ul class="record-count-cards">
+            <li>
+              <a href="#associated-people" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                  People
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-places" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  Places
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-periodicals" class="record-count-card">
+                <span class="record-count-card__number">2</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><path d="M4 17a3 3 0 0 1 3-3h11"/></svg>
+                  Periodicals
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="record-main">
+        <section class="record-intro" aria-labelledby="person-biography-heading">
+          <p class="record-section-tag" id="person-biography-heading">Biography</p>
+          <p class="record-intro__text">
+            Jane Vance Rule was a teacher, activist, and writer who explored lesbian relationships and themes in her work. Her writing was regularly featured in the Body Politic, and also appeared in periodicals such as The Ladder. Her first novel, Desert of the Heart (1964), is considered a classic of lesbian literature and was adapted into a film in 1985. In 1978, she won the Canadian Author's Association award for Best Novel for The Young in One Another's Arm. Rule's work is considered significant in that it portrayed the everyday lives of lesbian women in a time when it was considered taboo. Rule was awarded the Order of British Columbia in 1998 and the Order of Canada in 2007.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <section class="record-section" aria-labelledby="person-occupation-heading">
-        <h2 id="person-occupation-heading" class="section-heading">Occupation</h2>
-        <ul class="list-unstyled">
-          <li>Writer</li>
-          <li>Columnist</li>
-          <li>Professor of English HigherEducation</li>
-        </ul>
-      </section>
-
-      <section class="record-section" aria-labelledby="person-merit-heading">
-        <h2 id="person-merit-heading" class="section-heading">Order of merit</h2>
-        <p class="section-text">
-          Member of the Order of Canada (2006-10-05)Order of British Columbia (1998)
-        </p>
-      </section>
-
-      <section class="record-section" aria-labelledby="person-related-heading">
-        <h2 id="person-related-heading" class="section-heading">Related results</h2>
-        
-        <div class="grid grid-4" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated People</h3>
-            <ul class="list-disc" aria-label="List of associated people">
-              <li>
-                <a href="#">
-                  Helen Sonthoff (Lovers)<br>
-                  Personal<br>
-                  Romantic<br>
-                  1975/12/01<br>
-                  BCDF["Jane Rule" vertical file, Canadian Lesbian and Gay Archives, Toronto]
-                </a>
-              </li>
-            </ul>
+        <details class="record-accordion" id="associated-people" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span class="record-accordion__title">Associated People</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Helen Sonthoff</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Lovers, Personal, Romantic</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> <a href="/citation/bcdf-jane-rule">BCDF["Jane Rule" vertical file, Canadian Lesbian and Gay Archives, Toronto]</a></p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> December 1, 1975</p>
+                </div>
+              </div>
+              <a href="/person/helen-sonthoff" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
+        </details>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/places.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated Places</h3>
-            <ul class="list-disc" aria-label="List of associated places">
-              <li>
-                <a href="#">
-                  University of British Columbia (Employee)<br>
-                  12/1/1975<br>
-                  "Jane Rule: The Woman Behind Lesbian Images," Body Politic, no. 21 (1975),p. 14
-                </a>
-              </li>
-            </ul>
+        <details class="record-accordion" id="associated-places" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span class="record-accordion__title">Associated Places</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">University of British Columbia</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Employee</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Jane Rule - The Woman Behind Lesbian Images," Body Politic, no. 21 (1975), p. 14</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> December 1, 1975</p>
+                </div>
+              </div>
+              <a href="/place/ubc" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
+        </details>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated Event</h3>
-            <ul class="list-disc" aria-label="List of associated events">
-              <li>
-                <a href="#">TBF</a>
-              </li>
-            </ul>
+        <details class="record-accordion" id="associated-periodicals" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><path d="M4 17a3 3 0 0 1 3-3h11"/></svg>
+            <span class="record-accordion__title">Associated Periodicals</span>
+            <span class="record-accordion__count">(2)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><path d="M4 17a3 3 0 0 1 3-3h11"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">The Body Politic</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Columnist</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> http://www.glbtq.com/literature/rule_j.html(http://goo.gl/mLUoUq)</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> 1979 - 1985</p>
+                </div>
+              </div>
+              <a href="/periodical/body-politic" class="record-entry-card__link">View Page</a>
+            </article>
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">The Ladder</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Writer</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> https://lglc.ca/periodical/p212/</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> N/A</p>
+                </div>
+              </div>
+              <a href="/periodical/ladder" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
+        </details>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/periodicals.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Associated Periodicals</h3>
-            <ul class="list-disc" aria-label="List of associated periodicals">
-              <li>
-                <a href="#">
-                  The Body Politic (Columnist)<br>
-                  1979 - 1985<br>
-                  http://www.glbtq.com/literature/rule_j.html(http://goo.gl/mLUoUq)
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  The Ladder (Writer)<br>
-                  BE [n75.10]
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        <section class="record-citations" aria-labelledby="person-cite-heading">
+          <h2 id="person-cite-heading" class="record-citations__heading">
+            <span>Citations</span>
+            <svg class="record-citations__info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1.1-1 1.7"/></svg>
+          </h2>
+          <p class="record-citations__text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
+        </section>
+      </div>
     </div>
   </main>
   -->
@@ -535,47 +516,117 @@
   <!-- PLACE PAGE -->
   <!-- ============================================ -->
   <!--
-  <main id="main-content" tabindex="-1">
-    <div class="container-page">
-      <section class="record-header" aria-labelledby="place-title">
-        <h1 id="place-title" class="record-title">Place's name</h1>
-        <p class="record-meta-line">Additional information available here.</p>
-      </section>
+  <main id="main-content" class="record-page" tabindex="-1">
+    <div class="container-page record-layout">
+      <aside class="record-sidebar" aria-label="Place summary">
+        <h1 id="place-title" class="record-title">University of British Columbia</h1>
 
-      <section class="record-section" aria-labelledby="place-related-heading">
-        <h2 id="place-related-heading" class="section-heading">Related results</h2>
-        <div class="grid grid-3" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated people</h3>
-            <ul class="related-list" aria-label="List of affiliated people">
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-              <li>Person's Name (Relationship)</li>
-            </ul>
+        <dl class="record-facts-list">
+          <div class="record-facts-list__group">
+            <dt>Location</dt>
+            <dd>Vancouver, British Columbia, Canada</dd>
           </div>
+          <div class="record-facts-list__group">
+            <dt>Jurisdiction</dt>
+            <dd>British Columbia</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Type</dt>
+            <dd>Educational institution</dd>
+          </div>
+        </dl>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated events</h3>
-            <ul class="list-disc" aria-label="List of affiliated events">
-              <li>Event</li>
-              <li>Event</li>
-              <li>Event</li>
-            </ul>
-          </div>
+        <div class="record-sidebar__related">
+          <h2 class="record-sidebar-heading">Related Entries in LGLC</h2>
+          <ul class="record-count-cards">
+            <li>
+              <a href="#associated-people" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                  People
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-events" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+                  Events
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
+      </aside>
+
+      <div class="record-main">
+        <section class="record-intro" aria-labelledby="place-overview-heading">
+          <p class="record-section-tag" id="place-overview-heading">Overview</p>
+          <p class="record-intro__text">
+            The University of British Columbia, founded in 1908, is a public research university with campuses in Vancouver and Kelowna. This record appears in the LGLC chronology in relation to employment, lectures, and affiliated events.
+          </p>
+        </section>
+
+        <details class="record-accordion" id="associated-people" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span class="record-accordion__title">Affiliated People</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Jane Rule</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Employee</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> "Jane Rule: The Woman Behind Lesbian Images," Body Politic, no. 21 (1975), p. 14</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> December 1, 1975</p>
+                </div>
+              </div>
+              <a href="/person/jane-rule" class="record-entry-card__link">View Page</a>
+            </article>
+          </div>
+        </details>
+
+        <details class="record-accordion" id="associated-events" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            <span class="record-accordion__title">Affiliated Events</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Public lecture (sample)</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Hosted at location</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Chronology volume reference</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> 1975-03-15</p>
+                </div>
+              </div>
+              <a href="/event/sample-1" class="record-entry-card__link">View Page</a>
+            </article>
+          </div>
+        </details>
+
+        <section class="record-citations" aria-labelledby="place-cite-heading">
+          <h2 id="place-cite-heading" class="record-citations__heading">
+            <span>Citations</span>
+            <svg class="record-citations__info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1.1-1 1.7"/></svg>
+          </h2>
+          <p class="record-citations__text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
+        </section>
+      </div>
     </div>
   </main>
   -->
@@ -584,62 +635,117 @@
   <!-- PERIODICAL PAGE -->
   <!-- ============================================ -->
   <!--
-  <main id="main-content" tabindex="-1">
-    <div class="container-page">
-      <section class="record-header" aria-labelledby="periodical-title">
-        <h1 id="periodical-title" class="record-title">Periodical's name</h1>
-        <p class="record-meta-line">Additional information available here.</p>
-      </section>
+  <main id="main-content" class="record-page" tabindex="-1">
+    <div class="container-page record-layout">
+      <aside class="record-sidebar" aria-label="Periodical summary">
+        <h1 id="periodical-title" class="record-title">The Body Politic</h1>
 
-      <section class="record-section" aria-labelledby="periodical-related-heading">
-        <h2 id="periodical-related-heading" class="section-heading">Related results</h2>
-        <div class="grid grid-3" role="list" aria-label="Related records grouped by type">
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/people.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Authored by</h3>
-            <ul class="list-disc" aria-label="List of authors">
-              <li>Person's Name</li>
-              <li>Person's Name</li>
-              <li>Person's Name</li>
-            </ul>
+        <dl class="record-facts-list">
+          <div class="record-facts-list__group">
+            <dt>Publisher</dt>
+            <dd>Pink Triangle Press (historical)</dd>
           </div>
+          <div class="record-facts-list__group">
+            <dt>Years active</dt>
+            <dd>1971 - 1987</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Place of publication</dt>
+            <dd>Toronto, Ontario</dd>
+          </div>
+        </dl>
 
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/events.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated events</h3>
-            <ul class="list-disc" aria-label="List of affiliated events">
-              <li>Event</li>
-              <li>Event</li>
-              <li>Event</li>
-            </ul>
-          </div>
-
-          <div class="related-card" role="listitem">
-            <img 
-              src="media/icons/periodicals.png" 
-              alt="" 
-              class="related-icon-img"
-              aria-hidden="true"
-            >
-            <h3 class="related-heading">Affiliated Places</h3>
-            <ul class="list-disc" aria-label="List of affiliated places">
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
+        <div class="record-sidebar__related">
+          <h2 class="record-sidebar-heading">Related Entries in LGLC</h2>
+          <ul class="record-count-cards">
+            <li>
+              <a href="#associated-people" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                  People
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-places" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  Places
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
+      </aside>
+
+      <div class="record-main">
+        <section class="record-intro" aria-labelledby="periodical-about-heading">
+          <p class="record-section-tag" id="periodical-about-heading">About</p>
+          <p class="record-intro__text">
+            The Body Politic was a Toronto-based gay liberation magazine published from 1971 to 1987. A central voice of the Canadian gay liberation movement, it regularly featured reporting, editorials, columns, and book reviews from leading activists and writers of the era.
+          </p>
+        </section>
+
+        <details class="record-accordion" id="associated-people" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span class="record-accordion__title">Authored by / Contributors</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Jane Rule</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Columnist</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Contributor index; sample citation string.</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> 1979 - 1985</p>
+                </div>
+              </div>
+              <a href="/person/jane-rule" class="record-entry-card__link">View Page</a>
+            </article>
+          </div>
+        </details>
+
+        <details class="record-accordion" id="associated-places" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span class="record-accordion__title">Affiliated Places</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Toronto</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Place of publication</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Masthead / imprint</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> N/A</p>
+                </div>
+              </div>
+              <a href="/place/toronto" class="record-entry-card__link">View Page</a>
+            </article>
+          </div>
+        </details>
+
+        <section class="record-citations" aria-labelledby="periodical-cite-heading">
+          <h2 id="periodical-cite-heading" class="record-citations__heading">
+            <span>Citations</span>
+            <svg class="record-citations__info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1.1-1 1.7"/></svg>
+          </h2>
+          <p class="record-citations__text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
+        </section>
+      </div>
     </div>
   </main>
   -->
@@ -648,64 +754,152 @@
   <!-- ORGANIZATION PAGE -->
   <!-- ============================================ -->
   <!--
-    <main id="main-content" tabindex="-1">
-      <div class="container-page">
-        <section class="record-header" aria-labelledby="organization-title">
-          <h1 id="organization-title" class="record-title">Organization Name</h1>
-          <p class="record-meta-line">Additional information available here.</p>
+  <main id="main-content" class="record-page" tabindex="-1">
+    <div class="container-page record-layout">
+      <aside class="record-sidebar" aria-label="Organization summary">
+        <h1 id="organization-title" class="record-title">Lesbian Organization of Toronto</h1>
+
+        <dl class="record-facts-list">
+          <div class="record-facts-list__group">
+            <dt>Location</dt>
+            <dd>Toronto, Ontario</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Years active</dt>
+            <dd>1970s - 1980s (illustrative)</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Type</dt>
+            <dd>Community organization</dd>
+          </div>
+        </dl>
+
+        <div class="record-sidebar__related">
+          <h2 class="record-sidebar-heading">Related Entries in LGLC</h2>
+          <ul class="record-count-cards">
+            <li>
+              <a href="#associated-people" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                  People
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-events" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+                  Events
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-periodicals" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><path d="M4 17a3 3 0 0 1 3-3h11"/></svg>
+                  Periodicals
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="record-main">
+        <section class="record-intro" aria-labelledby="organization-about-heading">
+          <p class="record-section-tag" id="organization-about-heading">About</p>
+          <p class="record-intro__text">
+            The Lesbian Organization of Toronto (LOOT) was a community organization active in the 1970s and 1980s. This sample record illustrates how organizations are presented in the LGLC chronology, with affiliated people, events, and publications surfaced below.
+          </p>
         </section>
 
-        <section class="record-section" aria-labelledby="organization-related-heading">
-          <h2 id="organization-related-heading" class="section-heading">Related results</h2>
-          <div class="grid grid-3" role="list" aria-label="Related records grouped by type">
-            <div class="related-card" role="listitem">
-              <img 
-                src="media/icons/people.png" 
-                alt="" 
-                class="related-icon-img"
-                aria-hidden="true"
-              >
-              <h3 class="related-heading">Affiliated persons</h3>
-              <ul class="list-disc" aria-label="List of affiliated persons">
-                <li>Person's Name</li>
-                <li>Person's Name</li>
-                <li>Person's Name</li>
-              </ul>
-            </div>
-
-            <div class="related-card" role="listitem">
-              <img 
-                src="media/icons/events.png" 
-                alt="" 
-                class="related-icon-img"
-                aria-hidden="true"
-              >
-              <h3 class="related-heading">Affiliated events</h3>
-              <ul class="list-disc" aria-label="List of affiliated events">
-                <li>Event</li>
-                <li>Event</li>
-                <li>Event</li>
-              </ul>
-            </div>
-
-            <div class="related-card" role="listitem">
-              <img 
-                src="media/icons/periodicals.png" 
-                alt="" 
-                class="related-icon-img"
-                aria-hidden="true"
-              >
-              <h3 class="related-heading">Affiliated periodicals</h3>
-              <ul class="list-disc" aria-label="List of affiliated periodicals">
-                <li>Title</li>
-                <li>Title</li>
-                <li>Title</li>
-              </ul>
-            </div>
+        <details class="record-accordion" id="associated-people" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span class="record-accordion__title">Affiliated Persons</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Sample member</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Member</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Organization file / chronology cross-reference</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> 1978-06-01</p>
+                </div>
+              </div>
+              <a href="/person/sample" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
+        </details>
+
+        <details class="record-accordion" id="associated-events" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            <span class="record-accordion__title">Affiliated Events</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Pride march (sample)</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Organizer</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Photograph and chronology entry</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> 1981-06-28</p>
+                </div>
+              </div>
+              <a href="/event/march-sample" class="record-entry-card__link">View Page</a>
+            </article>
+          </div>
+        </details>
+
+        <details class="record-accordion" id="associated-periodicals" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><path d="M4 17a3 3 0 0 1 3-3h11"/></svg>
+            <span class="record-accordion__title">Affiliated Periodicals</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">The Body Politic</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Coverage / mention</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Issue reference</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> 1979-04-01</p>
+                </div>
+              </div>
+              <a href="/periodical/body-politic" class="record-entry-card__link">View Page</a>
+            </article>
+          </div>
+        </details>
+
+        <section class="record-citations" aria-labelledby="organization-cite-heading">
+          <h2 id="organization-cite-heading" class="record-citations__heading">
+            <span>Citations</span>
+            <svg class="record-citations__info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1.1-1 1.7"/></svg>
+          </h2>
+          <p class="record-citations__text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
         </section>
       </div>
-    </main>
+    </div>
+  </main>
   -->
 
   <!-- ============================================ -->
@@ -713,63 +907,76 @@
   <!-- ============================================ -->
   <!--
   <main id="main-content" tabindex="-1">
-    <div class="container-page">
-      <section class="record-header" aria-labelledby="editorial-title">
-        <h1 id="editorial-title" class="record-title">Editorial Principles</h1>
+    <div class="container-page editorial-page">
+      <section class="editorial-section" aria-labelledby="editorial-title">
+        <p class="editorial-kicker">Editorial</p>
+        <h1 id="editorial-title" class="editorial-title">Editorial Principles</h1>
       </section>
 
-      <section class="record-section" aria-labelledby="our-stories-heading">
-        <h2 id="our-stories-heading" class="section-heading">Our Stories</h2>
-        <p class="section-text">
-          Lesbian and Gay Liberation in Canada (LGLC) publishes searchable event records of the gay liberation movement online. The project has been heavily influenced by the ethos of the ArQuives (formerly the Canadian Lesbian and Gay Archives), whose motto is "Keeping Our Stories Alive." Built and maintained by the community it serves, The ArQuives were established by Ron Dayman in 1973 out of The Body Politic (later Pink Triangle Press) collective's papers. The Body Politic and other gay liberation periodicals, handbills, and circulars bear important witness to the work of gay liberation activists in the 1960s and 1970s. The stories of gay liberation (and the important ways that Canadian gay liberation politics and activism differ from both gay rights politics and activism today and from analogous histories in other countries), will only live on if we, members of the generations that have followed and benefitted from gay liberation, know about the good work of the activists that have preceded us. Our hope is that the Lesbian and Gay Liberation in Canada project, and this website in particular, will help support Canadian gay cultural heritage through preservation and transmission.
-        </p>
+      <section class="editorial-section" aria-labelledby="our-stories-heading">
+        <h2 id="our-stories-heading" class="editorial-heading editorial-heading--eyebrow">Our Stories</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            Lesbian and Gay Liberation in Canada (LGLC) publishes searchable event records of the gay liberation movement online. The project has been heavily influenced by the ethos of the ArQuives (formerly the Canadian Lesbian and Gay Archives), whose motto is "Keeping Our Stories Alive." Built and maintained by the community it serves, The ArQuives were established by Ron Dayman in 1973 out of The Body Politic (later Pink Triangle Press) collective's papers. The Body Politic and other gay liberation periodicals, handbills, and circulars bear important witness to the work of gay liberation activists in the 1960s and 1970s. The stories of gay liberation (and the important ways that Canadian gay liberation politics and activism differ from both gay rights politics and activism today and from analogous histories in other countries), will only live on if we, members of the generations that have followed and benefitted from gay liberation, know about the good work of the activists that have preceded us. Our hope is that the Lesbian and Gay Liberation in Canada project, and this website in particular, will help support Canadian gay cultural heritage through preservation and transmission.
+          </p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="sources">
-        <h2 id="sources" class="section-heading">Sources</h2>
-        <p class="section-text">
-          The two volumes of <em>Lesbian and Gay Liberation In Canada: A Selected Annotated Chronology</em> (spanning 1964 to 1975 and 1976 to 1981), by Donald W. McLeod, represent two decades' archival research. The LGLC event text, drawn from McLeod's volumes, was gathered primarily from the archival holdings of the Canadian Lesbian and Gay Archives in Toronto, the Archives gaies du Québec in Montreal, the Canadian Women's Movement Archives in Ottawa, the University of British Columbia archives and the New York Public Library, further supplemented by personal correspondence, and data gathered from print periodicals and online sources. The data about people, organizations, periodicals, and places builds on McLeod's text, and incorporates data from other archives, government and personal websites, and commercial research databases.
-        </p>
+      <section class="editorial-section" aria-labelledby="sources">
+        <h2 id="sources" class="editorial-heading editorial-heading--eyebrow">Sources</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            The two volumes of <em>Lesbian and Gay Liberation In Canada: A Selected Annotated Chronology</em> (spanning 1964 to 1975 and 1976 to 1981), by Donald W. McLeod, represent two decades' archival research. The LGLC event text, drawn from McLeod's volumes, was gathered primarily from the archival holdings of the Canadian Lesbian and Gay Archives in Toronto, the Archives gaies du Québec in Montreal, the Canadian Women's Movement Archives in Ottawa, the University of British Columbia archives and the New York Public Library, further supplemented by personal correspondence, and data gathered from print periodicals and online sources. The data about people, organizations, periodicals, and places builds on McLeod's text, and incorporates data from other archives, government and personal websites, and commercial research databases.
+          </p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="a-note-on-language">
-        <h2 id="a-note-on-language" class="section-heading">A Note on Language</h2>
-        <p class="section-text">
-          This is a history project: the event text represents language used between 1960s and early 1980s. Many terms that were used in the past may seem anachronistic or even offensive today. We have preserved this language in order to capture, as best as we can, the cultural context for the Canadian gay liberation movement. This includes terms that people used to define themselves, as well as terms others used to refer to them. Similarly, the project's contextual essays mix historical language with that contemporary to the 2010s. As time goes on, we will not update the 2010s language, not out of a desire to offend future readers as language and the meaning it carries evolves, but rather to leave a record of contemporary thinking about queer lives, politics, and experience.
-        </p>
+      <section class="editorial-section" aria-labelledby="a-note-on-language">
+        <h2 id="a-note-on-language" class="editorial-heading editorial-heading--eyebrow">A Note on Language</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            This is a history project: the event text represents language used between 1960s and early 1980s. Many terms that were used in the past may seem anachronistic or even offensive today. We have preserved this language in order to capture, as best as we can, the cultural context for the Canadian gay liberation movement. This includes terms that people used to define themselves, as well as terms others used to refer to them. Similarly, the project's contextual essays mix historical language with that contemporary to the 2010s. As time goes on, we will not update the 2010s language, not out of a desire to offend future readers as language and the meaning it carries evolves, but rather to leave a record of contemporary thinking about queer lives, politics, and experience.
+          </p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="cwrc">
-        <h2 id="cwrc" class="section-heading">CWRC</h2>
-        <p class="section-text">
-          LGLC is also an infrastructure pilot project of the <a href="https://beta.cwrc.ca/" target="_blank" rel="noopener noreferrer">Canadian Writing Research Collaboratory (CWRC)</a> at the University of Alberta. The TEI-XML encoded volumes of Don McLeod's chronology are housed by CWRC and are part of its Online Research Canada (ORCA) database. By being included in CWRC, LGLC content will be made available as part of an interdisciplinary, open-access library database, for use by researchers and students worldwide.
-        </p>
+      <section class="editorial-section" aria-labelledby="cwrc">
+        <h2 id="cwrc" class="editorial-heading editorial-heading--eyebrow">CWRC</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            LGLC is also an infrastructure pilot project of the <a href="https://beta.cwrc.ca/" target="_blank" rel="noopener noreferrer">Canadian Writing Research Collaboratory (CWRC)</a> at the University of Alberta. The TEI-XML encoded volumes of Don McLeod's chronology are housed by CWRC and are part of its Online Research Canada (ORCA) database. By being included in CWRC, LGLC content will be made available as part of an interdisciplinary, open-access library database, for use by researchers and students worldwide.
+          </p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="technical-specifications">
-        <h2 id="technical-specifications" class="section-heading">Technical Specifications</h2>
-        <p class="section-text">
-          We have encoded Don McLeod's text using a form of XML called P5 TEI (the language of the <a href="http://www.tei-c.org/" target="_blank" rel="noopener noreferrer">Text Encoding Initiative</a>). It and the CSV that underpin our prosopography has been imported into a <a href="https://neo4j.com/" target="_blank" rel="noopener noreferrer">Neo4j</a> graph database instance. The database enables dynamic search and filtering of our data. The user interface is an app built with Node.js and Jade.
-        </p>
+      <section class="editorial-section" aria-labelledby="technical-specifications">
+        <h2 id="technical-specifications" class="editorial-heading editorial-heading--eyebrow">Technical Specifications</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            We have encoded Don McLeod's text using a form of XML called P5 TEI (the language of the <a href="http://www.tei-c.org/" target="_blank" rel="noopener noreferrer">Text Encoding Initiative</a>). It and the CSV that underpin our prosopography has been imported into a <a href="https://neo4j.com/" target="_blank" rel="noopener noreferrer">Neo4j</a> graph database instance. The database enables dynamic search and filtering of our data. The user interface is an app built with Node.js and Jade.
+          </p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="contact-us">
-        <h2 id="contact-us" class="section-heading">Contact Us</h2>
-        <p class="section-text">
-          We are happy to share our TEI and are actively seeking contributions to our contextual essays section. If you would like to contribute an essay elucidating any of the LGLC events or suggest additions or corrections please contact us.
-        </p>
-        <p class="section-text">
-          This resource is still being updated. Both the encoding and the database that underpin lglc.ca are designed to show the connections between people, places, organizations, occupations, and events (and citations for the events' archival sources) through plain text, network graphs, maps, and timelines. The interface of this beta version of the site, however, allows for only finite graph visualizations alongside complete textual records. We are revising the names of the 5% of the people listed in the database.
-        </p>
-        <p class="section-text">
-          If you find an error of any sort please do not hesitate to contact us. We are committed to mitigating any risk to the people and organizations of the gay liberation movement, and have collected these records of Canadian LGBTQ+ history in good faith. That said, we welcome takedown requests for records that might be unfair, unlawful, or that through being online, might be otherwise deemed sensitive.
-        </p>
-        <p class="section-text">
-          Please send all correspondence to both michelle.schwartz[at]ryerson.ca and constance.crompton[at]uottawa.ca.
-        </p>
-        <p class="section-text">
-          <em>Constance Crompton and Michelle Schwartz, 2019</em>
-        </p>
+      <section class="editorial-section" aria-labelledby="contact-us">
+        <h2 id="contact-us" class="editorial-heading editorial-heading--eyebrow">Contact Us</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            We are happy to share our TEI and are actively seeking contributions to our contextual essays section. If you would like to contribute an essay elucidating any of the LGLC events or suggest additions or corrections please contact us.
+          </p>
+          <p class="editorial-text">
+            This resource is still being updated. Both the encoding and the database that underpin lglc.ca are designed to show the connections between people, places, organizations, occupations, and events (and citations for the events' archival sources) through plain text, network graphs, maps, and timelines. The interface of this beta version of the site, however, allows for only finite graph visualizations alongside complete textual records. We are revising the names of the 5% of the people listed in the database.
+          </p>
+          <p class="editorial-text">
+            If you find an error of any sort please do not hesitate to contact us. We are committed to mitigating any risk to the people and organizations of the gay liberation movement, and have collected these records of Canadian LGBTQ+ history in good faith. That said, we welcome takedown requests for records that might be unfair, unlawful, or that through being online, might be otherwise deemed sensitive.
+          </p>
+          <p class="editorial-text">
+            Please use our <a href="/contact">contact form</a> to get in touch with the team.
+          </p>
+          <p class="editorial-text">
+            <em>Constance Crompton and Michelle Schwartz, 2019</em>
+          </p>
+        </div>
       </section>
     </div>
   </main>
@@ -780,146 +987,209 @@
   <!-- ============================================ -->
 
   <!-- <main id="main-content" tabindex="-1">
-    <div class="container-page">
-      <section class="record-header" aria-labelledby="about-title">
-        <h1 id="about-title" class="record-title">About</h1>
+    <div class="container-page editorial-page">
+      <section class="editorial-section" aria-labelledby="about-title">
+        <p class="editorial-kicker">About</p>
+        <h1 id="about-title" class="editorial-title">Lesbian and Gay Liberation in Canada</h1>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            Lesbian and Gay Liberation in Canada (LGLC) is an interactive digital resource for the study of lesbian, gay, bisexual, and transgender (LGBT) history in Canada from 1964 to 1981. The project takes two books, Don McLeod's chronologies <em>Lesbian and Gay Liberation in Canada Volumes 1 and 2</em> (ECW Press, 1996; Homewood Books, 2014), and has converted them into a database that allows users to explore the people, places, events, and publications that defined Canadian lesbian and gay liberation history.
+          </p>
+          <p class="editorial-text">
+            We have supplemented the digitized text with additional data about the people, places, organizations, and periodicals mentioned in McLeod's books, including biographical information for every person mentioned in the database. These individuals worked to push through major changes to the national political and social landscape, however, because of their status as members of marginalized and persecuted groups, their efforts and identities have largely gone unrecorded. Our goal is to increase the amount of existing and publicly accessible historical information about the lesbian and gay liberation movement in Canada, and to capture for posterity the contributions that many individuals in Canada made to this movement.
+          </p>
+          <div class="content-box">
+            <p class="content-box-text">
+              <strong>Historical event content warning:</strong> The events documented in LGLC include descriptions of homophobia, lesbophobia, biphobia, transphobia, sexism, racism, colonial violence, ableism, classism, assault, sexual assault, sexual assault of minors, murder, and police violence.
+            </p>
+          </div>
+        </div>
+        <figure class="editorial-figure">
+          <img src="media/img/lesbian-organization-toronto.png" alt="Historical photograph of the Lesbian Organization of Toronto banner being carried by activists" class="editorial-image">
+        </figure>
       </section>
 
-      <section class="record-section" aria-labelledby="what-is-lglc-heading">
-        <h2 id="what-is-lglc-heading" class="section-heading">What is Lesbian and Gay Liberation in Canada?</h2>
-        <p class="section-text">
-          Lesbian and Gay Liberation in Canada (LGLC) is an interactive digital resource for the study of lesbian, gay, bisexual, and transgender (LGBT) history in Canada from 1964 to 1981. The project takes two books, Don McLeod's chronologies <em>Lesbian and Gay Liberation in Canada Volumes 1 and 2</em> (ECW Press, 1996; Homewood Books, 2014), and has converted them into a database that allows users to explore the people, places, events, and publications that defined Canadian lesbian and gay liberation history.
-        </p>
-        <p class="section-text">
-          We have supplemented the digitized text with additional data about the people, places, organizations, and periodicals mentioned in McLeod's books, including biographical information for every person mentioned in the database. These individuals worked to push through major changes to the national political and social landscape, however, because of their status as members of marginalized and persecuted groups, their efforts and identities have largely gone unrecorded. Our goal is to increase the amount of existing and publicly accessible historical information about the lesbian and gay liberation movement in Canada, and to capture for posterity the contributions that many individuals in Canada made to this movement.
-        </p>
-        <div class="content-box">
-          <p class="content-box-text">
-            <strong>Historical event content warning:</strong> The events documented in LGLC include descriptions of homophobia, lesbophobia, biphobia, transphobia, sexism, racism, colonial violence, ableism, classism, assault, sexual assault, sexual assault of minors, murder, and police violence.
+      <section class="editorial-section" aria-labelledby="chronology-heading">
+        <h2 id="chronology-heading" class="editorial-heading editorial-heading--display">A Selected Annotated Chronology</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            The LGLC project team is forever indebted to Don McLeod for so generously allowing us to work with his books, <em>Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volumes 1 and 2</em>.
+          </p>
+          <p class="editorial-text">
+            <em><a href="http://hdl.handle.net/1807/4397" target="_blank" rel="noopener noreferrer">Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volume 1, 1964-1975</a></em>, originally published in 1996, is a chronology of the first twelve years of the organized homophile/gay liberation movement in Canada. The start date of the chronology corresponds with the formation of the Vancouver-based Association for Social Knowledge (ASK), the first large-scale homophile organization in Canada. The end date coincides with the founding of the National Gay Rights Coalition/Coalition national pour les droits des homosexuels (NGRC/CNDH), the "first truly national coalition of Canadian lesbian and gay groups" (McLeod, Lesbian and Gay Liberation In Canada V.1 viii).
+          </p>
+          <p class="editorial-text">
+            <em><a href="http://hdl.handle.net/1807/74702" target="_blank" rel="noopener noreferrer">Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volume 2, 1976-1981</a></em> continues the series. The second volume concludes in 1981, "the year of the Bath Raids in Toronto and the beginning of the first press reports concerning AIDS" (McLeod, Lesbian and Gay Liberation In Canada V.2 ix).
+          </p>
+          <p class="editorial-text">
+            The word 'selected' in the titles of the two volumes refers to the limits that were placed on the material covered — the books focus primarily on "self-declared lesbians and gay men and their activities in regard to the forging of lesbian and gay communities and liberation in Canada" (viii). Therefore, the chronology dedicates its foremost attention to demonstrations, political actions, lobbying, and legal reforms.
           </p>
         </div>
-
-        <h3 id="selected-chronology-heading" class="subsection-heading">A Selected Annotated Chronology</h3>
-        <p class="section-text">
-          The LGLC project team is forever indebted to Don McLeod for so generously allowing us to work with his books, <em>Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volumes 1 and 2</em>.
-        </p>
-        <p class="section-text">
-          <em><a href="http://hdl.handle.net/1807/4397" target="_blank" rel="noopener noreferrer">Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volume 1, 1964-1975</a></em>, originally published in 1996, is a chronology of the first twelve years of the organized homophile/gay liberation movement in Canada. The start date of the chronology corresponds with the formation of the Vancouver-based Association for Social Knowledge (ASK), the first large-scale homophile organization in Canada. The end date coincides with the founding of the National Gay Rights Coalition/Coalition national pour les droits des homosexuels (NGRC/CNDH), the "first truly national coalition of Canadian lesbian and gay groups" (McLeod, Lesbian and Gay Liberation In Canada V.1 viii).
-        </p>
-        <p class="section-text">
-          <em><a href="http://hdl.handle.net/1807/74702" target="_blank" rel="noopener noreferrer">Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, Volume 2, 1976-1981</a></em> continues the series. The second volume concludes in 1981, "the year of the Bath Raids in Toronto and the beginning of the first press reports concerning AIDS" (McLeod, Lesbian and Gay Liberation In Canada V.2 ix).
-        </p>
-        <p class="section-text">
-          The word 'selected' in the titles of the two volumes refers to the limits that were placed on the material covered—the books focus primarily on "self-declared lesbians and gay men and their activities in regard to the forging of lesbian and gay communities and liberation in Canada" (viii). Therefore, the chronology dedicates its foremost attention to demonstrations, political actions, lobbying, and legal reforms.
-        </p>
       </section>
 
-      <section class="record-section" aria-labelledby="what-is-gay-liberation-heading">
-        <h2 id="what-is-gay-liberation-heading" class="section-heading">What is Gay Liberation?</h2>
-        <p class="section-text">
-          Gay liberation was a militant, radical, and unapologetically visible gay rights movement. In stark contrast to the assimilationist politics of the 1980s and beyond, the movement rejected heterosexual norms and compulsory nuclear family structures. To counter the repression of gay men and lesbians espoused by mainstream culture, gay liberationists developed highly eroticised utopian politics in direct opposition to mainstream respectability. They pioneered new forms of consciousness raising, created a vibrant print culture, won legal reforms, and developed successful strategies for supporting survivors of assault. That said, the movement itself was not without internal schisms and debate: gay men who focused on their own sexual libertarianism could be blind to gender-based power imbalances, and lesbian groups, often finding themselves at odds with both the gay liberation and women's liberation movements, splintered off to form their own organizations based around distinct sets of demands. In its early years, few gay and lesbian liberationists addressed class- and race-based oppression or trans rights. LGLC traces the progress of the movement, its varying political aims, its developing diversity, its setbacks, and its triumphs.
-        </p>
-        <p class="section-text">
-          LGBT rights movements have remade themselves, generation after generation, often without engaging with the political work of predecessors; however, since we are all indebted to the activists who preceded us, we hope that the LGLC project will serve as a welcome resource for those who want to learn from, study, and build on the rich history of gay liberation in Canada.
-        </p>
+      <section class="editorial-section" aria-labelledby="gay-liberation-heading">
+        <h2 id="gay-liberation-heading" class="editorial-heading editorial-heading--eyebrow">What is Gay Liberation?</h2>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            Gay liberation was a militant, radical, and unapologetically visible gay rights movement. In stark contrast to the assimilationist politics of the 1980s and beyond, the movement rejected heterosexual norms and compulsory nuclear family structures. To counter the repression of gay men and lesbians espoused by mainstream culture, gay liberationists developed highly eroticised utopian politics in direct opposition to mainstream respectability. They pioneered new forms of consciousness raising, created a vibrant print culture, won legal reforms, and developed successful strategies for supporting survivors of assault. That said, the movement itself was not without internal schisms and debate: gay men who focused on their own sexual libertarianism could be blind to gender-based power imbalances, and lesbian groups, often finding themselves at odds with both the gay liberation and women's liberation movements, splintered off to form their own organizations based around distinct sets of demands. In its early years, few gay and lesbian liberationists addressed class- and race-based oppression or trans rights. LGLC traces the progress of the movement, its varying political aims, its developing diversity, its setbacks, and its triumphs.
+          </p>
+          <p class="editorial-text">
+            LGBT rights movements have remade themselves, generation after generation, often without engaging with the political work of predecessors; however, since we are all indebted to the activists who preceded us, we hope that the LGLC project will serve as a welcome resource for those who want to learn from, study, and build on the rich history of gay liberation in Canada.
+          </p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="team-heading">
-        <h2 id="team-heading" class="section-heading">The LGLC Team</h2>
-        
-        <h3 class="subsection-heading">Co-Directors</h3>
-        <ul class="list-unstyled">
-          <li>Constance Crompton (University of Ottawa)</li>
-          <li>Michelle Schwartz (Toronto Metropolitan University)</li>
-        </ul>
+      <section class="editorial-section" aria-labelledby="team-heading">
+        <h2 id="team-heading" class="editorial-heading editorial-heading--display">The LGLC Team</h2>
+        <div class="editorial-body">
+          <h3 class="editorial-subheading">Co-Directors</h3>
+          <ul class="editorial-list">
+            <li>Constance Crompton (University of Ottawa)</li>
+            <li>Michelle Schwartz (Toronto Metropolitan University)</li>
+          </ul>
 
-        <h3 class="subsection-heading">Collaborators</h3>
-        <ul class="list-unstyled">
-          <li>Donald W. McLeod (University of Toronto)</li>
-          <li>Susan Brown (University of Guelph)</li>
-          <li>El Chenier (Simon Fraser University)</li>
-          <li>Fangmin Wang (Toronto Metropolitan University)</li>
-          <li>M.J. Sohonos (Toronto Metropolitan University)</li>
-          <li>Elspeth Brown (University of Toronto)</li>
-          <li>Fabien Galipeau (Archives Gaies du Québec)</li>
-        </ul>
+          <h3 class="editorial-subheading">Collaborators</h3>
+          <ul class="editorial-list">
+            <li>Donald W. McLeod (University of Toronto)</li>
+            <li>Susan Brown (University of Guelph)</li>
+            <li>El Chenier (Simon Fraser University)</li>
+            <li>Fangmin Wang (Toronto Metropolitan University)</li>
+            <li>M.J. Sohonos (Toronto Metropolitan University)</li>
+            <li>Elspeth Brown (University of Toronto)</li>
+            <li>Fabien Galipeau (Archives Gaies du Québec)</li>
+          </ul>
 
-        <h3 class="subsection-heading">Managing Editor</h3>
-        <ul class="list-unstyled">
-          <li>Candice Lipski</li>
-        </ul>
+          <h3 class="editorial-subheading">Managing Editor</h3>
+          <ul class="editorial-list">
+            <li>Candice Lipski</li>
+          </ul>
 
-        <h3 class="subsection-heading">Current Research Assistants</h3>
-        <ul class="list-unstyled">
-          <li>Pascale Dangoisse (University of Ottawa)</li>
-          <li>Sam Lehn (University of Ottawa)</li>
-          <li>Moni Razavi (University of Ottawa)</li>
-          <li>Farinaz Basmechi (University of Ottawa)</li>
-          <li>Jasmin Macarios (University of Ottawa)</li>
-        </ul>
+          <h3 class="editorial-subheading">Current Research Assistants</h3>
+          <ul class="editorial-list">
+            <li>Pascale Dangoisse (University of Ottawa)</li>
+            <li>Sam Lehn (University of Ottawa)</li>
+            <li>Moni Razavi (University of Ottawa)</li>
+            <li>Farinaz Basmechi (University of Ottawa)</li>
+            <li>Jasmin Macarios (University of Ottawa)</li>
+          </ul>
 
-        <h3 class="subsection-heading">Developers</h3>
-        <ul class="list-unstyled">
-          <li>Patrick Fung -- Toronto Metropolitan University Library (systems administration)</li>
-          <li>Rob Butz -- Oxygen Smith (prospopgraphy data ingestion and front end)</li>
-          <li>Iversoft (front end)</li>
-        </ul>
+          <h3 class="editorial-subheading">Developers</h3>
+          <ul class="editorial-list">
+            <li>Patrick Fung — Toronto Metropolitan University Library (systems administration)</li>
+            <li>Rob Butz — Oxygen Smith (prosopography data ingestion and front end)</li>
+            <li>Iversoft (front end)</li>
+          </ul>
 
-        <h3 class="subsection-heading">Former Project Managers</h3>
-        <ul class="list-unstyled">
-          <li>Candice Lipski (University of British Columbia)</li>
-          <li>Raymon Sandhu (University of British Columbia)</li>
-          <li>Travis White (University of British Columbia)</li>
-          <li>Caitlin Voth (University of British Columbia)</li>
-        </ul>
+          <h3 class="editorial-subheading">Former Project Managers</h3>
+          <ul class="editorial-list">
+            <li>Candice Lipski (University of British Columbia)</li>
+            <li>Raymon Sandhu (University of British Columbia)</li>
+            <li>Travis White (University of British Columbia)</li>
+            <li>Caitlin Voth (University of British Columbia)</li>
+          </ul>
 
-        <h3 class="subsection-heading">Former Research Assistants</h3>
-        <ul class="list-unstyled">
-          <li>Oxana Pilenko (University of Ottawa)</li>
-          <li>Alice Defours (Lyon 2)</li>
-          <li>Ewan Matthews (Toronto Metropolitan University)</li>
-          <li>Caitlin Voth (University of British Columbia)</li>
-          <li>Nadine Boulay (Simon Fraser University)</li>
-          <li>Jessica Bonney (University of British Columbia)</li>
-          <li>Sarah Lane (Toronto Metropolitan University)</li>
-          <li>Raymon Sandhu (University of British Columbia)</li>
-          <li>Anderson Tuguinay (Toronto Metropolitan University)</li>
-          <li>Travis White (University of British Columbia)</li>
-          <li>Stefanie Martin (Toronto Metropolitan University)</li>
-          <li>Cole Mash (University of British Columbia)</li>
-          <li>Seamus Riordan-Short (University of British Columbia)</li>
-          <li>Rebecca Desjarlais (University of British Columbia)</li>
-        </ul>
+          <h3 class="editorial-subheading">Former Research Assistants</h3>
+          <ul class="editorial-list">
+            <li>Oxana Pilenko (University of Ottawa)</li>
+            <li>Alice Defours (Lyon 2)</li>
+            <li>Ewan Matthews (Toronto Metropolitan University)</li>
+            <li>Caitlin Voth (University of British Columbia)</li>
+            <li>Nadine Boulay (Simon Fraser University)</li>
+            <li>Jessica Bonney (University of British Columbia)</li>
+            <li>Sarah Lane (Toronto Metropolitan University)</li>
+            <li>Raymon Sandhu (University of British Columbia)</li>
+            <li>Anderson Tuguinay (Toronto Metropolitan University)</li>
+            <li>Travis White (University of British Columbia)</li>
+            <li>Stefanie Martin (Toronto Metropolitan University)</li>
+            <li>Cole Mash (University of British Columbia)</li>
+            <li>Seamus Riordan-Short (University of British Columbia)</li>
+            <li>Rebecca Desjarlais (University of British Columbia)</li>
+          </ul>
 
-        <p class="section-text">
-          <em>The LGLC project has been made possible by a SSHRC Insight Grant, the Department of Canadian Heritage, and the support of the Toronto Metropolitan University University Libraries with further support from the Faculty of Arts at the University of Ottawa, Compute Canada, the Canadian Foundation for Innovation, the British Columbia Knowledge Network, the UBC Okanagan Faculty of Creative and Critical Studies, the <a href="https://fccs.ok.ubc.ca/research/projects/hdl.html" target="_blank" rel="noopener noreferrer">UBC Okanagan Humanities Data Lab</a> now the <a href="http://amplab.ok.ubc.ca/" target="_blank" rel="noopener noreferrer">AMP Lab</a>, the <a href="https://www.torontomu.ca/centre-digital-humanities/" target="_blank" rel="noopener noreferrer">Toronto Metropolitan University Centre for Digital Humanities</a>, the <a href="https://library.torontomu.ca/collab/" target="_blank" rel="noopener noreferrer">Toronto Metropolitan University Libraries Collaboratory</a>, and the <a href="http://humanitiesdata.ca/" target="_blank" rel="noopener noreferrer">Humanities Data Lab at the University of Ottawa</a>.</em>
-        </p>
-        <p class="section-text">
-          <em>The LGLC is an infrastructure pilot project of the <a href="https://beta.cwrc.ca/" target="_blank" rel="noopener noreferrer">Canadian Research Writing Collaboratory (CWRC)</a>.</em>
-        </p>
-        <p class="section-text">
-          <em>Front end design by <a href="https://www.iversoft.ca/" target="_blank" rel="noopener noreferrer">Iversoft</a>. Logo and branding by <a href="https://thepublicstudio.ca/" target="_blank" rel="noopener noreferrer">The Public</a>.</em>
-        </p>
-        <p class="section-text">
-          <em>Banner image courtesy of <a href="https://arquives.ca/" target="_blank" rel="noopener noreferrer">The ArQuives</a>.</em>
-        </p>
+          <p class="editorial-text">
+            <em>The LGLC project has been made possible by a SSHRC Insight Grant, the Department of Canadian Heritage, and the support of the Toronto Metropolitan University Libraries with further support from the Faculty of Arts at the University of Ottawa, Compute Canada, the Canadian Foundation for Innovation, the British Columbia Knowledge Network, the UBC Okanagan Faculty of Creative and Critical Studies, the <a href="https://fccs.ok.ubc.ca/research/projects/hdl.html" target="_blank" rel="noopener noreferrer">UBC Okanagan Humanities Data Lab</a> now the <a href="http://amplab.ok.ubc.ca/" target="_blank" rel="noopener noreferrer">AMP Lab</a>, the <a href="https://www.torontomu.ca/centre-digital-humanities/" target="_blank" rel="noopener noreferrer">Toronto Metropolitan University Centre for Digital Humanities</a>, the <a href="https://library.torontomu.ca/collab/" target="_blank" rel="noopener noreferrer">Toronto Metropolitan University Libraries Collaboratory</a>, and the <a href="http://humanitiesdata.ca/" target="_blank" rel="noopener noreferrer">Humanities Data Lab at the University of Ottawa</a>.</em>
+          </p>
+          <p class="editorial-text">
+            <em>The LGLC is an infrastructure pilot project of the <a href="https://beta.cwrc.ca/" target="_blank" rel="noopener noreferrer">Canadian Research Writing Collaboratory (CWRC)</a>.</em>
+          </p>
+          <p class="editorial-text">
+            <em>Front end design by <a href="https://www.iversoft.ca/" target="_blank" rel="noopener noreferrer">Iversoft</a>. Logo and branding by <a href="https://thepublicstudio.ca/" target="_blank" rel="noopener noreferrer">The Public</a>.</em>
+          </p>
+          <p class="editorial-text">
+            <em>Banner image courtesy of <a href="https://arquives.ca/" target="_blank" rel="noopener noreferrer">The ArQuives</a>.</em>
+          </p>
+        </div>
       </section>
 
-      <section class="record-section" aria-labelledby="cite-heading">
-        <h2 id="cite-heading" class="section-heading">Cite This Source</h2>
-        
-        <p class="section-text"><strong>LGLC website:</strong></p>
-        <p class="section-text">
-          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
-        </p>
-        
-        <p class="section-text"><strong>Individual page:</strong></p>
-        <p class="section-text">
-          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Chris Bearchell. <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/person/CBEA
-        </p>
+      <section class="editorial-section" aria-labelledby="cite-heading">
+        <h2 id="cite-heading" class="editorial-heading editorial-heading--eyebrow">Cite This Source</h2>
+        <div class="editorial-body">
+          <p class="editorial-text"><strong>LGLC website:</strong></p>
+          <p class="editorial-text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
+          <p class="editorial-text"><strong>Individual page:</strong></p>
+          <p class="editorial-text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Chris Bearchell. <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/person/CBEA
+          </p>
+        </div>
       </section>
     </div>
   </main> -->
+
+
+  <!-- ============================================ -->
+  <!-- CONTACT PAGE -->
+  <!-- ============================================ -->
+  <!--
+  <main id="main-content" tabindex="-1">
+    <div class="container-page editorial-page">
+      <section class="editorial-section" aria-labelledby="contact-title">
+        <p class="editorial-kicker">Contact</p>
+        <h1 id="contact-title" class="editorial-title">Get in touch</h1>
+        <div class="editorial-body">
+          <p class="editorial-text">
+            Have corrections and additions? Love our site and want more? Curious about supporting the project? Tell us what's on your mind and we'll get back to you.
+          </p>
+        </div>
+      </section>
+
+      <section class="editorial-section" aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading" class="visually-hidden">Contact form</h2>
+        <form class="contact-form" id="contact-form" data-recipient="michelle.schwartz@torontomu.ca">
+          <div class="contact-field">
+            <label for="contact-name" class="contact-label">Your name</label>
+            <input type="text" id="contact-name" name="name" class="contact-input" autocomplete="name" required>
+          </div>
+          <div class="contact-field">
+            <label for="contact-email" class="contact-label">Your email</label>
+            <input type="email" id="contact-email" name="email" class="contact-input" autocomplete="email" required>
+          </div>
+          <div class="contact-field">
+            <label for="contact-topic" class="contact-label">What's it about?</label>
+            <select id="contact-topic" name="topic" class="contact-select" required>
+              <option value="" disabled selected>Choose a topic…</option>
+              <option value="Corrections and additions">Corrections and additions</option>
+              <option value="Love our site? Want more?">Love our site? Want more?</option>
+              <option value="Care to send money?">Care to send money?</option>
+              <option value="Something else">Something else</option>
+            </select>
+          </div>
+          <div class="contact-field">
+            <label for="contact-message" class="contact-label">Message</label>
+            <textarea id="contact-message" name="message" class="contact-textarea" rows="6" required></textarea>
+          </div>
+          <div class="contact-actions">
+            <button type="submit" class="btn-primary contact-submit">Open your email</button>
+          </div>
+          <p class="contact-help">
+            Submitting this form opens your default email app with your message pre-filled and addressed to the LGLC team. Nothing leaves this page until you hit send in your email app.
+          </p>
+        </form>
+      </section>
+    </div>
+  </main>
+  -->
 
 
   <!-- ============================================ -->
@@ -929,124 +1199,38 @@
     <div class="footer-container">
       <div class="footer-content">
         <div class="footer-brand">
-          <a href="/" class="footer-logo" aria-label="LGLC Home">
-            <img 
-              src="media/img/LGLC Logo Icon Black.jpg" 
-              alt="LGLC Logo" 
+          <a href="/" class="footer-logo" aria-label="LGLC - Lesbian and Gay Liberation in Canada Home">
+            <img
+              src="media/img/LGLC Logo Black.jpg"
+              alt="LGLC - Lesbian and Gay Liberation in Canada"
               class="footer-logo-img"
             >
           </a>
-          <div class="footer-social">
-            <a 
-              href="https://www.facebook.com/lglc" 
-              aria-label="Visit LGLC on Facebook" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
-                />
-              </svg>
-            </a>
-            <a 
-              href="https://twitter.com/lglc" 
-              aria-label="Visit LGLC on Twitter" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                />
-              </svg>
-            </a>
-            <a 
-              href="https://www.linkedin.com/company/lglc" 
-              aria-label="Visit LGLC on LinkedIn" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
-                />
-              </svg>
-            </a>
-            <a 
-              href="https://www.instagram.com/lglc" 
-              aria-label="Visit LGLC on Instagram" 
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path 
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                />
-              </svg>
-            </a>
-          </div>
         </div>
-        
-        <nav class="footer-nav" aria-label="Footer navigation">
+
+        <nav class="footer-nav footer-nav--menu" aria-label="Footer navigation">
           <div class="footer-column">
-            <h4 class="footer-heading">About LGLC</h4>
+            <h4 class="footer-heading">Menu</h4>
             <ul class="footer-links">
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/mission">Our Mission</a></li>
-              <li><a href="/team">Team</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/search">Search</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
           <div class="footer-column">
-            <h4 class="footer-heading">Resources</h4>
+            <h4 class="footer-heading">Learn More</h4>
             <ul class="footer-links">
-              <li><a href="/search">Search Database</a></li>
-              <li><a href="/editorial-principles">Editorial Principles</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4 class="footer-heading">Legal</h4>
-            <ul class="footer-links">
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/terms">Terms of Use</a></li>
-              <li><a href="/accessibility">Accessibility</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/editorial-principles">Editorial</a></li>
             </ul>
           </div>
         </nav>
+
       </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">Lesbian and Gay Liberation in Canada © 2026. All rights reserved.</p>
+</div>
     </div>
   </footer>
   <!-- End Footer Component -->

@@ -1,177 +1,131 @@
 # LGLC Website Templates
 
-Lesbian and Gay Liberation in Canada (LGLC) website templates and 
-components built with a token-based design system.
+Lesbian and Gay Liberation in Canada (LGLC) website templates and components built with a **token-based design system** documented in `DESIGN-LANGUAGE.md`.
 
-## 🚀 Quick Start
+## Quick start
 
-1. **View the templates:**
-   - Open `index.html` in a browser to see the active template (currently Organization page)
-   - Open `search.html` to see the search interface
+1. **View the templates**
+   - Open `index.html` in a browser to explore the main template (multiple page sections can be toggled in the file).
+   - Open files under `demo/` for standalone examples (landing, record types, etc.).
 
-2. **Customize a page:**
-   - Edit `index.html` and uncomment the desired page template section
-   - Replace placeholder content with your actual data
-   - Update CSS files to match your brand (using design tokens)
+2. **Customize a page**
+   - Edit the relevant HTML and replace placeholder content.
+   - Style changes should go through **`css/design-tokens.css`** and component CSS—avoid hardcoded values (see below).
 
-3. **Add new components:**
-   - Create a new CSS file in `css/` directory
-   - Import `design-tokens.css` first, then your component CSS
-   - Use design tokens exclusively (see Component Styling Guide below)
+3. **Add new components**
+   - Add a CSS file under `css/`.
+   - Load `design-tokens.css` first, then shared styles, then your component.
+   - Use tokens only (`var(--token-name)`).
 
-## 📁 Project Structure
+## Project structure
 
 ```
 ├── css/
-│   ├── design-tokens.css    # Design system (colors, spacing, typography)
-│   ├── header.css           # Header component styles
-│   ├── footer.css           # Footer component styles
-│   ├── main.css             # Main shared styles
-│   ├── pages.css            # Page-specific styles (records, landing, etc.)
-│   └── search.css           # Search page styles
+│   ├── design-tokens.css    # Design tokens (colors, spacing, typography)
+│   ├── header.css           # Header / nav / search bar strip
+│   ├── footer.css           # Footer (white band; navy text)
+│   ├── main.css             # Base typography, buttons, grids, utilities
+│   ├── components.css       # Cards, tags, related-result cards, tertiary buttons
+│   ├── pages.css            # Landing + record page patterns
+│   └── search.css           # staticSearch / search UI styling
+├── demo/                    # Example HTML pages
 ├── js/
-│   └── header.js            # Header interactivity and accessibility features
-├── media/                   # Images, fonts, and assets
-│   ├── fonts/               # Local font files (Josefin Sans, Aachen Std)
-│   ├── icons/               # Icon images for related results
-│   ├── img/                 # Image assets and logos
-│   └── style_guide.pdf      # Official LGLC Brand Standards Manual
-├── .cursorrules             # Consolidated AI/IDE rules (for all coding assistants)
-├── .aiderrules              # Points to .cursorrules (Aider-specific)
-├── DESIGN-LANGUAGE.md       # Comprehensive design language documentation
-├── index.html               # Main template (contains multiple page types)
-├── search.html              # Search page template with staticSearch integration
+│   └── header.js            # Mobile nav, search tabs, accessibility helpers
+├── media/                   # Images, optional local fonts, brand PDFs
+├── .cursorrules             # AI/IDE rules (may lag design updates—prefer DESIGN-LANGUAGE.md)
+├── DESIGN-LANGUAGE.md       # Authoritative design system documentation
+├── index.html               # Main multi-section template
 └── README.md                # This file
 ```
 
-## 🎨 Brand Standards
+## Design system overview
 
-**IMPORTANT:** This project follows the official **LGLC Brand Standards Manual** (see `media/style_guide.pdf`).
+The **canonical spec** is **`DESIGN-LANGUAGE.md`**. CSS implements that spec via **`css/design-tokens.css`**.
 
-### Official Brand Colors
+A separate **LGLC Brand Standards Manual** may exist as `media/style_guide.pdf` for logo and print rules; **web UI tokens** follow the Design Language (colors, type, spacing) unless you intentionally map back to print-only guidelines.
 
-All colors must match the brand standards exactly:
+### Colors
 
-- **Black:** `#000000` - Main headings (Aachen Std)
-- **Red:** `#ED1C24` - Header, interactive materials
-- **Navy:** `#1C3664` - Body copy, secondary headings (Josefin Sans)
-- **Yellow:** `#F6BE38` - Accents, highlights
-- **Light Grey:** `#E6E7E8` - Page backgrounds
+| Role | Name | Hex | Typical use |
+|------|------|-----|-------------|
+| Primary | Primary Navy | `#002D56` | Body emphasis, headings, primary buttons, footer |
+| Accent | Secondary Gold | `#FFC72C` | Focus rings, highlights, team / accent bands |
+| Surface | Background Cream | `#F9F7F2` | Default page background |
+| Alert | Accent Red | `#C8102E` | Errors, critical callouts |
 
-**Note:** Magenta is part of the official brand palette but is not used in this implementation. We use a context-aware navy-based link color system instead.
+**Neutrals:** Black `#000000`, Dark Grey `#4D4D4D`, Medium Grey `#999999`, Light Grey `#E6E6E6`, White `#FFFFFF`.
 
-### Official Typography
+In CSS, prefer semantic tokens such as `--text-primary`, `--text-secondary`, `--bg-page`, `--color-primary-navy`, `--color-secondary-gold`, and `--color-focus-ring` (gold) rather than raw hex values.
 
-**Primary Typeface: Josefin Sans**
-- Body copy (Regular, Navy, 10pt+)
-- Secondary headings (Bold, Navy, 14pt+)
-- Tertiary headings (Bold, Navy, 11pt+)
+### Typography
 
-**Secondary Typeface: Aachen Std**
-- Main headings only (Bold, Black, 18pt+)
+Fonts load from **Google Fonts** (see the `<link>` in each HTML file):
 
-### Brand Color Usage Rules
+- **Montserrat** — `h1`–`h4`, section titles, labels / buttons (`--font-family-heading`, `--font-family-label`).
+- **Open Sans** — body, captions, UI copy (`--font-family-primary`).
 
-- **Links:** Context-aware navy-based system (see [Link Colors](#-link-colors) section below)
-  - Default (on light backgrounds): Brightened navy (`#2D5A8C`) → Navy (`#1C3664`) on hover
-  - On colored backgrounds: Context-specific colors (white on red/navy/black, navy on yellow/grey)
-- **Interactive elements:** Red (`#ED1C24`) and Red 80% (`#F15B40`)
-- **Body text:** Navy (`#1C3664`)
-- **Main headings:** Black (`#000000`)
+Sizes and line heights are expressed in **`rem`** via tokens (e.g. `--font-size-h1`–`--font-size-h4`, `--font-size-body`, `--font-size-body-small`).
 
-For detailed brand guidelines, typography examples, logo usage rules, and complete link color specifications, see:
-- **Brand Standards Manual:** `media/style_guide.pdf`
-- **Design Language Doc:** `DESIGN-LANGUAGE.md` - Comprehensive guide with all design system details
+### Spacing
 
----
+Spacing follows a **4px / 8px** rhythm. Numeric tokens include `--spacing-1` (4px) through `--spacing-20` (80px) and semantic aliases such as `--spacing-xs` … `--spacing-4xl` where defined in `design-tokens.css`.
 
-## 🔗 Link Colors
+### Buttons
 
-LGLC uses a context-aware navy-based link color system for optimal brand harmony and accessibility:
+- **Primary:** Navy fill, white text (`--button-primary-*`).
+- **Secondary:** Navy border, transparent / light fill (`--button-secondary-*`).
+- **White** (`.btn-white`): Used on strong accent backgrounds (e.g. gold band).
 
-- **Default links (on white/light backgrounds):** Brightened navy (`#2D5A8C`) → Navy (`#1C3664`) on hover
-- **Links on red backgrounds:** White (background change provides hover feedback)
-- **Links on navy/dark backgrounds:** White (background change provides hover feedback)
-- **Links on black backgrounds:** White (background change provides hover feedback)
-- **Links on grey backgrounds:** Navy (`#1C3664`) → Brightened navy (`#2D5A8C`) on hover
-- **Links on yellow backgrounds:** Navy (`#1C3664`) → Black (`#000000`) on hover
+### Focus and links
 
-All link color combinations meet WCAG 2.1 accessibility standards. See `DESIGN-LANGUAGE.md` for complete specifications and usage examples.
+- **Focus:** Use **`--color-focus-ring`** (gold) for visible focus outlines on interactive elements.
+- **Links:** Default in-page links use the semantic link tokens (`--text-link`, `--text-link-hover`, `--text-link-visited`). Utility classes such as `.bg-navy`, `.bg-yellow`, etc. adjust link colors on colored surfaces—see `css/main.css` and `DESIGN-LANGUAGE.md`.
 
-## 🎨 Component Styling Guide
+## Component styling guide
 
-### Design Token System
+All styling **must** use design tokens from `css/design-tokens.css`. Do not hardcode colors, spacing, or font sizes in component stylesheets.
 
-All styling **must** use design tokens from `css/design-tokens.css`. 
-Never hardcode values in component stylesheets.
+**Correct:**
 
-**✅ Correct:**
 ```css
 .my-component {
   padding: var(--spacing-4);
-  color: var(--color-primary-red);
+  color: var(--color-primary-navy);
   border-radius: var(--border-radius-md);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
 }
 ```
 
-**❌ Incorrect:**
+**Incorrect:**
+
 ```css
 .my-component {
-  padding: 16px;           /* Don't hardcode */
-  color: #ED1C24;          /* Use tokens */
-  border-radius: 8px;      /* Use tokens */
-  font-size: 18px;         /* Use tokens */
+  padding: 16px;
+  color: #002d56;
+  border-radius: 8px;
+  font-size: 16px;
 }
 ```
 
-### Available Token Categories
+### Token categories (reference)
 
-- **Colors**: `--color-primary-*`, `--color-secondary-*`
-- **Spacing**: `--spacing-1` through `--spacing-24`
-- **Typography**: `--font-size-*`, `--font-weight-*`, 
-  `--line-height-*`
-- **Borders**: `--border-width-*`, `--border-radius-*`, 
-  `--border-color-*`
-- **Shadows**: `--shadow-xs` through `--shadow-2xl`
-- **Opacity**: `--opacity-hover`, `--opacity-disabled`
-- **Overlays**: `--overlay-light`, `--overlay-dark`
-- **Focus**: `--outline-width-*`, `--outline-offset-*`
-- **Touch Targets**: `--touch-target-min`, `--touch-target-sm`
+- **Colors:** `--color-primary-navy`, `--color-secondary-gold`, `--color-bg-cream`, neutrals, semantic `--text-*`, `--bg-*`
+- **Spacing:** `--spacing-*` and semantic `--spacing-xs` … `--spacing-4xl` where present
+- **Typography:** `--font-family-heading`, `--font-family-primary`, `--font-size-*`, `--font-weight-*`, `--line-height-*`
+- **Borders:** `--border-width-*`, `--border-radius-*`, `--border-color-*`
+- **Shadows:** `--shadow-xs` … `--shadow-2xl`
+- **Focus:** `--color-focus-ring`, `--outline-width-*`, `--outline-offset-*`
+- **Touch targets:** `--touch-target-min`, `--touch-target-sm`
 
-### Creating New Components
+### New components
 
-1. **Import design tokens first, then your component:**
-   ```html
-   <!-- Design Tokens MUST be imported first -->
-   <link rel="stylesheet" href="css/design-tokens.css">
-   <!-- Main shared styles -->
-   <link rel="stylesheet" href="css/main.css">
-   <!-- Your new component -->
-   <link rel="stylesheet" href="css/your-component.css">
-   ```
+1. Import CSS in order: **`design-tokens.css`** → shared styles (`main.css`, etc.) → your file.
+2. Use only `var(--token-name)`; add new tokens in `design-tokens.css` if something is missing.
+3. Use **`rem`** via tokens for scalable layout and type; border widths use tokenized **`px`** where defined.
 
-2. **Use design tokens exclusively:**
-   - Reference existing tokens via `var(--token-name)`
-   - Never define custom values in component CSS
-   - If you need a new value, add it to `css/design-tokens.css`
-
-3. **Follow unit conventions:**
-   - Use `rem` for all scalable values (spacing, fonts, sizes)
-   - Use `px` ONLY for border widths (already in tokens)
-   - Use design token variables, not raw values
-
-4. **Maintain consistency:**
-   - Use semantic token names (`--text-primary` vs 
-     `--color-primary-black`)
-   - Follow existing patterns in `css/header.css` and `css/footer.css`
-   - Keep component-specific tokens in the component section of 
-     `css/design-tokens.css`
-
-### Example: Creating a Card Component
+### Example: card
 
 ```css
-/* card.css */
 .card {
   background-color: var(--card-bg);
   border: var(--border-width-thin) solid var(--card-border);
@@ -186,174 +140,96 @@ Never hardcode values in component stylesheets.
 }
 
 .card-title {
-  font-size: var(--font-size-xl);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h4);
   font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-3);
 }
 
 .card-text {
   font-size: var(--font-size-base);
   color: var(--text-secondary);
-  line-height: var(--line-height-relaxed);
+  line-height: var(--line-height-loose);
 }
 ```
 
-## 📱 Responsive Design
+## Responsive design
 
-### Breakpoints
-
-Breakpoints are defined in `css/design-tokens.css` for documentation and 
-JavaScript access. **Note:** CSS variables cannot be used in `@media` 
-queries, so use the values directly with comments:
+Breakpoints are documented in `css/design-tokens.css`. **CSS variables cannot be used inside `@media`**, so duplicate the values with comments:
 
 ```css
-/* Mobile-first: min-width queries */
-@media (min-width: 48rem) {  /* --breakpoint-md */
-  /* Tablet styles (768px+) */
+@media (min-width: 48rem) {  /* --breakpoint-md: 768px */
+  /* tablet and up */
 }
 
-@media (min-width: 64rem) {  /* --breakpoint-lg */
-  /* Desktop styles (1024px+) */
-}
-
-/* Desktop-first: max-width queries */
 @media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
-  /* Mobile styles (767px and below) */
+  /* mobile */
 }
 ```
 
-**Available breakpoints:**
-- `--breakpoint-sm`: 40rem (640px)
-- `--breakpoint-md`: 48rem (768px)
-- `--breakpoint-lg`: 64rem (1024px)
-- `--breakpoint-xl`: 80rem (1280px)
-- `--breakpoint-2xl`: 96rem (1536px)
+Reference tokens: `--breakpoint-sm` through `--breakpoint-2xl`, plus `*-max` variants.
 
-## ♿ Accessibility
+## Accessibility
 
-- Use semantic HTML (`<header>`, `<main>`, `<footer>`, `<nav>`)
-- Include ARIA labels where needed
-- Ensure touch targets are minimum `var(--touch-target-min)` 
-  (2.75rem/44px)
-- Use focus indicators: `outline: var(--outline-width-thick) solid 
-  var(--color-primary-yellow)`
-- Test keyboard navigation
+- Semantic HTML (`<header>`, `<main>`, `<footer>`, `<nav>`) and ARIA where needed.
+- Minimum touch target: `var(--touch-target-min)` (2.75rem / 44px).
+- Visible focus: `outline` using **`var(--color-focus-ring)`** (gold) with **`var(--outline-offset-sm)`** (or matching tokens).
+- Keyboard-navigable controls and logical tab order.
 
-## 📄 Page Templates
+## Page templates
 
-The `index.html` file contains multiple page templates that can be activated by uncommenting the relevant sections:
+`index.html` bundles several **commented / alternate** `<main>` sections (landing, events, people, etc.). Switch layouts by showing the section you need and hiding others. **`demo/`** holds single-purpose examples (e.g. `demo/landing.html`, `demo/person.html`) with relative paths to `../css/`.
 
-- **Landing Page** - Homepage with hero section, featured content, and team section
-- **Event Page** - Individual event record with details and related results
-- **Person Page** - Individual person record with biography, occupation, and related results
-- **Place Page** - Individual place record with related results
-- **Periodical Page** - Individual periodical record with related results
-- **Organization Page** - Individual organization record with related results (currently active)
+## Search UI
 
-To switch between templates, comment/uncomment the relevant `<main>` sections in `index.html`.
+**`css/search.css`** styles the staticSearch-oriented layout (tabs, filters, results). When you add a search page, include `design-tokens.css`, `main.css`, and `search.css`, and wire in [staticSearch](https://github.com/projectEndings/staticSearch) build outputs (`ssSearch.js`, etc.) as needed.
 
-## 🔍 Search Functionality
+## JavaScript
 
-The `search.html` page includes integration with [staticSearch](https://github.com/projectEndings/staticSearch), a static site search solution. The search page includes:
+`js/header.js` provides mobile menu toggling, search tab / panel behavior where present, and related ARIA updates.
 
-- Tabbed interface for different collection types (Events, People, Places, Periodicals, Organizations)
-- Keyword search with date range filters
-- Advanced filters for associated people, periodicals, organizations, and places
-- Type-based filtering (e.g., place types)
-- Boolean filters for availability
+## Development rules
 
-**Note:** The staticSearch build artifacts (`ssSearch.js`, `ssInitialize.js`) need to be generated and injected into the search page for full functionality.
+- **Tokens only** in CSS—no magic numbers for spacing, colors, or font size.
+- **`rem`** for scalable values via tokens; border widths use defined tokens.
+- **No inline styles** for presentation.
+- **Import order:** `design-tokens.css` first.
+- **One component file per major UI area** where practical.
 
-## 🎯 JavaScript Features
+## Browser support
 
-The `js/header.js` file provides:
+Modern browsers with **CSS Custom Properties**, **Flexbox** and **Grid**, **ES6** syntax, and **HTML5** semantics.
 
-- **Mobile Menu Toggle** - Responsive navigation with ARIA attributes
-- **Accessibility Enhancements** - Skip links, keyboard navigation, screen reader announcements
-- **Focus Management** - Proper focus handling for keyboard users
-- **Window Resize Handling** - Auto-closes mobile menu on desktop viewport
+## Usage snippet
 
-## 🚀 Development Rules
+```html
+<link rel="stylesheet" href="css/design-tokens.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/components.css">
+<!-- Search page only: -->
+<link rel="stylesheet" href="css/search.css">
+```
 
-- **No hardcoded values** - always use design tokens
-- **Consistent units** - use `rem` via tokens (not `px` or `em`)
-- **No inline styles** - keep all CSS in stylesheets
-- **Import order** - `css/design-tokens.css` must load first
-- **Component isolation** - each component in its own CSS file
-- **Semantic HTML** - use proper HTML5 elements and ARIA attributes
-- **Accessibility first** - ensure all interactive elements are keyboard accessible
+Load **`js/header.js`** before `</body>` on pages that use the header.
 
-## 🌐 Browser Support
+## Media assets
 
-These templates are designed to work in modern browsers that support:
-- CSS Custom Properties (CSS Variables)
-- Flexbox and CSS Grid
-- ES6 JavaScript features
-- HTML5 semantic elements
+- **`media/img/`** — Logos, photos, illustrations.
+- **`media/fonts/`** — Optional local font files; **web templates primarily use Google Fonts** (Montserrat + Open Sans) linked from HTML.
+- **`media/style_guide.pdf`** — Legacy / print brand manual (logo usage, etc.), not the same document as the web Design System PNG.
 
-## 📝 Usage
+## Technical summary
 
-1. **Set up your HTML page:**
-   ```html
-   <!-- Design Tokens MUST be imported first -->
-   <link rel="stylesheet" href="css/design-tokens.css">
-   <!-- Main shared styles -->
-   <link rel="stylesheet" href="css/main.css">
-   <!-- Component-specific styles -->
-   <link rel="stylesheet" href="css/header.css">
-   <link rel="stylesheet" href="css/footer.css">
-   <!-- Page-specific styles -->
-   <link rel="stylesheet" href="css/pages.css">
-   <!-- For search page only -->
-   <link rel="stylesheet" href="css/search.css">
-   ```
-   - Include `js/header.js` before closing `</body>` tag
+- Static HTML, CSS, and vanilla JS—no bundler required.
+- Centralized **design tokens** in `css/design-tokens.css`.
+- **WCAG-oriented** contrast and focus patterns; validate any new color pairs.
+- **Mobile-first** responsive layouts.
 
-2. **Use design tokens:**
-   - Reference tokens via `var(--token-name)`
-   - Never hardcode values in component CSS
+## For AI and IDE assistants
 
-3. **Customize templates:**
-   - Uncomment the desired page template in `index.html`
-   - Replace placeholder content with your actual data
-   - Update navigation links and footer content as needed
-
-4. **For search functionality:**
-   - Set up staticSearch build process
-   - Configure search indexes for your content
-   - Inject build artifacts into `search.html`
-
-## 📦 Media Assets
-
-The `media/` folder contains:
-- **`fonts/`** - Local font files (Josefin Sans, Aachen Std) with fallback support
-- **`icons/`** - Icon images for related results sections (events, people, periodicals, places)
-- **`img/`** - Image assets including logos and featured images
-- **`style_guide.pdf`** - Official LGLC Brand Standards Manual
-
-Replace placeholder images with your actual project assets. Maintain the same file structure or update image paths in the HTML files accordingly.
-
-## 🔧 Technical Details
-
-- **No build process required** - These are static HTML/CSS/JS templates
-- **No dependencies** - Pure vanilla JavaScript and CSS
-- **Design tokens** - All styling values are centralized in `css/design-tokens.css`
-- **Accessibility** - WCAG 2.1 compliant with semantic HTML and ARIA attributes
-- **Mobile-first** - Responsive design with mobile-first approach
-
-## 🤖 For AI/IDE Assistants
-
-This project includes a consolidated rules file for all AI coding assistants:
-
-- **`.cursorrules`** - Comprehensive coding rules, brand standards, design token usage, and development guidelines (consolidated file for all IDEs)
-- **`.aiderrules`** - Points to `.cursorrules` (Aider-specific reference)
-
-All AI coding assistants (Cursor, Aider, etc.) should reference `.cursorrules` for:
-- Design token system requirements
-- Brand standards compliance
-- Component creation guidelines
-- Accessibility requirements
-- Code quality standards
-
-For detailed design specifications and component examples, see `DESIGN-LANGUAGE.md`.
+- **`DESIGN-LANGUAGE.md`** — First stop for colors, type, spacing, and patterns.
+- **`.cursorrules`** — Project conventions; may not reflect every design-token name—prefer the CSS files and `DESIGN-LANGUAGE.md` when they disagree.

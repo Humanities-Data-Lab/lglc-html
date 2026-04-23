@@ -1,498 +1,182 @@
 # LGLC Design Language
 
-A comprehensive guide to using design elements consistently across the Lesbian and Gay Liberation in Canada (LGLC) website.
+A practical guide to visual design for the **Lesbian and Gay Liberation in Canada (LGLC)** website and related templates.
 
-**Based on the official LGLC Brand Standards Manual**
+**Scope:** This document is the authoritative reference for the LGLC design system — color, type, spacing, UI components, and the homepage and record-page patterns. CSS in `css/` implements it, starting with the tokens in `css/design-tokens.css`.
 
 ## About LGLC
 
-The Lesbian and Gay Liberation in Canada (LGLC) project is working to build an interactive digital resource for the study of LGBT history in Canada. The project takes Don McLeod's books, *Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology Volumes 1 and 2* and will convert them into a visual and interactive database that will allow users to explore the people, places, events, and publications that defined the history of gay liberation in Canada between 1964 and 1981. While being a pilot project within the Canadian Writing Research Collaboratory, this project will be available as part of an interdisciplinary, open-access library database, for use by researchers and students worldwide.
-
-The LGLC identity reflects this mission. It captures these historical movements while transcending to current struggles today.
+The Lesbian and Gay Liberation in Canada (LGLC) project is building an interactive digital resource for the study of LGBT history in Canada, based on Don McLeod’s chronology and related materials. The interface should feel scholarly, welcoming, and clear—supporting long reading sessions and structured exploration (search, filters, record pages).
 
 ## Table of Contents
 
 1. [Brand Identity](#brand-identity)
 2. [Color System](#color-system)
-3. [Typography](#typography)
-4. [Buttons](#buttons)
-5. [Cards](#cards)
-6. [Layout Patterns](#layout-patterns)
-7. [Spacing System](#spacing-system)
-8. [Components](#components)
-9. [Form Elements](#form-elements)
-10. [Images & Media](#images--media)
-11. [Responsive Design](#responsive-design)
+3. [Accessible Color Combinations](#accessible-color-combinations)
+4. [Typography](#typography)
+5. [Spacing System](#spacing-system)
+6. [Buttons](#buttons)
+7. [Core UI Patterns](#core-ui-patterns)
+8. [Layout Patterns](#layout-patterns)
+9. [Cards & Content Blocks](#cards--content-blocks)
+10. [Forms & Search](#forms--search)
+11. [Homepage Pattern](#homepage-pattern)
+12. [Record / Results Page Pattern](#record--results-page-pattern)
+13. [Editorial Page Pattern](#editorial-page-pattern)
+14. [Images & Media](#images--media)
+15. [Responsive Design](#responsive-design)
+16. [Accessibility](#accessibility)
+17. [Quick Reference](#quick-reference)
+18. [Design Principles](#design-principles)
+19. [Implementation Note](#implementation-note)
 
 ---
 
 ## Brand Identity
 
-### Logo Structure
+### Logo
 
-The LGLC logo is comprised of two parts:
-- **Logotype** - The text "LGLC" and tagline
-- **Symbol** - The graphical icon
+- **Placement:** Logo on the left; primary navigation on the right in the header.
+- **Footer:** Logo may appear in white on the dark navy footer for contrast and continuity.
 
-### Logo Versions
+### Logo usage (don’ts)
 
-**Full Version (with tagline and website)**
-- Use whenever possible
-- Includes logo, symbol, and logotype
+Do **not**:
 
-**Symbol Only**
-- Use when space is lacking
-- Only on LGLC-issued communications materials
+- Stretch or squash the logo
+- Rotate or place the logo at an angle
+- Rearrange logo elements
+- Add effects such as drop shadows to the logo
+- Change approved logo colors
 
-### Logo Spacing
-
-The "X" measurement represents the height of the first "L" in "LGLC". This measurement is the basis for all spacing guidelines.
-
-**Spacing Rules:**
-- The space surrounding the logo should be equal to or greater than the height of the "L" in the word "LGLC" (the "X" measurement)
-- No elements—other logos, type, or images—should encroach upon the "X" space around the logo
-- This applies to both the full version and symbol-only versions of the logo
-
-### Logo Usage Don'ts
-
-❌ **NEVER:**
-- Stretch the logo horizontally or vertically
-- Place the logo on an angle
-- Reconfigure the logo elements
-- Use effects like drop shadows
-- Change the logo colors
-
-### File Types
-
-LGLC's logo is available in several different file types. File selection is determined by the media:
-
-**For Print (High-Res):**
-- Main Identity: `LGLC Logo Black.eps`
-- Symbol only: `LGLC Logo Icon Black.eps`
-
-**For Web (Low-Res):**
-- Main Identity: `LGLC Logo Black.jpg`
-- Symbol only: `LGLC Logo Icon Black.jpg`
+Use official logo assets from project media folders; prefer vector for print and optimized raster or SVG for web.
 
 ---
 
 ## Color System
 
-### Primary Colors
+The palette is organized into **theme**, **secondary/accent**, and **neutral** colors.
 
-Materials issued by LGLC should utilize the official brand palette. If limited by a one-colour option, black can be used.
+### Theme colors
 
-- **Black (`--color-primary-black`)** - Primary text, headings, main emphasis
-  - **Hex:** `#000000`
-  - **RGB:** 0, 0, 0
-  - **CMYK:** 0/0/0/100
-  - Use for: Main headings (Aachen std), primary buttons, high-contrast text
-  - Example: Main page titles, `.btn-primary` buttons
+| Role | Name | Hex | Usage |
+|------|------|-----|--------|
+| Primary | **Primary Navy** | `#002D56` | Headers, primary buttons, key branding surfaces |
+| Accent | **Secondary Gold** | `#FFC72C` | Accents, highlights, emphasis on dark or light UI |
+| Surface | **Background Cream** | `#F9F7F2` | Default page background |
 
-- **Red (`--color-primary-red`)** - Header background, interactive elements, critical information
-  - **Hex:** `#ED1C24`
-  - **RGB:** 237, 28, 36
-  - **CMYK:** 0/100/100/0
-  - Use for: Site header banner, interactive materials (menus, maps, graphs), error states
-  - Example: Header banner, navigation highlights
+### Secondary / accent
 
-- **Navy (`--color-primary-navy`)** - Navigation, body text, primary UI elements
-  - **Hex:** `#1C3664`
-  - **RGB:** 28, 54, 100 (Note: Brand manual shows 0/51/102, but hex `#1C3664` = RGB 28/54/100)
-  - **CMYK:** 100/87/33/23
-  - Use for: Navigation backgrounds, headings (Josefin Sans), body copy
-  - Example: Secondary headings, navigation bar, primary text
+| Role | Name | Hex | Usage |
+|------|------|-----|--------|
+| Alert / emphasis | **Accent Red** | `#C8102E` | Critical alerts, strong callouts, selective highlights |
 
-- **Yellow (`--color-primary-yellow`)** - Accents, highlights, warm elements
-  - **Hex:** `#F6BE38`
-  - **RGB:** 246, 190, 56
-  - **CMYK:** 3/26/89/0
-  - Use for: Accents, highlights, warning states (not primary focus indicators)
-  - Example: Accent elements, decorative highlights
+The system may use **tints and shades** of Primary Navy and Secondary Gold for borders, hover states, and subtle fills—keep them clearly related to the base hues and test contrast.
 
-### Grey Tones
+### Neutrals
 
-- **Light Grey (`--color-grey-light`)** - Backgrounds, subtle elements
-  - **Hex:** `#E6E7E8`
-  - **RGB:** 230, 231, 232
-  - **CMYK:** 0/0/0/10
-  - Use for: Page backgrounds, subtle separators, light UI elements
+| Name | Hex | Usage |
+|------|-----|--------|
+| **Black** | `#000000` | Strong body text, high-contrast copy |
+| **Dark Grey** | `#4D4D4D` | Secondary text, subdued labels |
+| **Medium Grey** | `#999999` | Placeholder, disabled, tertiary text |
+| **Light Grey** | `#E6E6E6` | Dividers, subtle panels, input backgrounds |
+| **White** | `#FFFFFF` | Cards, surfaces, text on dark navy |
 
-### Secondary Colors (Tints)
+---
 
-Tints of 80% and 60% of the primary palette can be used for variety.
+## Accessible Color Combinations
 
-**80% Tints:**
-- **Black 80%:** `#58595B` (RGB: 88, 89, 91, CMYK: 0/0/0/80)
-- **Red 80%:** `#F15B40` (RGB: 241, 91, 64, CMYK: 0/80/80/0) - Use for: Interactive materials (with red)
-- **Navy 80%:** `#445078` (RGB: 68, 80, 120, CMYK: 80/69/26/18)
-- **Yellow 80%:** `#F8C965` (RGB: 248, 201, 101, CMYK: 2/21/71/0)
+Use these pairings as the default for readable, on-brand UI:
 
-**60% Tints:**
-- **Black 60%:** `#808285` (RGB: 128, 130, 133, CMYK: 0/0/0/60)
-- **Red 60%:** `#F58466` (RGB: 245, 132, 102, CMYK: 0/60/60/0)
-- **Navy 60%:** `#6A6D8F` (RGB: 106, 109, 143, CMYK: 60/52/20/14)
-- **Yellow 60%:** `#FAD589` (RGB: 250, 213, 137, CMYK: 2/16/53/0)
+| Foreground | Background | Notes |
+|------------|------------|--------|
+| Primary Navy `#002D56` | White `#FFFFFF` | Primary text on light surfaces |
+| Black `#000000` | White `#FFFFFF` | Maximum contrast body text |
+| Secondary Gold `#FFC72C` | Primary Navy `#002D56` | Accents on dark regions (e.g. header bands, buttons) |
+| Primary Navy `#002D56` | Secondary Gold `#FFC72C` | Accents on light gold bands |
+| White `#FFFFFF` | Primary Navy `#002D56` | Footer, inverted nav, primary filled buttons |
 
-### Semantic Colors
-
-**Text Colors:**
-- `--text-primary` - Main content, headings (black: `#000000`)
-- `--text-secondary` - Body text, descriptions (navy: `#1C3664`)
-- `--text-tertiary` - Metadata, less important info (navy 60%: `#6A6D8F`)
-- `--text-inverse` - Text on dark backgrounds (white)
-- `--text-link` - Links (context-aware navy-based system, see [Link Color System](#link-color-system) section)
-
-**Background Colors:**
-- `--bg-page` - Page background (light grey: `#E6E7E8`)
-- `--bg-surface` - Card/container backgrounds (white)
-- `--bg-elevated` - Elevated surfaces (white with shadow)
-
-### Color Usage Rules (from Brand Standards)
-
-✅ **DO:**
-- Use **red** (`#ED1C24`) and **red 80%** (`#F15B40`) for interactive materials (menus, maps, graphs)
-- Use **navy** (`#1C3664`) for headings and body copy
-- Use **black** (`#000000`) for main headings (with Aachen std font)
-- Maintain the official color palette values exactly
-- Use tints (80% and 60%) for variety
-- If limited by a one-colour option, black can be used
-
-❌ **DON'T:**
-- Don't stretch or distort logo colors
-- Don't use effects like drop shadows on brand elements
-- Don't create new colors outside the approved palette
-- Don't change the official hex values
-- Don't use colors that aren't in the brand standards
-
-### Link Color System
-
-LGLC uses a context-aware navy-based link color system that harmonizes with the brand palette while ensuring optimal contrast and accessibility across all contexts.
-
-**Design Tokens:**
-All link colors are available as CSS custom properties in `css/design-tokens.css`.
-
-#### Default Links (on White/Light Backgrounds)
-
-- **Link Color:** `--text-link` = `#2D5A8C` (Brightened navy - vibrant but cohesive)
-- **Hover:** `--text-link-hover` = `#1C3664` (Navy - subtle darkening)
-- **Visited:** `--text-link-visited` = `#445078` (Navy 80% - distinguishes visited links)
-
-**Usage:** Applied automatically to `<a>` tags on light backgrounds (white, light grey).
-
-#### Links on Red Backgrounds
-
-- **Link Color:** `--text-link-on-red` = White (`#FFFFFF`)
-- **Hover:** `--text-link-hover-on-red` = White (stays white - background change provides feedback)
-
-**Usage:** Navigation bar, red header sections, interactive elements with red backgrounds.
-
-#### Links on Navy/Dark Backgrounds
-
-- **Link Color:** `--text-link-on-navy` = White (`#FFFFFF`)
-- **Hover:** `--text-link-hover-on-navy` = White (stays white - background change provides feedback)
-
-**Usage:** Search tabs, dark sections, navy background areas.
-
-#### Links on Black Backgrounds
-
-- **Link Color:** `--text-link-on-black` = White (`#FFFFFF`)
-- **Hover:** `--text-link-hover-on-black` = White (stays white - background change provides feedback)
-
-**Usage:** Buttons with black backgrounds, dark UI elements.
-
-#### Links on Grey Backgrounds
-
-- **Link Color:** `--text-link-on-grey` = Navy (`#1C3664`)
-- **Hover:** `--text-link-hover-on-grey` = Brightened navy (`#2D5A8C`)
-
-**Usage:** Muted sections, hover states, grey background areas.
-
-#### Links on Yellow Backgrounds
-
-- **Link Color:** `--text-link-on-yellow` = Navy (`#1C3664`)
-- **Hover:** `--text-link-hover-on-yellow` = Black (`#000000`)
-
-**Usage:** Team section, yellow highlight areas, accent sections.
-
-### Link Color Usage Rules
-
-✅ **DO:**
-- Use default link colors (`--text-link`) for links on white/light backgrounds
-- Apply context-specific tokens when links appear on colored backgrounds
-- Use CSS classes (`.bg-red`, `.on-navy`, etc.) to apply context-specific link colors
-- Ensure all link/background combinations meet WCAG AA contrast standards
-
-❌ **DON'T:**
-- Don't use default link colors on colored backgrounds (use context-specific tokens)
-- Don't hardcode link colors - always use design tokens
-- Don't create new link colors outside the approved system
-
-### Accessibility Compliance
-
-All link color combinations in this system meet WCAG 2.1 accessibility standards:
-- **White text on dark backgrounds:** AAA level compliance
-- **Navy variations on light backgrounds:** AA+ compliance
-- **All combinations:** Minimum 4.5:1 contrast ratio for normal text
+Validate combinations with WCAG contrast checks when using intermediate tints or new components.
 
 ---
 
 ## Typography
 
-### Font Families
+The system uses two families: **Montserrat** for headings and labels, **Open Sans** for body and supporting text.
 
-**Official LGLC Typefaces:**
+| Style | Font | Size | Line height | Usage |
+|-------|------|------|-------------|--------|
+| **H1 Heading** | Montserrat | 48px | 60px | Main page titles |
+| **H2 Heading** | Montserrat | 32px | 40px | Section headers |
+| **H3 Heading** | Montserrat | 24px | 32px | Sub-section headers |
+| **H4 Heading** | Montserrat | 20px | 28px | Small headers, card titles |
+| **Body Lead** | Open Sans | 18px | 28px | Introductory / lead paragraphs |
+| **Body Main** | Open Sans | 16px | 24px | Standard body copy |
+| **Body Small** | Open Sans | 14px | 20px | Captions, metadata, notes |
+| **Label** | Montserrat Bold | 14px | 20px | Form labels, button text, tags |
 
-- **Primary Typeface: Josefin Sans** (`--font-family-primary`)
-  - Web-friendly typeface
-  - Available weights: Light, Light Italic, Regular, Bold, Bold Italic
-  - Use for: Body copy, secondary headings, tertiary headings, all general UI
-  - **Regular** - Default body copy
-  - **Bold** - Secondary headings
-  - Example: Paragraph text, navigation, buttons, form inputs
+### Rules of thumb
 
-- **Secondary Typeface: Aachen Std** (`--font-family-heading`)
-  - Use for: Main headings only
-  - Bold weight
-  - Color: Black (`#000000`)
-  - Size: 18pt+ (1.125rem+)
-  - Example: Page titles, major section headings
+- **Hierarchy:** Step down from H1 → H4; avoid skipping levels for accessibility.
+- **Body:** Default to Body Main; use Body Lead sparingly for hero or section intros.
+- **Labels:** Use Montserrat Bold at Label size for control text and primary actions in compact UI.
 
-- **Mono Font** (`--font-family-mono`) - Monospace stack
-  - Use for: Code, technical content, data tables (if needed)
+---
 
-### Font Sizes
+## Spacing System
 
-**Typography Hierarchy (from Brand Standards):**
+Spacing uses a **4px / 8px** rhythm. Name tokens for documentation:
 
-- **Main Heading** - 18pt+ (1.5rem/24px) - Aachen Std, Black
-  - Use for: Page titles, major section headings
-  - Font: `--font-family-heading` (Aachen Std)
-  - Token: `--font-size-main-heading`
-  - Color: `--text-primary` (Black #000000)
-  - Example: "LOREM IPSUM DOLOR", main page titles
-  
-- **Secondary Heading** - 14pt+ (1.167rem/~19px) - Josefin Sans Bold, Navy
-  - Use for: Section subheadings, important subsections
-  - Font: `--font-family-primary` (Josefin Sans Bold)
-  - Token: `--font-size-secondary-heading`
-  - Color: `--text-secondary` (Navy #1C3664)
-  - Example: Section titles, card headings
-  
-- **Tertiary Heading** - 11pt+ (0.917rem/~15px) - Josefin Sans Bold, Navy
-  - Use for: Smaller headings, card titles, emphasized labels
-  - Font: `--font-family-primary` (Josefin Sans Bold)
-  - Token: `--font-size-tertiary-heading`
-  - Color: `--text-secondary` (Navy #1C3664)
-  - Example: Small section titles, form group labels
-  
-- **Body Copy** - 10pt+ (0.875rem/14px) - Josefin Sans Regular, Navy
-  - Use for: All body text, paragraph content
-  - Font: `--font-family-primary` (Josefin Sans Regular)
-  - Token: `--font-size-body`
-  - Color: `--text-secondary` (Navy #1C3664)
-  - Example: Main content, descriptions, general text (like Jane Rule biography)
+| Token | Value | Typical use |
+|-------|--------|-------------|
+| `spacing-xs` | 4px | Tight gaps (icon + text) |
+| `spacing-sm` | 8px | Related items in a list or toolbar |
+| `spacing-md` | 16px | Default padding inside components |
+| `spacing-lg` | 24px | Space between grouped blocks |
+| `spacing-xl` | 32px | Between distinct sections |
+| `spacing-2xl` | 48px | Large section gaps |
+| `spacing-3xl` | 64px | Major layout separation |
+| `spacing-4xl` | 80px | Maximum page-level vertical margins |
 
-**Additional Size Scale:**
-
-- **5xl (3rem/48px)** - Hero titles, landing page headlines
-- **4xl (2.25rem/36px)** - Large section titles
-- **3xl (1.875rem/30px)** - Subsection headings
-- **2xl (1.5rem/24px)** - Main headings (18pt) when used in large contexts
-- **xl (1.25rem/20px)** - Large emphasis text
-- **lg (1.125rem/18px)** - Large body text, descriptions
-- **base (1rem/16px)** - UI elements (buttons, inputs, labels)
-- **sm (0.875rem/14px)** - Body copy (10.5pt, meets 10pt+ requirement)
-- **xs (0.75rem/12px)** - Small text, captions, metadata
-
-### Font Weights
-
-- **Extrabold (800)** - Hero titles, major emphasis
-- **Bold (700)** - Section headings, important content
-- **Semibold (600)** - Buttons, card titles, emphasized text
-- **Medium (500)** - Navigation links, subheadings
-- **Normal (400)** - Body text, default weight
-
-### Line Heights
-
-Based on the brand guide visual examples:
-
-- **Tight (1.2)** - Main headings (Aachen Std), large display text
-- **Normal (1.4)** - Secondary and tertiary headings (Josefin Sans Bold)
-- **Relaxed (1.7)** - Short paragraphs, descriptions, metadata
-- **Loose (1.9)** - Body copy, long-form content (per brand guide example)
-
-### Typography & Color (Brand Standards)
-
-LGLC applications should use the following styles and colors as a base for all LGLC materials:
-
-**Typography Hierarchy:**
-- **Main Heading:** Aachen Std | Color: Black (`#000000`) | Size: 18pt+
-- **Secondary Heading:** Josefin Sans Bold | Color: Navy (`#1C3664`) | Size: 14pt+
-- **Tertiary Heading:** Josefin Sans Bold | Color: Navy (`#1C3664`) | Size: 11pt+
-- **Body Copy:** Josefin Sans Regular | Color: Navy (`#1C3664`) | Size: 10pt+
-
-**Interactive Materials:**
-- **Red** (`#ED1C24`) and **Red 80%** (`#F15B40`) should be used for interactive materials (e.g., menus, maps, graphs)
-
-**Links:**
-- **Our Implementation:** Context-aware navy-based system (see [Link Color System](#link-color-system) section)
-
-### Typography Usage Rules
-
-✅ **DO:**
-- Use **Aachen Std** for main headings (18pt+) in black
-- Use **Josefin Sans Bold** for secondary and tertiary headings in navy
-- Use **Josefin Sans Regular** for all body copy in navy
-- Use the official brand font hierarchy
-- Maintain tight line-height for headings
-- Use relaxed line-height for body text
-- Use **red** and **red 80%** for interactive materials (menus, maps, graphs)
-
-❌ **DON'T:**
-- Don't use Josefin Sans for main headings (use Aachen Std instead)
-- Don't use Aachen Std for body copy (use Josefin Sans instead)
-- Don't use colors other than black for main headings (Aachen Std)
-- Don't use colors other than navy for secondary/tertiary headings and body copy
-- Don't mix font families outside the brand standards
-- Don't use font weights not specified in the brand standards
+Prefer repeating these steps over arbitrary pixel values.
 
 ---
 
 ## Buttons
 
-### Primary Button (`.btn-primary`)
+Three levels define actions and emphasis.
 
-**When to use:**
-- Main call-to-action on a page
-- Primary user actions (Submit, Search, Continue)
-- Hero section actions
-- Most important action in a group
+### 1. Primary
 
-**Characteristics:**
-- Black background (`--color-primary-black`)
-- White text
-- Medium border radius
-- Hover: Darker background, slight lift, shadow
-- Focus: Yellow outline
+- **Fill:** Primary Navy `#002D56`
+- **Text:** White `#FFFFFF`
+- **Use:** Main call to action (e.g. “Apply filters”, “Search”, submit).
 
-**Example:**
-```html
-<a href="/search" class="btn-primary">Search Database</a>
-<button class="btn-primary">Submit</button>
-```
+### 2. Secondary
 
-### Secondary Button (`.btn-secondary`)
+- **Border:** Primary Navy
+- **Text:** Primary Navy
+- **Background:** Transparent or cream/white
+- **Use:** Secondary actions that should stay visible but not compete with the primary button.
 
-**When to use:**
-- Secondary actions
-- Alternative options
-- Less important actions
-- When you need visual hierarchy (primary vs secondary)
+### 3. Tertiary / link-style
 
-**Characteristics:**
-- Transparent background
-- Black text
-- Gray border
-- Hover: Light gray background
-- Focus: Yellow outline
+- **Text:** Primary Navy (often with a chevron or “learn more” pattern)
+- **Use:** Low-emphasis navigation (“Learn more”, inline next steps).
 
-**Example:**
-```html
-<button class="btn-secondary">Cancel</button>
-<a href="/about" class="btn-secondary">Learn More</a>
-```
-
-### Team Section Buttons
-
-**When to use:**
-- Buttons on colored backgrounds (like yellow team section)
-- Special section call-to-actions
-
-**`.btn-team-primary`:**
-- Black background, white text
-- Use on yellow/light backgrounds
-
-**`.btn-team-secondary`:**
-- White background, black text
-- Use on yellow/light backgrounds for contrast
-
-### Button Usage Rules
-
-✅ **DO:**
-- Use primary button for the most important action
-- Use secondary button for alternative actions
-- Group related buttons together
-- Ensure buttons have sufficient touch target size (44px minimum)
-
-❌ **DON'T:**
-- Don't use more than one primary button per section
-- Don't use buttons for navigation (use links instead)
-- Don't make buttons too small (minimum touch target: 44px)
+Ensure minimum touch targets (see [Accessibility](#accessibility)) and visible focus styles.
 
 ---
 
-## Cards
+## Core UI Patterns
 
-### Content Cards (`.card`)
+Patterns illustrated in the Design System:
 
-**When to use:**
-- Displaying related content items
-- Feature highlights
-- Content previews
-- Grid layouts of similar items
-
-**Characteristics:**
-- White background
-- Image at top (optional)
-- Title and content below
-- Hover: Slight lift, enhanced shadow
-- Focus: Yellow outline
-
-**Example:**
-```html
-<article class="card">
-  <img src="..." alt="..." class="card-image">
-  <h3 class="card-title">Card Title</h3>
-</article>
-```
-
-### Related Results Cards (`.related-card`)
-
-**When to use:**
-- Displaying related content on detail pages
-- Showing connections between records
-- Grouping related information
-
-**Characteristics:**
-- Icon/image at top
-- Heading
-- List of related items
-- Used in 3-column grid (desktop)
-
-**Example:**
-```html
-<div class="related-card">
-  <img src="..." class="related-icon-img" alt="">
-  <h3 class="related-heading">Affiliated persons</h3>
-  <ul class="related-list">
-    <li>Person's Name</li>
-  </ul>
-</div>
-```
-
-### Card Usage Rules
-
-✅ **DO:**
-- Use cards for grouping related content
-- Maintain consistent card sizes in grids
-- Include hover states for interactive cards
-- Use cards in responsive grids
-
-❌ **DON'T:**
-- Don't nest cards within cards
-- Don't use cards for single pieces of information
-- Don't make cards too small to be clickable
+- **Header:** LGLC logo left; horizontal navigation right; clean, light background or cream as appropriate to the page.
+- **Hero:** H1 plus Body Lead on Background Cream; generous vertical spacing.
+- **Search:** Prominent full-width (or contained) field with a clear label and a **primary** button for the main action.
+- **Footer:** Dark **Primary Navy** band; logo in white; navigation links in light/white text.
 
 ---
 
@@ -500,482 +184,175 @@ LGLC applications should use the following styles and colors as a base for all L
 
 ### Containers
 
-**`.landing-container`**
-- Use for: Landing page sections
-- Max width: 75rem (1200px)
-- Centered with side padding
+- Center main content with comfortable horizontal padding; avoid edge-to-edge text on large screens.
+- Use consistent max-widths for reading columns (hero, long-form) versus wide tools (search, results).
 
-**`.record-container`**
-- Use for: Individual record pages (Event, Person, Place, etc.)
-- Max width: 80rem (1280px)
-- White background
-- Side padding
+### Grids
 
-**`.search-section`**
-- Use for: Search page content
-- Max width: 72.5rem (1160px)
-- Centered layout
+- **Cards:** Multi-column on desktop; collapse to a **single column** on small viewports.
+- **Gaps:** Use `spacing-lg`–`spacing-xl` between cards depending on density.
 
-### Content Widths
+### Section spacing
 
-- **Narrow (40rem/640px)** - Hero content, focused reading
-- **Medium (48rem/768px)** - Standard content width
-- **Wide (64rem/1024px)** - Search interfaces, wide content
-- **XLarge (75rem/1200px)** - Landing page sections
-- **Search (72.5rem/1160px)** - Search page specific
-
-### Grid Layouts
-
-**3-Column Grid (`.cards-grid`)**
-- Use for: Card layouts, related results
-- Responsive: Stacks to 1 column on mobile
-- Gap: `--spacing-8`
-
-**2-Column Grid**
-- Use for: About sections, content with images
-- Responsive: Stacks to 1 column on tablet/mobile
-
-### Section Spacing
-
-- **Hero sections**: `--spacing-20` top, `--spacing-16` bottom
-- **Standard sections**: `--spacing-20` vertical
-- **Featured images**: `--spacing-12` top, `--spacing-16` bottom
-- **Team sections**: `--spacing-16` vertical
+- Between major sections: `spacing-2xl`–`spacing-3xl` vertically.
+- Within a section: `spacing-md`–`spacing-lg` between related blocks.
 
 ---
 
-## Spacing System
+## Cards & Content Blocks
 
-### Spacing Scale
-
-Use spacing tokens consistently:
-
-- **0** - No spacing
-- **1 (0.25rem/4px)** - Tight spacing, icon padding
-- **2 (0.5rem/8px)** - Small gaps, tight lists
-- **3 (0.75rem/12px)** - Standard small spacing
-- **4 (1rem/16px)** - Default spacing, button padding
-- **5 (1.25rem/20px)** - Medium spacing
-- **6 (1.5rem/24px)** - Card padding, larger gaps
-- **8 (2rem/32px)** - Section gaps, grid gaps
-- **10 (2.5rem/40px)** - Large gaps
-- **12 (3rem/48px)** - Section spacing
-- **16 (4rem/64px)** - Major section spacing
-- **20 (5rem/80px)** - Hero spacing
-- **24 (6rem/96px)** - Maximum spacing
-
-### Spacing Usage Rules
-
-✅ **DO:**
-- Use spacing tokens, never hardcode values
-- Maintain consistent spacing within components
-- Use larger spacing for major sections
-- Use smaller spacing for related elements
-
-❌ **DON'T:**
-- Don't mix spacing units (px, em, rem)
-- Don't create custom spacing values
-- Don't use spacing that doesn't align with the scale
+- **Surface:** Prefer white or cream with clear separation (border or shadow—keep subtle).
+- **Content:** Image optional at top; **H3/H4** for titles; short supporting copy in Body Main or Body Small.
+- **Actions:** Tertiary “Learn more” links for secondary navigation from cards.
 
 ---
 
-## Components
+## Forms & Search
 
-### Header
-
-**When to use:**
-- On every page
-- Contains site logo and navigation
-- Sticky positioning for accessibility
-
-**Structure:**
-- Red banner background
-- White text
-- Logo on left, navigation on right
-- Mobile menu toggle for small screens
-
-### Navigation
-
-**Primary Navigation (`.primary-nav`)**
-- Desktop: Horizontal list
-- Mobile: Hidden, use mobile menu
-- Active state: Current page indicator
-
-**Mobile Navigation (`.mobile-nav`)**
-- Hidden by default
-- Toggle with hamburger menu
-- Full-width dropdown
-- Accessible with keyboard navigation
-
-### Footer
-
-**When to use:**
-- On every page
-- Contains site links, social media
-- Multiple columns (desktop), stacked (mobile)
-
-**Structure:**
-- Logo and social links (left)
-- Navigation columns (right)
-- Responsive: Stacks on mobile
-
-### Search Interface
-
-**When to use:**
-- Search page (`search.html`)
-- Integrated with staticSearch
-
-**Components:**
-- Search tabs for collection types
-- Search form with filters
-- Date range filters
-- Feature filters (people, places, etc.)
-- Results display area
+- **Labels:** Montserrat Bold, Label size; associate labels with inputs (`for` / `id`).
+- **Inputs:** Clear borders using neutrals; focus state visible (outline or ring using Secondary Gold or a high-contrast navy border—see Accessibility).
+- **Primary action:** Primary button aligned with the task (e.g. search submit).
 
 ---
 
-## Form Elements
+## Homepage Pattern
 
-### Input Fields
+- **Hero band (white surface):** small kicker tag, H1 title, Body Lead paragraph, a small Body Small content warning, and a pill-style `Learn More` link.
+- **Search band (white surface):** full-width filter select + search field with a trailing submit icon button; sits directly below the hero and shares the same horizontal padding.
+- **Timeline section (cream surface):** gold-underlined kicker, centered H2 title, italic Body Small note, and a four-node decade navigator where the active node uses a navy ring with a gold center dot.
+- **Card grid:** three-up cards on desktop collapsing to one column on small screens; each card has an image, kicker type, H3 title, short excerpt, and a primary `View Data` button.
+- **Featured image band:** full-width historical photograph at the bottom of the page (no border, no radius).
 
-**Text Inputs**
-- Background: Light gray (`--color-bg-lighter-gray`)
-- Border: Navy with opacity
-- Focus: Navy border, white background, shadow
-- Border radius: Large (`--border-radius-lg`)
+---
 
-**When to use:**
-- Search inputs
-- Form fields
-- Filter inputs
+## Record / Results Page Pattern
 
-### Select Dropdowns
+The record page (person, event, place, periodical, organization) uses a **two-column layout** on a **white page surface** with **white cards** bordered in Light Grey for distinct panels.
 
-**Characteristics:**
-- Same styling as text inputs
-- Custom arrow icon
-- Accessible keyboard navigation
+### Sidebar (left column)
 
-### Checkboxes
+Fixed ~288px wide; sticks to the top on desktop. Stacks **above** the main column on tablet / mobile.
 
-**When to use:**
-- Filter options
-- Multiple selections
-- Type selections
+- **Record title:** Montserrat ExtraBold, `4xl` step at desktop, scaling down at smaller breakpoints. Color: Black for maximum ink weight — the title is the primary visual anchor of the page. Long titles wrap at word boundaries (`overflow-wrap: break-word; hyphens: auto`).
+- **Facts list (dl):** grouped `dt`/`dd` pairs (e.g. `Occupation` / `Writer` / `Columnist`).
+  - `dt`: Montserrat Bold, Label size, Black.
+  - `dd`: Open Sans, Body Small, Dark Grey. Multiple `dd` values stack tightly, one per line.
+- **“Related Entries in LGLC” heading:** Montserrat Bold, H4 size, Black.
+- **Count-card tiles:** one card per related record type (People, Places, Periodicals, Events).
+  - White surface, 1px Light Grey border, ~8px radius, ~16–20px padding.
+  - Big count number (Montserrat Bold, `4xl` step, Black) on the first line.
+  - Label row (Open Sans Body Small, Dark Grey) with a leading icon — icon color matches the label’s dark ink.
+  - Hover: soft shadow + subtle 1px lift.
 
-**Style:**
-- Custom styled checkboxes
-- Pill-shaped labels
-- Selected: Navy background, white text
+### Main column (right)
 
-### Form Layout
+Vertical stack of semantic blocks separated by `spacing-xl`–`spacing-2xl`.
 
-**Grid Layout (`.ssFieldset`)**
-- Label column: 240px (desktop)
-- Input column: Flexible
-- Responsive: Stacks on mobile
+- **Section tag:** inline uppercase label with a soft Gold tint background (`color-gold-60`) and black text — e.g. `BIOGRAPHY`, `DETAILS`, `OVERVIEW`. Sits directly above the intro paragraph.
+- **Intro paragraph:** Open Sans Body Main, Dark Grey; no background.
+- **Associated-entry accordions:** native `<details>` / `<summary>` elements.
+  - Summary: leading type icon, bold Black title, parenthesized count, trailing chevron that rotates on `[open]`. H3 typographic scale.
+  - Body: list of entry cards with `spacing-md` gap.
+  - Bottom divider: 1px Light Grey line separating each section.
+- **Entry card:** white surface, 1px Light Grey border, ~8px radius, `spacing-lg` padding, left-right flex layout.
+  - Left: Black bold `xl` title, then a meta list of `Relation / Citation / Record Date` rows (bold label span + value).
+  - Right: red tertiary `View Page` link (Accent Red underline) aligned to the top-right.
+  - Small screens: collapse to a stacked layout.
+- **Citations footer:** separated from the cards above by a 1px light divider. `Citations` heading (H3, Black) with a small outlined info icon; followed by a full citation string in Body Main / Dark Grey.
+
+### Interaction & states
+
+- Sidebar count cards are links into the matching accordion section on the same page (use a fragment ID).
+- Accordions are open by default for quick scanability; the chevron rotates on toggle.
+- All interactive elements show the gold focus ring (see [Accessibility](#accessibility)).
 
 ---
 
 ## Images & Media
 
-### Image Sizes
+- Provide meaningful **alt** text for informative images; empty `alt` for decorative images.
+- Use consistent aspect ratios within grids; avoid stretching logos or portraits.
+- Optimize file size for web delivery.
 
-**When to use each:**
+---
 
-- **Small (12.5rem/200px)** - Thumbnails, small cards
-- **Medium (15rem/240px)** - Card images, standard content
-- **Large (31.25rem/500px)** - Featured images, hero images
-- **XLarge (37.5rem/600px)** - About section images
-- **2XLarge (50rem/800px)** - Full-width hero images
+## Editorial Page Pattern
 
-### Image Usage Rules
+Used for **About**, **Editorial Principles**, and other long-form reading pages. Content is centered in a narrow column on a white surface, with hero-style headings that punctuate sections rather than outline-style `h2`s.
 
-✅ **DO:**
-- Use appropriate image sizes for context
-- Include descriptive alt text
-- Use `object-fit: cover` for consistent aspect ratios
-- Optimize images for web
+- **Container:** `container-page editorial-page` — centered, `max-width` at `content-width-wide`, `text-align: center` at the section level so headings, kickers, figures, and CTAs all center automatically.
+- **Body column:** a `.editorial-body` wrapper re-sets `text-align: left` and constrains to `content-width-medium` so paragraphs stay comfortable to read. Paragraphs use `.editorial-text` (Open Sans, Body Main, Dark Grey, `line-height-relaxed`).
+- **`ABOUT` kicker (`.editorial-kicker`):** uppercase Montserrat Bold Label, black text, with a 4px gold underline. Sits directly above the H1.
+- **Section title (`.editorial-title`):** Montserrat Bold, H1 scale, centered, black — used for the page’s primary heading.
+- **Section heading (`.editorial-heading`):** Montserrat Bold, H2 scale, centered, black. Modifiers:
+  - `.editorial-heading--display` bumps to H1 scale for marquee sections (“A Selected Annotated Chronology”).
+  - `.editorial-heading--eyebrow` drops to H4 scale and uses uppercase + letter-spacing for smaller sub-sections (“What is Gay Liberation?”).
+- **Figure (`.editorial-figure`/`.editorial-image`):** inline historical photograph, full column width, no border or radius, capped at `image-height-lg` and cover-cropped. Generous vertical rhythm above/below.
+- **CTA (`.editorial-cta`):** centered `btn-primary` anchor after the final body block — e.g. *See our editorial principles*.
 
-❌ **DON'T:**
-- Don't use images larger than necessary
-- Don't skip alt text
-- Don't distort images
+Headings step down (H1 → eyebrow H2 → display H2) so screen readers still get a logical outline while the visual hierarchy favours the display sections.
 
 ---
 
 ## Responsive Design
 
-### Breakpoints
-
-**Mobile First Approach:**
-- Default: Mobile styles
-- Tablet: `48rem` (768px) and up
-- Desktop: `64rem` (1024px) and up
-- Large Desktop: `80rem` (1280px) and up
-
-### Responsive Patterns
-
-**Navigation:**
-- Mobile: Hamburger menu
-- Desktop: Horizontal navigation
-
-**Grids:**
-- Mobile: 1 column
-- Tablet: 2 columns (if applicable)
-- Desktop: 3 columns
-
-**Typography:**
-- Mobile: Smaller font sizes
-- Desktop: Larger font sizes
-
-**Spacing:**
-- Mobile: Reduced padding
-- Desktop: Full spacing
-
-### Responsive Usage Rules
-
-✅ **DO:**
-- Design mobile-first
-- Test on multiple screen sizes
-- Use flexible units (rem, %, fr)
-- Hide/show content appropriately
-
-❌ **DON'T:**
-- Don't use fixed pixel widths for layouts
-- Don't hide important content on mobile
-- Don't make touch targets too small
+- **Mobile first:** Default to single-column layouts and stacked navigation.
+- **Breakpoints:** Scale typography and spacing slightly up at tablet and desktop where the Design System shows multi-column layouts.
+- **Navigation:** Collapse to a compact pattern (e.g. menu control) on small screens while preserving keyboard access.
 
 ---
 
-## Accessibility Guidelines
+## Accessibility
 
-### Focus States
-
-**Always include:**
-- Yellow outline (`--color-primary-yellow`)
-- Adequate offset (`--outline-offset-sm`)
-- Visible on all interactive elements
-
-### Touch Targets
-
-**Minimum sizes:**
-- Interactive elements: 44px × 44px minimum
-- Buttons: Adequate padding
-- Links: Sufficient clickable area
-
-### Color Contrast
-
-- Text on backgrounds must meet WCAG AA standards
-- Use semantic colors for text
-- Don't rely on color alone for information
-
-### Keyboard Navigation
-
-- All interactive elements must be keyboard accessible
-- Logical tab order
-- Skip links for main content
-- ARIA labels where needed
+- **Contrast:** Prefer the [Accessible color combinations](#accessible-color-combinations); test custom pairs.
+- **Focus:** Visible focus for links, buttons, and form controls (e.g. gold or navy outline with clear offset).
+- **Touch targets:** Minimum about **44×44px** for interactive elements.
+- **Keyboard:** Logical tab order; interactive components operable without a pointer.
+- **Headings:** One logical H1 per page where possible; do not pick heading levels for style alone.
 
 ---
 
 ## Quick Reference
 
-### When to Use What
+### Typography (summary)
 
-| Element | Use Case | Example |
-|---------|----------|---------|
-| `.btn-primary` | Main action | "Search Database", "Submit" |
-| `.btn-secondary` | Alternative action | "Cancel", "Learn More" |
-| `.card` | Content previews | Feature cards, content grid |
-| `.related-card` | Related content | Affiliated items on detail pages |
-| `.hero-title` | Main page heading | Landing page title |
-| `.section-title` | Section headings | "How do I get started?" |
-| `.search-tabs` | Collection type navigation | Events, People, Places tabs |
-| `.record-container` | Detail pages | Event, Person, Place pages |
-| `.landing-container` | Landing page sections | Hero, About, Team sections |
+| Element | Font | Size / line |
+|---------|------|-------------|
+| H1 | Montserrat | 48 / 60 |
+| H2 | Montserrat | 32 / 40 |
+| H3 | Montserrat | 24 / 32 |
+| H4 | Montserrat | 20 / 28 |
+| Lead | Open Sans | 18 / 28 |
+| Body | Open Sans | 16 / 24 |
+| Small | Open Sans | 14 / 20 |
+| Label | Montserrat Bold | 14 / 20 |
 
-### Color Quick Reference
+### Color (summary)
 
-| Color | Hex | Token | Use For |
-|-------|-----|-------|---------|
-| Black | `#000000` | `--color-primary-black` | Main headings (Aachen), primary text |
-| Red | `#ED1C24` | `--color-primary-red` | Header, interactive materials |
-| Navy | `#1C3664` | `--color-primary-navy` | Headings (Josefin), body copy, navigation |
-| Yellow | `#F6BE38` | `--color-primary-yellow` | Accents, highlights |
-| Light Grey | `#E6E7E8` | `--color-grey-light` | Backgrounds, subtle elements |
-| Red 80% | `#F15B40` | `--color-red-80` | Interactive materials (with red) |
-| Brightened Navy | `#2D5A8C` | `--text-link` | Default links (on light backgrounds) |
-| Navy 80% | `#445078` | `--text-link-visited` | Visited links |
+| Token concept | Hex |
+|---------------|-----|
+| Primary Navy | `#002D56` |
+| Secondary Gold | `#FFC72C` |
+| Background Cream | `#F9F7F2` |
+| Accent Red | `#C8102E` |
+| Neutrals | `#000000`, `#4D4D4D`, `#999999`, `#E6E6E6`, `#FFFFFF` |
+
+### Spacing (summary)
+
+`4 → 8 → 16 → 24 → 32 → 48 → 64 → 80` px (`xs` through `4xl`).
 
 ---
 
 ## Design Principles
 
-1. **Brand Integrity** - Follow the official LGLC Brand Standards Manual exactly
-2. **Consistency** - Use design tokens consistently across all pages
-3. **Hierarchy** - Establish clear visual hierarchy with typography (Aachen for main, Josefin for secondary)
-4. **Accessibility** - Ensure all elements are accessible and keyboard navigable
-5. **Responsive** - Design mobile-first, enhance for larger screens
-6. **Clarity** - Use clear, semantic HTML and appropriate components
-7. **Historical Mission** - Honor the historical LGBT liberation movement while remaining relevant today
+1. **Clarity** — Readable type, predictable spacing, obvious primary actions.
+2. **Consistency** — Reuse the spacing scale, type styles, and color roles across pages.
+3. **Accessibility** — Sufficient contrast, focus visibility, and semantic structure.
+4. **Responsive behavior** — One column on small screens; progressive enhancement for larger viewports.
+5. **Respect for content** — History-forward, low-noise UI that foregrounds chronology, people, places, and sources.
 
 ---
 
-## Brand Standards Reference
+## Implementation Note
 
-This design language is based on the **LGLC Brand Standards Manual**. For official logo files, detailed spacing guidelines, and additional brand usage rules, refer to:
-
-- **Document:** `media/style_guide.pdf`
-- **Contact:** www.lglc.ca
-
-### Brand Standards Manual Contents
-
-The official LGLC Brand Standards Manual includes:
-
-1. **File Types** - Logo file formats for print (`.eps`) and web (`.jpg`)
-2. **Structure** - Full version (with tagline and website) and symbol-only versions
-3. **Spacing** - X measurement guidelines for logo placement
-4. **Colour Palette** - Primary colors, grey tones, and secondary tints (80% and 60%)
-5. **Typography** - Primary typeface (Josefin Sans) and secondary typeface (Aachen Std)
-6. **Typography & Colour** - Usage guidelines for headings, body copy, and interactive materials
-7. **Don'ts** - Logo usage restrictions
-8. **Contact Information** - www.lglc.ca
-
-### Key Brand Rules
-
-1. ✅ Use exact hex values from the brand palette
-2. ✅ Use Aachen Std for main headings only (18pt+, black)
-3. ✅ Use Josefin Sans for body copy and secondary/tertiary headings (navy)
-4. ✅ Use red and red 80% for interactive materials (menus, maps, graphs)
-5. ✅ Maintain proper logo spacing (X measurement)
-6. ✅ Use tints (80% and 60%) for variety
-7. ✅ If limited by one-colour option, use black
-8. ❌ Never stretch, rotate, or apply effects to the logo
-9. ❌ Never change brand colors or create new combinations
-10. ❌ Never use fonts outside Aachen Std and Josefin Sans
-11. ❌ Never reconfigure logo elements
-12. ❌ Never place logo on an angle
-
-**Note on Links:** We implement a context-aware navy-based link color system for optimal brand harmony and accessibility. See the [Link Color System](#link-color-system) section for complete specifications.
-
----
-
-## Implementation Guide
-
-### How to Apply Brand Standards to Components
-
-**1. Headings:**
-
-```css
-/* Main Heading (h1) - Brand Standard */
-h1 {
-  font-family: var(--font-family-heading);     /* Aachen Std */
-  font-size: var(--font-size-main-heading);    /* 18pt+ (1.5rem/24px) */
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);                  /* Black #000000 */
-  line-height: var(--line-height-tight);       /* 1.2 - Tight for large headings */
-}
-
-/* Secondary Heading (h2) - Brand Standard */
-h2 {
-  font-family: var(--font-family-primary);         /* Josefin Sans */
-  font-size: var(--font-size-secondary-heading);   /* 14pt+ (1.167rem/~19px) */
-  font-weight: var(--font-weight-bold);
-  color: var(--text-secondary);                    /* Navy #1C3664 */
-  line-height: var(--line-height-normal);          /* 1.4 - Comfortable for subheadings */
-}
-
-/* Tertiary Heading (h3) - Brand Standard */
-h3 {
-  font-family: var(--font-family-primary);        /* Josefin Sans */
-  font-size: var(--font-size-tertiary-heading);   /* 11pt+ (0.917rem/~15px) */
-  font-weight: var(--font-weight-bold);
-  color: var(--text-secondary);                   /* Navy #1C3664 */
-  line-height: var(--line-height-normal);         /* 1.4 - Comfortable for small headings */
-}
-```
-
-**2. Body Text:**
-
-```css
-/* Body Element - Brand Standard */
-body {
-  font-family: var(--font-family-primary);  /* Josefin Sans */
-  font-size: var(--font-size-body);         /* 10pt+ (0.875rem/14px) */
-  font-weight: var(--font-weight-normal);
-  color: var(--text-secondary);             /* Navy #1C3664 */
-  line-height: var(--line-height-loose);    /* 1.9 - Generous spacing per brand guide */
-}
-
-/* Paragraphs - Brand Standard */
-p {
-  font-family: var(--font-family-primary);  /* Josefin Sans */
-  font-size: var(--font-size-body);         /* 10pt+ (0.875rem/14px) */
-  color: var(--text-secondary);             /* Navy #1C3664 */
-  line-height: var(--line-height-loose);    /* 1.9 - Generous spacing per brand guide */
-}
-```
-
-**3. Links:**
-
-```css
-/* Default Links (on light backgrounds) */
-a {
-  color: var(--text-link);                  /* Brightened navy #2D5A8C */
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--text-link-hover);            /* Navy #1C3664 */
-}
-
-a:visited {
-  color: var(--text-link-visited);          /* Navy 80% #445078 */
-}
-
-/* Links on Red Backgrounds (navigation) */
-.bg-red a,
-.on-red a {
-  color: var(--text-link-on-red);          /* White */
-}
-
-.bg-red a:hover,
-.on-red a:hover {
-  color: var(--text-link-hover-on-red);    /* White (background changes) */
-}
-
-/* Links on Navy Backgrounds */
-.bg-navy a,
-.on-navy a {
-  color: var(--text-link-on-navy);         /* White */
-}
-
-/* Links on Yellow Backgrounds */
-.bg-yellow a,
-.on-yellow a {
-  color: var(--text-link-on-yellow);       /* Navy */
-}
-
-.bg-yellow a:hover,
-.on-yellow a:hover {
-  color: var(--text-link-hover-on-yellow); /* Black */
-}
-```
-
-**4. Interactive Elements (Buttons, Menus):**
-
-```css
-.interactive-element {
-  background-color: var(--color-primary-red);     /* Red #ED1C24 */
-}
-
-.interactive-element:hover {
-  background-color: var(--color-red-80);          /* Red 80% #F15B40 */
-}
-```
-
----
-
-*Last updated: Based on official LGLC Brand Standards Manual*
-
+This file is the authoritative reference. CSS in the repository (for example `css/design-tokens.css` and component styles) may still use older naming or values from a previous brand pass. When updating templates, align variables, components, and tokens with this document so that the live site matches these guidelines.

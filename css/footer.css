@@ -1,22 +1,12 @@
 /**
- * LGLC Footer Styles
- * Uses design tokens from design-tokens.css
- * 
- * LOGO SPACING GUIDELINES (Brand Standards):
- * - X measurement = height of the "L" in LGLC (equals logo height)
- * - Clearspace around logo must be ≥ X measurement
- * - No elements should encroach upon this clearspace
- * - Footer logo: 48px height = 48px clearspace (3rem each)
+ * LGLC Footer — white band, navy text, logo + menu + contact
  */
-
-/* ============================================
-   FOOTER
-   ============================================ */
 
 .site-footer {
   flex-shrink: 0;
-  padding: var(--spacing-16) 0 var(--spacing-8) 0;
-  background-color: var(--bg-surface);
+  padding: var(--spacing-16) 0 var(--spacing-8);
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   border-top: var(--border-width-thin) solid var(--border-color-light);
   position: relative;
   z-index: var(--z-index-base);
@@ -29,8 +19,9 @@
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: var(--spacing-16);
 }
 
@@ -40,55 +31,34 @@
   gap: var(--spacing-6);
 }
 
-/* Footer Logo - Icon with X measurement clearspace
-   X measurement = height of "L" in LGLC = logo height
-   Clearspace around logo = X measurement (logo height) */
 .footer-logo {
   display: inline-block;
-  /* X measurement clearspace: margin equal to logo height */
-  margin: var(--spacing-12) var(--spacing-12) var(--spacing-12) 0;
+  margin: var(--spacing-0) var(--spacing-8) var(--spacing-0) var(--spacing-0);
   transition: opacity var(--transition-fast);
 }
 
-/* Logo hover removed - brand standards: never change logo colors or apply effects */
-
 .footer-logo:focus {
-  outline: var(--outline-width-thick) solid var(--color-primary-yellow);
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
   outline-offset: var(--outline-offset-sm);
   border-radius: var(--border-radius-sm);
 }
 
 .footer-logo-img {
   display: block;
-  height: var(--spacing-12);  /* 48px - Logo height = X measurement */
-  width: auto;  /* Maintain aspect ratio */
+  height: var(--spacing-32);
+  width: auto;
   object-fit: contain;
-}
-
-.footer-social {
-  display: flex;
-  gap: var(--spacing-4);
-}
-
-/* Social links use default <a> tag colors (Context-aware: Brightened navy) with custom sizing */
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--touch-target-sm);
-  height: var(--touch-target-sm);
-  border-radius: var(--border-radius-md);
-  transition: all var(--transition-fast);
-}
-
-.social-link:hover {
-  background-color: var(--bg-page);
 }
 
 .footer-nav {
   display: grid;
   grid-template-columns: var(--grid-columns-three);
   gap: var(--spacing-8);
+}
+
+.footer-nav--menu {
+  grid-template-columns: repeat(2, minmax(0, auto));
+  gap: var(--spacing-16);
 }
 
 .footer-column {
@@ -98,9 +68,10 @@
 }
 
 .footer-heading {
-  font-size: var(--font-size-base);
+  font-family: var(--font-family-label);
+  font-size: var(--font-size-label);
   font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
+  color: var(--footer-text);
   margin-bottom: var(--spacing-2);
 }
 
@@ -113,23 +84,49 @@
   gap: var(--spacing-2);
 }
 
-/* Footer links use default <a> tag styling (Context-aware: Brightened navy on light backgrounds) */
 .footer-links a {
+  font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
+  color: var(--footer-link);
+  text-decoration: none;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
+.footer-links a:hover {
+  color: var(--color-secondary-gold);
+  text-decoration: underline;
+}
 
-@media (max-width: 63.9375rem) {  /* --breakpoint-lg-max */
+.footer-links a:focus {
+  outline: var(--outline-width-thick) solid var(--color-focus-ring);
+  outline-offset: var(--outline-offset-sm);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-12);
+  padding-top: var(--spacing-8);
+  border-top: var(--border-width-thin) solid var(--border-color-light);
+}
+
+.footer-copyright {
+  margin: var(--spacing-0);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 63.9375rem) {
   .footer-content {
-    grid-template-columns: 1fr;
     gap: var(--spacing-12);
   }
 }
 
-@media (max-width: 47.9375rem) {  /* --breakpoint-md-max */
+@media (max-width: 47.9375rem) {
   .footer-container {
     padding: var(--spacing-0) var(--spacing-6);
   }
@@ -138,13 +135,12 @@
     grid-template-columns: 1fr;
   }
 
-  /* Reduce logo size and X measurement clearspace on mobile */
-  .footer-logo {
-    margin: var(--spacing-8) var(--spacing-8) var(--spacing-8) 0;
+  .footer-logo-img {
+    height: var(--spacing-24);
   }
 
-  .footer-logo-img {
-    height: var(--spacing-10);  /* 40px - Smaller on mobile, X measurement adjusts proportionally */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
-
