@@ -1,6 +1,6 @@
 # LGLC Website Templates
 
-Lesbian and Gay Liberation in Canada (LGLC) website templates and components built with a **token-based design system** documented in `DESIGN-LANGUAGE.md` and sourced from `designs/Design System.png`.
+Lesbian and Gay Liberation in Canada (LGLC) website templates and components built with a **token-based design system** documented in `DESIGN-LANGUAGE.md`.
 
 ## Quick start
 
@@ -29,7 +29,6 @@ Lesbian and Gay Liberation in Canada (LGLC) website templates and components bui
 │   ├── pages.css            # Landing + record page patterns
 │   └── search.css           # staticSearch / search UI styling
 ├── demo/                    # Example HTML pages
-├── designs/                 # Design system artwork (e.g. Design System.png)
 ├── js/
 │   └── header.js            # Mobile nav, search tabs, accessibility helpers
 ├── media/                   # Images, optional local fonts, brand PDFs
@@ -41,7 +40,7 @@ Lesbian and Gay Liberation in Canada (LGLC) website templates and components bui
 
 ## Design system overview
 
-The **canonical spec** is **`DESIGN-LANGUAGE.md`**, aligned with **`designs/Design System.png`**. CSS implements that spec via **`css/design-tokens.css`**.
+The **canonical spec** is **`DESIGN-LANGUAGE.md`**. CSS implements that spec via **`css/design-tokens.css`**.
 
 A separate **LGLC Brand Standards Manual** may exist as `media/style_guide.pdf` for logo and print rules; **web UI tokens** follow the Design Language (colors, type, spacing) unless you intentionally map back to print-only guidelines.
 

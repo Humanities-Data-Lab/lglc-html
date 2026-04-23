@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lesbian and Gay Liberation in Canada — demo template">
+  <meta name="description" content="Lesbian and Gay Liberation in Canada — place demo">
   <title>Place — LGLC demo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,15 +29,9 @@
           </div>
           <nav class="primary-nav" aria-label="Primary navigation">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a href="landing.html" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="about.html" class="nav-link">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="../search.html" class="nav-link">Search</a>
-              </li>
+              <li class="nav-item"><a href="landing.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+              <li class="nav-item"><a href="../search.html" class="nav-link">Search</a></li>
             </ul>
           </nav>
           <div class="header-actions">
@@ -54,101 +48,124 @@
     </div>
     <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
       <ul class="mobile-nav-list">
-        <li class="mobile-nav-item">
-          <a href="landing.html" class="mobile-nav-link">Home</a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="about.html" class="mobile-nav-link">About Us</a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="../search.html" class="mobile-nav-link">Search</a>
-        </li>
+        <li class="mobile-nav-item"><a href="landing.html" class="mobile-nav-link">Home</a></li>
+        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li class="mobile-nav-item"><a href="../search.html" class="mobile-nav-link">Search</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main-content" class="record-page" tabindex="-1">
-    <div class="container-page">
-      <header class="record-hero" aria-labelledby="place-title">
+    <div class="container-page record-layout">
+      <aside class="record-sidebar" aria-label="Place summary">
         <h1 id="place-title" class="record-title">University of British Columbia</h1>
-        <p class="record-subtitle">Vancouver, British Columbia, Canada</p>
-      </header>
 
-      <section class="record-facts" aria-label="Place summary">
-        <div class="record-facts__group">
-          <h2 class="record-facts__label">Jurisdiction</h2>
-          <p class="record-facts__value">British Columbia</p>
-        </div>
-        <div class="record-facts__group">
-          <h2 class="record-facts__label">Type</h2>
-          <p class="record-facts__value">Educational institution</p>
-        </div>
-      </section>
-
-      <section class="record-section record-section--related" aria-labelledby="place-related-heading">
-        <h2 id="place-related-heading" class="section-heading">Related Entries in LGLC</h2>
-
-        <div class="related-block">
-          <div class="related-block__header">
-            <h3 class="related-block__title">Affiliated People</h3>
-            <span class="related-block__count">1 People</span>
+        <dl class="record-facts-list">
+          <div class="record-facts-list__group">
+            <dt>Location</dt>
+            <dd>Vancouver, British Columbia, Canada</dd>
           </div>
-          <ul class="related-entry-list">
+          <div class="record-facts-list__group">
+            <dt>Jurisdiction</dt>
+            <dd>British Columbia</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Type</dt>
+            <dd>Educational institution</dd>
+          </div>
+        </dl>
+
+        <div class="record-sidebar__related">
+          <h2 class="record-sidebar-heading">Related Entries in LGLC</h2>
+          <ul class="record-count-cards">
             <li>
-              <article class="related-entry">
-                <div class="related-entry__body">
-                  <h4 class="related-entry__title"><a href="../person/jane-rule">Jane Rule</a></h4>
-                  <dl class="related-entry__meta">
-                    <dt>Relation</dt>
-                    <dd>Employee</dd>
-                    <dt>Citation</dt>
-                    <dd>“Jane Rule: The Woman Behind Lesbian Images,” <em>Body Politic</em>, no. 21 (1975), p. 14</dd>
-                    <dt>Record Date</dt>
-                    <dd>December 1, 1975</dd>
-                  </dl>
-                </div>
-                <div class="related-entry__actions">
-                  <a href="../person/jane-rule" class="btn-primary">View Page</a>
-                </div>
-              </article>
+              <a href="#associated-people" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                  People
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-events" class="record-count-card">
+                <span class="record-count-card__number">2</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+                  Events
+                </span>
+              </a>
             </li>
           </ul>
         </div>
+      </aside>
 
-        <div class="related-block">
-          <div class="related-block__header">
-            <h3 class="related-block__title">Affiliated Events</h3>
-            <span class="related-block__count">2 Events</span>
+      <div class="record-main">
+        <section class="record-intro" aria-labelledby="place-overview-heading">
+          <p class="record-section-tag" id="place-overview-heading">Overview</p>
+          <p class="record-intro__text">
+            The University of British Columbia, founded in 1908, is a public research university with campuses in Vancouver and Kelowna. This record appears in the LGLC chronology in relation to employment, lectures, and affiliated events.
+          </p>
+        </section>
+
+        <details class="record-accordion" id="associated-people" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span class="record-accordion__title">Affiliated People</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Jane Rule</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Employee</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> "Jane Rule: The Woman Behind Lesbian Images," Body Politic, no. 21 (1975), p. 14</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> December 1, 1975</p>
+                </div>
+              </div>
+              <a href="person.html" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
-          <ul class="related-entry-list">
-            <li>
-              <article class="related-entry">
-                <div class="related-entry__body">
-                  <h4 class="related-entry__title"><a href="../event/sample-1">Public lecture (sample)</a></h4>
-                  <dl class="related-entry__meta">
-                    <dt>Relation</dt>
-                    <dd>Hosted at location</dd>
-                    <dt>Citation</dt>
-                    <dd>Chronology volume reference</dd>
-                    <dt>Record Date</dt>
-                    <dd>1975-03-15</dd>
-                  </dl>
-                </div>
-                <div class="related-entry__actions">
-                  <a href="../event/sample-1" class="btn-primary">View Page</a>
-                </div>
-              </article>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </details>
 
-      <section class="record-section" aria-labelledby="place-cite-heading">
-        <h2 id="place-cite-heading" class="section-heading">Citations</h2>
-        <p class="section-text">
-          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/
-        </p>
-      </section>
+        <details class="record-accordion" id="associated-events" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            <span class="record-accordion__title">Affiliated Events</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Public lecture (sample)</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Hosted at location</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Chronology volume reference</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> 1975-03-15</p>
+                </div>
+              </div>
+              <a href="event.html" class="record-entry-card__link">View Page</a>
+            </article>
+          </div>
+        </details>
+
+        <section class="record-citations" aria-labelledby="place-cite-heading">
+          <h2 id="place-cite-heading" class="record-citations__heading">
+            <span>Citations</span>
+            <svg class="record-citations__info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1.1-1 1.7"/></svg>
+          </h2>
+          <p class="record-citations__text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -164,7 +181,7 @@
           <div class="footer-column">
             <h4 class="footer-heading">Menu</h4>
             <ul class="footer-links">
-              <li><a href="../index.html">Home</a></li>
+              <li><a href="landing.html">Home</a></li>
               <li><a href="../search.html">Search</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="../contact.html">Contact</a></li>

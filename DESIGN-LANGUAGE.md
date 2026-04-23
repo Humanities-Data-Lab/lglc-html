@@ -2,7 +2,7 @@
 
 A practical guide to visual design for the **Lesbian and Gay Liberation in Canada (LGLC)** website and related templates.
 
-**Source:** This document is derived from the project Design System specification (`designs/Design System.png`). Detailed UI components (buttons, form controls, cards, tags, header/footer layout) are also reflected in `designs/Design Components.png`; the templates implement those patterns in HTML/CSS (see `css/components.css`).
+**Scope:** This document is the authoritative reference for the LGLC design system — color, type, spacing, UI components, and the homepage and record-page patterns. CSS in `css/` implements it, starting with the tokens in `css/design-tokens.css`.
 
 ## About LGLC
 
@@ -20,12 +20,14 @@ The Lesbian and Gay Liberation in Canada (LGLC) project is building an interacti
 8. [Layout Patterns](#layout-patterns)
 9. [Cards & Content Blocks](#cards--content-blocks)
 10. [Forms & Search](#forms--search)
-11. [Images & Media](#images--media)
-12. [Responsive Design](#responsive-design)
-13. [Accessibility](#accessibility)
-14. [Quick Reference](#quick-reference)
-15. [Design Principles](#design-principles)
-16. [Implementation Note](#implementation-note)
+11. [Homepage Pattern](#homepage-pattern)
+12. [Record / Results Page Pattern](#record--results-page-pattern)
+13. [Images & Media](#images--media)
+14. [Responsive Design](#responsive-design)
+15. [Accessibility](#accessibility)
+16. [Quick Reference](#quick-reference)
+17. [Design Principles](#design-principles)
+18. [Implementation Note](#implementation-note)
 
 ---
 
@@ -212,6 +214,59 @@ Patterns illustrated in the Design System:
 
 ---
 
+## Homepage Pattern
+
+- **Hero band (white surface):** small kicker tag, H1 title, Body Lead paragraph, a small Body Small content warning, and a pill-style `Learn More` link.
+- **Search band (white surface):** full-width filter select + search field with a trailing submit icon button; sits directly below the hero and shares the same horizontal padding.
+- **Timeline section (cream surface):** gold-underlined kicker, centered H2 title, italic Body Small note, and a four-node decade navigator where the active node uses a navy ring with a gold center dot.
+- **Card grid:** three-up cards on desktop collapsing to one column on small screens; each card has an image, kicker type, H3 title, short excerpt, and a primary `View Data` button.
+- **Featured image band:** full-width historical photograph at the bottom of the page (no border, no radius).
+
+---
+
+## Record / Results Page Pattern
+
+The record page (person, event, place, periodical, organization) uses a **two-column layout** on a **white page surface** with **white cards** bordered in Light Grey for distinct panels.
+
+### Sidebar (left column)
+
+Fixed ~288px wide; sticks to the top on desktop. Stacks **above** the main column on tablet / mobile.
+
+- **Record title:** Montserrat ExtraBold, large (use the `5xl` step at desktop, scaling down at smaller breakpoints). Color: Black for maximum ink weight — the title is the primary visual anchor of the page.
+- **Facts list (dl):** grouped `dt`/`dd` pairs (e.g. `Occupation` / `Writer` / `Columnist`).
+  - `dt`: Montserrat Bold, Label size, Black.
+  - `dd`: Open Sans, Body Small, Dark Grey. Multiple `dd` values stack tightly, one per line.
+- **“Related Entries in LGLC” heading:** Montserrat Bold, H4 size, Black.
+- **Count-card tiles:** one card per related record type (People, Places, Periodicals, Events).
+  - White surface, 1px Light Grey border, ~8px radius, ~16–20px padding.
+  - Big count number (Montserrat Bold, `4xl` step, Black) on the first line.
+  - Label row (Open Sans Body Small, Dark Grey) with a leading icon — icon color matches the label’s dark ink.
+  - Hover: soft shadow + subtle 1px lift.
+
+### Main column (right)
+
+Vertical stack of semantic blocks separated by `spacing-xl`–`spacing-2xl`.
+
+- **Section tag:** inline uppercase label with a soft Gold tint background (`color-gold-60`) and black text — e.g. `BIOGRAPHY`, `DETAILS`, `OVERVIEW`. Sits directly above the intro paragraph.
+- **Intro paragraph:** Open Sans Body Main, Dark Grey; no background.
+- **Associated-entry accordions:** native `<details>` / `<summary>` elements.
+  - Summary: leading type icon, bold Black title, parenthesized count, trailing chevron that rotates on `[open]`. H3 typographic scale.
+  - Body: list of entry cards with `spacing-md` gap.
+  - Bottom divider: 1px Light Grey line separating each section.
+- **Entry card:** white surface, 1px Light Grey border, ~8px radius, `spacing-lg` padding, left-right flex layout.
+  - Left: Black bold `xl` title, then a meta list of `Relation / Citation / Record Date` rows (bold label span + value).
+  - Right: red tertiary `View Page` link (Accent Red underline) aligned to the top-right.
+  - Small screens: collapse to a stacked layout.
+- **Citations footer:** separated from the cards above by a 1px light divider. `Citations` heading (H3, Black) with a small outlined info icon; followed by a full citation string in Body Main / Dark Grey.
+
+### Interaction & states
+
+- Sidebar count cards are links into the matching accordion section on the same page (use a fragment ID).
+- Accordions are open by default for quick scanability; the chevron rotates on toggle.
+- All interactive elements show the gold focus ring (see [Accessibility](#accessibility)).
+
+---
+
 ## Images & Media
 
 - Provide meaningful **alt** text for informative images; empty `alt` for decorative images.
@@ -281,8 +336,4 @@ Patterns illustrated in the Design System:
 
 ## Implementation Note
 
-This file describes the **Design System** as shown in `designs/Design System.png`. CSS in the repository (for example `css/design-tokens.css` and component styles) may still use older naming or values from a previous brand pass. When updating templates, align variables, components, and tokens with this document and the Design System artwork so that the live site matches these guidelines.
-
----
-
-*Last updated: Sourced from `designs/Design System.png` (LGLC Design System).*
+This file is the authoritative reference. CSS in the repository (for example `css/design-tokens.css` and component styles) may still use older naming or values from a previous brand pass. When updating templates, align variables, components, and tokens with this document so that the live site matches these guidelines.

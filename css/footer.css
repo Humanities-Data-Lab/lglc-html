@@ -1,5 +1,5 @@
 /**
- * LGLC Footer — designs/Design Components.png (white band, navy text, logo + menu + contact)
+ * LGLC Footer — white band, navy text, logo + menu + contact
  */
 
 .site-footer {
@@ -25,7 +25,7 @@
   align-items: start;
 }
 
-/* Third column when Contact block is present — designs/Design Components.png */
+/* Third column when Contact block is present */
 .footer-content:has(.footer-contact) {
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
 }

@@ -29,15 +29,9 @@
           </div>
           <nav class="primary-nav" aria-label="Primary navigation">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a href="landing.html" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="about.html" class="nav-link">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="../search.html" class="nav-link">Search</a>
-              </li>
+              <li class="nav-item"><a href="landing.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+              <li class="nav-item"><a href="../search.html" class="nav-link">Search</a></li>
             </ul>
           </nav>
           <div class="header-actions">
@@ -54,116 +48,124 @@
     </div>
     <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
       <ul class="mobile-nav-list">
-        <li class="mobile-nav-item">
-          <a href="landing.html" class="mobile-nav-link">Home</a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="about.html" class="mobile-nav-link">About Us</a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="../search.html" class="mobile-nav-link">Search</a>
-        </li>
+        <li class="mobile-nav-item"><a href="landing.html" class="mobile-nav-link">Home</a></li>
+        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li class="mobile-nav-item"><a href="../search.html" class="mobile-nav-link">Search</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main-content" class="record-page" tabindex="-1">
-    <div class="container-page">
-      <header class="record-hero" aria-labelledby="event-title">
+    <div class="container-page record-layout">
+      <aside class="record-sidebar" aria-label="Event summary">
         <h1 id="event-title" class="record-title">Parliament Hill demonstration</h1>
-        <p class="record-subtitle">First large-scale gay rights protest in Canada (sample record)</p>
-      </header>
 
-      <section class="record-facts" aria-label="Event summary">
-        <div class="record-facts__group">
-          <h2 class="record-facts__label">Date</h2>
-          <p class="record-facts__value">August 28, 1971</p>
-        </div>
-        <div class="record-facts__group">
-          <h2 class="record-facts__label">Location</h2>
-          <p class="record-facts__value">Ottawa, Ontario</p>
-        </div>
-        <div class="record-facts__group">
-          <h2 class="record-facts__label">Record type</h2>
-          <p class="record-facts__value">Demonstration / public action</p>
-        </div>
-      </section>
+        <dl class="record-facts-list">
+          <div class="record-facts-list__group">
+            <dt>Date</dt>
+            <dd>August 28, 1971</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Location</dt>
+            <dd>Ottawa, Ontario</dd>
+          </div>
+          <div class="record-facts-list__group">
+            <dt>Record type</dt>
+            <dd>Demonstration / public action</dd>
+          </div>
+        </dl>
 
-      <section class="record-section" aria-labelledby="event-details-heading">
-        <div class="content-box">
-          <h2 id="event-details-heading" class="content-box-heading">Details</h2>
-          <p class="content-box-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Chronology text from the annotated volumes would appear
-            here, with archival tone and citations to sources. This block matches the “Details” treatment in the result
-            layout (designs/Results.pdf).
+        <div class="record-sidebar__related">
+          <h2 class="record-sidebar-heading">Related Entries in LGLC</h2>
+          <ul class="record-count-cards">
+            <li>
+              <a href="#associated-people" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                  People
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#associated-places" class="record-count-card">
+                <span class="record-count-card__number">1</span>
+                <span class="record-count-card__label">
+                  <svg class="record-count-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  Places
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="record-main">
+        <section class="record-intro" aria-labelledby="event-details-heading">
+          <p class="record-section-tag" id="event-details-heading">Details</p>
+          <p class="record-intro__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Chronology text from the annotated volumes would appear here, with archival tone and citations to sources.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <section class="record-section" aria-labelledby="event-citations-heading">
-        <h2 id="event-citations-heading" class="section-heading">Citations</h2>
-        <p class="section-text">
-          Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). <em>Lesbian and Gay Liberation in Canada</em>. Retrieved from https://lglc.ca/
-        </p>
-      </section>
-
-      <section class="record-section record-section--related" aria-labelledby="event-related-heading">
-        <h2 id="event-related-heading" class="section-heading">Related Entries in LGLC</h2>
-
-        <div class="related-block">
-          <div class="related-block__header">
-            <h3 class="related-block__title">Associated People</h3>
-            <span class="related-block__count">1 People</span>
+        <details class="record-accordion" id="associated-people" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span class="record-accordion__title">Associated People</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Charles Hill</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Participant</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> McLeod, D. W., Lesbian and Gay Liberation in Canada, Vol. 1.</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> August 28, 1971</p>
+                </div>
+              </div>
+              <a href="../person/charles-hill" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
-          <ul class="related-entry-list">
-            <li>
-              <article class="related-entry">
-                <div class="related-entry__body">
-                  <h4 class="related-entry__title"><a href="../person/charles-hill">Charles Hill</a></h4>
-                  <dl class="related-entry__meta">
-                    <dt>Relation</dt>
-                    <dd>Participant</dd>
-                    <dt>Citation</dt>
-                    <dd>McLeod, D. W., <em>Lesbian and Gay Liberation in Canada</em>, Vol. 1.</dd>
-                    <dt>Record Date</dt>
-                    <dd>August 28, 1971</dd>
-                  </dl>
-                </div>
-                <div class="related-entry__actions">
-                  <a href="../person/charles-hill" class="btn-primary">View Page</a>
-                </div>
-              </article>
-            </li>
-          </ul>
-        </div>
+        </details>
 
-        <div class="related-block">
-          <div class="related-block__header">
-            <h3 class="related-block__title">Associated Places</h3>
-            <span class="related-block__count">1 Places</span>
+        <details class="record-accordion" id="associated-places" open>
+          <summary class="record-accordion__summary">
+            <svg class="record-accordion__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span class="record-accordion__title">Associated Places</span>
+            <span class="record-accordion__count">(1)</span>
+            <span class="record-accordion__trailing">
+              <svg class="record-accordion__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="record-accordion__body">
+            <article class="record-entry-card">
+              <div class="record-entry-card__body">
+                <h3 class="record-entry-card__title">Ottawa</h3>
+                <div class="record-entry-card__meta">
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Relation:</span> Location of event</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Citation:</span> Chronology entry; archival notes on file.</p>
+                  <p class="record-entry-card__meta-row"><span class="record-entry-card__meta-label">Record Date:</span> August 28, 1971</p>
+                </div>
+              </div>
+              <a href="../place/ottawa" class="record-entry-card__link">View Page</a>
+            </article>
           </div>
-          <ul class="related-entry-list">
-            <li>
-              <article class="related-entry">
-                <div class="related-entry__body">
-                  <h4 class="related-entry__title"><a href="../place/ottawa">Ottawa</a></h4>
-                  <dl class="related-entry__meta">
-                    <dt>Relation</dt>
-                    <dd>Location of event</dd>
-                    <dt>Citation</dt>
-                    <dd>Chronology entry; archival notes on file.</dd>
-                    <dt>Record Date</dt>
-                    <dd>August 28, 1971</dd>
-                  </dl>
-                </div>
-                <div class="related-entry__actions">
-                  <a href="../place/ottawa" class="btn-primary">View Page</a>
-                </div>
-              </article>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </details>
+
+        <section class="record-citations" aria-labelledby="event-citations-heading">
+          <h2 id="event-citations-heading" class="record-citations__heading">
+            <span>Citations</span>
+            <svg class="record-citations__info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1.1-1 1.7"/></svg>
+          </h2>
+          <p class="record-citations__text">
+            Crompton, C., McLeod, D., &amp; Schwartz, M. (n.d.). Lesbian and Gay Liberation in Canada. Retrieved from https://lglc.ca/
+          </p>
+        </section>
+      </div>
     </div>
   </main>
 

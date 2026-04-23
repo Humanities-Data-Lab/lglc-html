@@ -38,3 +38,6 @@ yarn.lock
 dist/
 build/
 
+# Design artefacts (not shipped with the site)
+designs/
+

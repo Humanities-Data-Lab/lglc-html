@@ -1,5 +1,5 @@
 /**
- * UI components — designs/Design Components.png + DESIGN-LANGUAGE.md
+ * UI components — see DESIGN-LANGUAGE.md
  * Load after main.css
  */
 
@@ -82,7 +82,7 @@ a.card-title-link:hover {
   width: auto;
 }
 
-/* Homepage timeline feature cards — image + meta + CTA (Design Components.png) */
+/* Homepage timeline feature cards — image + meta + CTA */
 .chronology-card .chronology-card__media {
   width: var(--size-full);
   aspect-ratio: 16 / 9;
@@ -166,7 +166,7 @@ a.card-title-link:hover {
 }
 
 /* ============================================
-   TEAM — profile cards (Design Components.png)
+   TEAM — profile cards
    ============================================ */
 
 .team-grid {

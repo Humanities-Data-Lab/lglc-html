@@ -1,6 +1,6 @@
 /**
  * LGLC Design System - CSS Custom Properties
- * Aligned with DESIGN-LANGUAGE.md / designs/Design System.png
+ * Aligned with DESIGN-LANGUAGE.md
  *
  * Theme: Primary Navy, Secondary Gold, Background Cream, Accent Red
  * Typography: Montserrat (headings, labels), Open Sans (body)
@@ -289,7 +289,7 @@
      HEADER / NAV / FOOTER
      ============================================ */
 
-  /* Header/footer surfaces — designs/Design Components.png (white bars on cream page) */
+  /* Header/footer surfaces — white bars on cream page */
   --header-bg: var(--color-white);
   --header-text: var(--color-primary-navy);
   --header-height: 10.25rem;
@@ -310,7 +310,7 @@
   /* Tags / badges — gold field, navy text */
   --tag-bg: var(--color-secondary-gold);
   --tag-text: var(--color-primary-navy);
-  /* Capsule tags — designs/Design Components.png */
+  /* Capsule tags */
   --tag-radius: var(--border-radius-full);
 
   /* Gold accent surfaces (promos, optional bands) */
@@ -323,7 +323,7 @@
 
   --card-bg: var(--color-white);
   --card-border: var(--color-grey-light);
-  /* Design Components.png — ~6–8px corners on cards / buttons */
+  /* ~6–8px corners on cards / buttons */
   --card-radius: var(--border-radius-md);
   --card-shadow: var(--shadow-sm);
   --card-shadow-hover: var(--shadow-md);
@@ -346,6 +346,8 @@
   --button-border-radius: var(--border-radius-md);
 
   --icon-size-sm: 1rem;
+  --icon-size-base: 1.125rem;
+  --icon-size-md-sm: 1.25rem;
   --icon-size-md: 1.5rem;
   --icon-size-lg: 2rem;
   --icon-size-xl: 3rem;
@@ -372,6 +374,9 @@
   --content-width-wide: 64rem;
   --content-width-xlarge: 75rem;
   --content-width-search: 72.5rem;
+
+  /* Record-page sidebar fixed width */
+  --record-sidebar-width: 18rem;
 
   --image-height-sm: 12.5rem;
   --image-height-md: 15rem;

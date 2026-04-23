@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lesbian and Gay Liberation in Canada — demo template">
-  <title>Homepage — LGLC demo</title>
+  <meta name="description" content="Lesbian and Gay Liberation in Canada — landing demo">
+  <title>Landing — LGLC demo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -29,15 +29,9 @@
           </div>
           <nav class="primary-nav" aria-label="Primary navigation">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a href="landing.html" class="nav-link" aria-current="page">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="about.html" class="nav-link">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="../search.html" class="nav-link">Search</a>
-              </li>
+              <li class="nav-item"><a href="landing.html" class="nav-link" aria-current="page">Home</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+              <li class="nav-item"><a href="../search.html" class="nav-link">Search</a></li>
             </ul>
           </nav>
           <div class="header-actions">
@@ -54,15 +48,9 @@
     </div>
     <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
       <ul class="mobile-nav-list">
-        <li class="mobile-nav-item">
-          <a href="landing.html" class="mobile-nav-link" aria-current="page">Home</a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="about.html" class="mobile-nav-link">About Us</a>
-        </li>
-        <li class="mobile-nav-item">
-          <a href="../search.html" class="mobile-nav-link">Search</a>
-        </li>
+        <li class="mobile-nav-item"><a href="landing.html" class="mobile-nav-link" aria-current="page">Home</a></li>
+        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li class="mobile-nav-item"><a href="../search.html" class="mobile-nav-link">Search</a></li>
       </ul>
     </nav>
   </header>
@@ -89,7 +77,7 @@
 
       <section class="homepage-search" aria-label="Search controls">
         <div class="container">
-          <form class="homepage-search-form" action="/search" method="get">
+          <form class="homepage-search-form" action="../search.html" method="get">
             <label class="visually-hidden" for="home-filter">Filter chronology</label>
             <select id="home-filter" name="filter" class="homepage-filter">
               <option value="">Filter</option>
@@ -127,19 +115,19 @@
         <p class="timeline-note">*These featured articles highlight selected results and are not an exhaustive list.</p>
 
         <nav class="timeline-nav" aria-label="Timeline decades">
-          <a href="../search?year=1960" class="timeline-nav__item">
+          <a href="../search.html?year=1960" class="timeline-nav__item">
             <span class="timeline-nav__dot" aria-hidden="true"></span>
             <span class="timeline-nav__label">1960s</span>
           </a>
-          <a href="../search?year=1970" class="timeline-nav__item is-active" aria-current="page">
+          <a href="../search.html?year=1970" class="timeline-nav__item is-active" aria-current="page">
             <span class="timeline-nav__dot" aria-hidden="true"></span>
             <span class="timeline-nav__label">1970s</span>
           </a>
-          <a href="../search?year=1980" class="timeline-nav__item">
+          <a href="../search.html?year=1980" class="timeline-nav__item">
             <span class="timeline-nav__dot" aria-hidden="true"></span>
             <span class="timeline-nav__label">1980s</span>
           </a>
-          <a href="../search?year=1990" class="timeline-nav__item">
+          <a href="../search.html?year=1990" class="timeline-nav__item">
             <span class="timeline-nav__dot" aria-hidden="true"></span>
             <span class="timeline-nav__label">1990s</span>
           </a>
@@ -148,11 +136,7 @@
         <div class="grid grid-3 grid--cards homepage-card-grid">
           <article class="card chronology-card">
             <div class="chronology-card__media">
-              <img
-                src="../media/img/homosexuals-are-human-beings.png"
-                alt=""
-                class="chronology-card__image"
-              >
+              <img src="../media/img/homosexuals-are-human-beings.png" alt="" class="chronology-card__image">
             </div>
             <div class="card-body">
               <p class="chronology-card__type">Person</p>
@@ -162,17 +146,13 @@
               </p>
             </div>
             <div class="card-footer">
-              <a href="../person/charles-hill" class="btn-primary">View Data</a>
+              <a href="person.html" class="btn-primary">View Data</a>
             </div>
           </article>
 
           <article class="card chronology-card">
             <div class="chronology-card__media">
-              <img
-                src="../media/Image.png"
-                alt=""
-                class="chronology-card__image"
-              >
+              <img src="../media/Image.png" alt="" class="chronology-card__image">
             </div>
             <div class="card-body">
               <p class="chronology-card__type">Organization</p>
@@ -182,17 +162,13 @@
               </p>
             </div>
             <div class="card-footer">
-              <a href="../organization/calgary-club-carousel" class="btn-primary">View Data</a>
+              <a href="organization.html" class="btn-primary">View Data</a>
             </div>
           </article>
 
           <article class="card chronology-card">
             <div class="chronology-card__media">
-              <img
-                src="../media/img/lesbian-gay-liberation-canada.png"
-                alt=""
-                class="chronology-card__image"
-              >
+              <img src="../media/img/lesbian-gay-liberation-canada.png" alt="" class="chronology-card__image">
             </div>
             <div class="card-body">
               <p class="chronology-card__type">Organization</p>
@@ -202,7 +178,7 @@
               </p>
             </div>
             <div class="card-footer">
-              <a href="../organization/cbc" class="btn-primary">View Data</a>
+              <a href="organization.html" class="btn-primary">View Data</a>
             </div>
           </article>
         </div>
@@ -211,11 +187,7 @@
 
     <section class="featured-image-section" aria-label="Historical photograph">
       <div class="container">
-        <img
-          src="../media/img/lesbian-organization-toronto.png"
-          alt="Historical photograph of the Lesbian Organization of Toronto banner being carried by activists at a pride march or demonstration"
-          class="img-featured"
-        >
+        <img src="../media/img/lesbian-organization-toronto.png" alt="Historical photograph of the Lesbian Organization of Toronto banner being carried by activists at a pride march or demonstration" class="img-featured">
       </div>
     </section>
   </main>
@@ -232,7 +204,7 @@
           <div class="footer-column">
             <h4 class="footer-heading">Menu</h4>
             <ul class="footer-links">
-              <li><a href="../index.html">Home</a></li>
+              <li><a href="landing.html">Home</a></li>
               <li><a href="../search.html">Search</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="../contact.html">Contact</a></li>
